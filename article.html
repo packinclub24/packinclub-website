@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G950DCDKES"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-G950DCDKES");
+  </script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./blog-data.js"></script>
+<style>
+  @keyframes plStem { from { stroke-dashoffset: 70; } to { stroke-dashoffset: 0; } }
+  @keyframes plLeaf { 0% { transform: scale(0) rotate(-12deg); opacity: 0; } 60% { opacity: 1; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
+  @keyframes plWord { from { opacity: 0; transform: translateY(8px); letter-spacing: 0.12em; } to { opacity: 1; transform: translateY(0); letter-spacing: -0.015em; } }
+  @keyframes plBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes plShimmer { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #F7F4EC; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  ::selection { background: #6FAF45; color: #14342C; }
+  @keyframes pcPulse { 0% { box-shadow: 0 0 0 0 #6FAF4566; } 70% { box-shadow: 0 0 0 7px #6FAF4500; } 100% { box-shadow: 0 0 0 0 #6FAF4500; } }
+  @keyframes pcFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+  .pc-dot { animation: pcPulse 2.6s ease-out infinite; }
+  .pc-card { transition: transform .32s cubic-bezier(.2,.7,.2,1), box-shadow .32s ease, border-color .32s ease; }
+  .pc-card:hover { transform: translateY(-6px); box-shadow: 0 26px 52px -28px rgba(20,52,44,.5); border-color: #6FAF4566; }
+  .pc-card .pc-thumb { transition: transform .55s cubic-bezier(.2,.7,.2,1); will-change: transform; }
+  .pc-card:hover .pc-thumb { transform: scale(1.1); }
+  .pc-arrow { display: inline-block; transition: transform .28s ease; }
+  .pc-card:hover .pc-arrow, a:hover > .pc-arrow, button:hover > .pc-arrow { transform: translateX(5px); }
+  .pc-float { animation: pcFloat 5.5s ease-in-out infinite; }
+  .pc-link-underline { background-image: linear-gradient(#6FAF45,#6FAF45); background-size: 0% 1.5px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size .3s ease; }
+  .pc-link-underline:hover { background-size: 100% 1.5px; }
+   @keyframes pcFadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  /* responsive header */
+  .pc-nav-desktop, .pc-cta-desktop { display: flex; }
+  .pc-burger { display: none; }
+  .pc-mobile-menu { display: none; }
+  @media (max-width: 860px) {
+    .pc-nav-desktop, .pc-cta-desktop { display: none !important; }
+    .pc-burger { display: inline-flex !important; }
+  }
+  .pc-mobile-menu.pc-open { display: flex; animation: pcFadeUp .25s ease; }
+  .pc-burger-bar { display: block; width: 22px; height: 2px; background: #F7F4EC; border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="font-family:Inter,sans-serif; color:#14342C; background:#F7F4EC; overflow-x:hidden; min-height:100vh;">
+      <!-- ============ PRELOADER ============ -->
+  <div ref="{{ preloaderRef }}" style="position:fixed; inset:0; z-index:9999; background:#14342C; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px; transition:opacity .7s ease, visibility .7s ease;">
+    <div style="position:relative; width:74px; height:96px;">
+      <svg viewBox="0 0 74 96" width="74" height="96" fill="none" style="position:absolute; inset:0;">
+        <!-- stem draws up -->
+        <path d="M37 94 L37 46" stroke="#6FAF45" stroke-width="2.4" stroke-linecap="round" style="stroke-dasharray:70; stroke-dashoffset:70; animation:plStem .7s cubic-bezier(.6,0,.2,1) .15s forwards;"/>
+        <!-- left leaf -->
+        <path d="M37 60 q-28 -6 -30 -34 q28 4 30 34 Z" fill="#6FAF45" style="transform-origin:37px 60px; opacity:0; animation:plLeaf .6s cubic-bezier(.2,.8,.2,1) .55s forwards;"/>
+        <!-- right leaf -->
+        <path d="M37 50 q28 -8 31 -44 q-29 6 -31 44 Z" fill="#8FCB62" style="transform-origin:37px 50px; opacity:0; animation:plLeaf .6s cubic-bezier(.2,.8,.2,1) .8s forwards;"/>
+      </svg>
+    </div>
+    <div style="font-family:Fraunces,serif; font-weight:600; font-size:30px; letter-spacing:-0.015em; color:#F7F4EC; opacity:0; animation:plWord .7s ease 1.05s forwards;">
+      Packin<span style="color:#6FAF45;">Club</span>
+    </div>
+    <div style="width:160px; height:2px; background:#ffffff1f; border-radius:2px; overflow:hidden; margin-top:2px;">
+      <div style="height:100%; background:#6FAF45; transform-origin:left; transform:scaleX(0); animation:plBar 1.5s cubic-bezier(.5,0,.1,1) .2s forwards;"></div>
+    </div>
+    <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#6FAF4599; margin-top:4px; animation:plShimmer 1.6s ease infinite;">Returning to soil</div>
+  </div>
+  <!-- HEADER -->
+  <header ref="{{ headerRef }}" style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px clamp(20px,4vw,40px); transition:padding .25s ease, background-color .25s ease, box-shadow .25s ease;">
+    <a href="index.html" style="display:flex; align-items:baseline; gap:1px; text-decoration:none; font-family:Fraunces,serif; font-weight:600; font-size:23px; letter-spacing:-0.015em; color:#F7F4EC;">
+      <span>Packin</span><span style="color:#6FAF45;">Club</span>
+    </a>
+    <nav class="pc-nav-desktop" style="display:flex; align-items:center; gap:clamp(10px,1.6vw,26px); font-size:13.5px; font-weight:500;">
+      <a href="index.html" style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Home</a>
+      <a href="about.html" style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">About</a>
+      <a href="industries.html" style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Industries</a>
+      <a href="products.html" style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Products</a>
+      <a href="blog.html" style="color:#6FAF45; text-decoration:none; transition:color .15s;">Blog</a>
+      <a href="contact.html" style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Contact</a>
+    </nav>
+    <a href="contact.html" onMouseMove="{{ magnetMove }}" onMouseLeave="{{ magnetLeave }}" class="pc-cta-desktop" style="flex:none; align-items:center; gap:8px; background:#6FAF45; color:#14342C; font-size:13.5px; font-weight:600; padding:11px 18px; border-radius:2px; text-decoration:none; transition:transform .18s ease-out; will-change:transform;">Request a Quote</a>
+    <button class="pc-burger" onClick="{{ toggleMobileMenu }}" aria-label="Toggle menu" style="flex:none; align-items:center; justify-content:center; width:38px; height:38px; border:none; background:transparent; cursor:pointer; padding:0; gap:5px; flex-direction:column;">
+      <span class="pc-burger-bar" ref="{{ burgerBar1Ref }}"></span>
+      <span class="pc-burger-bar" ref="{{ burgerBar2Ref }}"></span>
+      <span class="pc-burger-bar" ref="{{ burgerBar3Ref }}"></span>
+    </button>
+  </header>
+
+  <!-- MOBILE MENU PANEL -->
+  <div class="pc-mobile-menu {{ mobileMenuClass }}" style="position:fixed; top:0; left:0; right:0; z-index:59; flex-direction:column; background:#0c1f19f5; backdrop-filter:blur(10px); padding:88px 24px 28px; gap:2px;">
+    <a href="index.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Home</a>
+    <a href="about.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">About</a>
+    <a href="industries.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Industries</a>
+    <a href="products.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Products</a>
+    <a href="blog.html" onClick="{{ closeMobileMenu }}" style="color:#6FAF45; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Blog</a>
+    <a href="contact.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Contact</a>
+    <a href="contact.html" onClick="{{ closeMobileMenu }}" style="margin-top:18px; display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#6FAF45; color:#14342C; font-size:15px; font-weight:600; padding:14px 18px; border-radius:2px; text-decoration:none;">Request a Quote</a>
+  </div>
+
+  <!-- NOT FOUND -->
+  <sc-if value="{{ notFound }}" hint-placeholder-val="{{ false }}">
+    <section style="background:#14342C; color:#F7F4EC; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:120px 24px;">
+      <div style="max-width:520px;">
+        <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">404 · Article not found</div>
+        <h1 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(30px,5vw,52px); line-height:1.05; margin:0 0 18px;">That article has moved.</h1>
+        <p style="font-size:16px; line-height:1.6; color:#F7F4ECcc; margin:0 0 32px;">Browse the journal for guides on compostable packaging, certifications and the plastic switch.</p>
+        <a href="blog.html" style="display:inline-flex; align-items:center; gap:9px; background:#6FAF45; color:#14342C; font-weight:600; font-size:15px; padding:14px 26px; border-radius:2px; text-decoration:none;">Back to the journal →</a>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- ARTICLE -->
+  <sc-if value="{{ found }}" hint-placeholder-val="{{ true }}">
+  <div>
+
+    <!-- HERO -->
+    <section style="{{ heroThumbStyle }} color:#F7F4EC; padding:clamp(120px,15vw,168px) clamp(20px,4vw,40px) clamp(44px,6vw,64px); position:relative; overflow:hidden;"></section>
+      <div style="position:absolute; inset:0; background-image:radial-gradient(75% 85% at 80% 12%,#6FAF4512,transparent 68%); mask-image:radial-gradient(120% 90% at 80% 0%,#000 30%,transparent 80%); pointer-events:none;"></div>
+      <div style="max-width:900px; margin:0 auto; position:relative;">
+        <div style="display:flex; align-items:center; gap:9px; flex-wrap:wrap; font-family:Inter,sans-serif; font-size:12px; color:#F7F4EC99; margin-bottom:26px;">
+          <a href="index.html" style="color:#F7F4EC99; text-decoration:none;" style-hover="color:#6FAF45;">Home</a>
+          <span style="color:#F7F4EC55;">/</span>
+          <a href="blog.html" style="color:#F7F4EC99; text-decoration:none;" style-hover="color:#6FAF45;">Journal</a>
+          <span style="color:#F7F4EC55;">/</span>
+          <span style="color:#6FAF45;">{{ category }}</span>
+        </div>
+        <h1 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(30px,4.4vw,52px); line-height:1.08; letter-spacing:-0.02em; margin:0 0 24px;">{{ title }}</h1>
+        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; font-size:13.5px; color:#F7F4ECcc;">
+          <span style="font-family:Inter,sans-serif;">{{ dateLabel }}</span>
+          <span style="width:4px; height:4px; border-radius:50%; background:#6FAF45;"></span>
+          <span style="font-family:Inter,sans-serif;">{{ readLabel }}</span>
+          <span style="width:4px; height:4px; border-radius:50%; background:#6FAF45;"></span>
+          <span>{{ author }}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <section style="background:#F7F4EC; padding:clamp(44px,5vw,72px) clamp(20px,4vw,40px) clamp(56px,7vw,96px);">
+      <div style="max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; gap:clamp(36px,4vw,64px); align-items:flex-start;">
+
+        <!-- main -->
+        <article style="flex:1 1 560px; min-width:300px; max-width:720px;">
+
+          <p style="font-family:Fraunces,serif; font-weight:400; font-size:clamp(19px,1.9vw,23px); line-height:1.55; letter-spacing:-0.01em; color:#14342C; margin:0 0 clamp(36px,4vw,52px); padding-bottom:clamp(28px,3vw,40px); border-bottom:1px solid #14342C18;">{{ excerpt }}</p>
+
+          <sc-for list="{{ sections }}" as="s" hint-placeholder-count="6">
+            <div style="margin-bottom:32px;">
+              <sc-if value="{{ s.hasH }}" hint-placeholder-val="{{ true }}">
+                <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(22px,2.4vw,28px); line-height:1.2; letter-spacing:-0.01em; margin:0 0 16px; color:#14342C;">{{ s.h }}</h2>
+              </sc-if>
+              <sc-for list="{{ s.paras }}" as="para" hint-placeholder-count="2">
+                <p style="font-size:16.5px; line-height:1.75; color:#14342Cdd; margin:0 0 16px;">{{ para }}</p>
+              </sc-for>
+              <sc-if value="{{ s.hasList }}" hint-placeholder-val="{{ false }}">
+                <ul style="list-style:none; padding:0; margin:8px 0 0; display:flex; flex-direction:column; gap:11px;">
+                  <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="4">
+                    <li style="display:flex; gap:12px; align-items:flex-start; font-size:16px; line-height:1.6; color:#14342Cdd;">
+                      <span style="flex:none; margin-top:8px; width:6px; height:6px; border-radius:50%; background:#6FAF45;"></span>
+                      <span>{{ it }}</span>
+                    </li>
+                  </sc-for>
+                </ul>
+              </sc-if>
+            </div>
+          </sc-for>
+
+          <!-- FAQ -->
+          <div style="margin-top:clamp(36px,4vw,52px); padding-top:clamp(32px,3vw,44px); border-top:1px solid #14342C18;">
+            <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(22px,2.4vw,28px); letter-spacing:-0.01em; margin:0 0 22px; color:#14342C;">Frequently asked questions</h2>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
+                <div style="background:#fff; border:1px solid #14342C18; border-radius:4px; padding:20px 22px;">
+                  <div style="font-family:Inter,sans-serif; font-weight:600; font-size:16px; color:#14342C; margin-bottom:9px;">{{ f.q }}</div>
+                  <div style="font-size:15px; line-height:1.65; color:#14342C99;">{{ f.a }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </article>
+
+        <!-- sidebar -->
+        <aside style="flex:0 0 auto; width:clamp(280px,28vw,340px); position:sticky; top:88px; display:flex; flex-direction:column; gap:16px;">
+          <div style="border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+            <div style="background:#14342C; color:#F7F4EC; padding:18px 22px; font-family:Inter,sans-serif; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#6FAF45;">Key takeaways</div>
+            <ul style="list-style:none; padding:20px 22px; margin:0; display:flex; flex-direction:column; gap:14px;">
+              <sc-for list="{{ takeaways }}" as="t" hint-placeholder-count="4">
+                <li style="display:flex; gap:11px; align-items:flex-start; font-size:14px; line-height:1.55; color:#14342Cdd;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3f7a26" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:1px;"><path d="M20 6L9 17l-5-5"></path></svg>
+                  <span>{{ t }}</span>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+          <div style="border:1px solid #14342C18; border-radius:6px; background:#14342C; color:#F7F4EC; padding:24px;">
+            <div style="font-family:Fraunces,serif; font-size:21px; line-height:1.25; margin-bottom:10px;">Make the switch.</div>
+            <p style="font-size:13.5px; line-height:1.6; color:#F7F4EC99; margin:0 0 18px;">Get certified compostable packaging matched to your sizes, with samples and a quote in two business days.</p>
+            <a href="contact.html" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#6FAF45; color:#14342C; font-weight:600; font-size:14.5px; padding:13px; border-radius:2px; text-decoration:none;">Request a quote →</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- RELATED -->
+    <sc-if value="{{ hasRelated }}" hint-placeholder-val="{{ false }}">
+      <section style="background:#fff; border-top:1px solid #14342C12; padding:clamp(48px,6vw,84px) clamp(20px,4vw,40px);">
+        <div style="max-width:1180px; margin:0 auto;">
+          <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:26px;">
+            <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(24px,2.8vw,32px); letter-spacing:-0.01em; margin:0;">Keep reading</h2>
+            <a href="blog.html" style="font-size:14px; font-weight:600; color:#3f7a26; text-decoration:none;">All articles →</a>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px;">
+            <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
+              <a href="{{ r.href }}" class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+                <div style="height:120px; position:relative; {{ r.thumbStyle }} display:flex; align-items:flex-end; padding:16px;">
+  <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">{{ r.cat }}</span>
+</div>
+                <div style="padding:18px 20px;">
+                  <h3 style="font-family:Fraunces,serif; font-weight:500; font-size:17px; line-height:1.22; margin:0 0 8px; color:#14342C;">{{ r.title }}</h3>
+                  <span style="font-size:12.5px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+                </div>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+  </div>
+  </sc-if>
+
+  <!-- FOOTER -->
+  <footer style="background:#0c1f19; color:#F7F4EC; padding:clamp(56px,7vw,88px) clamp(20px,4vw,40px) 36px;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div style="display:flex; flex-wrap:wrap; gap:clamp(40px,6vw,90px); justify-content:space-between; padding-bottom:clamp(40px,5vw,60px); border-bottom:1px solid #ffffff14;">
+        <div style="max-width:340px;">
+          <div style="font-family:Fraunces,serif; font-weight:600; font-size:26px; letter-spacing:-0.015em; margin-bottom:18px;">Packin<span style="color:#6FAF45;">Club</span></div>
+          <p style="font-size:14.5px; line-height:1.65; color:#F7F4EC99; margin:0;">India's pioneering eco-packaging partner, pairing material science with practical business solutions. Founded 2024 in Delhi.</p>
+        </div>
+        <div style="display:flex; gap:clamp(40px,6vw,80px); flex-wrap:wrap;">
+          <div>
+            <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">Explore</div>
+            <div style="display:flex; flex-direction:column; gap:12px; font-size:14.5px;">
+              <a href="index.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">Home</a>
+              <a href="about.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">About</a>
+              <a href="industries.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">Industries</a>
+              <a href="products.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">Products</a>
+              <a href="blog.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">Blog</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">Contact</div>
+            <div style="display:flex; flex-direction:column; gap:12px; font-size:14.5px; color:#F7F4ECcc;">
+              <a ref="{{ emailRef }}" href="contact.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">Email us</a>
+              <a href="tel:+918178414360" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">+91 81784 14360</a>
+              <span style="line-height:1.6; max-width:240px;">D-1/64, 21st Century Business Centre, Veer Savarkar Block, Shakarpur, Nirman Vihar, Delhi 110092</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; padding-top:28px; font-size:12.5px; color:#F7F4EC66; font-family:Inter,sans-serif;">
+        <span>© 2025 Packin Club. Certified to IS 17088.</span>
+        <span>Returns to soil within 240 days.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { post: null, notFound: false, ready: false, mobileMenuOpen: false };
+
+  componentDidMount() {
+    this._plTimer = setTimeout(() => {
+      if (this.preloaderEl) { this.preloaderEl.style.opacity = '0'; this.preloaderEl.style.visibility = 'hidden'; }
+    }, 1400);
+    this._lookup();
+    if (this.emailEl) {
+      const addr = 'info' + String.fromCharCode(64) + 'packinclub.com';
+      this.emailEl.textContent = addr;
+      this.emailEl.href = 'mailto:' + addr;
+    }
+    this._onScroll = () => {
+      if (!this.header) return;
+      const s = window.scrollY > 30;
+      this.header.style.padding = s ? '12px clamp(20px,4vw,40px)' : '22px clamp(20px,4vw,40px)';
+     this.header.style.background = s ? 'rgba(12,31,25,0.92)' : 'rgba(12,31,25,0.38)'; 
+      this.header.style.backdropFilter = 'blur(8px)';
+      this.header.style.boxShadow = s ? '0 1px 0 #ffffff14' : 'none';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+
+  componentWillUnmount() { clearTimeout(this._plTimer); window.removeEventListener('scroll', this._onScroll); }
+
+  _lookup() {
+    const go = () => {
+      if (!window.PACKIN_BLOG) { setTimeout(go, 40); return; }
+      let s = '';
+      try {
+        const u = new URL(window.location.href);
+        s = u.searchParams.get('slug') || (u.hash.indexOf('slug=') > -1 ? decodeURIComponent(u.hash.split('slug=')[1]) : '');
+      } catch (e) { s = ''; }
+      if (!s) { this.setState({ post: window.PACKIN_BLOG.posts[0], ready: true }); this._seo(window.PACKIN_BLOG.posts[0]); return; }
+      const p = window.PACKIN_BLOG.bySlug(s);
+      if (p) { this.setState({ post: p, ready: true }); this._seo(p); }
+      else this.setState({ notFound: true, ready: true });
+    };
+    go();
+  }
+
+  _seo(p) {
+    if (!p) return;
+    try {
+      document.title = p.metaTitle + ' | Packin Club';
+      let m = document.querySelector('meta[name="description"]');
+      if (!m) { m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); }
+      m.setAttribute('content', p.metaDescription);
+      // structured data: Article + FAQPage
+      const old = document.getElementById('pc-ldjson');
+      if (old) old.remove();
+      const ld = document.createElement('script');
+      ld.type = 'application/ld+json';
+      ld.id = 'pc-ldjson';
+      ld.textContent = JSON.stringify([
+        {
+          '@context': 'https://schema.org', '@type': 'Article',
+          headline: p.title, description: p.metaDescription,
+          datePublished: p.date, author: { '@type': 'Organization', name: 'Packin Club' },
+          publisher: { '@type': 'Organization', name: 'Packin Club' },
+          keywords: p.keyword
+        },
+        {
+          '@context': 'https://schema.org', '@type': 'FAQPage',
+          mainEntity: p.faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))
+        }
+      ]);
+      document.head.appendChild(ld);
+    } catch (e) {}
+  }
+
+  magnetMove = (e) => {
+    const el = e.currentTarget; const r = el.getBoundingClientRect();
+    el.style.transform = 'translate(' + ((e.clientX - (r.left + r.width / 2)) * 0.28) + 'px,' + ((e.clientY - (r.top + r.height / 2)) * 0.32) + 'px)';
+  };
+  magnetLeave = (e) => { e.currentTarget.style.transform = 'translate(0,0)'; };
+
+  _syncBurger() {
+    const open = this.state.mobileMenuOpen;
+    if (this.burgerBar1) this.burgerBar1.style.transform = open ? 'translateY(7px) rotate(45deg)' : 'none';
+    if (this.burgerBar2) this.burgerBar2.style.opacity = open ? '0' : '1';
+    if (this.burgerBar3) this.burgerBar3.style.transform = open ? 'translateY(-7px) rotate(-45deg)' : 'none';
+  }
+
+  renderVals() {
+    const refs = {
+      rootRef: el => { this.root = el; },
+      headerRef: el => { this.header = el; },
+       preloaderRef: el => { this.preloaderEl = el; },
+      burgerBar1Ref: el => { this.burgerBar1 = el; this._syncBurger(); },
+      burgerBar2Ref: el => { this.burgerBar2 = el; this._syncBurger(); },
+      burgerBar3Ref: el => { this.burgerBar3 = el; this._syncBurger(); },
+      mobileMenuClass: this.state.mobileMenuOpen ? 'pc-open' : '',
+      toggleMobileMenu: () => { this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen }); setTimeout(() => this._syncBurger(), 0); },
+      closeMobileMenu: () => { this.setState({ mobileMenuOpen: false }); setTimeout(() => this._syncBurger(), 0); },
+      emailRef: el => { this.emailEl = el; },
+      magnetMove: this.magnetMove,
+      magnetLeave: this.magnetLeave
+    };
+    const cardThumbStyle = (x) => x.thumb
+  ? "background-color:" + x.heroBg + "; background-image:url('" + x.thumb + "'); background-size:cover; background-position:center;"
+  : "background-color:" + x.heroBg + "; background-image:radial-gradient(circle at 50% 42%,#6FAF4518,transparent 62%);";
+
+const heroThumbStyle = (x) => x.thumb
+  ? "background-color:" + x.heroBg + "; background-image:linear-gradient(180deg, " + x.heroBg + "e6 0%, " + x.heroBg + "b3 45%, " + x.heroBg + "f2 100%), url('" + x.thumb + "'); background-size:cover; background-position:center;"
+  : "background:" + x.heroBg + ";";
+
+const p = this.state.post;
+if (!p) {
+  return Object.assign(refs, {
+    found: false, notFound: this.state.notFound,
+    heroBg: '#14342C', heroThumbStyle: 'background:#14342C;', category: '', title: '', dateLabel: '', readLabel: '', author: '',
+    excerpt: '', sections: [], faqs: [], takeaways: [], related: [], hasRelated: false
+  });
+}
+const B = window.PACKIN_BLOG;
+const related = B.posts.filter(x => x.slug !== p.slug && x.cat === p.cat)
+  .concat(B.posts.filter(x => x.slug !== p.slug && x.cat !== p.cat))
+  .slice(0, 3)
+  .map(r => ({ title: r.title, cat: r.cat, heroBg: r.heroBg, thumbStyle: cardThumbStyle(r), href: 'article.html?slug=' + r.slug }));
+
+return Object.assign(refs, {
+  found: true, notFound: false,
+  heroBg: p.heroBg, heroThumbStyle: heroThumbStyle(p), category: p.cat, title: p.title,
+      dateLabel: p.dateLabel, readLabel: p.readMins + ' min read', author: p.author,
+      excerpt: p.excerpt,
+      sections: p.body.map(s => ({
+        hasH: !!s.h, h: s.h || '',
+        paras: s.p || [],
+        hasList: !!(s.ul && s.ul.length), items: s.ul || []
+      })),
+      faqs: p.faqs,
+      takeaways: p.takeaways,
+      related, hasRelated: related.length > 0
+    });
+  }
+}
+</script>
+</body>
+</html>
