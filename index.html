@@ -62,8 +62,8 @@
     .pc-nav-desktop, .pc-cta-desktop { display: none !important; }
     .pc-burger { display: inline-flex !important; }
   }
-  .pc-hero-media { position:absolute; top:50%; right:0; transform:translateY(-50%); width:56%; min-width:560px; max-width:820px; aspect-ratio:4/5; max-height:90%; overflow:hidden; z-index:1; }
-  .pc-hero-media img { width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block; -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 20%); mask-image:linear-gradient(to right,transparent 0%,#000 20%); }
+.pc-hero-media { position:absolute; top:50%; right:0; transform:translateY(-50%); width:56%; min-width:560px; max-width:820px; aspect-ratio:4/4.4; max-height:90%; overflow:hidden; z-index:1; }
+  .pc-hero-media img { width:100%; height:100%; object-fit:cover; object-position:center 0%; display:block; -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 20%); mask-image:linear-gradient(to right,transparent 0%,#000 20%); }
   @media (max-width: 560px) {
     .pc-hero-media { display:none; }
     #top { position:relative; }
@@ -157,7 +157,7 @@
   </div>  <!-- ✅ closes .pc-mobile-menu -->
 
   <!-- ============ HERO ============ -->
-  <section id="top" style="background:#14342C; color:#F7F4EC; padding:clamp(130px,16vw,190px) clamp(20px,4vw,40px) clamp(70px,9vw,110px); position:relative; overflow:hidden;">
+  <section id="top" style="background:#14342C; color:#F7F4EC; padding:clamp(85px,9vw,110px) clamp(20px,4vw,40px) clamp(45px,5vw,70px); position:relative; overflow:hidden;">
     <div style="position:absolute; inset:0; background-image:radial-gradient(75% 85% at 80% 12%,#6FAF4512,transparent 68%); mask-image:radial-gradient(120% 90% at 70% 20%,#000 30%,transparent 75%); pointer-events:none;"></div>
 
     <!-- Real product render: full-bleed on the right -->
@@ -168,7 +168,7 @@
     <div style="max-width:1280px; margin:0 auto; position:relative; z-index:2; display:flex; flex-wrap:wrap; gap:clamp(32px,5vw,72px); align-items:center;">
 
       <div style="flex:1 1 480px; min-width:300px;">
-        <div style="display:inline-flex; align-items:center; gap:10px; margin-bottom:24px; padding:8px 14px; border:1px solid rgba(111,175,69,.2); border-radius:999px; background:rgba(247,244,236,.05);">
+        <div style="display:inline-flex; align-items:center; gap:10px; margin-bottom:16px; padding:8px 14px; border:1px solid rgba(111,175,69,.2); border-radius:999px; background:rgba(247,244,236,.05);">
   <span style="width:8px; height:8px; border-radius:50%; background:#6FAF45;"></span>
   <span style="font-family:Inter,sans-serif; font-size:13px; font-weight:500; color:#D7D2C8;">
     IS 17088 Certified • Made in India
@@ -180,13 +180,13 @@
   font-size:clamp(36px,5vw,64px);
   line-height:1.08;
   letter-spacing:-0.03em;
-  margin:0 0 24px;
+  margin:0 0 16px;
 ">
   Packaging that<br>
   <span style="color:#6FAF45;">disappears</span> on purpose.
 </h1>
-        <p style="font-size:clamp(16px,1.4vw,19px); line-height:1.6; color:#F7F4ECcc; max-width:520px; margin:0 0 36px;">
-          We supply certified compostable packaging for businesses that refuse to leave a trace. No microplastics. No greenwashing. Just material that returns to soil.
+        <p style="font-size:clamp(16px,1.4vw,19px); line-height:1.6; color:#F7F4ECcc; max-width:520px; margin:0 0 24px;">
+          Trusted by brands, retailers and businesses across India for certified compostable bags that look premium, perform like plastic, and return safely to the soil.
         </p>
         <div style="display:flex; flex-wrap:wrap; gap:14px; align-items:center;">
           <a href="products.html" onMouseMove="{{ magnetMove }}" onMouseLeave="{{ magnetLeave }}" style="display:inline-flex; align-items:center; gap:9px; background:#6FAF45; color:#14342C; font-weight:600; font-size:15px; padding:15px 26px; border-radius:2px; text-decoration:none; transition:transform .18s ease-out; will-change:transform;">
@@ -197,7 +197,7 @@
             Watch it return to soil
           </a>
         </div>
-        <div style="display:flex; flex-wrap:wrap; gap:clamp(26px,4vw,52px); margin-top:clamp(40px,5vw,60px);">
+        <div style="display:flex; flex-wrap:wrap; gap:clamp(26px,4vw,52px); margin-top:clamp(24px,3vw,36px);">
           <div>
             <div style="font-family:Fraunces,serif; font-size:34px; font-weight:500; color:#6FAF45;">240</div>
             <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC99; margin-top:4px;">Days to compost</div>
