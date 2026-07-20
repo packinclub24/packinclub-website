@@ -39,6 +39,7 @@
   ::selection { background: #6FAF45; color: #14342C; }
   @keyframes pcPulse { 0% { box-shadow: 0 0 0 0 #6FAF4566; } 70% { box-shadow: 0 0 0 7px #6FAF4500; } 100% { box-shadow: 0 0 0 0 #6FAF4500; } }
   @keyframes pcFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+  @keyframes pcMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .pc-dot { animation: pcPulse 2.6s ease-out infinite; }
   .pc-card { transition: transform .32s cubic-bezier(.2,.7,.2,1), box-shadow .32s ease, border-color .32s ease; }
   .pc-card:hover { transform: translateY(-6px); box-shadow: 0 26px 52px -28px rgba(20,52,44,.5); border-color: #6FAF4566; }
@@ -269,6 +270,33 @@
   </section>
 
   <!-- MAP / VISIT STRIP -->
+  <!-- ============ CERTIFICATION MARQUEE ============ -->
+  <section style="background:#F7F4EC; padding:clamp(40px,5vw,64px) 0; border-bottom:1px solid #14342C12;">
+    <div style="text-align:center; font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:#8C8579; margin-bottom:30px;">Tested, certified & compliant</div>
+    <div style="overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent); mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);">
+      <div style="display:flex; width:max-content; gap:0; animation:pcMarquee 34s linear infinite;">
+        <div style="display:flex; gap:0;">
+          <sc-for list="{{ certs }}" as="c" hint-placeholder-count="6">
+            <div style="display:flex; align-items:center; gap:14px; padding:0 clamp(28px,4vw,52px); border-right:1px solid #14342C14;">
+              <span style="font-family:Fraunces,serif; font-size:clamp(20px,2.4vw,28px); font-weight:500; color:#14342C; white-space:nowrap;">{{ c.name }}</span>
+              <span style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; white-space:nowrap;">{{ c.tag }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex; gap:0;" aria-hidden="true">
+          <sc-for list="{{ certs }}" as="c" hint-placeholder-count="6">
+            <div style="display:flex; align-items:center; gap:14px; padding:0 clamp(28px,4vw,52px); border-right:1px solid #14342C14;">
+              <span style="font-family:Fraunces,serif; font-size:clamp(20px,2.4vw,28px); font-weight:500; color:#14342C; white-space:nowrap;">{{ c.name }}</span>
+              <span style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; white-space:nowrap;">{{ c.tag }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP / VISIT STRIP -->
+
   <section style="background:#F7F4EC; padding:clamp(48px,6vw,84px) clamp(20px,4vw,40px);">
     <div style="max-width:1280px; margin:0 auto; display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,56px); align-items:center; justify-content:space-between;">
       <div style="flex:1 1 360px; min-width:280px;">
@@ -431,6 +459,14 @@ onSubmit = () => {
     const productOptions = P ? Object.keys(P.cats).map(k => P.cats[k]) : ['Bags on Roll', 'Healthcare & Hospital', 'HORECA', 'Industrial', 'Retail', 'Agriculture & Nursery', 'Temple & Religious'];
 
     return {
+      certs: [
+        { name: 'IS 17088', tag: 'Compostable plastics' },
+        { name: 'CPCB', tag: 'Certified' },
+        { name: 'ISO 17088', tag: 'International' },
+        { name: 'OK Compost', tag: 'Home & industrial' },
+        { name: 'FSSAI', tag: 'Food-grade' },
+        { name: 'Plastic-free', tag: 'Verified' }
+      ],
       rootRef: el => { this.root = el; },
       headerRef: el => { this.header = el; },
        preloaderRef: el => { this.preloaderEl = el; },
