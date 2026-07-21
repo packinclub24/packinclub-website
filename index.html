@@ -647,17 +647,12 @@ margin:-15px 0 0;
 <script>
   (function() {
     var loaded = false;
-    var attempts = 0;
 
-    function tryInit() {
+    function attach() {
       var frame = document.getElementById('pc-video-frame');
       var wrap = document.getElementById('pc-video-wrap');
-
-      if (!frame || !wrap) {
-        attempts++;
-        if (attempts < 100) { setTimeout(tryInit, 100); }
-        return;
-      }
+      if (!frame || !wrap || frame.dataset.pcObserved) return;
+      frame.dataset.pcObserved = "1";
 
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
@@ -671,7 +666,11 @@ margin:-15px 0 0;
       observer.observe(wrap);
     }
 
-    tryInit();
+    attach();
+
+    var mo = new MutationObserver(function() { if (!loaded) attach(); });
+    mo.observe(document.body, { childList: true, subtree: true });
+    setTimeout(function() { mo.disconnect(); }, 15000);
   })();
 </script>
 <script type="text/x-dc" data-dc-script>
