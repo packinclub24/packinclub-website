@@ -576,7 +576,25 @@ margin:-15px 0 0;
     </div>
   </section>
 
-  <!-- ============ FINAL CTA ============ -->
+  <!-- ============ FEATURED VIDEO ============ -->
+  <section style="background:#0f2820; color:#F7F4EC; padding:clamp(72px,9vw,128px) clamp(20px,4vw,40px);">
+    <div style="max-width:900px; margin:0 auto; text-align:center;">
+      <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.18em; text-transform:uppercase; color:#6FAF45; margin-bottom:16px;">Watch</div>
+      <h2 style="font-family:Fraunces,serif; font-size:clamp(28px,4vw,44px); font-weight:500; margin:0 0 36px;">See Packin Club in action</h2>
+      <div id="pc-video-wrap" style="position:relative; width:100%; aspect-ratio:16/9; border-radius:2px; overflow:hidden; box-shadow:0 20px 60px #00000040;">
+        <iframe
+          id="pc-video-frame"
+          data-src="https://www.youtube.com/embed/YnUFMVT7CSs?autoplay=1&mute=1&playsinline=1&rel=0"
+          title="Packin Club"
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+   <!-- ============ FINAL CTA ============ -->
   <section id="quote" style="background:#6FAF45; color:#14342C; padding:clamp(72px,10vw,140px) clamp(20px,4vw,40px); position:relative; overflow:hidden;">
     <div style="position:absolute; inset:0; background-image:radial-gradient(80% 80% at 50% 0%,#14342C14,transparent 72%); mask-image:radial-gradient(100% 100% at 50% 0%,#000,transparent 75%);"></div>
     <div data-reveal style="max-width:860px; margin:0 auto; text-align:center; position:relative;">
@@ -626,6 +644,36 @@ margin:-15px 0 0;
 
 </div>
 </x-dc>
+<script>
+  (function() {
+    var loaded = false;
+    var attempts = 0;
+
+    function tryInit() {
+      var frame = document.getElementById('pc-video-frame');
+      var wrap = document.getElementById('pc-video-wrap');
+
+      if (!frame || !wrap) {
+        attempts++;
+        if (attempts < 100) { setTimeout(tryInit, 100); }
+        return;
+      }
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !loaded) {
+            frame.src = frame.getAttribute('data-src');
+            loaded = true;
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.35 });
+      observer.observe(wrap);
+    }
+
+    tryInit();
+  })();
+</script>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { day: 0, filter: 'All', compareVal: 0, _dispProg: 0, mobileMenuOpen: false };
