@@ -61,7 +61,10 @@
   @media (max-width: 860px) {
     .pc-nav-desktop, .pc-cta-desktop { display: none !important; }
     .pc-burger { display: inline-flex !important; }
+    .pc-hero-actions-desktop { display: none !important; }
+    .pc-hero-actions-mobile { display: flex !important; }
   }
+  .pc-hero-actions-mobile { display: none; }
   .pc-mobile-menu.pc-open { display: flex; animation: pcFadeUp .25s ease; }
   .pc-burger-bar { display: block; width: 22px; height: 2px; background: #F7F4EC; border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
 </style>
@@ -178,7 +181,7 @@
             </div>
             <h1 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(32px,4.6vw,58px); line-height:1.04; letter-spacing:-0.02em; margin:0 0 22px;">{{ productName }}</h1>
             <p style="font-size:clamp(16px,1.4vw,19px); line-height:1.6; color:#F7F4ECcc; max-width:560px; margin:0 0 34px;">{{ blurb }}</p>
-            <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <div class="pc-hero-actions-desktop" style="display:flex; flex-wrap:wrap; gap:12px;">
               <a href="{{ quoteHref }}" onMouseMove="{{ magnetMove }}" onMouseLeave="{{ magnetLeave }}" style="display:inline-flex; align-items:center; gap:9px; background:#6FAF45; color:#14342C; font-weight:600; font-size:15px; padding:14px 26px; border-radius:2px; text-decoration:none; transition:transform .18s ease-out; will-change:transform;">Request a quote →</a>
               <button onClick="{{ onDownload }}" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#F7F4EC; border:1px solid #F7F4EC3a; font-weight:600; font-size:15px; padding:14px 24px; border-radius:2px; cursor:pointer; font-family:Inter,sans-serif; transition:background-color .18s, border-color .18s;" style-hover="background:#ffffff14; border-color:#F7F4EC;">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;"><path d="M12 3v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>
@@ -197,6 +200,15 @@
 <sc-if value="{{ onSale }}" hint-placeholder-val="{{ false }}">
   <span style="position:absolute; top:14px; right:14px; z-index:3; font-family:Inter,sans-serif; font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:#14342C; background:#6FAF45; padding:4px 8px; border-radius:2px;">Sale</span>
 </sc-if>
+          </div>
+
+          <!-- mobile-only actions, shown after hero image below 860px -->
+          <div class="pc-hero-actions-mobile" style="flex-wrap:wrap; gap:12px; width:100%;">
+            <a href="{{ quoteHref }}" style="display:inline-flex; align-items:center; gap:9px; background:#6FAF45; color:#14342C; font-weight:600; font-size:15px; padding:14px 26px; border-radius:2px; text-decoration:none;">Request a quote →</a>
+            <button onClick="{{ onDownload }}" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#F7F4EC; border:1px solid #F7F4EC3a; font-weight:600; font-size:15px; padding:14px 24px; border-radius:2px; cursor:pointer; font-family:Inter,sans-serif;">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;"><path d="M12 3v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>
+              Download spec sheet (PDF)
+            </button>
           </div>
         </div>
       </div>
