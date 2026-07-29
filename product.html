@@ -235,6 +235,18 @@
               </span>
             </sc-for>
           </div>
+
+          <!-- more photos -->
+          <sc-if value="{{ hasExtraImages }}" hint-placeholder-val="{{ false }}">
+            <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(22px,2.4vw,30px); letter-spacing:-0.01em; margin:clamp(44px,5vw,64px) 0 22px; padding-bottom:16px; border-bottom:1px solid #14342C18;">More photos</h2>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px;">
+              <sc-for list="{{ extraImages }}" as="img" hint-placeholder-count="2">
+                <div style="aspect-ratio:1/1; border-radius:4px; overflow:hidden; border:1px solid #14342C14; background:#14342C;">
+                  <img src="{{ img.src }}" alt="{{ productName }}" style="width:100%; height:100%; object-fit:cover; display:block;" onerror="this.parentElement.style.display='none';" />
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
         </div>
 
         <!-- right column: specs -->
@@ -413,7 +425,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
 class Component extends DCLogic {
-  state = { product: null, notFound: false, ready: false, mobileMenuOpen: false };
+  state = { product: null, notFound: false, ready: false, mobileMenuOpen: false, activeImage: 0 };
 
   componentDidMount() {
     this._plTimer = setTimeout(() => {
@@ -453,12 +465,12 @@ class Component extends DCLogic {
       if (!s) {
         // default to first product so the page is never blank when opened directly
         const first = window.PACKIN.products[0];
-        this.setState({ product: first, notFound: false, ready: true });
+        this.setState({ product: first, notFound: false, ready: true, activeImage: 0 });
         return;
       }
       const p = window.PACKIN.bySlug(s);
-      if (p) this.setState({ product: p, notFound: false, ready: true });
-      else this.setState({ product: null, notFound: true, ready: true });
+      if (p) this.setState({ product: p, notFound: false, ready: true, activeImage: 0 });
+      else this.setState({ product: null, notFound: true, ready: true, activeImage: 0 });
     };
     go();
   }
@@ -528,11 +540,13 @@ class Component extends DCLogic {
         productName: '', catName: '', catShort: '', catHref: 'products.html',
         blurb: '', description: '', heroIcon: null, heroImage: '',
         specs: [], features: [], applications: [], related: [], hasRelated: false,
-        onSale: false, hasPrice: false, noPrice: true, priceText: '', oldPriceText: ''
+        onSale: false, hasPrice: false, noPrice: true, priceText: '', oldPriceText: '',
+        extraImages: [], hasExtraImages: false
       });
     }
 
-    const all = window.PACKIN.products;
+   const all = window.PACKIN.products;
+    const extraImages = (p.images || []).filter(Boolean).map(src => ({ src }));
     const related = all.filter(x => x.cat === p.cat && x.slug !== p.slug).slice(0, 3).map(r => ({
       name: r.name, blurb: r.blurb, catShort: r.catShort,
 icon: this._icon(r.form),
@@ -550,8 +564,10 @@ href: 'product.html?p=' + r.slug
       catHref: 'products.html',
       blurb: p.blurb,
       description: p.desc,
-      heroIcon: this._icon(p.form),
+     heroIcon: this._icon(p.form),
 heroImage: p.image || '',
+extraImages,
+hasExtraImages: extraImages.length > 0,
 specs: p.specs,
       features: p.features,
       applications: p.applications,

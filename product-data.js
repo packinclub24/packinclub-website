@@ -33,7 +33,10 @@
   var P = [
     {
       name: 'Compostable Agri Mulch Film', cat: 'AGRI', form: 'film',
-      image: 'product_images/agri-mulch-film.jpeg',
+      image: 'product_images/agri-mulch-film.png',
+      images: [
+        'product_images/Compostableagrimulch_2.png',
+      ],
       blurb: 'Suppresses weeds and holds soil moisture, then tills back into the earth, no retrieval, no residue.',
       desc: 'A field-grade biodegradable mulch film engineered to perform like conventional polyethylene mulch through a full growing season, then break down in situ. Lay it, plant through it, and till it back into the soil at harvest. There is nothing to lift, collect, or send to landfill, and no microplastic left in your field.',
       features: [
@@ -58,7 +61,11 @@
     },
     {
       name: 'Compostable Nursery Bags', cat: 'AGRI', form: 'bag',
-      image: 'product_images/Nursery-bag.jpg',
+      image: 'product_images/Nursery-bag.png',
+      images: [
+        'product_images/Nursery_bag2.png',
+        'product_images/Nursery_bag3.png'
+      ],
       blurb: 'Grow-bags that go straight into the ground at transplant, roots and all.',
       desc: 'Seedling and sapling grow-bags that you plant whole. The bag breaks down in the soil as the plant establishes, so roots are never disturbed at transplant and transplant shock is all but eliminated. A cleaner, faster alternative to single-use polythene nursery sleeves.',
       features: [
@@ -83,7 +90,11 @@
     },
     {
       name: 'Compostable Carry Bags on Roll', cat: 'ROLL', form: 'roll',
-      image: 'product_images/compostablecarrybag.jpg',
+      image: 'product_images/carrybag_onroll.png',
+       images: [
+        'product_images/carrybagonroll2.png',
+        'product_images/carrybagonroll3.png'
+      ],
       blurb: 'Perforated carry bags on a roll for fast, fuss-free dispensing at the till.',
       desc: 'Carry bags supplied on a perforated roll for high-throughput counters. Staff tear off one bag at a time with one hand, keeping queues moving while staying fully compliant with single-use-plastic bans. Mount on any standard roll dispenser.',
       features: [
@@ -108,7 +119,11 @@
     },
     {
       name: 'Compostable Garbage Bag on Roll', cat: 'ROLL', form: 'roll',
-      image: 'product_images/garbage-bag-roll.jpg',
+      image: 'product_images/garbage-bag-roll.png',
+       images: [
+        'product_images/garbage-bag-roll2.png',
+        'product_images/garbage-bag-roll3.png'
+      ],
       blurb: 'Leak-resistant bin liners on a roll for busy kitchens and facilities.',
       desc: 'Bin liners on a perforated roll for kitchens, offices, and facilities that get through a lot of them. Leak-resistant seams hold wet waste, and the whole liner composts with its contents in an industrial facility, no separating the bag from the food scraps.',
       features: [
@@ -133,7 +148,11 @@
     },
     {
       name: 'Compostable Grocery Bags on Roll', cat: 'ROLL', form: 'roll',
-      image: 'product_images/GroceryBags.jpg',
+      image: 'product_images/grocery-bag-roll.png',
+      images: [
+        'product_images/grocerybag2.png',
+        'product_images/Grocerypouch3.jpg'
+      ],
       blurb: 'Tear-off grocery bags on a roll for produce sections and checkouts.',
       desc: 'Lightweight produce and grocery bags on a roll, positioned right where shoppers reach for loose fruit and veg. Tear off, fill, and weigh, the bag is food-safe, breathable, and fully compostable, so it can go into the green bin with peels and trimmings.',
       features: [
@@ -158,7 +177,11 @@
     },
     {
       name: 'Compostable Medical Waste Bags', cat: 'HEALTH', form: 'bag',
-      image: 'product_images/medical_waste_bag.jpg',
+      image: 'product_images/medical_waste_bag.png',
+       images: [
+        'product_images/medical_waste_bag2.png',
+        'product_images/medical_waste_bag3.png'
+      ],
       blurb: 'Colour-coded, compliant bags for the safe handling of non-hazardous clinical waste.',
       desc: 'Colour-coded biomedical waste bags for the segregation and safe handling of non-hazardous clinical waste, made to a compostable specification. Strong seams and a high load rating meet the demands of hospital waste streams while reducing the plastic burden of healthcare facilities.',
       features: [
@@ -183,7 +206,11 @@
     },
     {
       name: 'Compostable Bamboo Tissue', cat: 'HORECA', form: 'tissue',
-      image: 'product_images/Bamboo_tissue.jpeg',
+      image: 'product_images/Bamboo_tissue.png',
+      images: [
+        'product_images/Bamboo_tissue2.png',
+        'product_images/Bamboo_tissue3.png'
+      ],
       blurb: 'Soft, strong bamboo-pulp tissue for tables and washrooms, plastic- and chlorine-free.',
       desc: 'Tissue made from fast-renewing bamboo pulp, soft, surprisingly strong, and free of plastic wrap and chlorine bleaching. From napkins to washroom rolls, it delivers the comfort guests expect while keeping your back-of-house waste fully compostable.',
       features: [
@@ -208,7 +235,11 @@
     },
     {
       name: 'Compostable Bread Pouch', cat: 'HORECA', form: 'pouch',
-      image: 'product_images/Bread_pouch.jpg',
+      image: 'product_images/compostable_bread_pouch.jpeg',
+      images: [
+        'product_images/Bread_pouch.jpg',
+        'product_images/Compostable_bread_bags.png'
+      ],
       blurb: 'Keeps loaves fresh and breathable, then composts along with the crumbs.',
       desc: 'A breathable bread and bakery pouch that keeps loaves fresh without trapping moisture and going soggy. Crystal clear for shelf appeal, food-contact safe, and fully compostable, so day-old bread and its bag can go into the same green bin.',
       features: [
@@ -233,7 +264,11 @@
     },
     {
       name: 'Compostable Cling Film', cat: 'HORECA', form: 'film',
-      image: 'product_images/compostable-cling-film.jpeg',
+      image: 'product_images/compostable-cling-film.png',
+      images: [
+        'product_images/compostable-cling-film2.png',
+        'product_images/compostable-cling-film3.png'
+      ],
       blurb: 'Clings and seals like conventional wrap, without the petroleum plastic.',
       desc: 'A compostable cling wrap that clings, stretches, and seals to bowls and trays the way kitchen teams expect, minus the petroleum plastic. Food-safe and microwave-friendly, it covers prep and storage without leaving PVC behind.',
       features: [
@@ -258,7 +293,7 @@
     },
     {
       name: 'Compostable Hot Liquid Pouches', cat: 'HORECA', form: 'pouch',
-      image: 'product_images/hot-liquid-pouches.jpeg',
+      image: 'product_images/hot-liquid-pouches.png',
       blurb: 'Hold hot soups, curries, and beverages without leaching or leaking.',
       desc: 'Heat-tolerant pouches built to hold hot soups, curries, gravies, and beverages without leaching, softening, or leaking. A compostable answer to the plastic-lined parcel bag for cloud kitchens and delivery-first menus.',
       features: [
@@ -282,12 +317,12 @@
       ]
     },
     {
-      name: 'Compostable PLA Coated Paper Cups', cat: 'HORECA', form: 'cup',
-      image: 'product_images/PLA-coated-cups.jpg',
-      blurb: 'PLA-lined cups for hot and cold drinks, fully compostable, no plastic film.',
-      desc: 'Paper cups lined with plant-based PLA instead of polyethylene, so the whole cup composts cleanly, no plastic film to peel away first. Rated for hot and cold service and printable to your brand, they are the drop-in replacement for the standard PE-lined cup.',
+      name: 'Compostable Aqueous Coated Paper Cups', cat: 'HORECA', form: 'cup',
+      image: 'product_images/Aqua_coated_cup.png',
+      blurb: 'Aqueous-coated cups for hot and cold drinks, fully compostable, no plastic film.',
+      desc: 'Paper cups lined with a water-based aqueous coating instead of polyethylene, so the whole cup composts cleanly, no plastic film to peel away first. Rated for hot and cold service and printable to your brand, they are the drop-in replacement for the standard PE-lined cup.',
       features: [
-        'Plant-based PLA lining, not PE',
+        'Aqueous-based coating, not PE',
         'Fully compostable, no plastic film',
         'Rated for hot and cold beverages',
         'Single and double-wall options',
@@ -296,8 +331,8 @@
       specs: base([
         ['Capacity', '120 ml – 500 ml'],
         ['Wall', 'Single or double-wall'],
-        ['Lining', 'PLA (corn-based) bioplastic'],
-        ['Lids', 'Matching CPLA / paper lids available']
+        ['Lining', 'Aqueous (water-based) coating'],
+        ['Lids', 'Matching paper lids available']
       ]),
       applications: [
         'Coffee shops and cafés',
@@ -307,27 +342,33 @@
       ]
     },
     {
-      name: 'Compostable Tiffin Sheet', cat: 'HORECA', form: 'film',
-      image: 'product_images/Compostable-Tiffin-sheet.jpeg',
-      blurb: 'Food-grade liner sheets for tiffins, rotis, and takeaway.',
-      desc: 'Food-grade liner sheets for wrapping rotis, parathas, and packing tiffins and takeaway. Non-stick, grease-resistant, and compostable, they keep food fresh and hands clean without the foil or plastic film.',
+      name: 'Compostable Pouches', cat: 'HORECA', form: 'pouch',
+      image: 'product_images/compostable_pouches.png',
+      images: [
+        'product_images/compostable_pouches2.png',
+        'product_images/compostable_pouches3.png',
+        'product_images/compostable_pouches4.png',
+        'product_images/compostable_pouches5.png'
+      ],
+      blurb: 'Compostable pouches for packaging food, grains, and dry goods.',
+      desc: 'Compostable pouches for packing food, grains, snacks, and dry goods. Sturdy, grease-resistant, and fully compostable, they replace plastic pouches without compromising on strength or shelf appeal.',
       features: [
         'Food-grade, grease-resistant surface',
-        'Non-stick, food peels away clean',
-        'Keeps rotis soft and fresh',
-        'Cut-sheet or roll formats',
+        'Sturdy seal, holds shape when filled',
+        'Keeps contents fresh and protected',
+        'Multiple sizes and formats available',
         'Composts with food waste'
       ],
       specs: base([
-        ['Sheet size', '30×30 cm to 40×40 cm'],
-        ['Format', 'Pre-cut sheets or roll'],
-        ['Thickness', '12 – 18 microns'],
-        ['Finish', 'Non-stick food-grade']
+        ['Pouch size', '10×15 cm to 25×35 cm'],
+        ['Format', 'Stand-up or flat pouches'],
+        ['Thickness', '80 – 120 microns'],
+        ['Finish', 'Matte or kraft-look compostable film']
       ]),
       applications: [
-        'Tiffin and meal-delivery services',
-        'Roti and paratha wrapping',
-        'Takeaway and parcel counters',
+        'Grocery and grain packaging',
+        'Snack and dry-goods packing',
+        'Retail and takeaway counters',
         'Home and commercial kitchens'
       ]
     },
@@ -358,7 +399,7 @@
     },
     {
       name: 'Compostable Garbage Bags', cat: 'IND', form: 'bag',
-      image: 'product_images/garbage_bags.jpg',
+      image: 'product_images/garbage-bags_for_baskets.png',
       blurb: 'Sturdy bin bags that hold the load, and break down after.',
       desc: 'Heavy-duty bin bags rated for real industrial and municipal loads, they hold the weight, resist tearing, and then break down in composting rather than persisting in landfill. Available across a full size and gauge range for every bin in the building.',
       features: [
@@ -383,7 +424,11 @@
     },
     {
       name: 'Compostable Shrink Film', cat: 'IND', form: 'film',
-      image: 'product_images/shrink-film.jpeg',
+      image: 'product_images/shrink-film.png',
+      images: [
+        'product_images/shrink-film2.png',
+        'product_images/shrink-film.png'
+      ],
       blurb: 'Shrinks tight around multipacks and trays, then composts away.',
       desc: 'A heat-shrinkable film that pulls tight around multipacks, trays, and bundled product for a secure, tamper-evident finish, then composts at end of life. A direct replacement for conventional shrink wrap on existing tunnel lines.',
       features: [
@@ -408,7 +453,11 @@
     },
     {
       name: 'Compostable Stretch Film', cat: 'IND', form: 'roll',
-      image: 'product_images/compostable-stretch-film.jpeg',
+      image: 'product_images/Compostable-Stretch-film.png',
+      images: [
+        'product_images/compostable-stretch-film2.png',
+        'product_images/compostable-stretch-film.jpeg'
+      ],
       blurb: 'Compostable pallet wrap for end-of-line bundling and logistics.',
       desc: 'Pallet stretch wrap with the cling and load-retention of conventional film, formulated to compost. It secures loads through warehousing and transit and removes a major source of single-use plastic from the logistics chain.',
       features: [
@@ -433,7 +482,11 @@
     },
     {
       name: 'Compostable Carry Bags (W-cut, U-cut)', cat: 'RETAIL', form: 'bag',
-      image: 'product_images/CompostableCarrybagSizes(U-Wcut).jpg',
+      image: 'product_images/W-Cutbag.png',
+      images: [
+        'product_images/Carrybag-black.png',
+        'product_images/carry.jpg'
+      ],
       blurb: 'Everyday retail carry bags in W- and U-cut styles, sized for any counter.',
       desc: 'The everyday retail carry bag, in classic W-cut and U-cut handle styles and a full size range. Strong enough for a real shopping load, fully compliant with single-use-plastic rules, and printable so your brand travels home with the customer.',
       features: [
@@ -458,7 +511,11 @@
     },
     {
       name: 'Compostable Courier Bags / Mailers', cat: 'RETAIL', form: 'bag',
-      image: 'product_images/mailer_bags.jpg',
+      image: 'product_images/mailer_bags.png',
+      images: [
+        'product_images/mailer_bags3.png',
+        'product_images/mailer_bagsback.png'
+      ],
       blurb: 'Tamper-evident e-commerce mailers with a self-seal strip and write-on surface.',
       desc: 'E-commerce mailers built for the warehouse: a peel-and-seal adhesive strip, a tamper-evident closure, and a matte write-on surface for labels and notes. Opaque, water-resistant, and fully compostable, the sustainable upgrade to the standard poly mailer.',
       features: [
@@ -483,7 +540,11 @@
     },
     {
       name: 'Compostable D-Cut Shopping Bags', cat: 'RETAIL', form: 'bag',
-      image: 'product_images/Compostable_D-Cut-Shopping-Bags.jpg',
+      image: 'product_images/Compostable_D-Cut-Shopping-Bags.png',
+      images: [
+        'product_images/D-Cut.jpg',
+        'product_images/D-cut2.jpeg'
+      ],
       blurb: 'Premium D-cut shoppers with a clean, brandable finish.',
       desc: 'A premium D-cut shopping bag with a clean die-cut handle and a smooth, brandable face that feels closer to fabric than film. Made for boutiques, gifting, and any counter where the bag is part of the brand experience.',
       features: [
@@ -509,7 +570,11 @@
     },
     {
       name: 'Compostable Garment Bags', cat: 'RETAIL', form: 'bag',
-      image: 'product_images/Garment--Bags.jpg',
+      image: 'product_images/garmentbag_1.png',
+      images: [
+        'product_images/Garment--Bags.png',
+        'product_images/garment-bags.jpg'
+      ],
       blurb: 'Breathable garment covers that protect apparel in transit and storage.',
       desc: 'Breathable garment covers that protect apparel from dust and damage in transit and storage, without trapping moisture. Clear for easy identification and fully compostable, a clean replacement for the polythene suit and dress cover.',
       features: [
@@ -534,7 +599,7 @@
     },
     {
       name: 'Compostable Grocery Bags', cat: 'RETAIL', form: 'bag',
-      image: 'product_images/biodegradable-grocery-bag-roll.jpg',
+      image: 'product_images/biodegradable-grocery-bag-roll.png',
       blurb: 'Reliable grocery carriers for fresh produce and daily shopping.',
       desc: 'Dependable grocery carriers sized and gauged for a real weekly shop, fresh produce, packaged goods, and everything in between. Food-contact safe and fully compostable, they take the place of the everyday polythene grocery bag.',
       features: [
@@ -559,7 +624,11 @@
     },
     {
       name: 'Compostable Loop Handle Bags', cat: 'RETAIL', form: 'bag',
-      image: 'product_images/compostable-Loop-Handle-bags.jpeg',
+      image: 'product_images/compostable-Loop-Handle-bags.png',
+      images: [
+        'product_images/loophandlebag2.png',
+        'product_images/loophandlebag3.png'
+      ],
       blurb: 'Premium loop-handle bags for retail and gifting, with a refined feel.',
       desc: 'Loop-handle bags with a soft, comfortable carry and a refined, fabric-like body, the premium choice for retail and gifting. The flexible loop handle is heat-welded for strength, and the whole bag composts at end of life.',
       features: [
