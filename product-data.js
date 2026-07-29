@@ -36,6 +36,8 @@
       image: 'product_images/agri-mulch-film.png',
       images: [
         'product_images/Compostableagrimulch_2.png',
+        'product_images/mulchfilm.png',
+        'product_images/mulchagri2.png'
       ],
       blurb: 'Suppresses weeds and holds soil moisture, then tills back into the earth, no retrieval, no residue.',
       desc: 'A field-grade biodegradable mulch film engineered to perform like conventional polyethylene mulch through a full growing season, then break down in situ. Lay it, plant through it, and till it back into the soil at harvest. There is nothing to lift, collect, or send to landfill, and no microplastic left in your field.',
@@ -64,7 +66,8 @@
       image: 'product_images/Nursery-bag.png',
       images: [
         'product_images/Nursery_bag2.png',
-        'product_images/Nursery_bag3.png'
+        'product_images/Nursery_bag3.png',
+        'product_images/Nursery-bag-.png'
       ],
       blurb: 'Grow-bags that go straight into the ground at transplant, roots and all.',
       desc: 'Seedling and sapling grow-bags that you plant whole. The bag breaks down in the soil as the plant establishes, so roots are never disturbed at transplant and transplant shock is all but eliminated. A cleaner, faster alternative to single-use polythene nursery sleeves.',
@@ -654,6 +657,7 @@
     {
       name: 'Compostable Pet Poop Bags', cat: 'RETAIL', form: 'bag',
       image: 'product_images/Pet-Poop-Bags.jpg',
+
       blurb: "Strong, leak-proof waste bags that don't outlive the walk.",
       desc: "Strong, leak-proof pet-waste bags that do their one job cleanly and then break down, instead of sitting in landfill for centuries after a five-minute walk. Supplied on tidy tear-off rolls that fit standard dispensers.",
       features: [

@@ -241,7 +241,7 @@
             <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(22px,2.4vw,30px); letter-spacing:-0.01em; margin:clamp(44px,5vw,64px) 0 22px; padding-bottom:16px; border-bottom:1px solid #14342C18;">More photos</h2>
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px;">
               <sc-for list="{{ extraImages }}" as="img" hint-placeholder-count="2">
-                <div style="aspect-ratio:1/1; border-radius:4px; overflow:hidden; border:1px solid #14342C14; background:#14342C;">
+                <div onClick="{{ img.onClick }}" style="aspect-ratio:1/1; border-radius:4px; overflow:hidden; border:1px solid #14342C14; background:#14342C; cursor:pointer;">
                   <img src="{{ img.src }}" alt="{{ productName }}" style="width:100%; height:100%; object-fit:cover; display:block;" onerror="this.parentElement.style.display='none';" />
                 </div>
               </sc-for>
@@ -371,6 +371,14 @@
   </footer>
 </div>
 
+<!-- lightbox for "more photos" -->
+<sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeLightbox }}" style="position:fixed; inset:0; z-index:999; background:#14342Ce6; display:flex; align-items:center; justify-content:center; padding:clamp(20px,5vw,60px); cursor:zoom-out;">
+    <button onClick="{{ closeLightbox }}" style="position:absolute; top:20px; right:20px; width:40px; height:40px; border-radius:50%; border:1px solid #F7F4EC40; background:#ffffff14; color:#F7F4EC; font-size:20px; line-height:1; cursor:pointer;">×</button>
+    <img src="{{ lightboxSrc }}" onClick="{{ stopBubble }}" alt="{{ productName }}" style="max-width:100%; max-height:100%; object-fit:contain; border-radius:4px; cursor:default;" />
+  </div>
+</sc-if>
+
 <!-- ============ PRINT-ONLY SPEC SHEET ============ -->
 <div class="pc-print" style="font-family:Inter,sans-serif; color:#14342C; padding:0;">
   <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px; padding-bottom:18px; border-bottom:2px solid #14342C;">
@@ -425,7 +433,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
 class Component extends DCLogic {
-  state = { product: null, notFound: false, ready: false, mobileMenuOpen: false, activeImage: 0 };
+  state = { product: null, notFound: false, ready: false, mobileMenuOpen: false, activeImage: 0, lightboxOpen: false };
 
   componentDidMount() {
     this._plTimer = setTimeout(() => {
@@ -528,7 +536,9 @@ class Component extends DCLogic {
       emailRef: el => { this.emailEl = el; },
       magnetMove: this.magnetMove,
       magnetLeave: this.magnetLeave,
-      onDownload: this.onDownload
+      onDownload: this.onDownload,
+      closeLightbox: () => { this.setState({ lightboxOpen: false }); },
+      stopBubble: e => { e.stopPropagation(); }
     };
 
     const p = this.state.product;
@@ -541,12 +551,16 @@ class Component extends DCLogic {
         blurb: '', description: '', heroIcon: null, heroImage: '',
         specs: [], features: [], applications: [], related: [], hasRelated: false,
         onSale: false, hasPrice: false, noPrice: true, priceText: '', oldPriceText: '',
-        extraImages: [], hasExtraImages: false
+        extraImages: [], hasExtraImages: false, lightboxOpen: false, lightboxSrc: ''
       });
     }
 
    const all = window.PACKIN.products;
-    const extraImages = (p.images || []).filter(Boolean).map(src => ({ src }));
+    const extraImages = (p.images || []).filter(Boolean).map((src, i) => ({
+      src,
+      onClick: () => this.setState({ activeImage: i, lightboxOpen: true })
+    }));
+    const lightboxSrc = (extraImages[this.state.activeImage] || {}).src || '';
     const related = all.filter(x => x.cat === p.cat && x.slug !== p.slug).slice(0, 3).map(r => ({
       name: r.name, blurb: r.blurb, catShort: r.catShort,
 icon: this._icon(r.form),
@@ -568,6 +582,8 @@ href: 'product.html?p=' + r.slug
 heroImage: p.image || '',
 extraImages,
 hasExtraImages: extraImages.length > 0,
+lightboxOpen: this.state.lightboxOpen,
+lightboxSrc,
 specs: p.specs,
       features: p.features,
       applications: p.applications,
