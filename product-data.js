@@ -322,6 +322,10 @@
     {
       name: 'Compostable Aqueous Coated Paper Cups', cat: 'HORECA', form: 'cup',
       image: 'product_images/Aqua_coated_cup.png',
+      images: [
+        'product_images/brown_aqua_cup.png',
+        'product_images/aqua-coated-cup.png'
+      ],
       blurb: 'Aqueous-coated cups for hot and cold drinks, fully compostable, no plastic film.',
       desc: 'Paper cups lined with a water-based aqueous coating instead of polyethylene, so the whole cup composts cleanly, no plastic film to peel away first. Rated for hot and cold service and printable to your brand, they are the drop-in replacement for the standard PE-lined cup.',
       features: [
@@ -351,7 +355,8 @@
         'product_images/compostable_pouches2.png',
         'product_images/compostable_pouches3.png',
         'product_images/compostable_pouches4.png',
-        'product_images/compostable_pouches5.png'
+        'product_images/compostable_pouches5.png',
+        'product_images/Compostable_pouch6.png'
       ],
       blurb: 'Compostable pouches for packaging food, grains, and dry goods.',
       desc: 'Compostable pouches for packing food, grains, snacks, and dry goods. Sturdy, grease-resistant, and fully compostable, they replace plastic pouches without compromising on strength or shelf appeal.',
@@ -459,7 +464,7 @@
       image: 'product_images/Compostable-Stretch-film.png',
       images: [
         'product_images/compostable-stretch-film2.png',
-        'product_images/compostable-stretch-film.jpeg'
+        'product_images/Compostable_pallet_wrap.png'       
       ],
       blurb: 'Compostable pallet wrap for end-of-line bundling and logistics.',
       desc: 'Pallet stretch wrap with the cling and load-retention of conventional film, formulated to compost. It secures loads through warehousing and transit and removes a major source of single-use plastic from the logistics chain.',
@@ -657,6 +662,9 @@
     {
       name: 'Compostable Pet Poop Bags', cat: 'RETAIL', form: 'bag',
       image: 'product_images/Pet-Poop-Bags.jpg',
+      images: [
+        'product_images/Compostable_poop_bag.png'
+      ],
 
       blurb: "Strong, leak-proof waste bags that don't outlive the walk.",
       desc: "Strong, leak-proof pet-waste bags that do their one job cleanly and then break down, instead of sitting in landfill for centuries after a five-minute walk. Supplied on tidy tear-off rolls that fit standard dispensers.",
