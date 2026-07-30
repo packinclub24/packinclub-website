@@ -16,6 +16,14 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Insights on sustainable packaging, compostable materials, and the future of eco-friendly business practices from Packin Club.">
+<link rel="canonical" href="https://packinclub.com/article.html">
+<meta property="og:title" content="Packin Club Blog">
+<meta property="og:description" content="Insights on sustainable packaging, compostable materials, and the future of eco-friendly business practices from Packin Club.">
+<meta property="og:image" content="https://packinclub.com/assets/packinclub-logo.jpg">
+<meta property="og:url" content="https://packinclub.com/article.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -136,7 +144,7 @@
     <section style="background:#14342C; color:#F7F4EC; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:120px 24px;">
       <div style="max-width:520px;">
         <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">404 · Article not found</div>
-        <h1 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(30px,5vw,52px); line-height:1.05; margin:0 0 18px;">That article has moved.</h1>
+        <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(30px,5vw,52px); line-height:1.05; margin:0 0 18px;">That article has moved.</h2>
         <p style="font-size:16px; line-height:1.6; color:#F7F4ECcc; margin:0 0 32px;">Browse the journal for guides on compostable packaging, certifications and the plastic switch.</p>
         <a href="blog.html" style="display:inline-flex; align-items:center; gap:9px; background:#6FAF45; color:#14342C; font-weight:600; font-size:15px; padding:14px 26px; border-radius:2px; text-decoration:none;">Back to the journal →</a>
       </div>
@@ -350,6 +358,21 @@ class Component extends DCLogic {
       let m = document.querySelector('meta[name="description"]');
       if (!m) { m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); }
       m.setAttribute('content', p.metaDescription);
+      const setProp = (prop, content) => {
+        let el = document.querySelector('meta[property="' + prop + '"]');
+        if (!el) { el = document.createElement('meta'); el.setAttribute('property', prop); document.head.appendChild(el); }
+        el.setAttribute('content', content);
+      };
+      const pageUrl = 'https://packinclub.com/article.html?slug=' + p.slug;
+      const imgUrl = p.thumb ? (p.thumb.indexOf('http') === 0 ? p.thumb : 'https://packinclub.com/' + p.thumb) : 'https://packinclub.com/assets/hero-veggie.png';
+      setProp('og:title', p.metaTitle);
+      setProp('og:description', p.metaDescription);
+      setProp('og:image', imgUrl);
+      setProp('og:url', pageUrl);
+      setProp('og:type', 'article');
+      let canon = document.querySelector('link[rel="canonical"]');
+      if (!canon) { canon = document.createElement('link'); canon.setAttribute('rel', 'canonical'); document.head.appendChild(canon); }
+      canon.setAttribute('href', pageUrl);
       // structured data: Article + FAQPage
       const old = document.getElementById('pc-ldjson');
       if (old) old.remove();

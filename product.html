@@ -16,6 +16,14 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Browse Packin Club's range of certified compostable packaging products, bags, containers, and wraps designed for B2B buyers in India.">
+<link rel="canonical" href="https://packinclub.com/product.html">
+<meta property="og:title" content="Compostable Packaging Products | Packin Club">
+<meta property="og:description" content="Browse Packin Club's range of certified compostable packaging products, bags, containers, and wraps designed for B2B buyers in India.">
+<meta property="og:image" content="https://packinclub.com/assets/packinclub-logo.jpg">
+<meta property="og:url" content="https://packinclub.com/product.html">
+<meta property="og:type" content="product">
+<meta name="twitter:card" content="summary_large_image">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -146,7 +154,7 @@
     <section style="background:#14342C; color:#F7F4EC; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:120px 24px;">
       <div style="max-width:520px;">
         <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">404 · Product not found</div>
-        <h1 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(30px,5vw,52px); line-height:1.05; margin:0 0 18px;">We couldn't find that product.</h1>
+        <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(30px,5vw,52px); line-height:1.05; margin:0 0 18px;">We couldn't find that product.</h2>
         <p style="font-size:16px; line-height:1.6; color:#F7F4ECcc; margin:0 0 32px;">It may have moved or been renamed. Browse the full catalogue to find what you're after.</p>
         <a href="products.html" style="display:inline-flex; align-items:center; gap:9px; background:#6FAF45; color:#14342C; font-weight:600; font-size:15px; padding:14px 26px; border-radius:2px; text-decoration:none;">View all products →</a>
       </div>
@@ -254,7 +262,7 @@
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px;">
               <sc-for list="{{ extraImages }}" as="img" hint-placeholder-count="2">
                 <div onClick="{{ img.onClick }}" style="aspect-ratio:1/1; border-radius:4px; overflow:hidden; border:1px solid #14342C14; background:#14342C; cursor:pointer;">
-                  <img src="{{ img.src }}" alt="{{ productName }}" style="width:100%; height:100%; object-fit:cover; display:block;" onerror="this.parentElement.style.display='none';" />
+                  <img src="{{ img.src }}" alt="{{ productName }}" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" onerror="this.parentElement.style.display='none';" />
                 </div>
               </sc-for>
             </div>
@@ -319,7 +327,7 @@
                   <div style="position:absolute; inset:0; background-image:radial-gradient(circle at 50% 42%,#6FAF4518,transparent 62%);"></div>
 <div class="pc-thumb" style="position:relative; width:54px; height:54px; color:#6FAF45; z-index:1;">{{ r.icon }}</div>
 <sc-if value="{{ r.image }}" hint-placeholder-val="{{ false }}">
-  <img src="{{ r.image }}" alt="{{ r.name }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2;" onerror="this.style.display='none';" />
+  <img src="{{ r.image }}" alt="{{ r.name }}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2;" onerror="this.style.display='none';" />
 </sc-if>
 <span style="position:absolute; top:12px; left:12px; z-index:3; font-family:Inter,sans-serif; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#6FAF45; background:#14342Cb3; padding:2px 6px; border-radius:2px;">{{ r.catShort }}</span>
                 </div>
@@ -405,7 +413,7 @@
 
   <div style="margin-top:20px;">
     <div style="font-family:Inter,sans-serif; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#6FAF45;">{{ catName }}</div>
-    <h1 style="font-family:Fraunces,serif; font-weight:500; font-size:30px; line-height:1.1; margin:6px 0 12px;">{{ productName }}</h1>
+    <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:30px; line-height:1.1; margin:6px 0 12px;">{{ productName }}</h2>
     <p style="font-size:12.5px; line-height:1.6; color:#2c3a34; margin:0; max-width:680px;">{{ description }}</p>
   </div>
 
@@ -486,13 +494,39 @@ class Component extends DCLogic {
         // default to first product so the page is never blank when opened directly
         const first = window.PACKIN.products[0];
         this.setState({ product: first, notFound: false, ready: true, activeImage: 0 });
+        this._seo(first);
         return;
       }
       const p = window.PACKIN.bySlug(s);
-      if (p) this.setState({ product: p, notFound: false, ready: true, activeImage: 0 });
+      if (p) { this.setState({ product: p, notFound: false, ready: true, activeImage: 0 }); this._seo(p); }
       else this.setState({ product: null, notFound: true, ready: true, activeImage: 0 });
     };
     go();
+  }
+
+  _seo(p) {
+    if (!p) return;
+    try {
+      document.title = p.name + ' | Packin Club';
+      let m = document.querySelector('meta[name="description"]');
+      if (!m) { m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); }
+      m.setAttribute('content', p.blurb || p.desc);
+      const setProp = (prop, content) => {
+        let el = document.querySelector('meta[property="' + prop + '"]');
+        if (!el) { el = document.createElement('meta'); el.setAttribute('property', prop); document.head.appendChild(el); }
+        el.setAttribute('content', content);
+      };
+      const pageUrl = 'https://packinclub.com/product.html?p=' + p.slug;
+      const imgUrl = p.image ? (p.image.indexOf('http') === 0 ? p.image : 'https://packinclub.com/' + p.image) : 'https://packinclub.com/assets/hero-veggie.png';
+      setProp('og:title', p.name + ' | Packin Club');
+      setProp('og:description', p.blurb || p.desc);
+      setProp('og:image', imgUrl);
+      setProp('og:url', pageUrl);
+      setProp('og:type', 'product');
+      let canon = document.querySelector('link[rel="canonical"]');
+      if (!canon) { canon = document.createElement('link'); canon.setAttribute('rel', 'canonical'); document.head.appendChild(canon); }
+      canon.setAttribute('href', pageUrl);
+    } catch (e) {}
   }
 
   magnetMove = (e) => {
