@@ -663,7 +663,9 @@
       name: 'Compostable Pet Poop Bags', cat: 'RETAIL', form: 'bag',
       image: 'product_images/Pet-Poop-Bags.jpg',
       images: [
-        'product_images/Compostable_poop_bag.png'
+        'product_images/Compostable_poop_bag.png',
+        'product_images/Pet_poop.jpeg',
+        'product_images/pet_poop3.jpeg'
       ],
 
       blurb: "Strong, leak-proof waste bags that don't outlive the walk.",
