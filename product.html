@@ -488,7 +488,7 @@ class Component extends DCLogic {
       let s = '';
       try {
         const u = new URL(window.location.href);
-        s = u.searchParams.get('p') || (u.hash.indexOf('p=') > -1 ? decodeURIComponent(u.hash.split('p=')[1]) : '');
+        s = u.searchParams.get('slug') || u.searchParams.get('p') || (u.hash.indexOf('slug=') > -1 ? decodeURIComponent(u.hash.split('slug=')[1]) : '');
       } catch (e) { s = ''; }
       if (!s) {
         // default to first product so the page is never blank when opened directly
@@ -516,7 +516,7 @@ class Component extends DCLogic {
         if (!el) { el = document.createElement('meta'); el.setAttribute('property', prop); document.head.appendChild(el); }
         el.setAttribute('content', content);
       };
-      const pageUrl = 'https://packinclub.com/product.html?p=' + p.slug;
+      const pageUrl = 'https://packinclub.com/product.html?slug=' + p.slug;
       const imgUrl = p.image ? (p.image.indexOf('http') === 0 ? p.image : 'https://packinclub.com/' + p.image) : 'https://packinclub.com/assets/hero-veggie.png';
       setProp('og:title', p.name + ' | Packin Club');
       setProp('og:description', p.blurb || p.desc);
