@@ -220,33 +220,33 @@
       ]
     },
     {
-      title: 'PLA-Coated Paper Cups: Are They Actually Compostable?',
+      title: 'Aqueous-Coated Paper Cups: Are They Actually Compostable?',
       cat: 'Food Service',
-      keyword: 'are pla coated paper cups compostable',
-      secondaryKeywords: ['PLA lined cups vs PE lined cups', 'compostable coffee cups India', 'are paper cups recyclable', 'biodegradable cup lining'],
+      keyword: 'are aqueous coated paper cups compostable',
+      secondaryKeywords: ['aqueous coated cups vs PE lined cups', 'compostable coffee cups India', 'are paper cups recyclable', 'water-based barrier coating cups'],
       date: '2025-05-12',
       readMins: 6,
       author: 'Packin Club Editorial',
-      excerpt: 'A standard paper cup isn\u2019t recyclable because of the plastic lining hiding inside it. PLA-coated cups fix that problem \u2014 here\u2019s how, and what \u201Ccompostable\u201D actually means once you buy one.',
-      metaTitle: 'Are PLA-Coated Paper Cups Actually Compostable? Full Answer',
-      metaDescription: 'PLA-coated paper cups explained \u2014 how the plant-based lining differs from PE plastic, whether they\u2019re genuinely compostable, and how to dispose of them correctly.',
+      excerpt: 'A standard paper cup isn\u2019t recyclable because of the plastic lining hiding inside it. Aqueous-coated cups fix that problem \u2014 here\u2019s how the water-based lining works, and what \u201Ccompostable\u201D actually means once you buy one.',
+      metaTitle: 'Are Aqueous-Coated Paper Cups Actually Compostable? Full Answer',
+      metaDescription: 'Aqueous-coated paper cups explained \u2014 how the water-based lining differs from PE plastic, whether they\u2019re genuinely compostable, and how to dispose of them correctly.',
       takeaways: [
         'Most conventional \u201Cpaper\u201D cups are actually lined with PE plastic, which is why they\u2019re hard to recycle.',
-        'PLA-coated cups swap that lining for a plant-based bioplastic instead.',
+        'Aqueous-coated cups swap that lining for a water-based barrier coating instead.',
         'That swap lets the entire cup be certified compostable \u2014 there\u2019s no plastic film to separate out first.',
         'They still need industrial composting to break down within the certified window, not just any bin.'
       ],
       body: [
-        { p: ['Here\u2019s a fact that surprises most people the first time they hear it: the typical disposable \u201Cpaper\u201D coffee cup isn\u2019t really paper all the way through, and it\u2019s not easily recyclable. Understanding why explains exactly what PLA-coated cups are fixing.'] },
+        { p: ['Here\u2019s a fact that surprises most people the first time they hear it: the typical disposable \u201Cpaper\u201D coffee cup isn\u2019t really paper all the way through, and it\u2019s not easily recyclable. Understanding why explains exactly what aqueous-coated cups are fixing.'] },
         { h: 'The problem hiding inside a conventional paper cup', p: ['To actually hold liquid without collapsing, a standard paper cup gets lined with a thin layer of polyethylene, or PE \u2014 fossil-fuel plastic. That lining is fused directly to the paper, which makes the cup difficult to recycle in practice and means it isn\u2019t compostable at all. Billions end up in landfill every year as a direct result.'] },
-        { h: 'How PLA changes the whole equation', p: ['PLA, or polylactic acid, is a bioplastic made from plant sources like corn starch. In a PLA-coated cup, this plant-based lining does the same waterproofing job PE used to \u2014 but because PLA itself is compostable, the entire cup can be certified compostable as one piece. There\u2019s no plastic film to peel off or separate before disposal.'] },
-        { h: 'So are they genuinely compostable, or is that a stretch?', p: ['They genuinely are \u2014 when certified and disposed of correctly. A PLA-lined cup carrying IS 17088 or EN 13432 certification will break down into CO\u2082, water and humus under industrial composting conditions. The same caveat applies here as everywhere else: PLA needs the sustained heat of industrial composting to break down within the expected window, not a windowsill compost bin.'] },
-        { h: 'Getting the full benefit out of them', p: ['Pair PLA cups with compostable lids where you can, and route them to industrial composting whenever that\u2019s available to you. Even outside ideal conditions, they still sidestep the recycling headache and microplastic legacy that PE-lined cups leave behind.'] }
+        { h: 'How an aqueous coating changes the whole equation', p: ['An aqueous coating is a water-based dispersion applied to the paper as a barrier layer, in place of a plastic film. In an aqueous-coated cup, this water-based lining does the same waterproofing job PE used to \u2014 but because it contains no fossil plastic, the entire cup can be certified compostable as one piece. There\u2019s no plastic film to peel off or separate before disposal.'] },
+        { h: 'So are they genuinely compostable, or is that a stretch?', p: ['They genuinely are \u2014 when certified and disposed of correctly. An aqueous-coated cup carrying IS 17088 or EN 13432 certification will break down into CO\u2082, water and humus under industrial composting conditions. The same caveat applies here as everywhere else: the coating needs the sustained heat of industrial composting to break down within the expected window, not a windowsill compost bin.'] },
+        { h: 'Getting the full benefit out of them', p: ['Pair aqueous-coated cups with compostable lids where you can, and route them to industrial composting whenever that\u2019s available to you. Even outside ideal conditions, they still sidestep the recycling headache and microplastic legacy that PE-lined cups leave behind.'] }
       ],
       faqs: [
-        { q: 'Can I just toss PLA cups in the regular recycling bin?', a: 'No \u2014 PLA is a compostable bioplastic, not a recyclable plastic. It belongs in composting, ideally an industrial facility, not the recycling stream.' },
-        { q: 'Will PLA cups break down in a home compost bin?', a: 'Usually not reliably \u2014 PLA generally needs the higher, sustained temperatures of industrial composting. Home breakdown tends to be slow and inconsistent unless the specific product is home-certified.' },
-        { q: 'Are PLA-coated cups actually safe to use for hot drinks?', a: 'Yes, they\u2019re designed for it \u2014 double-wall versions add extra insulation if you\u2019re serving very hot beverages.' }
+        { q: 'Can I just toss aqueous-coated cups in the regular recycling bin?', a: 'No \u2014 they\u2019re certified compostable, not a recyclable plastic-lined product. They belong in composting, ideally an industrial facility, not the recycling stream.' },
+        { q: 'Will aqueous-coated cups break down in a home compost bin?', a: 'Usually not reliably \u2014 the coating generally needs the higher, sustained temperatures of industrial composting. Home breakdown tends to be slow and inconsistent unless the specific product is home-certified.' },
+        { q: 'Are aqueous-coated cups actually safe to use for hot drinks?', a: 'Yes, they\u2019re designed for it \u2014 double-wall versions add extra insulation if you\u2019re serving very hot beverages.' }
       ]
     },
     {
@@ -400,7 +400,7 @@
     'compostable-courier-bags-for-e-commerce-the-complete-guide': 'thumbnail_blog/compostable-courier-bags.png',
     'how-long-does-compostable-packaging-take-to-decompose': 'thumbnail_blog/decompose-packaging.png',
     'compostable-packaging-for-restaurants-and-cloud-kitchens': 'thumbnail_blog/Compostable-Packaging-for-Restaurants.png',
-    'pla-coated-paper-cups-are-they-actually-compostable': 'thumbnail_blog/PLA-Coated-Paper-Cups.png',
+    'aqueous-coated-paper-cups-are-they-actually-compostable': 'thumbnail_blog/Aqueous-Coated-Paper-Cups.png',
     'the-true-cost-of-switching-to-compostable-packaging': 'thumbnail_blog/True-Cost-of-Switching-to-Compostable-Packaging.png',
     'home-composting-vs-industrial-composting-what-you-need-to-know': 'thumbnail_blog/Home-Composting-vs-Industrial-Composting.png',
     'compostable-mulch-film-a-practical-guide-for-indian-farmers': 'thumbnail_blog/Compostable_mulch_film.png',
