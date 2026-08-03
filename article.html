@@ -31,7 +31,7 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <script src="./blog-data.js"></script>
 <style>
   @keyframes plStem { from { stroke-dashoffset: 70; } to { stroke-dashoffset: 0; } }
@@ -65,6 +65,49 @@
   }
   .pc-mobile-menu.pc-open { display: flex; animation: pcFadeUp .25s ease; }
   .pc-burger-bar { display: block; width: 22px; height: 2px; background: #F7F4EC; border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+
+  .pc-hero-imgwrap { margin-top: clamp(28px,3.4vw,40px); }
+  @media (min-width: 861px) {
+    .pc-hero-section { padding-bottom: clamp(50px,6vw,72px) !important; }
+    .pc-hero-flex { display: flex; align-items: center; gap: clamp(32px,4vw,56px); }
+    .pc-hero-text { flex: 1 1 auto; min-width: 0; }
+    .pc-hero-imgwrap { flex: 0 0 380px; width: 380px; margin-top: 0 !important; }
+    .pc-hero-imgwrap .pc-hero-img { aspect-ratio: 3/2 !important; max-height: 320px !important; border-radius: 14px !important; background-size: cover !important; background-repeat: no-repeat !important; }
+  }
+
+  /* ===== article redesign ===== */
+  .pc-progress-track { position: fixed; top: 0; left: 0; right: 0; height: 2.5px; background: #14342C14; z-index: 61; }
+  .pc-progress-bar { height: 100%; width: 0%; background: #6FAF45; transition: width .08s linear; }
+
+  .pc-article p, .pc-article li, .pc-article .pc-body-p { font-family: 'Source Serif 4', Georgia, serif; }
+  .pc-article h2 { font-family: 'Space Grotesk', Inter, sans-serif; }
+
+  .pc-dropcap::first-letter {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 3.4em;
+    line-height: 0.8;
+    float: left;
+    padding: 6px 8px 0 0;
+    color: #3f7a26;
+  }
+
+  .pc-pullquote { position: relative; margin: clamp(30px,4vw,44px) 0; padding: 4px 0 4px clamp(20px,2.4vw,28px); border-left: 3px solid #6FAF45; }
+  .pc-pullquote p { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: clamp(19px,2vw,23px); line-height: 1.5; color: #14342C; margin: 0; letter-spacing: -0.01em; }
+
+  .pc-toc-link { display: block; font-size: 13.5px; line-height: 1.5; color: #14342C99; text-decoration: none; padding: 7px 0; border-left: 2px solid transparent; padding-left: 12px; margin-left: -1px; transition: color .15s ease, border-color .15s ease; }
+  .pc-toc-link:hover { color: #3f7a26; border-color: #6FAF4566; }
+
+  details.pc-faq { border: 1px solid #14342C18; border-radius: 4px; background: #fff; overflow: hidden; }
+  details.pc-faq + details.pc-faq { margin-top: 12px; }
+  details.pc-faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 18px 22px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15.5px; color: #14342C; }
+  details.pc-faq summary::-webkit-details-marker { display: none; }
+  details.pc-faq .pc-faq-plus { flex: none; width: 20px; height: 20px; position: relative; }
+  details.pc-faq .pc-faq-plus::before, details.pc-faq .pc-faq-plus::after { content: ''; position: absolute; background: #3f7a26; top: 50%; left: 50%; transform: translate(-50%,-50%); transition: transform .25s ease, opacity .25s ease; }
+  details.pc-faq .pc-faq-plus::before { width: 12px; height: 2px; }
+  details.pc-faq .pc-faq-plus::after { width: 2px; height: 12px; }
+  details.pc-faq[open] .pc-faq-plus::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
+  details.pc-faq .pc-faq-a { padding: 0 22px 20px; font-family: 'Source Serif 4', serif; font-size: 15.5px; line-height: 1.65; color: #14342C99; }
 </style>
 </helmet>
 
@@ -155,49 +198,60 @@
   <sc-if value="{{ found }}" hint-placeholder-val="{{ true }}">
   <div>
 
+    <!-- READING PROGRESS -->
+    <div class="pc-progress-track"><div class="pc-progress-bar" ref="{{ progressBarRef }}"></div></div>
+
     <!-- HERO -->
-    <section style="{{ heroThumbStyle }} color:#F7F4EC; padding:clamp(120px,15vw,168px) clamp(20px,4vw,40px) clamp(44px,6vw,64px); position:relative; overflow:hidden;"></section>
-      <div style="position:absolute; inset:0; background-image:radial-gradient(75% 85% at 80% 12%,#6FAF4512,transparent 68%); mask-image:radial-gradient(120% 90% at 80% 0%,#000 30%,transparent 80%); pointer-events:none;"></div>
-      <div style="max-width:900px; margin:0 auto; position:relative;">
-        <div style="display:flex; align-items:center; gap:9px; flex-wrap:wrap; font-family:Inter,sans-serif; font-size:12px; color:#F7F4EC99; margin-bottom:26px;">
-          <a href="index.html" style="color:#F7F4EC99; text-decoration:none;" style-hover="color:#6FAF45;">Home</a>
-          <span style="color:#F7F4EC55;">/</span>
-          <a href="blog.html" style="color:#F7F4EC99; text-decoration:none;" style-hover="color:#6FAF45;">Journal</a>
-          <span style="color:#F7F4EC55;">/</span>
-          <span style="color:#6FAF45;">{{ category }}</span>
+    <section class="pc-hero-section" style="background:#14342C; color:#F7F4EC; padding:clamp(110px,14vw,150px) clamp(20px,4vw,40px) 0;">
+      <div class="pc-hero-flex" style="max-width:1180px; margin:0 auto;">
+        <div class="pc-hero-text">
+          <div style="display:flex; align-items:center; gap:9px; flex-wrap:wrap; font-family:Inter,sans-serif; font-size:12px; color:#F7F4EC99; margin-bottom:22px;">
+            <a href="index.html" style="color:#F7F4EC99; text-decoration:none;" style-hover="color:#6FAF45;">Home</a>
+            <span style="color:#F7F4EC55;">/</span>
+            <a href="blog.html" style="color:#F7F4EC99; text-decoration:none;" style-hover="color:#6FAF45;">Journal</a>
+            <span style="color:#F7F4EC55;">/</span>
+            <span style="color:#6FAF45;">{{ category }}</span>
+          </div>
+          <h1 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(27px,3.6vw,42px); line-height:1.14; letter-spacing:-0.02em; margin:0 0 22px; max-width:780px;">{{ title }}</h1>
+          <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; font-family:Inter,sans-serif; font-size:13px; color:#F7F4ECcc; padding-bottom:clamp(28px,3.4vw,40px);">
+            <span>{{ dateLabel }}</span>
+            <span style="width:4px; height:4px; border-radius:50%; background:#6FAF45;"></span>
+            <span>{{ readLabel }}</span>
+            <span style="width:4px; height:4px; border-radius:50%; background:#6FAF45;"></span>
+            <span>{{ author }}</span>
+          </div>
         </div>
-        <h1 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(30px,4.4vw,52px); line-height:1.08; letter-spacing:-0.02em; margin:0 0 24px;">{{ title }}</h1>
-        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; font-size:13.5px; color:#F7F4ECcc;">
-          <span style="font-family:Inter,sans-serif;">{{ dateLabel }}</span>
-          <span style="width:4px; height:4px; border-radius:50%; background:#6FAF45;"></span>
-          <span style="font-family:Inter,sans-serif;">{{ readLabel }}</span>
-          <span style="width:4px; height:4px; border-radius:50%; background:#6FAF45;"></span>
-          <span>{{ author }}</span>
+        <div class="pc-hero-imgwrap">
+          <div class="pc-hero-img" style="{{ heroImgStyle }} width:100%; aspect-ratio:3/2; max-height:560px; border-radius:10px 10px 0 0; position:relative; overflow:hidden;"></div>
         </div>
       </div>
     </section>
 
     <!-- BODY -->
-    <section style="background:#F7F4EC; padding:clamp(44px,5vw,72px) clamp(20px,4vw,40px) clamp(56px,7vw,96px);">
+    <section style="background:#F7F4EC; padding:clamp(40px,5vw,60px) clamp(20px,4vw,40px) clamp(56px,7vw,96px);">
       <div style="max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; gap:clamp(36px,4vw,64px); align-items:flex-start;">
 
         <!-- main -->
-        <article style="flex:1 1 560px; min-width:300px; max-width:720px;">
+        <article class="pc-article" style="flex:1 1 560px; min-width:300px; max-width:700px;">
 
-          <p style="font-family:Fraunces,serif; font-weight:400; font-size:clamp(19px,1.9vw,23px); line-height:1.55; letter-spacing:-0.01em; color:#14342C; margin:0 0 clamp(36px,4vw,52px); padding-bottom:clamp(28px,3vw,40px); border-bottom:1px solid #14342C18;">{{ excerpt }}</p>
+          <p class="pc-dropcap" style="font-size:clamp(17px,1.5vw,18.5px); line-height:1.75; letter-spacing:-0.005em; color:#14342C; margin:0 0 clamp(32px,3.6vw,44px); padding-bottom:clamp(26px,2.8vw,36px); border-bottom:1px solid #14342C18;">{{ excerpt }}</p>
 
           <sc-for list="{{ sections }}" as="s" hint-placeholder-count="6">
-            <div style="margin-bottom:32px;">
+            <sc-if value="{{ s.isQuote }}" hint-placeholder-val="{{ false }}">
+              <div class="pc-pullquote"><p>{{ s.quoteText }}</p></div>
+            </sc-if>
+            <sc-if value="{{ s.isNotQuote }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-bottom:30px;">
               <sc-if value="{{ s.hasH }}" hint-placeholder-val="{{ true }}">
-                <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(22px,2.4vw,28px); line-height:1.2; letter-spacing:-0.01em; margin:0 0 16px; color:#14342C;">{{ s.h }}</h2>
+                <h2 style="font-weight:600; font-size:clamp(20px,2vw,25px); line-height:1.28; letter-spacing:-0.005em; margin:0 0 15px; color:#14342C;">{{ s.h }}</h2>
               </sc-if>
               <sc-for list="{{ s.paras }}" as="para" hint-placeholder-count="2">
-                <p style="font-size:16.5px; line-height:1.75; color:#14342Cdd; margin:0 0 16px;">{{ para }}</p>
+                <p style="font-size:16.5px; line-height:1.78; color:#14342Cdd; margin:0 0 16px;">{{ para }}</p>
               </sc-for>
               <sc-if value="{{ s.hasList }}" hint-placeholder-val="{{ false }}">
                 <ul style="list-style:none; padding:0; margin:8px 0 0; display:flex; flex-direction:column; gap:11px;">
                   <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="4">
-                    <li style="display:flex; gap:12px; align-items:flex-start; font-size:16px; line-height:1.6; color:#14342Cdd;">
+                    <li style="display:flex; gap:12px; align-items:flex-start; font-family:'Source Serif 4',serif; font-size:16px; line-height:1.6; color:#14342Cdd;">
                       <span style="flex:none; margin-top:8px; width:6px; height:6px; border-radius:50%; background:#6FAF45;"></span>
                       <span>{{ it }}</span>
                     </li>
@@ -205,29 +259,39 @@
                 </ul>
               </sc-if>
             </div>
+            </sc-if>
           </sc-for>
 
           <!-- FAQ -->
           <div style="margin-top:clamp(36px,4vw,52px); padding-top:clamp(32px,3vw,44px); border-top:1px solid #14342C18;">
-            <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(22px,2.4vw,28px); letter-spacing:-0.01em; margin:0 0 22px; color:#14342C;">Frequently asked questions</h2>
-            <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#3f7a26; margin-bottom:10px;">Common questions</div>
+            <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(20px,2vw,25px); letter-spacing:-0.005em; margin:0 0 20px; color:#14342C;">Frequently asked questions</h2>
+            <div>
               <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
-                <div style="background:#fff; border:1px solid #14342C18; border-radius:4px; padding:20px 22px;">
-                  <div style="font-family:Inter,sans-serif; font-weight:600; font-size:16px; color:#14342C; margin-bottom:9px;">{{ f.q }}</div>
-                  <div style="font-size:15px; line-height:1.65; color:#14342C99;">{{ f.a }}</div>
-                </div>
+                <details class="pc-faq">
+                  <summary>{{ f.q }}<span class="pc-faq-plus"></span></summary>
+                  <div class="pc-faq-a">{{ f.a }}</div>
+                </details>
               </sc-for>
             </div>
           </div>
         </article>
 
         <!-- sidebar -->
-        <aside style="flex:0 0 auto; width:clamp(280px,28vw,340px); position:sticky; top:88px; display:flex; flex-direction:column; gap:16px;">
+        <aside style="flex:0 0 auto; width:clamp(280px,28vw,320px); position:sticky; top:88px; display:flex; flex-direction:column; gap:16px;">
           <div style="border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
-            <div style="background:#14342C; color:#F7F4EC; padding:18px 22px; font-family:Inter,sans-serif; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#6FAF45;">Key takeaways</div>
-            <ul style="list-style:none; padding:20px 22px; margin:0; display:flex; flex-direction:column; gap:14px;">
+            <div style="padding:16px 20px 8px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:#3f7a26;">In this article</div>
+            <nav style="display:flex; flex-direction:column; padding:2px 20px 16px;">
+              <sc-for list="{{ tocItems }}" as="tc" hint-placeholder-count="4">
+                <a href="javascript:void(0)" onClick="{{ tc.onClick }}" class="pc-toc-link">{{ tc.label }}</a>
+              </sc-for>
+            </nav>
+          </div>
+          <div style="border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+            <div style="background:#14342C; color:#F7F4EC; padding:16px 20px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:#6FAF45;">Key takeaways</div>
+            <ul style="list-style:none; padding:18px 20px; margin:0; display:flex; flex-direction:column; gap:13px;">
               <sc-for list="{{ takeaways }}" as="t" hint-placeholder-count="4">
-                <li style="display:flex; gap:11px; align-items:flex-start; font-size:14px; line-height:1.55; color:#14342Cdd;">
+                <li style="display:flex; gap:11px; align-items:flex-start; font-family:'Source Serif 4',serif; font-size:14px; line-height:1.55; color:#14342Cdd;">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3f7a26" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:1px;"><path d="M20 6L9 17l-5-5"></path></svg>
                   <span>{{ t }}</span>
                 </li>
@@ -235,7 +299,7 @@
             </ul>
           </div>
           <div style="border:1px solid #14342C18; border-radius:6px; background:#14342C; color:#F7F4EC; padding:24px;">
-            <div style="font-family:Fraunces,serif; font-size:21px; line-height:1.25; margin-bottom:10px;">Make the switch.</div>
+            <div style="font-family:Fraunces,serif; font-size:20px; line-height:1.25; margin-bottom:10px;">Make the switch.</div>
             <p style="font-size:13.5px; line-height:1.6; color:#F7F4EC99; margin:0 0 18px;">Get certified compostable packaging matched to your sizes, with samples and a quote in two business days.</p>
             <a href="contact.html" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#6FAF45; color:#14342C; font-weight:600; font-size:14.5px; padding:13px; border-radius:2px; text-decoration:none;">Request a quote →</a>
           </div>
@@ -339,12 +403,19 @@ class Component extends DCLogic {
       this.emailEl.href = 'mailto:' + addr;
     }
     this._onScroll = () => {
-      if (!this.header) return;
-      const s = window.scrollY > 30;
-      this.header.style.padding = s ? '12px clamp(20px,4vw,40px)' : '22px clamp(20px,4vw,40px)';
-     this.header.style.background = s ? 'rgba(12,31,25,0.92)' : 'rgba(12,31,25,0.38)'; 
-      this.header.style.backdropFilter = 'blur(8px)';
-      this.header.style.boxShadow = s ? '0 1px 0 #ffffff14' : 'none';
+      if (this.header) {
+        const s = window.scrollY > 30;
+        this.header.style.padding = s ? '12px clamp(20px,4vw,40px)' : '22px clamp(20px,4vw,40px)';
+        this.header.style.background = s ? 'rgba(12,31,25,0.92)' : 'rgba(12,31,25,0.38)';
+        this.header.style.backdropFilter = 'blur(8px)';
+        this.header.style.boxShadow = s ? '0 1px 0 #ffffff14' : 'none';
+      }
+      if (this.progressBar) {
+        const doc = document.documentElement;
+        const total = doc.scrollHeight - doc.clientHeight;
+        const pct = total > 0 ? Math.min(100, Math.max(0, (window.scrollY / total) * 100)) : 0;
+        this.progressBar.style.width = pct + '%';
+      }
     };
     window.addEventListener('scroll', this._onScroll, { passive: true });
     this._onScroll();
@@ -438,6 +509,7 @@ class Component extends DCLogic {
       toggleMobileMenu: () => { this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen }); setTimeout(() => this._syncBurger(), 0); },
       closeMobileMenu: () => { this.setState({ mobileMenuOpen: false }); setTimeout(() => this._syncBurger(), 0); },
       emailRef: el => { this.emailEl = el; },
+      progressBarRef: el => { this.progressBar = el; },
       magnetMove: this.magnetMove,
       magnetLeave: this.magnetLeave
     };
@@ -445,16 +517,16 @@ class Component extends DCLogic {
   ? "background-color:" + x.heroBg + "; background-image:url('" + x.thumb + "'); background-size:cover; background-position:center;"
   : "background-color:" + x.heroBg + "; background-image:radial-gradient(circle at 50% 42%,#6FAF4518,transparent 62%);";
 
-const heroThumbStyle = (x) => x.thumb
-  ? "background-color:" + x.heroBg + "; background-image:linear-gradient(180deg, " + x.heroBg + "e6 0%, " + x.heroBg + "b3 45%, " + x.heroBg + "f2 100%), url('" + x.thumb + "'); background-size:cover; background-position:center;"
-  : "background:" + x.heroBg + ";";
+const heroImgStyle = (x) => x.thumb
+  ? "background-color:" + x.heroBg + "; background-image:url('" + x.thumb + "'); background-size:cover; background-repeat:no-repeat; background-position:center;"
+  : "background:" + x.heroBg + "; background-image:radial-gradient(75% 85% at 80% 12%,#6FAF4530,transparent 68%);";
 
 const p = this.state.post;
 if (!p) {
   return Object.assign(refs, {
     found: false, notFound: this.state.notFound,
-    heroBg: '#14342C', heroThumbStyle: 'background:#14342C;', category: '', title: '', dateLabel: '', readLabel: '', author: '',
-    excerpt: '', sections: [], faqs: [], takeaways: [], related: [], hasRelated: false
+    heroBg: '#14342C', heroImgStyle: 'background:#14342C;', category: '', title: '', dateLabel: '', readLabel: '', author: '',
+    excerpt: '', sections: [], faqs: [], takeaways: [], tocItems: [], related: [], hasRelated: false
   });
 }
 const B = window.PACKIN_BLOG;
@@ -463,20 +535,49 @@ const related = B.posts.filter(x => x.slug !== p.slug && x.cat === p.cat)
   .slice(0, 3)
   .map(r => ({ title: r.title, cat: r.cat, heroBg: r.heroBg, thumbStyle: cardThumbStyle(r), href: 'article.html?slug=' + r.slug }));
 
+// build reading sections, inserting a pull-quote after the second section (if a takeaway exists)
+const rawSections = p.body.map(s => ({
+  isQuote: false, isNotQuote: true, quoteText: '',
+  hasH: !!s.h, h: s.h || '',
+  paras: s.p || [],
+  hasList: !!(s.ul && s.ul.length), items: s.ul || []
+}));
+if (p.takeaways && p.takeaways.length && rawSections.length > 2) {
+  rawSections.splice(2, 0, { isQuote: true, isNotQuote: false, quoteText: p.takeaways[0], hasH: false, h: '', paras: [], hasList: false, items: [] });
+}
+const headingIdxs = [];
+rawSections.forEach((s, i) => { if (s.hasH) headingIdxs.push(i); });
+const tocItems = headingIdxs.map((i, n) => ({
+  label: rawSections[i].h,
+  onClick: () => this._scrollToHeading(n)
+}));
+if (p.faqs && p.faqs.length) {
+  tocItems.push({
+    label: 'Frequently asked questions',
+    onClick: () => this._scrollToHeading(headingIdxs.length)
+  });
+}
+
 return Object.assign(refs, {
   found: true, notFound: false,
-  heroBg: p.heroBg, heroThumbStyle: heroThumbStyle(p), category: p.cat, title: p.title,
+  heroBg: p.heroBg, heroImgStyle: heroImgStyle(p), category: p.cat, title: p.title,
       dateLabel: p.dateLabel, readLabel: p.readMins + ' min read', author: p.author,
       excerpt: p.excerpt,
-      sections: p.body.map(s => ({
-        hasH: !!s.h, h: s.h || '',
-        paras: s.p || [],
-        hasList: !!(s.ul && s.ul.length), items: s.ul || []
-      })),
+      sections: rawSections,
       faqs: p.faqs,
       takeaways: p.takeaways,
+      tocItems,
       related, hasRelated: related.length > 0
     });
+  }
+
+  _scrollToHeading(n) {
+    if (!this.root) return;
+    const heads = this.root.querySelectorAll('.pc-article h2');
+    const target = heads[n];
+    if (!target) return;
+    const y = target.getBoundingClientRect().top + window.scrollY - 96;
+    window.scrollTo({ top: y, behavior: 'smooth' });
   }
 }
 </script>
