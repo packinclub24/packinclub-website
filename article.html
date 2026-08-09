@@ -108,6 +108,14 @@
   details.pc-faq .pc-faq-plus::after { width: 2px; height: 12px; }
   details.pc-faq[open] .pc-faq-plus::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
   details.pc-faq .pc-faq-a { padding: 0 22px 20px; font-family: 'Source Serif 4', serif; font-size: 15.5px; line-height: 1.65; color: #14342C99; }
+
+.pc-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid #14342C18; border-radius: 6px; margin: 4px 0 6px; }
+table.pc-table { width: 100%; min-width: 480px; border-collapse: collapse; font-family: 'Source Serif 4', serif; font-size: 14.5px; }
+table.pc-table th { background: #14342C; color: #F7F4EC; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 12.5px; letter-spacing: 0.02em; text-align: left; padding: 13px 16px; }
+table.pc-table th:first-child { color: #F7F4EC99; font-weight: 500; }
+table.pc-table td { padding: 13px 16px; border-top: 1px solid #14342C14; color: #14342Cdd; line-height: 1.5; vertical-align: top; }
+table.pc-table td:first-child { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.04em; color: #3f7a26; white-space: nowrap; }
+table.pc-table tr:nth-child(even) td { background: #14342C06; }
 </style>
 </helmet>
 
@@ -257,6 +265,28 @@
                     </li>
                   </sc-for>
                 </ul>
+              </sc-if>
+              <sc-if value="{{ s.hasTable }}" hint-placeholder-val="{{ false }}">
+                <div class="pc-table-wrap">
+                  <table class="pc-table">
+                    <thead>
+                      <tr>
+                        <sc-for list="{{ s.tableHeaders }}" as="th" hint-placeholder-count="3">
+                          <th>{{ th }}</th>
+                        </sc-for>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <sc-for list="{{ s.tableRows }}" as="row" hint-placeholder-count="3">
+                        <tr>
+                          <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="3">
+                            <td>{{ cell }}</td>
+                          </sc-for>
+                        </tr>
+                      </sc-for>
+                    </tbody>
+                  </table>
+                </div>
               </sc-if>
             </div>
             </sc-if>
@@ -453,9 +483,14 @@ class Component extends DCLogic {
       };
       const pageUrl = 'https://packinclub.com/article.html?slug=' + p.slug;
       const imgUrl = p.thumb ? (p.thumb.indexOf('http') === 0 ? p.thumb : 'https://packinclub.com/' + p.thumb) : 'https://packinclub.com/assets/hero-veggie.png';
+      const allKeywords = [p.keyword].concat(p.secondaryKeywords || []).concat(p.semanticKeywords || []).join(', ');
+      let mk = document.querySelector('meta[name="keywords"]');
+      if (!mk) { mk = document.createElement('meta'); mk.setAttribute('name', 'keywords'); document.head.appendChild(mk); }
+      mk.setAttribute('content', allKeywords);
       setProp('og:title', p.metaTitle);
       setProp('og:description', p.metaDescription);
       setProp('og:image', imgUrl);
+      setProp('og:image:alt', p.imageAlt || p.title);
       setProp('og:url', pageUrl);
       setProp('og:type', 'article');
       let canon = document.querySelector('link[rel="canonical"]');
@@ -471,13 +506,23 @@ class Component extends DCLogic {
         {
           '@context': 'https://schema.org', '@type': 'Article',
           headline: p.title, description: p.metaDescription,
-          datePublished: p.date, author: { '@type': 'Organization', name: 'Packin Club' },
+          image: imgUrl,
+          datePublished: p.date, dateModified: p.date,
+          author: { '@type': 'Organization', name: 'Packin Club' },
           publisher: { '@type': 'Organization', name: 'Packin Club' },
-          keywords: p.keyword
+          keywords: allKeywords
         },
         {
           '@context': 'https://schema.org', '@type': 'FAQPage',
           mainEntity: p.faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))
+        },
+        {
+          '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://packinclub.com/index.html' },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://packinclub.com/blog.html' },
+            { '@type': 'ListItem', position: 3, name: p.title, item: pageUrl }
+          ]
         }
       ]);
       document.head.appendChild(ld);
@@ -540,10 +585,13 @@ const rawSections = p.body.map(s => ({
   isQuote: false, isNotQuote: true, quoteText: '',
   hasH: !!s.h, h: s.h || '',
   paras: s.p || [],
-  hasList: !!(s.ul && s.ul.length), items: s.ul || []
+  hasList: !!(s.ul && s.ul.length), items: s.ul || [],
+  hasTable: !!(s.table && s.table.rows && s.table.rows.length),
+  tableHeaders: s.table ? s.table.headers : [],
+  tableRows: s.table ? s.table.rows.map(r => ({ cells: r })) : []
 }));
 if (p.takeaways && p.takeaways.length && rawSections.length > 2) {
-  rawSections.splice(2, 0, { isQuote: true, isNotQuote: false, quoteText: p.takeaways[0], hasH: false, h: '', paras: [], hasList: false, items: [] });
+  rawSections.splice(2, 0, { isQuote: true, isNotQuote: false, quoteText: p.takeaways[0], hasH: false, h: '', paras: [], hasList: false, items: [], hasTable: false, tableHeaders: [], tableRows: [] });
 }
 const headingIdxs = [];
 rawSections.forEach((s, i) => { if (s.hasH) headingIdxs.push(i); });
