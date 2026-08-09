@@ -120,8 +120,17 @@
         { p: ['When a packaging product calls itself compostable in India, IS 17088 is the standard that\u2019s supposed to back that claim up. Knowing what it actually covers turns you into a much sharper buyer \u2014 and it\u2019s a five-minute read, not a legal deep-dive.'] },
         { h: 'The standard, in one line', p: ['IS 17088 lays out the requirements and test methods for plastics designed to be composted. It\u2019s broadly aligned with international standards like EN 13432 and ASTM D6400, so a product certified to it is speaking a language that global buyers already recognise.'] },
         { h: 'What it\u2019s actually testing for', p: ['Certification here isn\u2019t a single pass/fail checkbox. A material has to satisfy several distinct criteria at once:'], ul: ['Biodegradation \u2014 the material has to convert to CO\u2082 at a defined rate within a set period', 'Disintegration \u2014 it has to physically break apart, with no visible fragments left', 'Ecotoxicity \u2014 the resulting compost has to be safe enough to support healthy plant growth', 'Heavy-metal and chemical limits \u2014 kept controlled so the residue stays clean'] },
-        { h: 'Why this actually matters to you, not just the supplier', p: ['Two reasons. First, compliance \u2014 a certified product gives you a documented basis for meeting single-use plastic rules, instead of a hope. Second, trust \u2014 certification is your defence if anyone accuses your packaging of greenwashing, since the claim has been independently verified rather than self-declared.'] },
-        { h: 'How to actually verify a supplier\u2019s claim', p: ['Treat the certificate as the source of truth, not the marketing copy around it. A supplier worth buying from will share their IS 17088 documentation without hesitation and can explain the test conditions if you ask. If a supplier hedges, delays, or can\u2019t produce it \u2014 that silence tells you what you need to know.'] }
+        { h: 'Why this actually matters to you, not just the supplier', p: ['Two reasons. First, compliance — a certified product gives you a documented basis for meeting single-use plastic rules, instead of a hope. Second, trust — certification is your defence if anyone accuses your packaging of greenwashing, since the claim has been independently verified rather than self-declared.'] },
+        { h: 'IS 17088 vs. Other Standards Buyers Encounter', table: {
+          headers: ['Standard', 'Region', 'What it means for an Indian buyer'],
+          rows: [
+            ['IS 17088 (based on ISO 17088)', 'India', 'The standard tied to legal CPCB registration for compostable plastic sold domestically'],
+            ['EN 13432', 'Europe', 'Legitimate, rigorous, but doesn’t substitute for Indian CPCB registration on its own'],
+            ['ASTM D6400', 'United States', 'The US equivalent; same limitation for domestic Indian compliance'],
+            ['TÜV Austria OK Compost / OK Compost Home', 'International', 'Useful for clarifying home vs industrial compostability, best held alongside IS 17088, not instead of it']
+          ]
+        } },
+        { h: 'How to actually verify a supplier’s claim', p: ['Treat the certificate as the source of truth, not the marketing copy around it. A supplier worth buying from will share their IS 17088 documentation without hesitation and can explain the test conditions if you ask. If a supplier hedges, delays, or can’t produce it — that silence tells you what you need to know.'] }
       ],
       faqs: [
         { q: 'Is IS 17088 basically the same thing as EN 13432?', a: 'They\u2019re closely aligned and test the same core properties. EN 13432 is Europe\u2019s standard, IS 17088 is India\u2019s, and the two are broadly compatible with each other.' },
