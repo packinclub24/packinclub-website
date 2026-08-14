@@ -33,6 +33,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
 <script src="./blog-data.js"></script>
+<script>
+(function(){
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get('slug');
+    var url = 'https://packinclub.com/article.html' + (slug ? '?slug=' + encodeURIComponent(slug) : '');
+    var canon = document.querySelector('link[rel="canonical"]');
+    if (canon) canon.setAttribute('href', url);
+    var ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', url);
+  } catch (e) {}
+})();
+</script>
 <style>
   @keyframes plStem { from { stroke-dashoffset: 70; } to { stroke-dashoffset: 0; } }
   @keyframes plLeaf { 0% { transform: scale(0) rotate(-12deg); opacity: 0; } 60% { opacity: 1; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
