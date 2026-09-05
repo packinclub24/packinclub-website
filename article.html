@@ -78,6 +78,9 @@
   }
   .pc-mobile-menu.pc-open { display: flex; animation: pcFadeUp .25s ease; }
   .pc-burger-bar { display: block; width: 22px; height: 2px; background: #F7F4EC; border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+.pc-burger.pc-active .pc-burger-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.pc-burger.pc-active .pc-burger-bar:nth-child(2) { opacity: 0; }
+.pc-burger.pc-active .pc-burger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   .pc-hero-imgwrap { margin-top: clamp(28px,3.4vw,40px); }
   @media (min-width: 861px) {
@@ -154,7 +157,7 @@ table.pc-table tr:nth-child(even) td { background: #14342C06; }
     <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#6FAF4599; margin-top:4px; animation:plShimmer 1.6s ease infinite;">Returning to soil</div>
   </div>
   <!-- HEADER -->
-  <header ref="{{ headerRef }}" style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px clamp(20px,4vw,40px); transition:padding .25s ease, background-color .25s ease, box-shadow .25s ease;">
+  <header ref="{{ headerRef }}" style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px clamp(20px,4vw,40px); transition:padding .25s ease, background-color .25s ease, box-shadow .25s ease;">
     <a href="index.html" style="display:flex; align-items:baseline; gap:1px; text-decoration:none; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:23px; letter-spacing:-0.015em; color:#F7F4EC;">
       <img src="assets/packinclub-logo.png" alt="PackinClub" style="height:55px; width:auto; display:block;">
     </a>

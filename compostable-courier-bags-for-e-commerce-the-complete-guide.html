@@ -62,6 +62,9 @@
   }
   .pc-mobile-menu.pc-open { display: flex; animation: pcFadeUp .25s ease; }
   .pc-burger-bar { display: block; width: 22px; height: 2px; background: #F7F4EC; border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+.pc-burger.pc-active .pc-burger-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.pc-burger.pc-active .pc-burger-bar:nth-child(2) { opacity: 0; }
+.pc-burger.pc-active .pc-burger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .pc-hero-imgwrap { margin-top: clamp(28px,3.4vw,40px); }
   @media (min-width: 861px) {
     .pc-hero-section { padding-bottom: clamp(50px,6vw,72px) !important; }
@@ -115,7 +118,7 @@
   </div>
 
   <!-- HEADER -->
-  <header id="pc-header" style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px clamp(20px,4vw,40px); background:rgba(12,31,25,0.92); transition:padding .25s ease, background-color .25s ease, box-shadow .25s ease;">
+  <header ref="{{ headerRef }}" style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px clamp(20px,4vw,40px); transition:padding .25s ease, background-color .25s ease, box-shadow .25s ease;">
    <a href="index.html" style="display:flex; align-items:baseline; gap:1px; text-decoration:none;">
   <img src="assets/packinclub-logo.png" alt="PackinClub" style="height:50px; width:auto; display:block; margin-bottom:15px;">
 </a>
@@ -354,7 +357,7 @@
   function onScroll(){
     if (header) {
       var s = window.scrollY > 30;
-      header.style.padding = s ? '12px clamp(20px,4vw,40px)' : '22px clamp(20px,4vw,40px)';
+      header.style.padding = s ? '12px clamp(20px,4vw,40px)' : '14px clamp(20px,4vw,40px)';
       header.style.background = s ? 'rgba(12,31,25,0.92)' : 'rgba(12,31,25,0.38)';
       header.style.backdropFilter = 'blur(8px)';
       header.style.boxShadow = s ? '0 1px 0 #ffffff14' : 'none';
@@ -371,7 +374,7 @@
   var burger = document.getElementById('pc-burger');
   var mobileMenu = document.getElementById('pc-mobile-menu');
   if (burger && mobileMenu) {
-    burger.addEventListener('click', function(){ mobileMenu.classList.toggle('pc-open'); });
+    burger.addEventListener('click', function(){ mobileMenu.classList.toggle('pc-open'); burger.classList.toggle('pc-active'); });
     mobileMenu.querySelectorAll('a').forEach(function(a){
       a.addEventListener('click', function(){ mobileMenu.classList.remove('pc-open'); });
     });
