@@ -38,6 +38,18 @@
   try {
     var params = new URLSearchParams(window.location.search);
     var slug = params.get('slug');
+    if (slug) {
+      window.location.replace('https://packinclub.com/' + encodeURIComponent(slug) + '.html');
+      return;
+    }
+  } catch (e) {}
+})();
+</script>
+<script>
+(function(){
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get('slug');
     var url = 'https://packinclub.com/article.html' + (slug ? '?slug=' + encodeURIComponent(slug) : '');
     var canon = document.querySelector('link[rel="canonical"]');
     if (canon) canon.setAttribute('href', url);
