@@ -51,6 +51,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<script src="./blog-data.js"></script>
 </head>
 <body>
 <x-dc>
@@ -649,7 +650,7 @@ padding-bottom:22px;
             <div style="padding:24px; flex:1; display:flex; flex-direction:column;">
               <h3 style="font-family:Fraunces,serif; font-weight:500; font-size:21px; line-height:1.25; margin:0 0 12px;">{{ a.title }}</h3>
               <p style="font-size:14px; line-height:1.6; color:#14342C99; margin:0 0 18px; flex:1;">{{ a.excerpt }}</p>
-              <span style="font-size:13.5px; font-weight:600; color:#C1622D;">Read article <span class="pc-arrow">→</span></span>
+              <span style="font-size:13.5px; font-weight:600; color:#C1622D;">Read articles <span class="pc-arrow">→</span></span>
             </div>
           </a>
         </sc-for>
@@ -1249,15 +1250,16 @@ else col = this._easeCol(clay, soil, Math.min(1, (p - 0.8) / 0.6));
         { no: '03', title: 'Sample & test', body: 'You receive samples to trial on your real lines before committing.', icon: this._icon('sample') },
         { no: '04', title: 'Supply at scale', body: 'Certified production, printed to your brand, delivered on schedule.', icon: this._icon('supply') }
       ],
-      articles: [
-  { tag: 'Explainer', bg: '#14342C', thumb: 'thumbnail_blog/CompostablevsBiodegradable_homepage.png', href: 'article.html?slug=compostable-vs-biodegradable-packaging-what-s-the-real-difference', title: 'Compostable vs biodegradable: the difference that matters', excerpt: 'Why one word is a certified outcome and the other is a marketing liability.' },
-  { tag: 'Compliance', bg: '#1d4439', thumb: 'thumbnail_blog/IS17088_homepage.png', href: 'article.html?slug=what-is-is-17088-compostable-plastic-certification-explained', title: 'IS 17088, decoded for procurement teams', excerpt: 'What the standard actually tests, and how to verify a supplier’s claim.' },
-  { tag: 'Policy', bg: '#0f2820', thumb: 'thumbnail_blog/IndiaSingle-UsePlasticBan_homepage.png', href: 'article.html?slug=india-s-single-use-plastic-ban-a-practical-compliance-guide-for-businesses', title: 'India’s plastic ban: a practical compliance checklist', excerpt: 'Where the rules stand, and how to switch lines before deadlines hit.' }
-].map(a => Object.assign(a, {
-  thumbStyle: a.thumb
-    ? "background-color:" + a.bg + "; background-image:url('" + a.thumb + "'); background-size:cover; background-position:center 18%;"
-    : "background-color:" + a.bg + "; background-image:radial-gradient(circle at 50% 40%,#6FAF4518,transparent 62%);"
-}))
+            articles: (window.PACKIN_BLOG ? window.PACKIN_BLOG.posts.slice().sort((a,b) => new Date(b.date) - new Date(a.date)).slice(0,3) : []).map(p => ({
+        tag: p.cat,
+        thumb: p.thumb,
+        href: p.slug + '.html',
+        title: p.title,
+        excerpt: p.excerpt,
+        thumbStyle: p.thumb
+          ? "background-color:" + p.heroBg + "; background-image:url('" + p.thumb + "'); background-size:cover; background-position:" + (p.slug === 'what-is-compostable-packaging' ? 'center 55%' : 'center 18%') + ";"
+          : "background-color:" + p.heroBg + "; background-image:radial-gradient(circle at 50% 40%,#6FAF4518,transparent 62%);"
+      }))
     };
   }
 }
