@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/</loc>
@@ -41,145 +42,413 @@
     <loc>https://packinclub.com/product.html?slug=compostable-agri-mulch-film</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/agri-mulch-film.png</image:loc>
+      <image:title>Compostable Agri Mulch Film</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Compostableagrimulch_2.png</image:loc>
+      <image:title>Compostable Agri Mulch Film</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/mulchfilm.png</image:loc>
+      <image:title>Compostable Agri Mulch Film</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/mulchagri2.png</image:loc>
+      <image:title>Compostable Agri Mulch Film</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-nursery-bags</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/Nursery-bag.png</image:loc>
+      <image:title>Compostable Nursery Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Nursery_bag2.png</image:loc>
+      <image:title>Compostable Nursery Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Nursery_bag3.png</image:loc>
+      <image:title>Compostable Nursery Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Nursery-bag-.png</image:loc>
+      <image:title>Compostable Nursery Bags</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-carry-bags-on-roll</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/carrybag_onroll.png</image:loc>
+      <image:title>Compostable Carry Bags on Roll</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/carrybagonroll2.png</image:loc>
+      <image:title>Compostable Carry Bags on Roll</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/carrybagonroll3.png</image:loc>
+      <image:title>Compostable Carry Bags on Roll</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-garbage-bag-on-roll</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/garbage-bag-roll.png</image:loc>
+      <image:title>Compostable Garbage Bag on Roll</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/garbage-bag-roll2.png</image:loc>
+      <image:title>Compostable Garbage Bag on Roll</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/garbage-bag-roll3.png</image:loc>
+      <image:title>Compostable Garbage Bag on Roll</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-grocery-bags-on-roll</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/grocery-bag-roll.png</image:loc>
+      <image:title>Compostable Grocery Bags on Roll</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/grocerybag2.png</image:loc>
+      <image:title>Compostable Grocery Bags on Roll</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Grocerypouch3.jpg</image:loc>
+      <image:title>Compostable Grocery Bags on Roll</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-medical-waste-bags</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/medical_waste_bag.png</image:loc>
+      <image:title>Compostable Medical Waste Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/medical_waste_bag2.png</image:loc>
+      <image:title>Compostable Medical Waste Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/medical_waste_bag3.png</image:loc>
+      <image:title>Compostable Medical Waste Bags</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-bamboo-tissue</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/Bamboo_tissue.png</image:loc>
+      <image:title>Compostable Bamboo Tissue</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Bamboo_tissue2.png</image:loc>
+      <image:title>Compostable Bamboo Tissue</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Bamboo_tissue3.png</image:loc>
+      <image:title>Compostable Bamboo Tissue</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-bread-pouch</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/compostable_bread_pouch.jpeg</image:loc>
+      <image:title>Compostable Bread Pouch</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Bread_pouch.jpg</image:loc>
+      <image:title>Compostable Bread Pouch</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Compostable_bread_bags.png</image:loc>
+      <image:title>Compostable Bread Pouch</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-cling-film</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/compostable-cling-film.png</image:loc>
+      <image:title>Compostable Cling Film</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/compostable-cling-film2.png</image:loc>
+      <image:title>Compostable Cling Film</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/compostable-cling-film3.png</image:loc>
+      <image:title>Compostable Cling Film</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-hot-liquid-pouches</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/hot-liquid-pouches.png</image:loc>
+      <image:title>Compostable Hot Liquid Pouches</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-aqueous-coated-paper-cups</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/Aqua_coated_cup.png</image:loc>
+      <image:title>Compostable Aqueous Coated Paper Cups</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/brown_aqua_cup.png</image:loc>
+      <image:title>Compostable Aqueous Coated Paper Cups</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/aqua-coated-cup.png</image:loc>
+      <image:title>Compostable Aqueous Coated Paper Cups</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-pouches</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/compostable_pouches.png</image:loc>
+      <image:title>Compostable Pouches</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/compostable_pouches2.png</image:loc>
+      <image:title>Compostable Pouches</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/compostable_pouches3.png</image:loc>
+      <image:title>Compostable Pouches</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/compostable_pouches4.png</image:loc>
+      <image:title>Compostable Pouches</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/compostable_pouches5.png</image:loc>
+      <image:title>Compostable Pouches</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Compostable_pouch6.png</image:loc>
+      <image:title>Compostable Pouches</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-electrical-wire-packaging-wrap</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/compostable-wire-wrap.jpeg</image:loc>
+      <image:title>Compostable Electrical Wire Packaging Wrap</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-garbage-bags</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/garbage-bags_for_baskets.png</image:loc>
+      <image:title>Compostable Garbage Bags</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-shrink-film</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/shrink-film.png</image:loc>
+      <image:title>Compostable Shrink Film</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/shrink-film2.png</image:loc>
+      <image:title>Compostable Shrink Film</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-stretch-film</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/Compostable-Stretch-film.png</image:loc>
+      <image:title>Compostable Stretch Film</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/compostable-stretch-film2.png</image:loc>
+      <image:title>Compostable Stretch Film</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Compostable_pallet_wrap.png</image:loc>
+      <image:title>Compostable Stretch Film</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-carry-bags</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/W-Cutbag.png</image:loc>
+      <image:title>Compostable Carry Bags (W-cut, U-cut)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Carrybag-black.png</image:loc>
+      <image:title>Compostable Carry Bags (W-cut, U-cut)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/carry.jpg</image:loc>
+      <image:title>Compostable Carry Bags (W-cut, U-cut)</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-courier-bags-mailers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/mailer_bags.png</image:loc>
+      <image:title>Compostable Courier Bags / Mailers</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/mailer_bags3.png</image:loc>
+      <image:title>Compostable Courier Bags / Mailers</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/mailer_bagsback.png</image:loc>
+      <image:title>Compostable Courier Bags / Mailers</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-d-cut-shopping-bags</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/Compostable_D-Cut-Shopping-Bags.png</image:loc>
+      <image:title>Compostable D-Cut Shopping Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/D-Cut.jpg</image:loc>
+      <image:title>Compostable D-Cut Shopping Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/D-cut2.jpeg</image:loc>
+      <image:title>Compostable D-Cut Shopping Bags</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-garment-bags</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/garmentbag_1.png</image:loc>
+      <image:title>Compostable Garment Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Garment--Bags.png</image:loc>
+      <image:title>Compostable Garment Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/garment-bags.jpg</image:loc>
+      <image:title>Compostable Garment Bags</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-grocery-bags</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/biodegradable-grocery-bag-roll.png</image:loc>
+      <image:title>Compostable Grocery Bags</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-loop-handle-bags</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/compostable-Loop-Handle-bags.png</image:loc>
+      <image:title>Compostable Loop Handle Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/loophandlebag2.png</image:loc>
+      <image:title>Compostable Loop Handle Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/loophandlebag3.png</image:loc>
+      <image:title>Compostable Loop Handle Bags</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-pet-poop-bags</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/Pet-Poop-Bags.jpg</image:loc>
+      <image:title>Compostable Pet Poop Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Compostable_poop_bag.png</image:loc>
+      <image:title>Compostable Pet Poop Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/Pet_poop.jpeg</image:loc>
+      <image:title>Compostable Pet Poop Bags</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://packinclub.com/product_images/pet_poop3.jpeg</image:loc>
+      <image:title>Compostable Pet Poop Bags</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/product.html?slug=compostable-prasadam-pouches</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
+      <image:image>
+      <image:loc>https://packinclub.com/product_images/Prasadam-Pouches.png</image:loc>
+      <image:title>Compostable Prasadam Pouches</image:title>
+    </image:image>
+</url>
   <url>
     <lastmod>2026-09-06</lastmod>
     <loc>https://packinclub.com/compostable-vs-biodegradable-packaging-what-s-the-real-difference.html</loc>
