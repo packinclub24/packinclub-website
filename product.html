@@ -534,7 +534,7 @@ class Component extends DCLogic {
         if (!el) { el = document.createElement('meta'); el.setAttribute('property', prop); document.head.appendChild(el); }
         el.setAttribute('content', content);
       };
-      const pageUrl = 'https://packinclub.com/product.html?slug=' + p.slug;
+      const pageUrl = 'https://packinclub.com/product.html?p=' + p.slug;
       const imgUrl = p.image ? (p.image.indexOf('http') === 0 ? p.image : 'https://packinclub.com/' + p.image) : 'https://packinclub.com/assets/hero-veggie.png';
       setProp('og:title', p.name + ' | Packin Club');
       setProp('og:description', p.blurb || p.desc);
