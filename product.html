@@ -508,6 +508,12 @@ class Component extends DCLogic {
         const u = new URL(window.location.href);
         s = u.searchParams.get('slug') || u.searchParams.get('p') || (u.hash.indexOf('slug=') > -1 ? decodeURIComponent(u.hash.split('slug=')[1]) : '');
       } catch (e) { s = ''; }
+      if (s && window.PACKIN.bySlug(s)) {
+        // Legacy URL (product.html?p=... or ?slug=...) — send visitors and
+        // search engines straight to the new static page for this product.
+        window.location.replace('/products/' + s + '.html');
+        return;
+      }
       if (!s) {
         // default to first product so the page is never blank when opened directly
         const first = window.PACKIN.products[0];
