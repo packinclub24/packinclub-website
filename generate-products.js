@@ -1,0 +1,411 @@
+/* Packin Club — static product page generator.
+   Reads product-data.js (same file product.html already uses) and writes
+   one fully static, pre-rendered HTML file per product into /products/.
+   Run: node generate-products.js
+   Re-run any time product-data.js changes — it's safe to re-run repeatedly. */
+
+const fs = require('fs');
+const path = require('path');
+const vm = require('vm');
+
+const ROOT = __dirname;
+const OUT_DIR = path.join(ROOT, 'products');
+const SITE_URL = 'https://packinclub.com';
+
+// ---------- 1. Load product-data.js the same way the browser does ----------
+const sandbox = { window: {}, console };
+vm.createContext(sandbox);
+const dataSrc = fs.readFileSync(path.join(ROOT, 'product-data.js'), 'utf8');
+vm.runInContext(dataSrc, sandbox, { filename: 'product-data.js' });
+const PACKIN = sandbox.window.PACKIN;
+if (!PACKIN) throw new Error('Could not load window.PACKIN from product-data.js');
+
+// ---------- 2. Hero/thumb icon paths per product "form" (mirrors product.html's _icon()) ----------
+const ICONS = {
+  bag: '<path d="M7 8h10l1.4 12.5a1 1 0 01-1 1.1H6.6a1 1 0 01-1-1.1L7 8z"/><path d="M9 8V6.5a3 3 0 016 0V8"/>',
+  roll: '<ellipse cx="12" cy="7" rx="7" ry="2.6"/><path d="M5 7v8c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V7"/><path d="M12 17.6V22M12 22l-2.4-2M12 22l2.4-2"/>',
+  film: '<path d="M5 4h11l3 3v13H5z"/><path d="M16 4v3h3" fill="none"/><path d="M8 11c1.4 1 2.6 1 4 0s2.6-1 4 0M8 15c1.4 1 2.6 1 4 0s2.6-1 4 0" opacity="0.6"/>',
+  cup: '<path d="M7 7h10l-1 13.2a1 1 0 01-1 .8H9a1 1 0 01-1-.8L7 7z"/><path d="M6.4 7h11.2M9 11c1.4 1 4.6 1 6 0" opacity="0.6"/>',
+  pouch: '<path d="M6 6h12v13a2 2 0 01-2 2H8a2 2 0 01-2-2V6z"/><path d="M6 6l2-2h8l2 2M9.5 11h5" opacity="0.7"/>',
+  tissue: '<path d="M5 9h14v9a1 1 0 01-1 1H6a1 1 0 01-1-1V9z"/><path d="M9 9V6.5C9 5 10 4 12 4s3 1 3 2.5V9"/><path d="M12 12v4" opacity="0.6"/>'
+};
+function iconSvg(form) {
+  const paths = ICONS[form] || ICONS.bag;
+  return '<svg viewBox="0 0 24 24" style="width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;">' + paths + '</svg>';
+}
+
+// ---------- 3. Small helpers ----------
+function esc(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+function absUrl(img) {
+  if (!img) return SITE_URL + '/assets/hero-veggie.png';
+  return img.indexOf('http') === 0 ? img : SITE_URL + '/' + img;
+}
+function catHref(cat) {
+  return '../products.html?cat=' + cat;
+}
+function related(product) {
+  const sameCat = PACKIN.products.filter(p => p.cat === product.cat && p.slug !== product.slug);
+  const pool = sameCat.length >= 3 ? sameCat : PACKIN.products.filter(p => p.slug !== product.slug);
+  return pool.slice(0, 3);
+}
+
+// ---------- 4. Page template ----------
+function renderPage(p) {
+  const pageUrl = SITE_URL + '/products/' + p.slug + '.html';
+  const title = p.name + ' | Packin Club';
+  const metaDesc = p.blurb || p.desc;
+  const imgUrl = absUrl(p.image);
+  const rel = related(p);
+
+  const featuresHtml = (p.features || []).map(f => `
+              <div style="display:flex; align-items:flex-start; gap:13px; padding:18px 20px; background:#fff; border:1px solid #14342C14; border-radius:4px;">
+                <span style="flex:none; margin-top:1px; width:22px; height:22px; border-radius:50%; background:#6FAF4524; display:flex; align-items:center; justify-content:center;">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3f7a26" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                </span>
+                <span style="font-size:14.5px; line-height:1.5; color:#14342C;">${esc(f)}</span>
+              </div>`).join('');
+
+  const applicationsHtml = (p.applications || []).map(a => `
+            <span style="display:inline-flex; align-items:center; gap:9px; font-size:14px; color:#14342C; background:#fff; border:1px solid #14342C18; border-radius:2px; padding:11px 16px;">
+              <span style="width:6px; height:6px; border-radius:50%; background:#6FAF45; flex:none;"></span>
+              ${esc(a)}
+            </span>`).join('');
+
+  const extraImages = (p.images || []).filter(img => img !== p.image);
+  const morePhotosHtml = extraImages.length ? `
+            <h2 style="font-family:Newsreader,serif; font-weight:500; font-size:clamp(22px,2.4vw,30px); letter-spacing:-0.01em; margin:clamp(44px,5vw,64px) 0 22px; padding-bottom:16px; border-bottom:1px solid #14342C18;">More photos</h2>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px;">
+              ${extraImages.map(img => `
+              <a href="../${esc(img)}" target="_blank" rel="noopener" style="aspect-ratio:1/1; display:block; border-radius:4px; overflow:hidden; border:1px solid #14342C14; background:#14342C;">
+                <img src="../${esc(img)}" alt="${esc(p.name)} — additional product photo" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
+              </a>`).join('')}
+            </div>` : '';
+
+  const specsHtml = (p.specs || []).map(s => `
+              <div style="display:flex; gap:16px; justify-content:space-between; padding:13px 24px; border-bottom:1px solid #14342C12;">
+                <span style="flex:0 0 38%; font-size:12.5px; color:#8C8579; font-family:Inter,sans-serif; letter-spacing:0.02em; line-height:1.45;">${esc(s.k)}</span>
+                <span style="flex:1; text-align:right; font-size:13.5px; color:#14342C; line-height:1.45;">${esc(s.v)}</span>
+              </div>`).join('');
+
+  const featuresSectionHtml = (p.features && p.features.length) ? `
+        <h2 style="font-family:Newsreader,serif; font-weight:500; font-size:clamp(22px,2.4vw,30px); letter-spacing:-0.01em; margin:0 0 22px; padding-bottom:16px; border-bottom:1px solid #14342C18;">Key features</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-bottom:clamp(44px,5vw,64px);">${featuresHtml}
+        </div>` : '';
+
+  const applicationsSectionHtml = (p.applications && p.applications.length) ? `
+        <h2 style="font-family:Newsreader,serif; font-weight:500; font-size:clamp(22px,2.4vw,30px); letter-spacing:-0.01em; margin:0 0 22px; padding-bottom:16px; border-bottom:1px solid #14342C18;">Applications</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">${applicationsHtml}
+        </div>` : '';
+
+  const specsSectionHtml = (p.specs && p.specs.length) ? `
+          <div style="background:#14342C; color:#F7F4EC; padding:20px 24px;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#6FAF45; margin-bottom:6px;">Technical specifications</div>
+            <div style="font-family:Newsreader,serif; font-size:20px;">At a glance</div>
+          </div>
+          <div>${specsHtml}
+          </div>` : '';
+
+  const specsForSchema = (p.specs || []).map(s => `{"@type":"PropertyValue","name":${JSON.stringify(s.k)},"value":${JSON.stringify(s.v)}}`).join(',');
+
+  const relatedHtml = rel.length ? `
+    <section style="background:#fff; border-top:1px solid #14342C12; padding:clamp(48px,6vw,84px) clamp(20px,4vw,40px);">
+      <div style="max-width:1280px; margin:0 auto;">
+        <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:28px;">
+          <h2 style="font-family:Newsreader,serif; font-weight:500; font-size:clamp(24px,2.8vw,34px); letter-spacing:-0.01em; margin:0;">More in ${esc(p.catName)}</h2>
+          <a href="${catHref(p.cat)}" style="font-size:14px; font-weight:600; color:#3f7a26; text-decoration:none;">View category →</a>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px;">
+          ${rel.map(r => `
+          <a href="${esc(r.slug)}.html" class="pc-card" style="text-decoration:none; border:1px solid #14342C18; border-radius:4px; overflow:hidden; background:#fff; display:flex; flex-direction:column;">
+            <div style="position:relative; height:140px; background:#14342C; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+              <div style="position:absolute; inset:0; background-image:radial-gradient(circle at 50% 42%,#6FAF4518,transparent 62%);"></div>
+              <div class="pc-thumb" style="position:relative; width:54px; height:54px; color:#6FAF45; z-index:1;">${iconSvg(r.form)}</div>
+              ${r.image ? `<img src="../${esc(r.image)}" alt="${esc(r.name)}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2;" />` : ''}
+              <span style="position:absolute; top:12px; left:12px; z-index:3; font-family:Inter,sans-serif; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#6FAF45; background:#14342Cb3; padding:2px 6px; border-radius:2px;">${esc(r.catShort)}</span>
+            </div>
+            <div style="padding:18px 20px;">
+              <h3 style="font-family:Newsreader,serif; font-weight:500; font-size:17px; line-height:1.2; margin:0 0 8px; color:#14342C;">${esc(r.name)}</h3>
+              <p style="font-size:13px; line-height:1.55; color:#14342C99; margin:0;">${esc(r.blurb)}</p>
+            </div>
+          </a>`).join('')}
+        </div>
+      </div>
+    </section>` : '';
+
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: p.name,
+    description: p.desc || p.blurb,
+    image: [imgUrl].concat((p.images || []).filter(i => i !== p.image).map(absUrl)),
+    brand: { '@type': 'Brand', name: 'Packin Club' },
+    category: p.catName,
+    url: pageUrl,
+    additionalProperty: JSON.parse('[' + specsForSchema + ']'),
+    offers: {
+      '@type': 'Offer',
+      url: pageUrl,
+      priceCurrency: 'INR',
+      availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      seller: { '@type': 'Organization', name: 'Packin Club' }
+    }
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL + '/index.html' },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: SITE_URL + '/products.html' },
+      { '@type': 'ListItem', position: 3, name: p.name, item: pageUrl }
+    ]
+  };
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G950DCDKES"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-G950DCDKES");
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(metaDesc)}">
+<link rel="canonical" href="${pageUrl}">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(metaDesc)}">
+<meta property="og:image" content="${imgUrl}">
+<meta property="og:url" content="${pageUrl}">
+<meta property="og:type" content="product">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">${JSON.stringify(productSchema)}</script>
+<script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+<script src="../support.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #F7F4EC; font-family: Inter, sans-serif; color: #14342C; -webkit-font-smoothing: antialiased; }
+  ::selection { background: #6FAF45; color: #14342C; }
+  @keyframes pcPulse { 0% { box-shadow: 0 0 0 0 #6FAF4566; } 70% { box-shadow: 0 0 0 7px #6FAF4500; } 100% { box-shadow: 0 0 0 0 #6FAF4500; } }
+  .pc-dot { animation: pcPulse 2.6s ease-out infinite; }
+  .pc-card { transition: transform .32s cubic-bezier(.2,.7,.2,1), box-shadow .32s ease, border-color .32s ease; }
+  .pc-card:hover { transform: translateY(-6px); box-shadow: 0 26px 52px -28px rgba(20,52,44,.5); border-color: #6FAF4566; }
+  .pc-nav-desktop, .pc-cta-desktop { display: flex; }
+  .pc-burger { display: none; }
+  .pc-mobile-menu { display: none; }
+  @media (max-width: 860px) {
+    .pc-nav-desktop, .pc-cta-desktop { display: none !important; }
+    .pc-burger { display: inline-flex !important; }
+    .pc-hero-actions-desktop { display: none !important; }
+    .pc-hero-actions-mobile { display: flex !important; }
+  }
+  .pc-hero-actions-mobile { display: none; }
+  .pc-mobile-menu.pc-open { display: flex !important; }
+  .pc-burger-bar { display: block; width: 22px; height: 2px; background: #F7F4EC; border-radius: 2px; }
+  a { transition: color .15s; }
+</style>
+</head>
+<body>
+<div class="pc-site" style="overflow-x:hidden; min-height:100vh;">
+
+  <!-- HEADER -->
+  <header id="pcHeader" style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px clamp(20px,4vw,40px); background:rgba(12,31,25,0.92); backdrop-filter:blur(8px); transition:padding .25s ease;">
+    <a href="../index.html" style="display:flex; align-items:baseline; gap:1px; text-decoration:none;">
+      <img src="../assets/packinclub-logo.png" alt="PackinClub" style="height:55px; width:auto; display:block;">
+    </a>
+    <nav class="pc-nav-desktop" style="align-items:center; gap:clamp(10px,1.6vw,26px); font-size:13.5px; font-weight:500;">
+      <a href="../index.html" style="color:#F7F4EC; text-decoration:none;">Home</a>
+      <a href="../about.html" style="color:#F7F4EC; text-decoration:none;">About</a>
+      <a href="../industries.html" style="color:#F7F4EC; text-decoration:none;">Industries</a>
+      <a href="../products.html" style="color:#6FAF45; text-decoration:none;">Products</a>
+      <a href="../blog.html" style="color:#F7F4EC; text-decoration:none;">Blog</a>
+      <a href="../contact.html" style="color:#F7F4EC; text-decoration:none;">Contact</a>
+    </nav>
+    <div class="pc-cta-desktop" style="align-items:center; gap:12px;">
+      <a href="../contact.html#quote" style="align-items:center; gap:8px; background:#6FAF45; color:#14342C; font-size:13.5px; font-weight:600; padding:11px 18px; border-radius:2px; text-decoration:none;">Request a Quote</a>
+    </div>
+    <button class="pc-burger" id="pcBurger" aria-label="Toggle menu" style="align-items:center; justify-content:center; width:38px; height:38px; border:none; background:transparent; cursor:pointer; padding:0; gap:5px; flex-direction:column;">
+      <span class="pc-burger-bar"></span><span class="pc-burger-bar"></span><span class="pc-burger-bar"></span>
+    </button>
+  </header>
+
+  <div class="pc-mobile-menu" id="pcMobileMenu" style="position:fixed; top:0; left:0; right:0; z-index:59; flex-direction:column; background:#0c1f19f5; backdrop-filter:blur(10px); padding:88px 24px 28px; gap:2px;">
+    <a href="../index.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Home</a>
+    <a href="../about.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">About</a>
+    <a href="../industries.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Industries</a>
+    <a href="../products.html" style="color:#6FAF45; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Products</a>
+    <a href="../blog.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Blog</a>
+    <a href="../contact.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Contact</a>
+    <a href="../contact.html#quote" style="margin-top:18px; display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#6FAF45; color:#14342C; font-size:15px; font-weight:600; padding:14px 18px; border-radius:2px; text-decoration:none;">Request a Quote</a>
+  </div>
+
+  <!-- HERO -->
+  <section style="background:#14342C; color:#F7F4EC; padding:clamp(120px,15vw,168px) clamp(20px,4vw,40px) clamp(48px,6vw,72px); position:relative; overflow:hidden;">
+    <div style="max-width:1280px; margin:0 auto; position:relative;">
+      <nav aria-label="Breadcrumb" style="display:flex; align-items:center; gap:9px; flex-wrap:wrap; font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.04em; color:#F7F4EC99; margin-bottom:30px;">
+        <a href="../index.html" style="color:#F7F4EC99; text-decoration:none;">Home</a>
+        <span style="color:#F7F4EC55;">/</span>
+        <a href="../products.html" style="color:#F7F4EC99; text-decoration:none;">Products</a>
+        <span style="color:#F7F4EC55;">/</span>
+        <a href="${catHref(p.cat)}" style="color:#F7F4EC99; text-decoration:none;">${esc(p.catName)}</a>
+        <span style="color:#F7F4EC55;">/</span>
+        <span style="color:#6FAF45;">${esc(p.name)}</span>
+      </nav>
+
+      <div style="display:flex; flex-wrap:wrap; gap:clamp(32px,5vw,72px); align-items:center; justify-content:space-between;">
+        <div style="flex:1 1 460px; min-width:280px;">
+          <div style="display:inline-flex; align-items:center; gap:9px; font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase; color:#6FAF45; margin-bottom:22px;">
+            <span class="pc-dot" style="width:6px; height:6px; border-radius:50%; background:#6FAF45;"></span>
+            ${esc(p.catShort)}
+          </div>
+          <h1 style="font-family:Newsreader,serif; font-weight:500; font-size:clamp(32px,4.6vw,58px); line-height:1.04; letter-spacing:-0.02em; margin:0 0 22px;">${esc(p.name)}</h1>
+          <p style="font-size:clamp(16px,1.4vw,19px); line-height:1.6; color:#F7F4ECcc; max-width:560px; margin:0 0 34px;">${esc(p.blurb)}</p>
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <a href="../contact.html#quote" style="display:inline-flex; align-items:center; gap:9px; background:#6FAF45; color:#14342C; font-weight:600; font-size:15px; padding:14px 26px; border-radius:2px; text-decoration:none;">Request a quote →</a>
+          </div>
+        </div>
+        <div style="flex:0 0 auto; width:clamp(220px,28vw,320px); aspect-ratio:1/1; position:relative; border:1px solid #ffffff1f; border-radius:6px; background:#0f261f; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+          <div style="position:relative; width:46%; height:46%; color:#6FAF45; z-index:1;">${iconSvg(p.form)}</div>
+          ${p.image ? `<img src="../${esc(p.image)}" alt="${esc(p.name)} — compostable packaging by Packin Club" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2;" />` : ''}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <section style="background:#F7F4EC; padding:clamp(48px,6vw,84px) clamp(20px,4vw,40px) clamp(60px,8vw,110px);">
+    <div style="max-width:1280px; margin:0 auto; display:flex; flex-wrap:wrap; gap:clamp(32px,4vw,64px); align-items:flex-start;">
+      <div style="flex:1 1 480px; min-width:300px;">
+        <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:#8C8579; margin-bottom:16px;">Overview</div>
+        <p style="font-family:Newsreader,serif; font-weight:400; font-size:clamp(20px,2vw,26px); line-height:1.5; letter-spacing:-0.01em; color:#14342C; margin:0 0 clamp(40px,5vw,60px); max-width:680px;">${esc(p.desc)}</p>
+
+        ${featuresSectionHtml}
+        ${applicationsSectionHtml}
+        ${morePhotosHtml}
+      </div>
+
+      <aside style="flex:0 0 auto; width:clamp(300px,32vw,400px);">
+        <div style="border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+          ${specsSectionHtml}
+          <div style="padding:22px 24px;">
+            <p style="font-size:13px; line-height:1.55; color:#14342C99; margin:0 0 16px;">Priced to specification and volume. Request a quote and we'll respond within two business days.</p>
+            <a href="../contact.html#quote" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#6FAF45; color:#14342C; font-weight:600; font-size:15px; padding:14px; border-radius:2px; text-decoration:none;">Request a quote</a>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:11px; margin-top:16px; padding:16px 20px; border:1px solid #14342C18; border-radius:4px; background:#fff;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6FAF45" stroke-width="1.6" style="flex:none;"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"></path><path d="M9 12l2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size:13px; line-height:1.5; color:#14342C99;">Certified to <strong style="color:#14342C;">IS 17088</strong> &amp; <strong style="color:#14342C;">EN 13432</strong>. CPCB-listed compostable.</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+${relatedHtml}
+  <!-- QUOTE CTA -->
+  <section style="background:#6FAF45; color:#14342C; padding:clamp(64px,9vw,128px) clamp(20px,4vw,40px); position:relative; overflow:hidden;">
+    <div style="max-width:820px; margin:0 auto; text-align:center; position:relative;">
+      <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#14342C99; margin-bottom:18px;">Samples &amp; quotes</div>
+      <h2 style="font-family:Newsreader,serif; font-weight:500; font-size:clamp(30px,4.6vw,56px); line-height:1.05; letter-spacing:-0.02em; margin:0 0 22px;">Trial it on your real lines.</h2>
+      <p style="font-size:clamp(16px,1.4vw,19px); line-height:1.55; color:#14342Ccc; max-width:540px; margin:0 auto 34px;">We'll send samples of this format to trial on your packing line, and quote to your sizes and volumes within two business days.</p>
+      <a href="../contact.html#quote" style="display:inline-flex; align-items:center; gap:10px; background:#14342C; color:#F7F4EC; font-weight:600; font-size:16px; padding:17px 32px; border-radius:2px; text-decoration:none;">Request samples &amp; quote <span style="font-size:18px;">→</span></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0c1f19; color:#F7F4EC; padding:clamp(56px,7vw,88px) clamp(20px,4vw,40px) 36px;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div style="display:flex; flex-wrap:wrap; gap:clamp(40px,6vw,72px); justify-content:space-between; padding-bottom:clamp(40px,5vw,60px); border-bottom:1px solid #ffffff14;">
+        <div style="max-width:300px;">
+          <img src="../assets/packinclub-logo.png" alt="PackinClub" style="height:53px; width:auto; display:block; margin-bottom:15px;">
+          <p style="font-size:14.5px; line-height:1.65; color:#F7F4EC99; margin:0 0 22px;">India's pioneering eco-packaging partner, pairing material science with practical business solutions.</p>
+          <div style="display:flex; gap:10px;">
+            <a href="https://www.linkedin.com/company/packin-club-compostable-packaging/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:38px; height:38px; border-radius:8px; background:#ffffff14; display:inline-flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+            <a href="https://www.instagram.com/packinclub/" target="_blank" rel="noopener" aria-label="Instagram" style="width:38px; height:38px; border-radius:8px; background:#ffffff14; display:inline-flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.02-3.58.07-4.85c.15-3.23 1.67-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8.16zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
+            <a href="https://x.com/ClubPackin" target="_blank" rel="noopener" aria-label="Twitter" style="width:38px; height:38px; border-radius:8px; background:#ffffff14; display:inline-flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98A8.521 8.521 0 0 1 2 18.57a12.02 12.02 0 0 0 6.29 1.85c7.55 0 11.69-6.25 11.69-11.69l-.01-.53c.8-.58 1.5-1.3 2.05-2.13z"/></svg></a>
+            <a href="https://www.youtube.com/@packinclub" target="_blank" rel="noopener" aria-label="YouTube" style="width:38px; height:38px; border-radius:8px; background:#ffffff14; display:inline-flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">Explore</div>
+          <div style="display:flex; flex-direction:column; gap:12px; font-size:14.5px;">
+            <a href="../index.html" style="color:#F7F4ECcc; text-decoration:none;">Home</a>
+            <a href="../about.html" style="color:#F7F4ECcc; text-decoration:none;">About</a>
+            <a href="../industries.html" style="color:#F7F4ECcc; text-decoration:none;">Industries</a>
+            <a href="../products.html" style="color:#e97114da; text-decoration:none;">Products</a>
+            <a href="../blog.html" style="color:#F7F4ECcc; text-decoration:none;">Blog</a>
+          </div>
+        </div>
+        <div style="max-width:260px;">
+          <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">Newsletter</div>
+          <p style="font-size:14.5px; line-height:1.6; color:#F7F4ECcc; margin:0 0 16px;">Material science, compliance updates and case studies. Once a month.</p>
+          <div style="display:flex; gap:8px; margin-bottom:16px;">
+            <input type="email" placeholder="you@company.com" style="flex:1; min-width:0; background:#ffffff0d; border:1px solid #ffffff1f; border-radius:2px; padding:11px 14px; color:#F7F4EC; font-family:Inter,sans-serif; font-size:13.5px;">
+            <button type="button" style="background:#6FAF45; border:none; border-radius:2px; width:42px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14342C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span style="font-family:Inter,sans-serif; font-size:11.5px; color:#F7F4ECaa; border:1px solid #ffffff1f; border-radius:999px; padding:5px 12px;">IS 17088</span>
+            <span style="font-family:Inter,sans-serif; font-size:11.5px; color:#F7F4ECaa; border:1px solid #ffffff1f; border-radius:999px; padding:5px 12px;">EN 13432</span>
+            <span style="font-family:Inter,sans-serif; font-size:11.5px; color:#F7F4ECaa; border:1px solid #ffffff1f; border-radius:999px; padding:5px 12px;">CPCB Certified</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">Contact</div>
+          <div style="display:flex; flex-direction:column; gap:12px; font-size:14.5px; color:#F7F4ECcc;">
+            <a href="mailto:info@packinclub.com" style="color:#F7F4ECcc; text-decoration:none;">info@packinclub.com</a>
+            <a href="tel:+918178414360" style="color:#F7F4ECcc; text-decoration:none;">+91 81784 14360</a>
+            <span style="line-height:1.6; max-width:240px;">D-1/64, 21st Century Business Centre, Veer Savarkar Block, Shakarpur, Nirman Vihar, Delhi 110092</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; padding-top:28px; font-size:12.5px; color:#F7F4EC66; font-family:Inter,sans-serif;">
+        <span style="display:flex; gap:16px; align-items:center; flex-wrap:wrap;">© 2026 Packin Club. All rights reserved.<a href="../privacy.html" style="color:#F7F4EC66; text-decoration:none;">Privacy Policy</a><a href="../terms.html" style="color:#F7F4EC66; text-decoration:none;">Terms of Use</a><a href="../cookies.html" style="color:#F7F4EC66; text-decoration:none;">Cookies</a><a href="javascript:void(0)" onclick="window.pcOpenCookieSettings &amp;&amp; window.pcOpenCookieSettings()" style="color:#F7F4EC66; text-decoration:none;">Cookie Settings</a></span>
+        <span style="display:flex; align-items:center; gap:8px;">Your trusted partner for Compostable Solutions.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+  (function(){
+    var header = document.getElementById('pcHeader');
+    window.addEventListener('scroll', function(){
+      var s = window.scrollY > 30;
+      header.style.padding = s ? '12px clamp(20px,4vw,40px)' : '22px clamp(20px,4vw,40px)';
+    }, { passive: true });
+    var burger = document.getElementById('pcBurger');
+    var menu = document.getElementById('pcMobileMenu');
+    if (burger && menu) {
+      burger.addEventListener('click', function(){ menu.classList.toggle('pc-open'); });
+    }
+  })();
+</script>
+</body>
+</html>
+`;
+}
+
+// ---------- 5. Write files ----------
+if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR);
+const written = [];
+PACKIN.products.forEach(p => {
+  const html = renderPage(p);
+  const file = path.join(OUT_DIR, p.slug + '.html');
+  fs.writeFileSync(file, html, 'utf8');
+  written.push(p.slug);
+});
+
+console.log('Generated ' + written.length + ' static product pages in /products/:');
+written.forEach(s => console.log('  - products/' + s + '.html'));

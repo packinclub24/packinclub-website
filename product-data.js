@@ -95,7 +95,7 @@
       name: 'Compostable Carry Bags on Roll', cat: 'ROLL', form: 'roll',
       image: 'product_images/carrybag_onroll.png',
        images: [
-        'product_images/carrybagonroll2.png',
+        'product_images/Carrybagonroll2.png',
         'product_images/carrybagonroll3.png'
       ],
       blurb: 'Perforated carry bags on a roll for fast, fuss-free dispensing at the till.',
@@ -550,7 +550,7 @@
       name: 'Compostable D-Cut Shopping Bags', cat: 'RETAIL', form: 'bag',
       image: 'product_images/Compostable_D-Cut-Shopping-Bags.png',
       images: [
-        'product_images/D-Cut.jpg',
+        'product_images/D-cut.jpg',
         'product_images/D-cut2.jpeg'
       ],
       blurb: 'Premium D-cut shoppers with a clean, brandable finish.',

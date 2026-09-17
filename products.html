@@ -488,7 +488,7 @@ blurb: p.blurb, price: p.price, oldPrice: p.oldPrice, slug: p.slug, image: p.ima
       name: p.name, catShort: p.catShort, blurb: p.blurb,
 icon: this._icon(p.form),
 image: p.image || '',
-href: 'product.html?p=' + p.slug,
+href: 'products/' + p.slug + '.html',
       onSale: !!p.oldPrice,
       priceText: p.price ? ('\u20B9' + p.price) : 'Request pricing',
       priceStyle: p.price
