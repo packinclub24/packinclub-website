@@ -144,15 +144,12 @@ function renderPage(p) {
     brand: { '@type': 'Brand', name: 'Packin Club' },
     category: p.catName,
     url: pageUrl,
-    additionalProperty: JSON.parse('[' + specsForSchema + ']'),
-    offers: {
-      '@type': 'Offer',
-      url: pageUrl,
-      priceCurrency: 'INR',
-      availability: 'https://schema.org/InStock',
-      itemCondition: 'https://schema.org/NewCondition',
-      seller: { '@type': 'Organization', name: 'Packin Club' }
-    }
+    additionalProperty: JSON.parse('[' + specsForSchema + ']')
+    // No "offers" block: pricing is custom-quoted per specification/volume for
+    // this B2B catalog, so there is no real fixed price to declare. Google
+    // requires a "price" field whenever "offers" is present — faking one
+    // would be inaccurate. "offers" is optional for Product schema, so
+    // omitting it keeps this valid without misrepresenting pricing.
   };
 
   const breadcrumbSchema = {
@@ -345,7 +342,7 @@ ${relatedHtml}
             <a href="../index.html" style="color:#F7F4ECcc; text-decoration:none;">Home</a>
             <a href="../about.html" style="color:#F7F4ECcc; text-decoration:none;">About</a>
             <a href="../industries.html" style="color:#F7F4ECcc; text-decoration:none;">Industries</a>
-            <a href="../products.html" style="color:#e97114da; text-decoration:none;">Products</a>
+            <a href="../products.html" style="color:#F7F4ECcc; text-decoration:none;">Products</a>
             <a href="../blog.html" style="color:#F7F4ECcc; text-decoration:none;">Blog</a>
           </div>
         </div>
