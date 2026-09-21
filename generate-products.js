@@ -17,6 +17,9 @@ const sandbox = { window: {}, console };
 vm.createContext(sandbox);
 const dataSrc = fs.readFileSync(path.join(ROOT, 'product-data.js'), 'utf8');
 vm.runInContext(dataSrc, sandbox, { filename: 'product-data.js' });
+const reviewsSrc = fs.readFileSync(path.join(ROOT, 'testimonials-data.js'), 'utf8');
+vm.runInContext(reviewsSrc, sandbox, { filename: 'testimonials-data.js' });
+const ALL_REVIEWS = sandbox.window.PACKIN_REVIEWS || [];
 const PACKIN = sandbox.window.PACKIN;
 if (!PACKIN) throw new Error('Could not load window.PACKIN from product-data.js');
 
@@ -51,6 +54,11 @@ function related(product) {
   const pool = sameCat.length >= 3 ? sameCat : PACKIN.products.filter(p => p.slug !== product.slug);
   return pool.slice(0, 3);
 }
+function reviewsFor(product) {
+  const pinned = ALL_REVIEWS.filter(r => r.forSlug === product.slug);
+  const generic = ALL_REVIEWS.filter(r => !r.forSlug);
+  return pinned.concat(generic).slice(0, 3);
+}
 
 // ---------- 4. Page template ----------
 function renderPage(p) {
@@ -59,6 +67,7 @@ function renderPage(p) {
   const metaDesc = p.blurb || p.desc;
   const imgUrl = absUrl(p.image);
   const rel = related(p);
+  const reviews = reviewsFor(p);
 
   const featuresHtml = (p.features || []).map(f => `
               <div style="display:flex; align-items:flex-start; gap:13px; padding:18px 20px; background:#fff; border:1px solid #14342C14; border-radius:4px;">
@@ -135,6 +144,24 @@ function renderPage(p) {
       </div>
     </section>` : '';
 
+  function stars(n) {
+    return Array.from({ length: 5 }, (_, i) => `<svg width="14" height="14" viewBox="0 0 24 24" style="fill:${i < n ? '#6FAF45' : 'none'}; stroke:#6FAF45; stroke-width:1.4;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`).join('');
+  }
+  const reviewsHtml = reviews.length ? `
+    <section style="background:#F7F4EC; padding:clamp(48px,6vw,84px) clamp(20px,4vw,40px);">
+      <div style="max-width:1280px; margin:0 auto;">
+        <h2 style="font-family:Newsreader,serif; font-weight:500; font-size:clamp(24px,2.8vw,34px); letter-spacing:-0.01em; margin:0 0 28px;">What our clients say</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px;">
+          ${reviews.map(r => `
+          <div style="background:#fff; border:1px solid #14342C18; border-radius:4px; padding:22px 24px; display:flex; flex-direction:column; gap:12px;">
+            <div style="display:flex; gap:2px;">${stars(r.rating)}</div>
+            <p style="font-size:14.5px; line-height:1.6; color:#14342C; margin:0; flex:1;">"${esc(r.text)}"</p>
+            <div style="font-size:13px; color:#14342C99;"><strong style="color:#14342C;">${esc(r.author)}</strong>${r.location ? ' — ' + esc(r.location) : ''}</div>
+          </div>`).join('')}
+        </div>
+      </div>
+    </section>` : '';
+
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -144,13 +171,31 @@ function renderPage(p) {
     brand: { '@type': 'Brand', name: 'Packin Club' },
     category: p.catName,
     url: pageUrl,
-    additionalProperty: JSON.parse('[' + specsForSchema + ']')
+    additionalProperty: JSON.parse('[' + specsForSchema + ']'),
     // No "offers" block: pricing is custom-quoted per specification/volume for
     // this B2B catalog, so there is no real fixed price to declare. Google
     // requires a "price" field whenever "offers" is present — faking one
     // would be inaccurate. "offers" is optional for Product schema, so
     // omitting it keeps this valid without misrepresenting pricing.
+    //
+    // review/aggregateRating below are real customer reviews (originally on
+    // IndiaMART, reuse permission confirmed with each customer) — satisfies
+    // Google's "offers, review, or aggregateRating" requirement honestly.
+    review: reviews.map(r => ({
+      '@type': 'Review',
+      reviewRating: { '@type': 'Rating', ratingValue: String(r.rating), bestRating: '5' },
+      author: { '@type': 'Person', name: r.author },
+      reviewBody: r.text
+    })),
+    aggregateRating: reviews.length ? {
+      '@type': 'AggregateRating',
+      ratingValue: (reviews.reduce((s, r) => s + r.rating, 0) / reviews.length).toFixed(1),
+      reviewCount: String(reviews.length),
+      bestRating: '5'
+    } : undefined
   };
+  if (!productSchema.aggregateRating) delete productSchema.aggregateRating;
+  if (!productSchema.review.length) delete productSchema.review;
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -311,6 +356,7 @@ function renderPage(p) {
       </aside>
     </div>
   </section>
+${reviewsHtml}
 ${relatedHtml}
   <!-- QUOTE CTA -->
   <section style="background:#6FAF45; color:#14342C; padding:clamp(64px,9vw,128px) clamp(20px,4vw,40px); position:relative; overflow:hidden;">
