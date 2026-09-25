@@ -47,7 +47,7 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
 <style>
   @keyframes plStem { from { stroke-dashoffset: 70; } to { stroke-dashoffset: 0; } }
   @keyframes plLeaf { 0% { transform: scale(0) rotate(-12deg); opacity: 0; } 60% { opacity: 1; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
@@ -157,7 +157,26 @@
   </div>  <!-- ✅ closes .pc-mobile-menu -->
 
   <!-- ============ STORY HERO ============ -->
-  <section id="top" style="background:#14342C; color:#F7F4EC; padding:clamp(130px,16vw,190px) clamp(20px,4vw,40px) clamp(64px,8vw,100px); position:relative; overflow:hidden;">
+  <style>
+    .pc-about-hero-bg {
+      background-color: #14342C;
+      background-image:
+        linear-gradient(100deg, rgba(11,28,24,.92) 0%, rgba(11,28,24,.8) 38%, rgba(11,28,24,.55) 62%, rgba(11,28,24,.32) 100%),
+        url('assets/hero-about-desktop.png');
+      background-size: cover;
+      background-position: center 60%;
+      background-repeat: no-repeat;
+    }
+    @media (max-width: 780px) {
+      .pc-about-hero-bg {
+        background-image:
+          linear-gradient(180deg, rgba(11,28,24,.5) 0%, rgba(11,28,24,.88) 58%, rgba(11,28,24,.97) 100%),
+          url('assets/hero-about-mobile.jpg');
+        background-position: 88% bottom;
+      }
+    }
+  </style>
+  <section id="top" class="pc-about-hero-bg" style="color:#F7F4EC; padding:clamp(130px,16vw,190px) clamp(20px,4vw,40px) clamp(64px,8vw,100px); position:relative; overflow:hidden;">
     <div style="position:absolute; inset:0; background-image:radial-gradient(75% 85% at 80% 12%,#6FAF4512,transparent 68%); mask-image:radial-gradient(120% 90% at 80% 10%,#000 30%,transparent 75%); pointer-events:none;"></div>
     <div style="max-width:1280px; margin:0 auto; position:relative; display:flex; flex-wrap:wrap; gap:clamp(32px,5vw,72px); align-items:center;">
       <div style="flex:1 1 520px; min-width:300px;">
@@ -221,17 +240,17 @@ margin:0 0 26px;
         <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#C1622D; margin-bottom:20px;">Two moments</div>
         <div style="display:flex; flex-direction:column; gap:32px;">
           <div style="display:flex; gap:20px;">
-            <div style="flex:none; font-family:Fraunces,serif; font-size:30px; font-weight:500; color:#6FAF45; line-height:1;">01</div>
+            <div style="flex:none; font-family:Bitter,serif; font-size:30px; font-weight:600; color:#6FAF45; line-height:1;">01</div>
             <p style="font-size:16.5px; line-height:1.7; color:#14342Cdd; margin:0;">When India announced its single-use plastic ban, it landed as more than policy for our founder, <strong>Vikas Jha</strong>. Coming from a second-generation plastic-film trading family, he saw the disruption and the opening in the same instant.</p>
           </div>
           <div style="display:flex; gap:20px;">
-            <div style="flex:none; font-family:Fraunces,serif; font-size:30px; font-weight:500; color:#6FAF45; line-height:1;">02</div>
+            <div style="flex:none; font-family:Bitter,serif; font-size:30px; font-weight:600; color:#6FAF45; line-height:1;">02</div>
             <p style="font-size:16.5px; line-height:1.7; color:#14342Cdd; margin:0;">Around the same time, a coffee with a friend visiting from Spain laid bare an uncomfortable truth: many celebrated "eco-friendly" alternatives, paper straws among them, simply fall apart in real-world use. Good intentions weren't enough. The products had to actually work.</p>
           </div>
         </div>
       </div>
       <div data-reveal style="flex:1 1 360px; min-width:280px; display:flex; flex-direction:column; justify-content:center;">
-        <p style="font-family:Fraunces,serif; font-size:clamp(22px,2.8vw,30px); font-weight:500; line-height:1.35; letter-spacing:-0.01em; margin:0; color:#14342C;">Founded in 2024 in Delhi, Packin Club became the answer to that question, a catalyst for businesses ready to lead the shift to a plastic-free future.</p>
+        <p style="font-family:Bitter,serif; font-size:clamp(22px,2.8vw,30px); font-weight:600; line-height:1.35; letter-spacing:-0.01em; margin:0; color:#14342C;">Founded in 2024 in Delhi, Packin Club became the answer to that question, a catalyst for businesses ready to lead the shift to a plastic-free future.</p>
       </div>
     </div>
   </section>
@@ -249,7 +268,7 @@ margin:0 0 26px;
       </div>
       <div data-reveal style="flex:1 1 440px; min-width:300px;">
         <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6FAF45; margin-bottom:22px;">A message from our founder</div>
-        <blockquote style="margin:0; font-family:Fraunces,serif; font-weight:400; font-size:clamp(20px,2.3vw,27px); line-height:1.45; letter-spacing:-0.01em; color:#F7F4EC;">
+        <blockquote style="margin:0; font-family:Bitter,serif; font-weight:400; font-style:italic; font-size:clamp(20px,2.3vw,27px); line-height:1.45; letter-spacing:-0.01em; color:#F7F4EC;">
           "When I started Packin Club, the goal was never only to protect the planet, it was to protect people. Plastic shows up everywhere we look now: in our food, our water, even our bloodstream. I couldn't accept that convenience should cost us our health or the next generation's future.
           <br><br>
           So we set out to make packaging that's safe, strong, and genuinely sustainable, for businesses, for families, and for what comes after us. In the end, this work isn't measured by what we make. It's measured by what we leave behind."
@@ -270,7 +289,7 @@ margin:0 0 26px;
     <div style="max-width:1280px; margin:0 auto;">
       <div data-reveal style="max-width:680px; margin-bottom:clamp(40px,5vw,60px);">
         <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#C1622D; margin-bottom:16px;">Leadership</div>
-        <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(30px,4.4vw,52px); line-height:1.05; letter-spacing:-0.02em; margin:0 0 16px;">The people driving the work.</h2>
+        <h2 style="font-family:Bitter,serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.05; letter-spacing:-0.02em; margin:0 0 16px;">The people driving the work.</h2>
         <p style="font-size:16.5px; line-height:1.6; color:#14342Ccc; margin:0;">Our strength is the range of expertise across the team, from brand and operations to materials engineering.</p>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px;">
@@ -280,7 +299,7 @@ margin:0 0 26px;
   <img src="{{ L.image }}" alt="{{ L.name }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block;" onerror="this.style.display='none';" />
 </div>
             <div style="padding:clamp(24px,2.6vw,32px);">
-              <h3 style="font-family:Fraunces,serif; font-weight:500; font-size:25px; margin:0 0 4px; color:#14342C;">{{ L.name }}</h3>
+              <h3 style="font-family:Bitter,serif; font-weight:600; font-size:25px; margin:0 0 4px; color:#14342C;">{{ L.name }}</h3>
               <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6FAF45; margin-bottom:16px;">{{ L.role }}</div>
               <p style="font-size:14.5px; line-height:1.65; color:#14342C99; margin:0;">{{ L.bio }}</p>
             </div>
@@ -295,12 +314,12 @@ margin:0 0 26px;
     <div style="max-width:1280px; margin:0 auto;">
       <div data-reveal style="max-width:680px; margin-bottom:clamp(40px,5vw,60px);">
         <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6FAF45; margin-bottom:16px;">Our philosophy</div>
-        <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(30px,4.4vw,52px); line-height:1.05; letter-spacing:-0.02em; margin:0;">Impact through innovation.</h2>
+        <h2 style="font-family:Bitter,serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.05; letter-spacing:-0.02em; margin:0;">Impact through innovation.</h2>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1px; background:#ffffff14; border:1px solid #ffffff14;">
         <sc-for list="{{ philosophy }}" as="p" hint-placeholder-count="3">
           <div data-reveal style="background:#14342C; padding:clamp(28px,3vw,40px); min-height:200px; display:flex; flex-direction:column; gap:18px;">
-            <div style="font-family:Fraunces,serif; font-size:28px; font-weight:500; color:#6FAF45; line-height:1;">{{ p.no }}</div>
+            <div style="font-family:Bitter,serif; font-size:28px; font-weight:600; color:#6FAF45; line-height:1;">{{ p.no }}</div>
             <p style="font-size:16px; line-height:1.6; color:#F7F4ECdd; margin:0;">{{ p.text }}</p>
           </div>
         </sc-for>
@@ -313,7 +332,7 @@ margin:0 0 26px;
     <div style="max-width:1080px; margin:0 auto; display:flex; flex-wrap:wrap; gap:clamp(40px,5vw,72px);">
       <div data-reveal style="flex:1 1 420px; min-width:300px;">
         <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#C1622D; margin-bottom:16px;">Our mission</div>
-        <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(28px,3.6vw,46px); line-height:1.12; letter-spacing:-0.02em; margin:0; color:#14342C;">To take single-use plastic out of business and everyday life, through certified compostable packaging that's durable, dependable, and safe for the planet.</h2>
+        <h2 style="font-family:Bitter,serif; font-weight:600; font-size:clamp(28px,3.6vw,46px); line-height:1.12; letter-spacing:-0.02em; margin:0; color:#14342C;">To take single-use plastic out of business and everyday life, through certified compostable packaging that's durable, dependable, and safe for the planet.</h2>
       </div>
       <div data-reveal style="flex:1 1 340px; min-width:280px; display:flex; flex-direction:column; justify-content:center;">
         <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:20px;">
@@ -332,13 +351,13 @@ margin:0 0 26px;
   <section style="background:#0f2820; color:#F7F4EC; padding:clamp(72px,9vw,120px) clamp(20px,4vw,40px);">
     <div style="max-width:1280px; margin:0 auto;">
       <div data-reveal style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:clamp(40px,5vw,60px);">
-        <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(30px,4.4vw,52px); line-height:1.05; letter-spacing:-0.02em; margin:0;">Vision <span style="color:#6FAF45;">2030</span></h2>
+        <h2 style="font-family:Bitter,serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.05; letter-spacing:-0.02em; margin:0;">Vision <span style="color:#6FAF45;">2030</span></h2>
         <p style="font-family:Inter,sans-serif; font-size:12.5px; letter-spacing:0.06em; color:#8C8579; max-width:340px; margin:0;">Where we intend to take compostable packaging this decade.</p>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1px; background:#ffffff14; border:1px solid #ffffff14;">
         <sc-for list="{{ vision }}" as="v" hint-placeholder-count="4">
           <div data-reveal style="background:#0f2820; padding:clamp(28px,3vw,40px); min-height:220px; display:flex; flex-direction:column; gap:20px;">
-            <div style="font-family:Fraunces,serif; font-size:46px; font-weight:500; color:#6FAF4566; line-height:1;">{{ v.no }}</div>
+            <div style="font-family:Bitter,serif; font-size:46px; font-weight:600; color:#6FAF4566; line-height:1;">{{ v.no }}</div>
             <p style="font-size:16px; line-height:1.55; color:#F7F4ECdd; margin:0;">{{ v.text }}</p>
           </div>
         </sc-for>
@@ -351,15 +370,15 @@ margin:0 0 26px;
     <div style="max-width:1280px; margin:0 auto;">
       <div data-reveal style="max-width:720px; margin-bottom:clamp(40px,5vw,60px);">
         <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#C1622D; margin-bottom:16px;">Our impact</div>
-        <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(30px,4.4vw,52px); line-height:1.05; letter-spacing:-0.02em; margin:0 0 16px;">The first year, in numbers.</h2>
+        <h2 style="font-family:Bitter,serif; font-weight:600; font-size:clamp(30px,4.4vw,52px); line-height:1.05; letter-spacing:-0.02em; margin:0 0 16px;">The first year, in numbers.</h2>
         <p style="font-size:16.5px; line-height:1.6; color:#14342Ccc; margin:0;">We keep our clients' details in confidence, so we'll let the work speak. These figures reflect our progress to date, and they're still climbing.</p>
       </div>
       <div ref="{{ countersRef }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px; background:#14342C18; border:1px solid #14342C18;">
         <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="4">
           <div style="background:#F7F4EC; padding:clamp(30px,3.4vw,46px) clamp(24px,2.6vw,36px);">
             <div style="display:flex; align-items:baseline; gap:4px;">
-              <span data-count="{{ m.value }}" style="font-family:Fraunces,serif; font-size:clamp(40px,5vw,62px); font-weight:500; color:#14342C; line-height:1;">0</span>
-              <span style="font-family:Fraunces,serif; font-size:clamp(28px,3.4vw,42px); font-weight:500; color:#6FAF45; line-height:1;">{{ m.suffix }}</span>
+              <span data-count="{{ m.value }}" style="font-family:Bitter,serif; font-size:clamp(40px,5vw,62px); font-weight:600; color:#14342C; line-height:1;">0</span>
+              <span style="font-family:Bitter,serif; font-size:clamp(28px,3.4vw,42px); font-weight:600; color:#6FAF45; line-height:1;">{{ m.suffix }}</span>
             </div>
             <div style="font-weight:600; font-size:15.5px; margin:16px 0 6px; color:#14342C;">{{ m.label }}</div>
             <div style="font-size:13.5px; line-height:1.55; color:#14342C99;">{{ m.note }}</div>
@@ -374,7 +393,7 @@ margin:0 0 26px;
     <div style="position:absolute; inset:0; background-image:radial-gradient(80% 80% at 50% 0%,#14342C14,transparent 72%); mask-image:radial-gradient(100% 100% at 50% 0%,#000,transparent 75%);"></div>
     <div data-reveal style="max-width:860px; margin:0 auto; text-align:center; position:relative;">
       <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#14342C99; margin-bottom:20px;">Join our journey</div>
-      <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(32px,5vw,64px); line-height:1.04; letter-spacing:-0.02em; margin:0 0 24px;">There's room for you in this story.</h2>
+      <h2 style="font-family:Bitter,serif; font-weight:600; font-size:clamp(32px,5vw,64px); line-height:1.04; letter-spacing:-0.02em; margin:0 0 24px;">There's room for you in this story.</h2>
       <p style="font-size:clamp(16px,1.5vw,20px); line-height:1.55; color:#14342Ccc; max-width:560px; margin:0 auto 38px;">Whether you're a business searching for packaging you can stand behind, or simply someone who wants less plastic in the world, let's build the change together.</p>
       <a href="contact.html" onMouseMove="{{ magnetMove }}" onMouseLeave="{{ magnetLeave }}" style="display:inline-flex; align-items:center; gap:10px; background:#14342C; color:#F7F4EC; font-weight:600; font-size:16px; padding:18px 34px; border-radius:2px; text-decoration:none; transition:transform .18s ease-out; will-change:transform;">
         Let's create sustainable change together
