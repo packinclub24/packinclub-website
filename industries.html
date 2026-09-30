@@ -225,12 +225,18 @@ margin:0;
   From e-commerce mailers to farm mulch film, we supply certified compostable packaging matched to the realities of your industry, strength, food-safety, cold chains and the last mile included.
 </p>
       <div style="display:flex; flex-wrap:wrap; gap:clamp(28px,4vw,56px); margin-top:clamp(36px,4vw,52px);">
-        <sc-for list="{{ heroStats }}" as="s" hint-placeholder-count="3">
-          <div>
-            <div style="font-family:Bitter,serif; font-size:clamp(30px,3.6vw,42px); font-weight:600; color:#6FAF45; line-height:1;">{{ s.value }}</div>
-            <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC99; margin-top:8px;">{{ s.label }}</div>
-          </div>
-        </sc-for>
+                <div>
+          <div style="font-family:Bitter,serif; font-size:clamp(30px,3.6vw,42px); font-weight:600; color:#6FAF45; line-height:1;">9+</div>
+          <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC99; margin-top:8px;">Industries served</div>
+        </div>
+        <div>
+          <div style="font-family:Bitter,serif; font-size:clamp(30px,3.6vw,42px); font-weight:600; color:#6FAF45; line-height:1;">24</div>
+          <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC99; margin-top:8px;">Certified formats</div>
+        </div>
+        <div>
+          <div style="font-family:Bitter,serif; font-size:clamp(30px,3.6vw,42px); font-weight:600; color:#6FAF45; line-height:1;">240 days</div>
+          <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC99; margin-top:8px;">Returns to soil</div>
+        </div>
       </div>
     </div>
   </section>
@@ -239,29 +245,192 @@ margin:0;
   <section style="background:#F7F4EC; padding:clamp(56px,7vw,96px) clamp(20px,4vw,40px) clamp(40px,5vw,64px);">
     <div style="max-width:1280px; margin:0 auto;">
       <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:18px;">
-        <sc-for list="{{ industries }}" as="ind" hint-placeholder-count="9">
-          <div data-reveal class="pc-card" style="display:flex; flex-direction:column; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
-            <div style="display:flex; align-items:center; gap:16px; padding:24px 26px 20px; border-bottom:1px solid #14342C12;">
-              <div style="flex:none; width:52px; height:52px; border-radius:5px; background:#14342C; display:flex; align-items:center; justify-content:center;">
-                <div class="pc-thumb" style="width:26px; height:26px; color:#6FAF45;">{{ ind.icon }}</div>
-              </div>
-              <div>
-                <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.12em; color:#8C8579;">{{ ind.no }}</div>
-                <h2 style="font-family:Bitter,serif; font-weight:600; font-size:21px; line-height:1.15; margin:2px 0 0; color:#14342C;">{{ ind.name }}</h2>
-              </div>
+                <div data-reveal class="pc-card" style="display:flex; flex-direction:column; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+          <div style="display:flex; align-items:center; gap:16px; padding:24px 26px 20px; border-bottom:1px solid #14342C12;">
+            <div style="flex:none; width:52px; height:52px; border-radius:5px; background:#14342C; display:flex; align-items:center; justify-content:center;">
+              <div class="pc-thumb" style="width:26px; height:26px; color:#6FAF45;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M3 4h2l2.2 11.2a1 1 0 001 .8h8.4a1 1 0 001-.8L20 7H6"/></svg></div>
             </div>
-            <div style="padding:22px 26px 26px; display:flex; flex-direction:column; flex:1;">
-              <p style="font-size:14.5px; line-height:1.6; color:#14342C99; margin:0 0 18px;">{{ ind.body }}</p>
-              <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8C8579; margin-bottom:12px;">Typical formats</div>
-              <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:22px;">
-                <sc-for list="{{ ind.formats }}" as="fmt" hint-placeholder-count="3">
-                  <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">{{ fmt }}</span>
-                </sc-for>
-              </div>
-              <a href="{{ ind.href }}" style="margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600; color:#3f7a26; text-decoration:none;">{{ ind.cta }} <span class="pc-arrow">→</span></a>
+            <div>
+              <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.12em; color:#8C8579;">01</div>
+              <h2 style="font-family:Bitter,serif; font-weight:600; font-size:21px; line-height:1.15; margin:2px 0 0; color:#14342C;">E-commerce &amp; D2C</h2>
             </div>
           </div>
-        </sc-for>
+          <div style="padding:22px 26px 26px; display:flex; flex-direction:column; flex:1;">
+            <p style="font-size:14.5px; line-height:1.6; color:#14342C99; margin:0 0 18px;">The mailer is the first thing your customer touches, make it a brand moment, not a plastic apology. Tamper-evident, water-resistant compostable mailers built for the courier network.</p>
+            <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8C8579; margin-bottom:12px;">Typical formats</div>
+            <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:22px;">
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Courier bags / mailers</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Carry bags</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Loop handle bags</span>
+            </div>
+            <a href="products.html" style="margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600; color:#3f7a26; text-decoration:none;">See e-commerce range <span class="pc-arrow">→</span></a>
+          </div>
+        </div>
+        <div data-reveal class="pc-card" style="display:flex; flex-direction:column; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+          <div style="display:flex; align-items:center; gap:16px; padding:24px 26px 20px; border-bottom:1px solid #14342C12;">
+            <div style="flex:none; width:52px; height:52px; border-radius:5px; background:#14342C; display:flex; align-items:center; justify-content:center;">
+              <div class="pc-thumb" style="width:26px; height:26px; color:#6FAF45;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M6 8h12l-1.2 12.2a1 1 0 01-1 .8H8.2a1 1 0 01-1-.8L6 8z"/><path d="M5.4 8h13.2"/><path d="M14 4c0 1.2-1 1.6-1 2.8"/></svg></div>
+            </div>
+            <div>
+              <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.12em; color:#8C8579;">02</div>
+              <h2 style="font-family:Bitter,serif; font-weight:600; font-size:21px; line-height:1.15; margin:2px 0 0; color:#14342C;">Food Service &amp; HORECA</h2>
+            </div>
+          </div>
+          <div style="padding:22px 26px 26px; display:flex; flex-direction:column; flex:1;">
+            <p style="font-size:14.5px; line-height:1.6; color:#14342C99; margin:0 0 18px;">Hot, cold, greasy or saucy, formats engineered to perform under real service conditions, then compost cleanly with the food waste.</p>
+            <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8C8579; margin-bottom:12px;">Typical formats</div>
+            <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:22px;">
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">PLA paper cups</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Tiffin sheets</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Bamboo tissue</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Cling film</span>
+            </div>
+            <a href="products.html" style="margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600; color:#3f7a26; text-decoration:none;">See HORECA range <span class="pc-arrow">→</span></a>
+          </div>
+        </div>
+        <div data-reveal class="pc-card" style="display:flex; flex-direction:column; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+          <div style="display:flex; align-items:center; gap:16px; padding:24px 26px 20px; border-bottom:1px solid #14342C12;">
+            <div style="flex:none; width:52px; height:52px; border-radius:5px; background:#14342C; display:flex; align-items:center; justify-content:center;">
+              <div class="pc-thumb" style="width:26px; height:26px; color:#6FAF45;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17l4-8h5l3 8M10 9l-1-3H7"/></svg></div>
+            </div>
+            <div>
+              <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.12em; color:#8C8579;">03</div>
+              <h2 style="font-family:Bitter,serif; font-weight:600; font-size:21px; line-height:1.15; margin:2px 0 0; color:#14342C;">Cloud Kitchens &amp; Delivery</h2>
+            </div>
+          </div>
+          <div style="padding:22px 26px 26px; display:flex; flex-direction:column; flex:1;">
+            <p style="font-size:14.5px; line-height:1.6; color:#14342C99; margin:0 0 18px;">The last mile is unforgiving. Leak-proof, heat-tolerant pouches and sealed containers that protect the food and the brand all the way to the door.</p>
+            <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8C8579; margin-bottom:12px;">Typical formats</div>
+            <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:22px;">
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Hot liquid pouches</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Bread pouch</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Tiffin sheets</span>
+            </div>
+            <a href="products.html" style="margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600; color:#3f7a26; text-decoration:none;">See delivery range <span class="pc-arrow">→</span></a>
+          </div>
+        </div>
+        <div data-reveal class="pc-card" style="display:flex; flex-direction:column; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+          <div style="display:flex; align-items:center; gap:16px; padding:24px 26px 20px; border-bottom:1px solid #14342C12;">
+            <div style="flex:none; width:52px; height:52px; border-radius:5px; background:#14342C; display:flex; align-items:center; justify-content:center;">
+              <div class="pc-thumb" style="width:26px; height:26px; color:#6FAF45;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M3 12l8-8h7a2 2 0 012 2v7l-8 8a2 2 0 01-2.8 0L3 14.8A2 2 0 013 12z"/><circle cx="15" cy="9" r="1.3"/></svg></div>
+            </div>
+            <div>
+              <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.12em; color:#8C8579;">04</div>
+              <h2 style="font-family:Bitter,serif; font-weight:600; font-size:21px; line-height:1.15; margin:2px 0 0; color:#14342C;">Retail &amp; Fashion</h2>
+            </div>
+          </div>
+          <div style="padding:22px 26px 26px; display:flex; flex-direction:column; flex:1;">
+            <p style="font-size:14.5px; line-height:1.6; color:#14342C99; margin:0 0 18px;">Premium carry bags that feel closer to fabric than film, with the print surface to carry your brand home, fully ban-compliant.</p>
+            <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8C8579; margin-bottom:12px;">Typical formats</div>
+            <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:22px;">
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">D-cut shopping bags</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">W/U-cut carry bags</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Garment bags</span>
+            </div>
+            <a href="products.html" style="margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600; color:#3f7a26; text-decoration:none;">See retail range <span class="pc-arrow">→</span></a>
+          </div>
+        </div>
+        <div data-reveal class="pc-card" style="display:flex; flex-direction:column; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+          <div style="display:flex; align-items:center; gap:16px; padding:24px 26px 20px; border-bottom:1px solid #14342C12;">
+            <div style="flex:none; width:52px; height:52px; border-radius:5px; background:#14342C; display:flex; align-items:center; justify-content:center;">
+              <div class="pc-thumb" style="width:26px; height:26px; color:#6FAF45;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M4 9h16l-1.4 10.2a1 1 0 01-1 .8H6.4a1 1 0 01-1-.8L4 9z"/><path d="M8 9l2-5M16 9l-2-5M3 9h18"/></svg></div>
+            </div>
+            <div>
+              <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.12em; color:#8C8579;">05</div>
+              <h2 style="font-family:Bitter,serif; font-weight:600; font-size:21px; line-height:1.15; margin:2px 0 0; color:#14342C;">Grocery &amp; Supermarkets</h2>
+            </div>
+          </div>
+          <div style="padding:22px 26px 26px; display:flex; flex-direction:column; flex:1;">
+            <p style="font-size:14.5px; line-height:1.6; color:#14342C99; margin:0 0 18px;">Dependable carriers and produce bags sized for a real weekly shop, plus tear-off bags on a roll for fast, compliant dispensing at the till.</p>
+            <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8C8579; margin-bottom:12px;">Typical formats</div>
+            <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:22px;">
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Grocery bags</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Carry bags on roll</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Grocery bags on roll</span>
+            </div>
+            <a href="products.html" style="margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600; color:#3f7a26; text-decoration:none;">See grocery range <span class="pc-arrow">→</span></a>
+          </div>
+        </div>
+        <div data-reveal class="pc-card" style="display:flex; flex-direction:column; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+          <div style="display:flex; align-items:center; gap:16px; padding:24px 26px 20px; border-bottom:1px solid #14342C12;">
+            <div style="flex:none; width:52px; height:52px; border-radius:5px; background:#14342C; display:flex; align-items:center; justify-content:center;">
+              <div class="pc-thumb" style="width:26px; height:26px; color:#6FAF45;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M5 19c0-8 6-13 14-13 0 8-6 13-14 13z"/><path d="M5 19c3-5 7-8 11-9"/></svg></div>
+            </div>
+            <div>
+              <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.12em; color:#8C8579;">06</div>
+              <h2 style="font-family:Bitter,serif; font-weight:600; font-size:21px; line-height:1.15; margin:2px 0 0; color:#14342C;">Agriculture &amp; Nursery</h2>
+            </div>
+          </div>
+          <div style="padding:22px 26px 26px; display:flex; flex-direction:column; flex:1;">
+            <p style="font-size:14.5px; line-height:1.6; color:#14342C99; margin:0 0 18px;">Mulch film that tills back into the soil and grow-bags you plant whole, the agronomic gains of plastic, without the microplastic that stays behind.</p>
+            <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8C8579; margin-bottom:12px;">Typical formats</div>
+            <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:22px;">
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Agri mulch film</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Nursery bags</span>
+            </div>
+            <a href="products.html" style="margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600; color:#3f7a26; text-decoration:none;">See agriculture range <span class="pc-arrow">→</span></a>
+          </div>
+        </div>
+        <div data-reveal class="pc-card" style="display:flex; flex-direction:column; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+          <div style="display:flex; align-items:center; gap:16px; padding:24px 26px 20px; border-bottom:1px solid #14342C12;">
+            <div style="flex:none; width:52px; height:52px; border-radius:5px; background:#14342C; display:flex; align-items:center; justify-content:center;">
+              <div class="pc-thumb" style="width:26px; height:26px; color:#6FAF45;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M4 8a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M12 9.5v5M9.5 12h5" stroke-width="2"/></svg></div>
+            </div>
+            <div>
+              <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.12em; color:#8C8579;">07</div>
+              <h2 style="font-family:Bitter,serif; font-weight:600; font-size:21px; line-height:1.15; margin:2px 0 0; color:#14342C;">Healthcare &amp; Hospitals</h2>
+            </div>
+          </div>
+          <div style="padding:22px 26px 26px; display:flex; flex-direction:column; flex:1;">
+            <p style="font-size:14.5px; line-height:1.6; color:#14342C99; margin:0 0 18px;">Colour-coded, high-strength bags for the safe segregation of non-hazardous clinical waste, a compostable alternative that lightens the plastic load.</p>
+            <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8C8579; margin-bottom:12px;">Typical formats</div>
+            <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:22px;">
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Medical waste bags</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Garbage bags</span>
+            </div>
+            <a href="products.html" style="margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600; color:#3f7a26; text-decoration:none;">See healthcare range <span class="pc-arrow">→</span></a>
+          </div>
+        </div>
+        <div data-reveal class="pc-card" style="display:flex; flex-direction:column; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+          <div style="display:flex; align-items:center; gap:16px; padding:24px 26px 20px; border-bottom:1px solid #14342C12;">
+            <div style="flex:none; width:52px; height:52px; border-radius:5px; background:#14342C; display:flex; align-items:center; justify-content:center;">
+              <div class="pc-thumb" style="width:26px; height:26px; color:#6FAF45;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg></div>
+            </div>
+            <div>
+              <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.12em; color:#8C8579;">08</div>
+              <h2 style="font-family:Bitter,serif; font-weight:600; font-size:21px; line-height:1.15; margin:2px 0 0; color:#14342C;">Industrial &amp; Logistics</h2>
+            </div>
+          </div>
+          <div style="padding:22px 26px 26px; display:flex; flex-direction:column; flex:1;">
+            <p style="font-size:14.5px; line-height:1.6; color:#14342C99; margin:0 0 18px;">Stretch and shrink films, protective wraps and heavy-duty liners that hold the load through warehousing and transit, then compost at end of life.</p>
+            <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8C8579; margin-bottom:12px;">Typical formats</div>
+            <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:22px;">
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Stretch film</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Shrink film</span>
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Wire packaging wrap</span>
+            </div>
+            <a href="products.html" style="margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600; color:#3f7a26; text-decoration:none;">See industrial range <span class="pc-arrow">→</span></a>
+          </div>
+        </div>
+        <div data-reveal class="pc-card" style="display:flex; flex-direction:column; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+          <div style="display:flex; align-items:center; gap:16px; padding:24px 26px 20px; border-bottom:1px solid #14342C12;">
+            <div style="flex:none; width:52px; height:52px; border-radius:5px; background:#14342C; display:flex; align-items:center; justify-content:center;">
+              <div class="pc-thumb" style="width:26px; height:26px; color:#6FAF45;"><svg viewBox="0 0 24 24" aria-hidden="true" style="width:100%; height:100%; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round;"><path d="M12 3c1 4 5 5 5 9a5 5 0 01-10 0c0-2 1-3 2-4 .5 1.5 1.5 2 2 2 .5-2-1-5 1-7z"/></svg></div>
+            </div>
+            <div>
+              <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.12em; color:#8C8579;">09</div>
+              <h2 style="font-family:Bitter,serif; font-weight:600; font-size:21px; line-height:1.15; margin:2px 0 0; color:#14342C;">Temple &amp; Religious</h2>
+            </div>
+          </div>
+          <div style="padding:22px 26px 26px; display:flex; flex-direction:column; flex:1;">
+            <p style="font-size:14.5px; line-height:1.6; color:#14342C99; margin:0 0 18px;">Food-safe pouches for prasadam and offerings, keeping high-footfall festivals and daily darshan free of single-use plastic, with room for your branding.</p>
+            <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#8C8579; margin-bottom:12px;">Typical formats</div>
+            <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:22px;">
+              <span style="font-size:12px; color:#14342C; background:#F2F6EC; border:1px solid #6FAF4533; border-radius:2px; padding:5px 10px;">Prasadam pouches</span>
+            </div>
+            <a href="products.html" style="margin-top:auto; display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:600; color:#3f7a26; text-decoration:none;">See temple range <span class="pc-arrow">→</span></a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -274,13 +443,26 @@ margin:0;
         <h2 style="font-family:Bitter,serif; font-weight:600; font-size:clamp(28px,4vw,46px); line-height:1.06; letter-spacing:-0.02em; margin:0;">From audit to first delivery, without the disruption.</h2>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1px; background:#ffffff14; border:1px solid #ffffff14;">
-        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
-          <div data-reveal style="background:#0f2820; padding:clamp(28px,3vw,40px); min-height:220px; display:flex; flex-direction:column; gap:16px;">
-            <div style="font-family:Bitter,serif; font-size:42px; font-weight:600; color:#6FAF4566; line-height:1;">{{ st.no }}</div>
-            <div style="font-weight:600; font-size:17px; color:#F7F4EC;">{{ st.title }}</div>
-            <p style="font-size:14.5px; line-height:1.6; color:#F7F4ECcc; margin:0;">{{ st.body }}</p>
-          </div>
-        </sc-for>
+                <div data-reveal style="background:#0f2820; padding:clamp(28px,3vw,40px); min-height:220px; display:flex; flex-direction:column; gap:16px;">
+          <div style="font-family:Bitter,serif; font-size:42px; font-weight:600; color:#6FAF4566; line-height:1;">1</div>
+          <div style="font-weight:600; font-size:17px; color:#F7F4EC;">Audit</div>
+          <p style="font-size:14.5px; line-height:1.6; color:#F7F4ECcc; margin:0;">We map every plastic SKU on your line, by size, volume and function, so nothing gets missed.</p>
+        </div>
+        <div data-reveal style="background:#0f2820; padding:clamp(28px,3vw,40px); min-height:220px; display:flex; flex-direction:column; gap:16px;">
+          <div style="font-family:Bitter,serif; font-size:42px; font-weight:600; color:#6FAF4566; line-height:1;">2</div>
+          <div style="font-weight:600; font-size:17px; color:#F7F4EC;">Match</div>
+          <p style="font-size:14.5px; line-height:1.6; color:#F7F4ECcc; margin:0;">Each item is paired to a certified compostable format, or tooled to your exact spec where needed.</p>
+        </div>
+        <div data-reveal style="background:#0f2820; padding:clamp(28px,3vw,40px); min-height:220px; display:flex; flex-direction:column; gap:16px;">
+          <div style="font-family:Bitter,serif; font-size:42px; font-weight:600; color:#6FAF4566; line-height:1;">3</div>
+          <div style="font-weight:600; font-size:17px; color:#F7F4EC;">Trial</div>
+          <p style="font-size:14.5px; line-height:1.6; color:#F7F4ECcc; margin:0;">Samples go out for you to test on your real packing lines before any commitment.</p>
+        </div>
+        <div data-reveal style="background:#0f2820; padding:clamp(28px,3vw,40px); min-height:220px; display:flex; flex-direction:column; gap:16px;">
+          <div style="font-family:Bitter,serif; font-size:42px; font-weight:600; color:#6FAF4566; line-height:1;">4</div>
+          <div style="font-weight:600; font-size:17px; color:#F7F4EC;">Supply</div>
+          <p style="font-size:14.5px; line-height:1.6; color:#F7F4ECcc; margin:0;">We quote to your sizes and volumes and deliver on a schedule that keeps your operation running.</p>
+        </div>
       </div>
     </div>
   </section>

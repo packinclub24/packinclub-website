@@ -245,43 +245,179 @@ max-width:840px;
 
       <!-- filter chips -->
       <div style="display:flex; flex-wrap:wrap; gap:9px; margin-bottom:clamp(32px,4vw,48px); padding-bottom:clamp(28px,3vw,40px); border-bottom:1px solid #14342C18;">
-        <sc-for list="{{ chips }}" as="c" hint-placeholder-count="9">
-          <button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button>
-        </sc-for>
+                <button type="button" data-chip="All" style="cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:600; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C; background:#14342C; color:#F7F4EC;">All</button>
+        <button type="button" data-chip="Guides" style="cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:500; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C26; background:transparent; color:#14342Ccc;">Guides</button>
+        <button type="button" data-chip="Sustainability" style="cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:500; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C26; background:transparent; color:#14342Ccc;">Sustainability</button>
+        <button type="button" data-chip="Compliance" style="cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:500; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C26; background:transparent; color:#14342Ccc;">Compliance</button>
+        <button type="button" data-chip="Certification" style="cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:500; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C26; background:transparent; color:#14342Ccc;">Certification</button>
+        <button type="button" data-chip="E-commerce" style="cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:500; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C26; background:transparent; color:#14342Ccc;">E-commerce</button>
+        <button type="button" data-chip="Food Service" style="cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:500; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C26; background:transparent; color:#14342Ccc;">Food Service</button>
+        <button type="button" data-chip="Business" style="cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:500; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C26; background:transparent; color:#14342Ccc;">Business</button>
+        <button type="button" data-chip="Agriculture" style="cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:500; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C26; background:transparent; color:#14342Ccc;">Agriculture</button>
       </div>
 
       <!-- featured (only on All, no filter) -->
-      <sc-if value="{{ showFeatured }}" hint-placeholder-val="{{ true }}">
-        <a href="{{ featured.href }}" data-reveal class="pc-card" style="display:flex; flex-wrap:wrap; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff; margin-bottom:clamp(32px,4vw,48px);">
-          <div style="flex:1 1 360px; min-width:280px; min-height:280px; position:relative; {{ featured.thumbStyle }} display:flex; align-items:flex-end; padding:clamp(24px,3vw,40px);">
-  <div style="position:relative;">
-    <span style="font-family:Inter,sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:5px 10px; border-radius:2px;">Featured · {{ featured.cat }}</span>
-  </div>
-</div>
+            <div data-featured-wrap>
+        <a href="what-is-compostable-packaging.html" data-reveal class="pc-card" style="display:flex; flex-wrap:wrap; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff; margin-bottom:clamp(32px,4vw,48px);">
+          <div style="flex:1 1 360px; min-width:280px; min-height:280px; position:relative; background-color:#0f2820; background-image:url('thumbnail_blog/what_is_compostable_packaging.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:clamp(24px,3vw,40px);">
+            <div style="position:relative;">
+              <span style="font-family:Inter,sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:5px 10px; border-radius:2px;">Featured · Sustainability</span>
+            </div>
+          </div>
           <div style="flex:1 1 420px; min-width:300px; padding:clamp(28px,3.4vw,52px); display:flex; flex-direction:column; justify-content:center;">
-            <div style="font-family:Inter,sans-serif; font-size:11.5px; color:#8C8579; margin-bottom:14px;">{{ featured.dateLabel }} · {{ featured.readLabel }}</div>
-            <h2 style="font-family: 'Newsreader', serif; font-weight:500; font-size:clamp(24px,2.8vw,36px); line-height:1.12; letter-spacing:-0.01em; margin:0 0 16px; color:#14342C;">{{ featured.title }}</h2>
-            <p style="font-size:15.5px; line-height:1.6; color:#14342C99; margin:0 0 22px; max-width:520px;">{{ featured.excerpt }}</p>
+            <div style="font-family:Inter,sans-serif; font-size:11.5px; color:#8C8579; margin-bottom:14px;">4 Sept 2026 · 10 min read</div>
+            <h2 style="font-family: 'Newsreader', serif; font-weight:500; font-size:clamp(24px,2.8vw,36px); line-height:1.12; letter-spacing:-0.01em; margin:0 0 16px; color:#14342C;">What Is Compostable Packaging? A Complete Guide</h2>
+            <p style="font-size:15.5px; line-height:1.6; color:#14342C99; margin:0 0 22px; max-width:520px;">A clear, no-jargon breakdown of what compostable packaging actually is, how it’s made, and how it differs from biodegradable alternatives.</p>
             <span style="font-size:14px; font-weight:600; color:#3f7a26;">Read the guide <span class="pc-arrow">→</span></span>
           </div>
         </a>
-      </sc-if>
+      </div>
 
       <!-- grid -->
       <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px;">
-        <sc-for list="{{ posts }}" as="p" hint-placeholder-count="9">
-          <a href="{{ p.href }}" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
-            <div style="height:150px; position:relative; {{ p.thumbStyle }} display:flex; align-items:flex-end; padding:18px;">
-  <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">{{ p.cat }}</span>
-</div>
-            <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
-              <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">{{ p.dateLabel }} · {{ p.readLabel }}</div>
-              <h3 style="font-family: 'Newsreader', serif;; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">{{ p.title }}</h3>
-              <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">{{ p.excerpt }}</p>
-              <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
-            </div>
-          </a>
-        </sc-for>
+                <a href="what-is-compostable-packaging.html" data-post-cat="Sustainability" data-dup="1" data-reveal class="pc-card" style="display:none; display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#0f2820; background-image:url('thumbnail_blog/what_is_compostable_packaging.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">Sustainability</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">4 Sept 2026 · 10 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">What Is Compostable Packaging? A Complete Guide</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">A clear, no-jargon breakdown of what compostable packaging actually is, how it’s made, and how it differs from biodegradable alternatives.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="are-compostable-bags-really-eco-friendly-an-honest-look.html" data-post-cat="Sustainability" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#0f2820; background-image:url('thumbnail_blog/AnHonestLook.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">Sustainability</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">24 Jul 2025 · 11 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">Are Compostable Bags Really Eco-Friendly? An Honest Look</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">Compostable packaging solves plastic persistence, but not every environmental question. An honest look at feedstock, infrastructure, and footprint tradeoffs.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="how-to-spot-greenwashing-in-eco-friendly-packaging.html" data-post-cat="Sustainability" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#0f2820; background-image:url('thumbnail_blog/Eco-FriendlyPackaging.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">Sustainability</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">10 Jul 2025 · 12 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">How to Spot Greenwashing in Eco-Friendly Packaging: A Buyer's Verification Framework</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">Every packaging supplier says biodegradable, eco-friendly, sustainable, compostable, green. They don't mean the same thing. Here's how to verify the claim before you sign the PO.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="compostable-mulch-film-a-practical-guide-for-indian-farmers.html" data-post-cat="Agriculture" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#0f2820; background-image:url('thumbnail_blog/Compostable_mulch_film.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">Agriculture</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">23 Jun 2025 · 12 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">Compostable Mulch Film: A Practical Guide for Indian Farmers</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">How compostable mulch film performs in the field, what it costs versus plastic mulch, and what to verify before buying for your crop and region.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="how-long-does-compostable-packaging-take-to-decompose.html" data-post-cat="Guides" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#14342C; background-image:url('thumbnail_blog/decompose-packaging.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">Guides</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">16 Jun 2025 · 12 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">How Long Does Compostable Packaging Take to Decompose?</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">How long does compostable packaging actually take to break down? Here are the real IS 17088 timeframes by material, and why real-world results vary.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="home-composting-vs-industrial-composting-what-you-need-to-know.html" data-post-cat="Guides" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#14342C; background-image:url('thumbnail_blog/Home-Composting-vs-Industrial-Composting.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">Guides</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">9 Jun 2025 · 6 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">Home Composting vs Industrial Composting: What You Need to Know</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">“Compostable” sounds like a single promise. In practice it splits into two very different disposal pathways — home composting and industrial composting — and a product certified for one isn’t automatically suited to the other.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="the-true-cost-of-switching-to-compostable-packaging.html" data-post-cat="Business" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#14342C; background-image:url('thumbnail_blog/True-Cost-of-Switching-to-Compostable-Packaging.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">Business</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">26 May 2025 · 12 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">The True Cost of Switching to Compostable Packaging</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">A per-unit price comparison misses the real cost of switching to compostable packaging. Compliance, damage, and brand costs, weighed against material cost.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="aqueous-coated-paper-cups-are-they-actually-compostable.html" data-post-cat="Food Service" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#3d2b16; background-image:url('thumbnail_blog/Aqueous-Coated-Paper-Cups.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">Food Service</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">12 May 2025 · 10 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">Aqueous Coated Paper Cups: Are They Actually Compostable?</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">A cup that looks like plain paper can still contain plastic. Here’s how aqueous coating differs from PE and PLA linings, and how to verify whether a paper cup is genuinely compostable.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="compostable-packaging-for-restaurants-and-cloud-kitchens.html" data-post-cat="Food Service" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#3d2b16; background-image:url('thumbnail_blog/Compostable-Packaging-for-Restaurants.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">Food Service</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">28 Apr 2025 · 12 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">Compostable Packaging for Restaurants &amp; Cloud Kitchens</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">What to test before switching to compostable food packaging — grease resistance, heat retention, leak-proofing, and matching material to your menu.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="compostable-courier-bags-for-e-commerce-the-complete-guide.html" data-post-cat="E-commerce" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#0f2820; background-image:url('thumbnail_blog/compostable-courier-bags.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">E-commerce</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">31 Mar 2025 · 8 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">Compostable Courier Bags for E-Commerce: The Complete Guide</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">What to evaluate before switching to compostable courier bags — tear strength, seal integrity, certification, and how they compare to conventional poly mailers.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="what-is-is-17088-compostable-plastic-certification-explained.html" data-post-cat="Certification" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#14342C; background-image:url('thumbnail_blog/IS17088_homepage.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">Certification</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">17 Mar 2025 · 12 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">What Is IS 17088? Compostable Plastic Certification Explained</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">What IS 17088 compostable plastic certification actually tests, how CPCB registration works, and how to verify a supplier’s certificate before you buy.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="india-s-single-use-plastic-ban-a-practical-compliance-guide-for-businesses.html" data-post-cat="Compliance" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#3d2b16; background-image:url('thumbnail_blog/IndiaSingle-UsePlasticBan_homepage.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">Compliance</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">3 Mar 2025 · 12 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">India’s Single-Use Plastic Ban: A Practical Compliance Guide for Businesses</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">What’s actually banned, carry bag thickness rules, and EPR obligations under India’s Plastic Waste Management Rules — a practical compliance guide.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="compostable-vs-biodegradable-packaging-what-s-the-real-difference.html" data-post-cat="Guides" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+          <div style="height:150px; position:relative; background-color:#14342C; background-image:url('thumbnail_blog/CompostablevsBiodegradable_homepage.png'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
+            <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">Guides</span>
+          </div>
+          <div style="padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;">
+            <div style="font-family:Inter,sans-serif; font-size:11px; color:#8C8579; margin-bottom:11px;">4 Feb 2025 · 8 min read</div>
+            <h3 style="font-family: 'Newsreader', serif; font-weight:500; font-size:20px; line-height:1.2; margin:0 0 10px; color:#14342C;">Compostable vs Biodegradable Packaging: What’s the Real Difference?</h3>
+            <p style="font-size:13.5px; line-height:1.55; color:#14342C99; margin:0 0 18px; flex:1;">“Biodegradable” and “compostable” get used as if they’re the same word. They’re not, and the gap between them changes what a product is legally allowed to claim, and whether your sustainability positioning actually holds up.</p>
+            <span style="font-size:13px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -498,6 +634,28 @@ const mapPost = (p) => ({
   }
   if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); }
   else { init(); }
+})();
+</script>
+<script>
+/* Blog category filter (posts are written straight into the HTML so search engines can read them) */
+(function(){
+  var ON  = 'cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:600; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C; background:#14342C; color:#F7F4EC;';
+  var OFF = 'cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:500; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C26; background:transparent; color:#14342Ccc;';
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest ? e.target.closest('[data-chip]') : null;
+    if (!btn) return;
+    var cat = btn.getAttribute('data-chip');
+    document.querySelectorAll('[data-chip]').forEach(function(b){
+      b.setAttribute('style', b === btn ? ON : OFF);
+    });
+    var fw = document.querySelector('[data-featured-wrap]');
+    if (fw) fw.style.display = (cat === 'All') ? '' : 'none';
+    document.querySelectorAll('[data-post-cat]').forEach(function(card){
+      var show = (cat === 'All') ? !card.hasAttribute('data-dup') : card.getAttribute('data-post-cat') === cat;
+      card.style.display = show ? 'flex' : 'none';
+      if (show) { card.style.opacity = '1'; card.style.transform = 'none'; }
+    });
+  });
 })();
 </script>
 </body>
