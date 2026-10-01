@@ -1,0 +1,19 @@
+/* Pill-shaped floating header (shared by all pages)
+   To undo: delete the <link ... header-pill.css> line from a page, or delete this file. */
+
+header.pc-header {
+  top: 14px !important;                                /* gap from the top of the screen */
+  left: clamp(12px, 3vw, 40px) !important;             /* gap on the left  */
+  right: clamp(12px, 3vw, 40px) !important;            /* gap on the right */
+  border-radius: 999px !important;                     /* the oval / pill shape */
+  padding: 8px clamp(20px, 3vw, 36px) !important;      /* height of the pill (first number = up/down) */
+}
+
+/* Mobile menu panel: rounded bottom corners so it matches the pill */
+.pc-mobile-menu { border-radius: 0 0 28px 28px; }
+
+/* OPTIONAL: make the button and social icons round too.
+   Remove the /* and */ around this block to turn it on.
+header.pc-header a[href="contact.html"] { border-radius: 999px !important; padding: 11px 22px !important; }
+header.pc-header .pc-cta-desktop a[aria-label] { border-radius: 50% !important; }
+*/
