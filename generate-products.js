@@ -261,12 +261,13 @@ function renderPage(p) {
   .pc-burger-bar { display: block; width: 22px; height: 2px; background: #F7F4EC; border-radius: 2px; }
   a { transition: color .15s; }
 </style>
+<link rel="stylesheet" href="../header-pill.css">
 </head>
 <body>
 <div class="pc-site" style="overflow-x:hidden; min-height:100vh;">
 
   <!-- HEADER -->
-  <header id="pcHeader" style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px clamp(20px,4vw,40px); background:rgba(12,31,25,0.92); backdrop-filter:blur(8px); transition:padding .25s ease;">
+  <header id="pcHeader" class="pc-header" style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px clamp(20px,4vw,40px); background:rgba(12,31,25,0.92); backdrop-filter:blur(8px); transition:padding .25s ease;">
     <a href="../index.html" style="display:flex; align-items:baseline; gap:1px; text-decoration:none;">
       <img src="../assets/packinclub-logo.png" alt="PackinClub" style="height:55px; width:auto; display:block;">
     </a>
