@@ -453,3 +453,49 @@ PACKIN.products.forEach(p => {
 
 console.log('Generated ' + written.length + ' static product pages in /products/:');
 written.forEach(s => console.log('  - products/' + s + '.html'));
+
+
+// ---------- 6. Pre-render a crawlable "all products" index into products.html ----------
+// products.html builds its product grid in the browser (JavaScript), so crawlers that
+// do not run JS see no product links. This writes plain HTML links to every product page
+// between two marker comments in products.html. Re-running replaces the block each time.
+(function injectProductIndex() {
+  const file = path.join(ROOT, 'products.html');
+  const START_TAG = '<!-- PRODUCT-INDEX:START';
+  const END_TAG = '<!-- PRODUCT-INDEX:END -->';
+  let html = fs.readFileSync(file, 'utf8');
+  const a = html.indexOf(START_TAG);
+  const b = html.indexOf(END_TAG);
+  if (a === -1 || b === -1 || b < a) {
+    console.log('\nSKIPPED products.html index: marker comments not found. Add them first (see instructions).');
+    return;
+  }
+  const startLineEnd = html.indexOf('-->', a) + 3;
+
+  const groups = Object.keys(PACKIN.cats).map(function (code) {
+    const items = PACKIN.products.filter(function (p) { return p.cat === code; });
+    if (!items.length) return '';
+    const lis = items.map(function (p) {
+      return '          <li style="margin:0 0 10px;"><a href="products/' + esc(p.slug) + '.html" style="color:#14342C; text-decoration:underline; text-underline-offset:3px; font-size:15px; line-height:1.4;">' + esc(p.name) + '</a></li>';
+    }).join('\n');
+    return '        <div>\n' +
+      '          <h3 style="font-family:Bitter,serif; font-weight:600; font-size:17px; margin:0 0 12px; color:#14342C;">' + esc(PACKIN.cats[code]) + '</h3>\n' +
+      '          <ul style="list-style:none; margin:0; padding:0;">\n' + lis + '\n          </ul>\n' +
+      '        </div>';
+  }).filter(Boolean).join('\n');
+
+  const block = '\n' +
+    '  <section style="background:#FFFFFF; padding:clamp(48px,6vw,80px) clamp(20px,4vw,40px); border-top:1px solid #14342C18;">\n' +
+    '    <div style="max-width:1280px; margin:0 auto;">\n' +
+    '      <h2 style="font-family:Bitter,serif; font-weight:600; font-size:clamp(24px,3vw,34px); letter-spacing:-0.01em; margin:0 0 10px; color:#14342C;">All ' + PACKIN.products.length + ' compostable packaging products</h2>\n' +
+    '      <p style="font-size:15px; line-height:1.6; color:#14342C99; margin:0 0 32px; max-width:640px;">Browse the full range by use case. Every product page lists specifications, minimum order quantity and a quote option.</p>\n' +
+    '      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:32px 28px;">\n' +
+    groups + '\n' +
+    '      </div>\n' +
+    '    </div>\n' +
+    '  </section>\n  ';
+
+  html = html.slice(0, startLineEnd) + block + html.slice(b);
+  fs.writeFileSync(file, html, 'utf8');
+  console.log('\nInjected ' + PACKIN.products.length + ' crawlable product links into products.html');
+})();
