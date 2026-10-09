@@ -24,7 +24,10 @@
     "mainEntity": {
       "@type": "Organization",
       "name": "Packin Club",
-      "founder": { "@type": "Person", "name": "Vikas Jha" },
+      "founder": [
+        { "@type": "Person", "name": "Vikas Jha", "jobTitle": "Founder", "sameAs": "https://www.linkedin.com/in/vikasjha228/" },
+        { "@type": "Person", "name": "Rajat Sharma", "jobTitle": "Co-founder", "sameAs": "https://www.linkedin.com/in/rs889044/" }
+      ],
       "foundingDate": "2024",
       "url": "https://packinclub.com/"
     }
@@ -251,15 +254,15 @@ margin:0 0 26px;
         </div>
       </div>
       <div data-reveal style="flex:1 1 360px; min-width:280px; display:flex; flex-direction:column; justify-content:center;">
-        <p style="font-family:Bitter,serif; font-size:clamp(22px,2.8vw,30px); font-weight:600; line-height:1.35; letter-spacing:-0.01em; margin:0; color:#14342C;">Packin Club began as an idea in September 2022 and officially started operations in Delhi in 2024. It became the answer to that question, a catalyst for businesses ready to lead the shift to a plastic-free future.</p>
-        <div style="margin-top:32px; border-left:2px solid #6FAF45; padding-left:22px; display:flex; flex-direction:column; gap:22px;">
+        <p style="font-family:Bitter,serif; font-size:clamp(22px,2.8vw,30px); font-weight:600; line-height:1.35; letter-spacing:-0.01em; margin:0; color:#14342C;">Packin Club became the answer to that question, a catalyst for businesses ready to lead the shift to a plastic-free future.</p>
+        <div style="margin-top:32px; display:flex; flex-direction:column; gap:20px; border-left:2px solid #6FAF45; padding-left:22px;">
           <div>
             <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#C1622D; margin-bottom:6px;">September 2022</div>
-            <p style="font-size:16.5px; line-height:1.6; color:#14342Cdd; margin:0;">We started working on the idea of Packin Club.</p>
+            <p style="font-size:16px; line-height:1.6; color:#14342Cdd; margin:0;">We started working on the idea of Packin Club.</p>
           </div>
           <div>
             <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#C1622D; margin-bottom:6px;">2024</div>
-            <p style="font-size:16.5px; line-height:1.6; color:#14342Cdd; margin:0;">Packin Club officially began operations in Delhi.</p>
+            <p style="font-size:16px; line-height:1.6; color:#14342Cdd; margin:0;">Packin Club officially started operations in Delhi.</p>
           </div>
         </div>
       </div>
@@ -287,7 +290,7 @@ margin:0 0 26px;
         <div style="margin-top:28px; display:flex; align-items:center; gap:14px;">
           <div style="width:34px; height:1px; background:#6FAF45;"></div>
           <div>
-            <div style="font-weight:600; font-size:15px;">Vikas Jha</div>
+            <div style="font-weight:600; font-size:15px;"><a href="https://www.linkedin.com/in/vikasjha228/" target="_blank" rel="noopener" aria-label="Vikas Jha on LinkedIn" style="color:inherit; text-decoration:none;">Vikas Jha</a></div>
             <div style="font-family:Inter,sans-serif; font-size:12px; color:#8C8579;">Founder</div>
           </div>
         </div>
@@ -304,18 +307,27 @@ margin:0 0 26px;
         <p style="font-size:16.5px; line-height:1.6; color:#14342Ccc; margin:0;">Our strength is the range of expertise across the team, from brand and operations to materials engineering.</p>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px;">
-        <sc-for list="{{ leaders }}" as="L" hint-placeholder-count="2">
-          <div data-reveal style="border:1px solid #14342C18; border-radius:4px; overflow:hidden; background:#fff; display:flex; flex-direction:column;">
+        <!-- Leadership cards are plain HTML (not a JS loop) so search and AI crawlers can read them -->
+        <div data-reveal style="border:1px solid #14342C18; border-radius:4px; overflow:hidden; background:#fff; display:flex; flex-direction:column;">
             <div style="width:100%; aspect-ratio:4/5; max-height:420px; background:#14342C; position:relative; overflow:hidden;">
-  <img src="{{ L.image }}" alt="{{ L.name }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block;" onerror="this.style.display='none';" />
-</div>
+              <img src="uploads/vikas2.jpg" alt="Vikas Jha, Founder of Packin Club" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block;" onerror="this.style.display='none';" />
+            </div>
             <div style="padding:clamp(24px,2.6vw,32px);">
-              <h3 style="font-family:Bitter,serif; font-weight:600; font-size:25px; margin:0 0 4px; color:#14342C;">{{ L.name }}</h3>
-              <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6FAF45; margin-bottom:16px;">{{ L.role }}</div>
-              <p style="font-size:14.5px; line-height:1.65; color:#14342C99; margin:0;">{{ L.bio }}</p>
+              <h3 style="font-family:Bitter,serif; font-weight:600; font-size:25px; margin:0 0 4px; color:#14342C;"><a href="https://www.linkedin.com/in/vikasjha228/" target="_blank" rel="noopener" aria-label="Vikas Jha on LinkedIn" style="color:inherit; text-decoration:none;">Vikas Jha</a></h3>
+              <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6FAF45; margin-bottom:16px;">Founder</div>
+              <p style="font-size:14.5px; line-height:1.65; color:#14342C99; margin:0;">An MBA in Marketing &amp; Operations and a second-generation entrepreneur, Vikas has built and scaled ventures across trading, branding, and sustainability. He leads strategy, partnerships, and the Packin Club brand.</p>
             </div>
           </div>
-        </sc-for>
+          <div data-reveal style="border:1px solid #14342C18; border-radius:4px; overflow:hidden; background:#fff; display:flex; flex-direction:column;">
+            <div style="width:100%; aspect-ratio:4/5; max-height:420px; background:#14342C; position:relative; overflow:hidden;">
+              <img src="uploads/Rajat.png" alt="Rajat Sharma, Co-founder of Packin Club" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block;" onerror="this.style.display='none';" />
+            </div>
+            <div style="padding:clamp(24px,2.6vw,32px);">
+              <h3 style="font-family:Bitter,serif; font-weight:600; font-size:25px; margin:0 0 4px; color:#14342C;"><a href="https://www.linkedin.com/in/rs889044/" target="_blank" rel="noopener" aria-label="Rajat Sharma on LinkedIn" style="color:inherit; text-decoration:none;">Rajat Sharma</a></h3>
+              <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6FAF45; margin-bottom:16px;">Co-founder</div>
+              <p style="font-size:14.5px; line-height:1.65; color:#14342C99; margin:0;">An M.Tech from IIT Madras with engineering experience at TCS and several technology ventures, Rajat drives product, materials, and the systems behind plastic-free manufacturing.</p>
+            </div>
+          </div>
       </div>
     </div>
   </section>
