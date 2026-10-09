@@ -6,6 +6,59 @@
 
 const fs = require('fs');
 const path = require('path');
+
+// ---------- SEO title + meta description for product pages ----------
+// Title:  "<Product name> India | Packin Club"   (kept near 60 characters)
+// Meta:   140-155 characters with "India", the use case, MOQ and a quote prompt.
+// To change wording for one product, edit its line in SEO_USE (or SEO_TITLE).
+const SEO_USE = {
+  'compostable-agri-mulch-film': 'weed-suppressing mulch film that tills into the soil',
+  'compostable-nursery-bags': 'grow-bags planted straight into the ground',
+  'compostable-carry-bags-on-roll': 'perforated carry bags on a roll for retail counters',
+  'compostable-garbage-bag-on-roll': 'leak-resistant bin liners for kitchens and facilities',
+  'compostable-grocery-bags-on-roll': 'tear-off grocery bags for produce and checkouts',
+  'compostable-medical-waste-bags': 'colour-coded bags for non-hazardous clinical waste',
+  'compostable-bamboo-tissue': 'bamboo-pulp tissue for tables and washrooms',
+  'compostable-bread-pouch': 'breathable pouches for bakeries and bread',
+  'compostable-cling-film': 'cling wrap for kitchens and food service',
+  'compostable-hot-liquid-pouches': 'pouches for hot soups, curries and beverages',
+  'compostable-aqueous-coated-paper-cups': 'plastic-film-free paper cups for hot and cold drinks',
+  'compostable-pouches': 'pouches for food, grains and dry goods',
+  'compostable-electrical-wire-packaging-wrap': 'protective wrap for spooled wire and cable',
+  'compostable-garbage-bags': 'sturdy bin bags for industrial and facility use',
+  'compostable-shrink-film': 'shrink film for multipacks and trays',
+  'compostable-stretch-film': 'pallet stretch film for logistics and bundling',
+  'compostable-carry-bags': 'everyday retail bags sized for any counter',
+  'compostable-courier-bags-mailers': 'tamper-evident mailers for e-commerce and D2C',
+  'compostable-d-cut-shopping-bags': 'brandable D-cut shopping bags for retail',
+  'compostable-garment-bags': 'garment covers for apparel retail and shipping',
+  'compostable-grocery-bags': 'grocery carry bags for supermarkets and produce',
+  'compostable-loop-handle-bags': 'loop-handle bags for retail and gifting',
+  'compostable-pet-poop-bags': 'leak-proof waste bags for pet shops, parks and daily walks',
+  'compostable-prasadam-pouches': 'food-safe pouches for temple prasadam'
+};
+const SEO_TITLE = {
+  'compostable-courier-bags-mailers': 'Compostable Courier Bags India: Mailers for D2C | Packin Club'
+};
+function buildProductSeo(p) {
+  const use = SEO_USE[p.slug];
+  const title = SEO_TITLE[p.slug] || (p.name + ' India | Packin Club');
+  if (!use) return { title: title, metaDesc: p.blurb || p.desc };
+  const tails = [
+    '. MOQ 100 kg. Get samples and a quote within two business days.',
+    '. MOQ 100 kg. Samples and a quote in two business days.',
+    '. MOQ 100 kg. Get samples and a quote in 2 days.',
+    '. MOQ 100 kg. Get a quote.'
+  ];
+  const heads = [p.name + ' for B2B buyers in India: ' + use, p.name + ' in India: ' + use];
+  let best = null;
+  heads.forEach(function (h) { tails.forEach(function (t) {
+    const d = h + t;
+    if (d.length >= 140 && d.length <= 155 && !best) best = d;
+  }); });
+  if (!best) { best = heads[1] + tails[0]; console.log('NOTE meta length ' + best.length + ' for ' + p.slug + ' (target 140-155)'); }
+  return { title: title, metaDesc: best };
+}
 const vm = require('vm');
 
 const ROOT = __dirname;
@@ -63,8 +116,9 @@ function reviewsFor(product) {
 // ---------- 4. Page template ----------
 function renderPage(p) {
   const pageUrl = SITE_URL + '/products/' + p.slug + '.html';
-  const title = p.name + ' | Packin Club';
-  const metaDesc = p.blurb || p.desc;
+  const seo = buildProductSeo(p);
+  const title = seo.title;
+  const metaDesc = seo.metaDesc;
   const imgUrl = absUrl(p.image);
   const rel = related(p);
   const reviews = reviewsFor(p);
