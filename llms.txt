@@ -1,22 +1,25 @@
-# PackinClub
+# Packin Club
 
-> PackinClub is a B2B supplier of certified compostable packaging in India, based in Delhi. It supplies compostable bags, courier mailers, films, pouches, cups and mulch film in bulk to businesses such as e-commerce and D2C brands, restaurants and cloud kitchens, retailers, farms and nurseries, hospitals and temples. Products are made to Indian standard IS 17088 for compostable plastics and are CPCB certified. Minimum order is 100 kg per specification, and PackinClub sends samples and a quote within two business days.
+> Packin Club is a B2B manufacturer and supplier of certified compostable packaging in India, founded in 2024 and based in Delhi. It makes and supplies compostable bags, courier mailers, films, pouches, cups and mulch film in bulk to businesses such as e-commerce and D2C brands, restaurants and cloud kitchens, retailers, farms and nurseries, hospitals and temples. Products are made to Indian standard IS 17088 for compostable plastics and are CPCB certified. Minimum order is 100 kg per specification, and Packin Club sends samples and a quote within two business days.
 
-PackinClub sells to businesses only (B2B), not to individual consumers. Products can be printed with a customer's brand using food-grade flexographic inks. Compostable packaging here means packaging designed to break down in managed industrial composting; it is not the same as "biodegradable" or "oxo-degradable" plastic, and the blog explains the difference.
+Packin Club sells to businesses only (B2B), not to individual consumers. Products can be printed with a customer's brand using food-grade flexographic inks. Compostable packaging here means packaging designed to break down in managed industrial composting; it is not the same as "biodegradable" or "oxo-degradable" plastic, and the blog explains the difference.
 
 ## Key facts
-- Company: PackinClub (website: https://packinclub.com/)
+- Company: Packin Club (website: https://packinclub.com/)
+- Company type: B2B manufacturer and supplier of compostable packaging
+- Founded: 2024
 - Location: D-1/64, 21st Century Business Centre, Veer Savarkar Block, Shakarpur, Nirman Vihar, Delhi 110092, India
 - Phone: +91 81784 14360
 - Email: info@packinclub.com
 - Founder: Vikas Jha. Co-founder: Rajat Sharma
 - Standards: IS 17088 (India's compostable plastics standard), CPCB certified
+- Composting time: 240 days in a managed composting environment
 - Minimum order quantity: 100 kg per specification
 - Quote and samples: within two business days via https://packinclub.com/contact.html
 
 ## Main pages
 - [Home](https://packinclub.com/): Company overview and what compostable packaging is
-- [About PackinClub](https://packinclub.com/about.html): Company story, mission and leadership
+- [About Packin Club](https://packinclub.com/about.html): Company story, mission and leadership
 - [Products](https://packinclub.com/products.html): Full range of 24 compostable packaging products
 - [Industries](https://packinclub.com/industries.html): Packaging by industry: e-commerce, HORECA, retail, agriculture, healthcare and more
 - [Blog](https://packinclub.com/blog.html): Buyer guides on compostable packaging, IS 17088 and Indian regulations
