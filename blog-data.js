@@ -2287,6 +2287,167 @@
   ]
 },
 
+{
+  title: 'Courier Bag Sizes Chart: Find the Right Size for Your Product',
+  slug: 'courier-bag-sizes-chart',
+  cat: 'Guides',
+  keyword: 'courier bag sizes',
+  secondaryKeywords: [
+    'courier bag size chart',
+    'courier bag size in inches',
+    'standard courier bag sizes India',
+    'plastic courier bag sizes',
+    'biodegradable courier bags',
+    'poly mailer sizes'
+  ],
+  date: '2026-10-15',
+  readMins: 6,
+  author: 'Vikas Jha',
+  excerpt: 'One chart for every common product, a 30-second way to measure, and the size mistakes that quietly cost D2C brands money.',
+  metaTitle: 'Courier Bag Sizes Chart: 8 Sizes Explained',
+  metaDescription: 'Courier bag sizes chart in inches for tees, kurtas, jeans, cosmetics and boxes. Measure in 30 seconds, skip common mistakes, and order once.',
+  takeaways: [
+    'Pick a courier bag 1 to 2 inches wider and longer than your folded product; for boxed items, add the box height to both width and length.',
+    'Most sellers quote bag size without the flap, which adds roughly 2 inches, so always confirm with your supplier.',
+    '50 microns suits light, soft products like clothes; 60 microns or more suits boxes, heavier parcels, and long-distance shipping.',
+    'A loose, over-padded bag can push up volumetric weight and increase your shipping cost, even at the same actual weight.',
+    'Certified compostable courier bags come in the same standard sizes as plastic, from 9x12 to 16x20 inches, with custom sizes for bulk orders.'
+  ],
+  body: [
+    {
+      p: [
+        'Quick answer: Pick a courier bag 1 to 2 inches wider and longer than your folded product. For boxed items, add the box height to both width and length. Common sizes in India: 8x10 for accessories, 10x12 for one T-shirt, 12x14 for shirts and kurtis, 14x18 for jeans or kurta sets, and 16x20 for jackets and shoe boxes.',
+        'Order the wrong courier bag size once and you\u2019ll remember it for a year. Too big, and the kurta slides around and arrives looking slept-in. Too small, and your packer is fighting the flap at 11 pm before a sale.',
+        'This guide to courier bag sizes is built around what Indian brands actually ship: tees, kurtas, jeans, cosmetics, books and boxed products. Find your product, find your size, and order once.'
+      ]
+    },
+    {
+      h: 'How to Read Courier Bag Sizes',
+      p: [
+        'Courier bag sizes are written in inches. A 12x14 bag is 12 inches by 14 inches.',
+        'Here\u2019s the catch. Sellers don\u2019t agree on which number comes first. Some write width first, some write length first. Before you order, ask which side is the opening.',
+        'The second catch is the flap. Most sellers quote the size without the flap, which adds roughly 2 inches on top. So two "12x14" bags from two suppliers may not be the same bag.',
+        'Thickness is measured in microns. Plastic courier bags in India usually run from 50 to 75 microns. Compostable courier bags usually run from 50 to 60.'
+      ]
+    },
+    {
+      h: 'Courier Bag Size Chart for Common Products',
+      p: [
+        'One thing changes everything: the fold. A T-shirt folded in thirds fits a 10x12. Folded in half, it needs a 12x14. Fold the product the way your packers fold it, and only then measure.'
+      ],
+      table: {
+        headers: ['Bag size (inches)', 'What fits', 'Who uses it'],
+        rows: [
+          ['6x8', 'Earrings, phone covers, cables, small cosmetics', 'Jewellery, accessories'],
+          ['8x10', 'Wallets, socks, a small skincare kit', 'Beauty, accessories'],
+          ['10x12', 'One folded T-shirt, a paperback', 'Basics, books'],
+          ['12x14', 'A shirt, a kurti, two tees', 'Fashion, ethnic wear'],
+          ['12x16', 'A nightsuit, leggings set, a thick textbook', 'Fashion, education'],
+          ['14x18', 'Jeans, a kurta set, three or four tops', 'Apparel'],
+          ['16x20', 'A hoodie, a light jacket, a bedsheet, a small shoe box', 'Winter wear, home linen'],
+          ['18x24', 'A heavy jacket, a blanket, a large shoe box', 'Winter wear, home']
+        ]
+      }
+    },
+    {
+      h: 'How to Measure Your Product in 30 Seconds',
+      p: [
+        'For clothes and other soft products:'
+      ],
+      ul: [
+        'Fold the product exactly as it ships, with tissue, tag and thank-you card.',
+        'Measure the width and the length.',
+        'Add 1 inch to the width and 1.5 to 2 inches to the length.',
+        'Round up to the nearest standard size. That\u2019s your bag.'
+      ]
+    },
+    {
+      p: [
+        'For boxed products, a box has height, and the bag has to wrap around it. So the height gets added to both sides.',
+        'Bag width = box width + box height + 1 inch. Bag length = box length + box height + 1 inch.',
+        'Example: a skincare box of 6 x 8 x 2 inches needs a bag of at least 9 x 11 inches. A 10x12 does the job.'
+      ]
+    },
+    {
+      h: '50, 60 or 75 Microns: Which Thickness Do You Need?',
+      p: [
+        'Size gets all the attention. Thickness decides whether the parcel survives the trip.',
+        '50 microns works for soft, light products: clothes, linen, and accessories already in their own pouch.',
+        '60 microns and above is better for boxes with sharp corners, heavier parcels, and anything travelling across states. Those parcels get thrown, stacked and sorted many times.',
+        'Still unsure? Ship a few test parcels of each thickness to a faraway pincode, and see how they arrive.'
+      ]
+    },
+    {
+      h: 'Does Courier Bag Size Change Your Shipping Cost?',
+      p: [
+        'It can. Couriers charge on whichever is higher: the actual weight or the volumetric weight. Volumetric weight is length x width x height in centimetres, divided by 5,000 for most Indian couriers. Some divide by 4,000, which makes bulky parcels cost even more.',
+        'A flat, snug parcel barely registers. A loose bag stuffed with bubble wrap to stop the product moving turns into a pillow. And pillows have height.',
+        'A right-sized bag keeps the parcel flat, and keeps the bill down.'
+      ]
+    },
+    {
+      h: '5 Courier Bag Size Mistakes That Cost Brands Money',
+      ul: [
+        'One size for everything. Easy to stock. It also means half your parcels are too loose.',
+        'Forgetting the flap. Always check whether the quoted size includes it.',
+        'Packing too tight. A strained bag splits at the seal or a corner during sorting.',
+        'Ignoring the invoice. If the label or invoice sleeve sits on the bag, leave room on the face for it.',
+        'Ordering lakhs before a trial. Order samples in two sizes, pack your real products, then commit.'
+      ]
+    },
+    {
+      p: [
+        'Most brands need only two or three courier bag sizes. For apparel, a 10x12, a 12x14 and a 14x18 cover most orders.'
+      ]
+    },
+    {
+      h: 'Biodegradable Courier Bags: Same Sizes, Different Material',
+      p: [
+        'If you\u2019re moving away from plastic courier bags, your courier bag sizes don\u2019t change. Certified compostable courier bags come in the same standard sizes, with the same peel-and-seal strip and tamper-evident flap.',
+        'One warning about labels. "Biodegradable" printed on a courier bag can mean almost anything. Look for IS 17088 certification and a certificate number registered with the Central Pollution Control Board (CPCB). That\u2019s what separates a compostable mailer from a plastic bag with a green print.',
+        'Our compostable courier bags run from 9x12 to 16x20 inches, at 50 to 60 microns, with custom sizes for bulk orders.',
+        'Two things to know before you switch. Store compostable mailers in a cool, dry place away from direct sun. And use your stock within its 12-month shelf life. Treat them like a product with a shelf life, because they are one.'
+      ]
+    },
+    {
+      h: 'Not Sure Which Size You Need?',
+      p: [
+        'Send us your product\u2019s dimensions. We\u2019ll suggest a size and send samples to test with your real packing.'
+      ]
+    }
+  ],
+  faqs: [
+    {
+      q: 'What is the most common courier bag size in India?',
+      a: '10x12 and 12x14 inches are among the most ordered sizes, because they fit a single folded garment. Accessory brands lean on 6x8 and 8x10. Winter wear and home linen need 16x20 and above.'
+    },
+    {
+      q: 'Is the courier bag size measured with or without the flap?',
+      a: 'Most sellers quote the size without the flap, which adds about 2 inches. Always confirm with your supplier, because this varies from seller to seller.'
+    },
+    {
+      q: 'Which courier bag size fits a shoe box?',
+      a: 'Add the box height to both its width and length, then add 1 inch to each. A small shoe box usually fits a 16x20 bag. A larger one needs 18x24.'
+    },
+    {
+      q: 'What thickness should a courier bag be?',
+      a: '50 microns suits light, soft products like clothes. Choose 60 microns or more for boxed, heavy or sharp-cornered products, and for long-distance shipping.'
+    },
+    {
+      q: 'Does a bigger courier bag increase shipping charges?',
+      a: 'It can. Couriers charge on the higher of actual weight and volumetric weight. A loose bag filled with padding gets bulky and can push the volumetric weight up.'
+    },
+    {
+      q: 'Do biodegradable courier bags come in the same sizes as plastic ones?',
+      a: 'Yes. Certified compostable courier bags come in the same standard sizes, with custom sizes for bulk orders. Ours range from 9x12 to 16x20 inches.'
+    },
+    {
+      q: 'How many courier bag sizes should a D2C brand stock?',
+      a: 'Two or three is enough for most brands. Start with your best-selling product, size the bag for it, then add one size up and one size down.'
+    }
+  ]
+},
+
  ];
   // category brand colour for hero blocks
   var CAT_BG = {
@@ -2320,7 +2481,8 @@
     'home-composting-vs-industrial-composting-what-you-need-to-know': 'thumbnail_blog/Home-Composting-vs-Industrial-Composting.png',
     'compostable-mulch-film-a-practical-guide-for-indian-farmers': 'thumbnail_blog/Compostable_mulch_film.png',
     'how-to-spot-greenwashing-in-eco-friendly-packaging': 'thumbnail_blog/Eco-FriendlyPackaging.png',
-    'what-is-compostable-packaging': 'thumbnail_blog/what_is_compostable_packaging.png'
+    'what-is-compostable-packaging': 'thumbnail_blog/what_is_compostable_packaging.png',
+    'courier-bag-sizes-chart': 'thumbnail_blog/PackinClub_Eco_Packaging_Guide.png'
   };
   POSTS.forEach(function (p) {
     p.slug = p.slug || slug(p.title);
