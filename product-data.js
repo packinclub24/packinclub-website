@@ -18,7 +18,7 @@
   }
 
   // Spec rows common to the entire range.
-  function base(extra) {
+  function base(extra, overrides) {
     var common = [
       ['Base material', 'Corn-starch + PLA + PBAT compostable blend'],
       ['Certification', 'IS 17088 · CPCB certified · EN 13432'],
@@ -27,7 +27,8 @@
       ['Shelf life', '12 months from date of manufacture'],
       ['Min. order qty', '100 kg per specification']
     ];
-    return (extra || []).concat(common).map(function (r) { return { k: r[0], v: r[1] }; });
+    overrides = overrides || {};
+    return (extra || []).concat(common).map(function (r) { return { k: r[0], v: (overrides[r[0]] !== undefined ? overrides[r[0]] : r[1]) }; });
   }
 
   var P = [
@@ -228,7 +229,7 @@
         ['Sheet size', '30 × 30 cm (napkin)'],
         ['GSM', '17 – 23 GSM per ply'],
         ['Packing', 'Paper-wrapped, plastic-free']
-      ]),
+      ], { 'Base material': 'Bamboo pulp, paper outer wrap' }),
       applications: [
         'Restaurants and cafés',
         'Hotel rooms and washrooms',
@@ -340,7 +341,7 @@
         ['Wall', 'Single or double-wall'],
         ['Lining', 'Aqueous (water-based) coating'],
         ['Lids', 'Matching paper lids available']
-      ]),
+      ], { 'Base material': 'Paperboard with aqueous (water-based) coating' }),
       applications: [
         'Coffee shops and cafés',
         'QSR and food courts',
