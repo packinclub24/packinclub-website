@@ -7,6 +7,125 @@
 const fs = require('fs');
 const path = require('path');
 
+// ---------- Extra buyer-guide content (who uses it, sizes, thickness, disposal, FAQs) ----------
+// Content lives in product-content.js. Products without an entry simply show no extra section.
+let PRODUCT_CONTENT = {};
+try { PRODUCT_CONTENT = require('./product-content.js'); } catch (e) { PRODUCT_CONTENT = {}; }
+
+function guideH2(text) {
+  return '<h2 style="font-family:Newsreader,serif; font-weight:500; font-size:clamp(22px,2.4vw,30px); letter-spacing:-0.01em; margin:clamp(44px,5vw,64px) 0 22px; padding-bottom:16px; border-bottom:1px solid #14342C18;">' + esc(text) + '</h2>';
+}
+function guideP(text) {
+  return '<p style="font-size:16px; line-height:1.7; color:#14342C; margin:0 0 14px; max-width:680px;">' + esc(text) + '</p>';
+}
+function renderGuide(p) {
+  const c = PRODUCT_CONTENT[p.slug];
+  if (!c) return '';
+  let h = '';
+  if (c.who && c.who.length) h += guideH2(c.whoTitle || ('Who uses ' + p.name.toLowerCase())) + c.who.map(guideP).join('');
+  const sizeRows = (p.specs || []).filter(function (s) { return /size|thickness|width|length|capacity|volume|dimension/i.test(s.k); });
+  if (sizeRows.length || c.sizing) {
+    h += guideH2('Sizes and thickness');
+    if (sizeRows.length) {
+      h += '<table style="border-collapse:collapse; width:100%; max-width:680px; margin:0 0 18px; background:#fff; border:1px solid #14342C18;"><thead><tr><th style="text-align:left; padding:12px 16px; font-size:12.5px; letter-spacing:0.04em; color:#8C8579; border-bottom:1px solid #14342C18;">Specification</th><th style="text-align:left; padding:12px 16px; font-size:12.5px; letter-spacing:0.04em; color:#8C8579; border-bottom:1px solid #14342C18;">Range</th></tr></thead><tbody>' +
+        sizeRows.map(function (s) { return '<tr><td style="padding:12px 16px; font-size:14.5px; border-bottom:1px solid #14342C12;">' + esc(s.k) + '</td><td style="padding:12px 16px; font-size:14.5px; border-bottom:1px solid #14342C12;">' + esc(s.v) + '</td></tr>'; }).join('') +
+        '</tbody></table>';
+    }
+    if (c.sizing) h += guideP(c.sizing);
+  }
+  if (c.thickness) h += guideH2('How to choose the right thickness') + guideP(c.thickness);
+  if (c.disposal) h += guideH2('Disposal and storage') + guideP(c.disposal);
+  if (c.faqs && c.faqs.length) {
+    h += guideH2('Frequently asked questions') + c.faqs.map(function (f) {
+      return '<h3 style="font-family:Newsreader,serif; font-weight:500; font-size:19px; margin:22px 0 8px; color:#14342C;">' + esc(f.q) + '</h3>' + guideP(f.a);
+    }).join('');
+  }
+  return h;
+}
+function faqSchemaTag(p) {
+  const c = PRODUCT_CONTENT[p.slug];
+  if (!c || !c.faqs || !c.faqs.length) return '';
+  const schema = { '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: c.faqs.map(function (f) { return { '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }; }) };
+  return '<script type="application/ld+json">' + JSON.stringify(schema).replace(/</g, '\\u003c') + '</script>';
+}
+
+// ---------- Alt text for product images (one real description per image) ----------
+// Key = file name inside product_images/. Edit the text here to change an image's alt text.
+const IMG_ALT = {
+  "agri-mulch-film.png": "Two black Packin Club compostable mulch film rolls and an unrolled sheet, with a round inset of mulched crop rows",
+  "Compostableagrimulch_2.png": "Black Packin Club compostable mulch film roll unrolling on a white surface, with an inset of mulched crop rows at sunset",
+  "mulchfilm.png": "Young plants growing through planting holes in black compostable mulch film laid over crop beds, with a roll in the foreground",
+  "mulchagri2.png": "Rows of young seedlings growing through holes in black compostable mulch film on bare farm soil",
+  "Nursery-bag.png": "White compostable nursery bag holding a young leafy plant, printed with Packin Club branding",
+  "Nursery_bag2.png": "White compostable nursery bag with a seedling, standing on soil in front of rows of nursery plants",
+  "Nursery_bag3.png": "Black compostable nursery bag with a small plant growing out of it, on a plain background",
+  "Nursery-bag-.png": "Empty black compostable nursery bag with an open top and a Packin Club label",
+  "carrybag_onroll.png": "Large roll of clear compostable carry bags beside a bag of red apples held by its handles",
+  "Carrybagonroll2.png": "Two rolls of clear compostable carry bags on a roll, with the handle cut-outs visible",
+  "carrybagonroll3.png": "Roll of clear compostable carry bags unrolled to show the handle cut-out shape",
+  "garbage-bag-roll.png": "Roll of black Packin Club compostable garbage bags next to a full, knotted black bag",
+  "garbage-bag-roll2.png": "Four rolls of green compostable garbage bags printed with the Packin Club name",
+  "garbage-bag-roll3.png": "Green compostable garbage bag rolls beside a kraft retail box labelled 100% compostable garbage bags",
+  "grocery-bag-roll.png": "Large roll of clear compostable grocery bags printed with a sample grocer's branding and an open arrow",
+  "grocerybag2.png": "Two clear compostable bags on grass, one large and one small holding bananas, both marked compostable",
+  "Grocerypouch3.jpg": "Hand holding a white compostable grocery pouch printed 100% compostable inside a shop",
+  "medical_waste_bag.png": "Red, yellow and green compostable bio-medical waste bags with biohazard symbols and handling warnings",
+  "medical_waste_bag2.png": "Three colour-coded compostable biomedical waste bags in red, yellow and green on a white background",
+  "medical_waste_bag3.png": "Yellow compostable biohazard waste bag with a biohazard symbol and Packin Club branding",
+  "Bamboo_tissue.png": "Box of Packin Club bamboo tissue with a tissue pulled up, surrounded by bamboo leaves",
+  "Bamboo_tissue2.png": "Stacks of folded Packin Club bamboo tissue napkins with bamboo leaves behind them",
+  "Bamboo_tissue3.png": "Two stacks of folded natural-colour bamboo tissue napkins with a Packin Club logo",
+  "compostable_bread_pouch.jpeg": "Sliced loaf of bread partly inside a translucent compostable bread bag printed Packin Club",
+  "Bread_pouch.jpg": "Sliced bread loaf in a clear compostable bread pouch with a gathered top",
+  "Compostable_bread_bags.png": "Three loaves of bread packed in clear compostable bread bags printed Packin Club and I am not plastic",
+  "compostable-cling-film.png": "Roll of Packin Club compostable cling film, with the film covering bowls of fruit and salad",
+  "compostable-cling-film2.png": "Compostable cling wrap box next to two bowls of salad and fruit covered with the film",
+  "compostable-cling-film3.png": "Two boxes of Packin Club compostable cling wrap laid at an angle",
+  "hot-liquid-pouches.png": "Hands holding a translucent compostable pouch filled with a hot brown liquid, printed 100% compostable",
+  "Aqua_coated_cup.png": "White Packin Club aqueous coated paper cup labelled plastic free",
+  "brown_aqua_cup.png": "Brown kraft Packin Club aqueous coated paper cup labelled plastic free",
+  "aqua-coated-cup.png": "Person holding a kraft Packin Club aqueous coated paper cup toward the camera",
+  "compostable_pouches.png": "Two clear compostable pouches filled with dry grains and pulses, printed I am not plastic",
+  "compostable_pouches2.png": "Clear compostable pouches holding a hair dryer and an electric kettle with their cords",
+  "compostable_pouches3.png": "Small compostable pouches holding a computer mouse, power bank, charger and earphones",
+  "compostable_pouches4.png": "Large flat white compostable pouch with a sealing strip along the top and a Packin Club logo",
+  "compostable_pouches5.png": "Flat white compostable pouch with a folded top flap and a Packin Club logo",
+  "Compostable_pouch6.png": "Clear compostable bags holding potatoes and sweet potatoes, printed 100% compostable",
+  "compostable-wire-wrap.jpeg": "Coil of cable wrapped in blue compostable wire wrap printed Packin Club",
+  "garbage-bags_for_baskets.png": "Black compostable garbage bag tied at the top beside a stack of folded black bags, printed Packin Club",
+  "shrink-film.png": "Tall rolls of Packin Club compostable shrink film beside shrink-wrapped food trays and canned drinks",
+  "shrink-film2.png": "Roll of compostable shrink film next to a shrink-wrapped multipack of water bottles",
+  "Compostable-Stretch-film.png": "Roll of Packin Club compostable stretch film being unrolled on a concrete floor",
+  "compostable-stretch-film2.png": "Clear roll of compostable stretch film on a cardboard core, unrolled on a light surface",
+  "Compostable_pallet_wrap.png": "Pallet of boxes being wrapped with compostable stretch film, with two rolls beside it",
+  "W-Cutbag.png": "Four sizes of white W-cut compostable carry bags laid on grass, printed Packin Club",
+  "Carrybag-black.png": "Black compostable carry bag with a mascot print and a QR code",
+  "carry.jpg": "White compostable carry bag with a mascot illustration and QR code on a beige background",
+  "mailer_bags.png": "Green and sage Packin Club compostable courier mailer bag",
+  "mailer_bags3.png": "Black compostable courier mailer printed with a sample footwear brand design",
+  "mailer_bagsback.png": "Back of a black compostable courier mailer printed I am compostable, with a sealed top flap",
+  "Compostable_D-Cut-Shopping-Bags.png": "White D-cut compostable shopping bag with Packin Club print standing on grass",
+  "D-cut.jpg": "Person carrying a white Packin Club D-cut compostable shopping bag",
+  "D-cut2.jpeg": "Hand holding a white D-cut compostable shopping bag printed Packin Club 100% compostable",
+  "garmentbag_1.png": "Clear compostable garment bag lying flat beside a rolled bag, with a sample clothing brand label",
+  "Garment--Bags.png": "Hands holding a clear compostable garment bag with folded blue jeans inside",
+  "garment-bags.jpg": "Folded orange t-shirt inside a clear compostable garment bag printed I am 100% compostable",
+  "biodegradable-grocery-bag-roll.png": "Roll of clear compostable grocery bags next to a bag filled with fruit",
+  "compostable-Loop-Handle-bags.png": "Translucent compostable loop-handle shopping bag packed with goods, printed Packin Club",
+  "loophandlebag2.png": "Green-tinted compostable loop-handle bag with a sample boutique brand design, in a clothing shop",
+  "loophandlebag3.png": "Clear compostable loop-handle bag with sample boutique branding on a shop counter",
+  "Pet-Poop-Bags.jpg": "Yellow rolls of compostable pet waste bags and a kraft dispenser box on grass",
+  "Compostable_poop_bag.png": "Person holding a kraft box and a yellow roll of compostable pet waste bags",
+  "Pet_poop.jpeg": "Yellow compostable pet waste bag rolls, a kraft box and an unrolled bag on grass",
+  "pet_poop3.jpeg": "Person with a dog holding a box of compostable pet waste bags",
+  "Prasadam-Pouches.png": "Translucent compostable prasadam pouch holding round sweets, printed Sacred inside, safe outside"
+};
+function altFor(imgPath, fallback) {
+  const key = String(imgPath || '').split('/').pop();
+  return IMG_ALT[key] || fallback;
+}
+
 // ---------- SEO title + meta description for product pages ----------
 // Title:  "<Product name> India | Packin Club"   (kept near 60 characters)
 // Meta:   140-155 characters with "India", the use case, MOQ and a quote prompt.
@@ -143,7 +262,7 @@ function renderPage(p) {
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px;">
               ${extraImages.map(img => `
               <a href="../${esc(img)}" target="_blank" rel="noopener" style="aspect-ratio:1/1; display:block; border-radius:4px; overflow:hidden; border:1px solid #14342C14; background:#14342C;">
-                <img src="../${esc(img)}" alt="${esc(p.name)} — additional product photo" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
+                <img src="../${esc(img)}" alt="${esc(altFor(img, p.name))}" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;" />
               </a>`).join('')}
             </div>` : '';
 
@@ -186,7 +305,7 @@ function renderPage(p) {
             <div style="position:relative; height:140px; background:#14342C; display:flex; align-items:center; justify-content:center; overflow:hidden;">
               <div style="position:absolute; inset:0; background-image:radial-gradient(circle at 50% 42%,#6FAF4518,transparent 62%);"></div>
               <div class="pc-thumb" style="position:relative; width:54px; height:54px; color:#6FAF45; z-index:1;">${iconSvg(r.form)}</div>
-              ${r.image ? `<img src="../${esc(r.image)}" alt="${esc(r.name)}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2;" />` : ''}
+              ${r.image ? `<img src="../${esc(r.image)}" alt="${esc(altFor(r.image, r.name))}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2;" />` : ''}
               <span style="position:absolute; top:12px; left:12px; z-index:3; font-family:Inter,sans-serif; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#6FAF45; background:#14342Cb3; padding:2px 6px; border-radius:2px;">${esc(r.catShort)}</span>
             </div>
             <div style="padding:18px 20px;">
@@ -289,6 +408,7 @@ function renderPage(p) {
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">${JSON.stringify(productSchema)}</script>
 <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
+${faqSchemaTag(p)}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
@@ -323,7 +443,7 @@ function renderPage(p) {
   <!-- HEADER -->
   <header id="pcHeader" class="pc-header" style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px clamp(20px,4vw,40px); background:rgba(12,31,25,0.92); backdrop-filter:blur(8px); transition:padding .25s ease;">
     <a href="../index.html" style="display:flex; align-items:baseline; gap:1px; text-decoration:none;">
-      <img src="../assets/packinclub-logo.png" alt="PackinClub" style="height:55px; width:auto; display:block;">
+      <img src="../assets/packinclub-logo.png" alt="Packin Club" style="height:55px; width:auto; display:block;">
     </a>
     <nav class="pc-nav-desktop" style="align-items:center; gap:clamp(10px,1.6vw,26px); font-size:13.5px; font-weight:500;">
       <a href="../index.html" style="color:#F7F4EC; text-decoration:none;">Home</a>
@@ -378,7 +498,7 @@ function renderPage(p) {
         </div>
         <div style="flex:0 0 auto; width:clamp(220px,28vw,320px); aspect-ratio:1/1; position:relative; border:1px solid #ffffff1f; border-radius:6px; background:#0f261f; display:flex; align-items:center; justify-content:center; overflow:hidden;">
           <div style="position:relative; width:46%; height:46%; color:#6FAF45; z-index:1;">${iconSvg(p.form)}</div>
-          ${p.image ? `<img src="../${esc(p.image)}" alt="${esc(p.name)} — compostable packaging by Packin Club" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2;" />` : ''}
+          ${p.image ? `<img src="../${esc(p.image)}" alt="${esc(altFor(p.image, p.name + ' by Packin Club'))}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2;" />` : ''}
         </div>
       </div>
     </div>
@@ -393,6 +513,7 @@ function renderPage(p) {
 
         ${featuresSectionHtml}
         ${applicationsSectionHtml}
+        ${renderGuide(p)}
         ${morePhotosHtml}
       </div>
 
@@ -428,7 +549,7 @@ ${relatedHtml}
     <div style="max-width:1280px; margin:0 auto;">
       <div style="display:flex; flex-wrap:wrap; gap:clamp(40px,6vw,72px); justify-content:space-between; padding-bottom:clamp(40px,5vw,60px); border-bottom:1px solid #ffffff14;">
         <div style="max-width:300px;">
-          <img src="../assets/packinclub-logo.png" alt="PackinClub" style="height:53px; width:auto; display:block; margin-bottom:15px;">
+          <img src="../assets/packinclub-logo.png" alt="Packin Club" style="height:53px; width:auto; display:block; margin-bottom:15px;">
           <p style="font-size:14.5px; line-height:1.65; color:#F7F4EC99; margin:0 0 22px;">India's pioneering eco-packaging partner, pairing material science with practical business solutions.</p>
           <div style="display:flex; gap:10px;">
             <a href="https://www.linkedin.com/company/packin-club-compostable-packaging/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:38px; height:38px; border-radius:8px; background:#ffffff14; display:inline-flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
