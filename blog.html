@@ -47,6 +47,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
 <link rel="stylesheet" href="/header-pill.css">
+<script src="nav-dropdown.js" defer></script>
 </head>
 <body>
 <x-dc>
@@ -120,7 +121,7 @@
   <a href="index.html" style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Home</a>
   <a href="about.html" data-nav style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">About</a>
   <a href="industries.html" data-nav style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Industries</a>
-  <a href="products.html" data-nav style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Products</a>
+  <div class="pc-nav-dd"><a href="products.html" data-nav style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Products</a><button type="button" class="pc-nav-dd-btn" aria-label="Show product categories" aria-haspopup="true" aria-expanded="false" style="color:#F7F4EC;"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></button><div class="pc-nav-dd-menu"><div class="pc-nav-dd-panel" role="menu"><a role="menuitem" href="products.html" data-pc-cat="all" class="pc-dd-all">All Products</a><a role="menuitem" href="products.html?cat=agriculture-nursery" data-pc-cat="agriculture-nursery">Agriculture &amp; Nursery</a><a role="menuitem" href="products.html?cat=bags-on-roll" data-pc-cat="bags-on-roll">Bags on Roll</a><a role="menuitem" href="products.html?cat=healthcare-hospital" data-pc-cat="healthcare-hospital">Healthcare &amp; Hospital</a><a role="menuitem" href="products.html?cat=horeca" data-pc-cat="horeca">HORECA</a><a role="menuitem" href="products.html?cat=industrial" data-pc-cat="industrial">Industrial</a><a role="menuitem" href="products.html?cat=retail" data-pc-cat="retail">Retail</a><a role="menuitem" href="products.html?cat=temple-religious" data-pc-cat="temple-religious">Temple &amp; Religious</a></div></div></div>
   <a href="blog.html" data-nav style="color:#6FAF45; text-decoration:none; transition:color .15s;">Blog</a>
   <a href="contact.html" data-nav style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Contact</a>
 </nav>
@@ -147,7 +148,7 @@
 
   <a href="industries.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Industries</a>
 
-  <a href="products.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Products</a>
+  <details class="pc-m-dd"><summary style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Products<svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></summary><div class="pc-m-dd-list"><a href="products.html" data-pc-cat="all" onClick="{{ closeMobileMenu }}">All Products</a><a href="products.html?cat=agriculture-nursery" data-pc-cat="agriculture-nursery" onClick="{{ closeMobileMenu }}">Agriculture &amp; Nursery</a><a href="products.html?cat=bags-on-roll" data-pc-cat="bags-on-roll" onClick="{{ closeMobileMenu }}">Bags on Roll</a><a href="products.html?cat=healthcare-hospital" data-pc-cat="healthcare-hospital" onClick="{{ closeMobileMenu }}">Healthcare &amp; Hospital</a><a href="products.html?cat=horeca" data-pc-cat="horeca" onClick="{{ closeMobileMenu }}">HORECA</a><a href="products.html?cat=industrial" data-pc-cat="industrial" onClick="{{ closeMobileMenu }}">Industrial</a><a href="products.html?cat=retail" data-pc-cat="retail" onClick="{{ closeMobileMenu }}">Retail</a><a href="products.html?cat=temple-religious" data-pc-cat="temple-religious" onClick="{{ closeMobileMenu }}">Temple &amp; Religious</a></div></details>
 
   <a href="blog.html" onClick="{{ closeMobileMenu }}" style="color:#6FAF45; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Blog</a>
 
