@@ -33,7 +33,7 @@ function renderGuide(p) {
     }
     if (c.sizing) h += guideP(c.sizing);
   }
-  if (c.thickness) h += guideH2('How to choose the right thickness') + guideP(c.thickness);
+  if (c.thickness) h += guideH2(c.thicknessTitle || 'How to choose the right thickness') + guideP(c.thickness);
   if (c.disposal) h += guideH2('Disposal and storage') + guideP(c.disposal);
   if (c.faqs && c.faqs.length) {
     h += guideH2('Frequently asked questions') + c.faqs.map(function (f) {
@@ -436,6 +436,7 @@ ${faqSchemaTag(p)}
   a { transition: color .15s; }
 </style>
 <link rel="stylesheet" href="../header-pill.css">
+<script src="../nav-dropdown.js" defer></script>
 </head>
 <body>
 <div class="pc-site" style="overflow-x:hidden; min-height:100vh;">
@@ -449,7 +450,7 @@ ${faqSchemaTag(p)}
       <a href="../index.html" style="color:#F7F4EC; text-decoration:none;">Home</a>
       <a href="../about.html" style="color:#F7F4EC; text-decoration:none;">About</a>
       <a href="../industries.html" style="color:#F7F4EC; text-decoration:none;">Industries</a>
-      <a href="../products.html" style="color:#6FAF45; text-decoration:none;">Products</a>
+      <div class="pc-nav-dd"><a href="../products.html" style="color:#6FAF45; text-decoration:none;">Products</a><button type="button" class="pc-nav-dd-btn" aria-label="Show product categories" aria-haspopup="true" aria-expanded="false" style="color:#6FAF45;"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></button><div class="pc-nav-dd-menu"><div class="pc-nav-dd-panel" role="menu"><a role="menuitem" href="../products.html" data-pc-cat="all" class="pc-dd-all">All Products</a><a role="menuitem" href="../products.html?cat=agriculture-nursery" data-pc-cat="agriculture-nursery">Agriculture &amp; Nursery</a><a role="menuitem" href="../products.html?cat=bags-on-roll" data-pc-cat="bags-on-roll">Bags on Roll</a><a role="menuitem" href="../products.html?cat=healthcare-hospital" data-pc-cat="healthcare-hospital">Healthcare &amp; Hospital</a><a role="menuitem" href="../products.html?cat=horeca" data-pc-cat="horeca">HORECA</a><a role="menuitem" href="../products.html?cat=industrial" data-pc-cat="industrial">Industrial</a><a role="menuitem" href="../products.html?cat=retail" data-pc-cat="retail">Retail</a><a role="menuitem" href="../products.html?cat=temple-religious" data-pc-cat="temple-religious">Temple &amp; Religious</a></div></div></div>
       <a href="../blog.html" style="color:#F7F4EC; text-decoration:none;">Blog</a>
       <a href="../contact.html" style="color:#F7F4EC; text-decoration:none;">Contact</a>
     </nav>
@@ -465,7 +466,7 @@ ${faqSchemaTag(p)}
     <a href="../index.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Home</a>
     <a href="../about.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">About</a>
     <a href="../industries.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Industries</a>
-    <a href="../products.html" style="color:#6FAF45; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Products</a>
+    <details class="pc-m-dd"><summary style="color:#6FAF45; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Products<svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></summary><div class="pc-m-dd-list"><a href="../products.html" data-pc-cat="all">All Products</a><a href="../products.html?cat=agriculture-nursery" data-pc-cat="agriculture-nursery">Agriculture &amp; Nursery</a><a href="../products.html?cat=bags-on-roll" data-pc-cat="bags-on-roll">Bags on Roll</a><a href="../products.html?cat=healthcare-hospital" data-pc-cat="healthcare-hospital">Healthcare &amp; Hospital</a><a href="../products.html?cat=horeca" data-pc-cat="horeca">HORECA</a><a href="../products.html?cat=industrial" data-pc-cat="industrial">Industrial</a><a href="../products.html?cat=retail" data-pc-cat="retail">Retail</a><a href="../products.html?cat=temple-religious" data-pc-cat="temple-religious">Temple &amp; Religious</a></div></details>
     <a href="../blog.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Blog</a>
     <a href="../contact.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Contact</a>
     <a href="../contact.html#quote" style="margin-top:18px; display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#6FAF45; color:#14342C; font-size:15px; font-weight:600; padding:14px 18px; border-radius:2px; text-decoration:none;">Request a Quote</a>

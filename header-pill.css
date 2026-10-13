@@ -35,3 +35,26 @@ header.pc-header {
    header.pc-header a[href="contact.html"] { border-radius: 999px !important; padding: 11px 22px !important; }
    header.pc-header .pc-cta-desktop a[aria-label] { border-radius: 50% !important; }
 */
+
+/* ---------- 4. Products dropdown (added with nav-dropdown.js) ---------- */
+.pc-nav-dd { position: relative; display: inline-flex; align-items: center; gap: 2px; }
+.pc-nav-dd-btn { background: none; border: 0; padding: 6px 4px; margin: 0; cursor: pointer; display: inline-flex; align-items: center; line-height: 1; }
+.pc-nav-dd-btn svg { transition: transform .2s ease; }
+.pc-nav-dd:hover .pc-nav-dd-btn svg, .pc-nav-dd.pc-dd-open .pc-nav-dd-btn svg { transform: rotate(180deg); }
+.pc-nav-dd-btn:focus-visible, .pc-nav-dd-panel a:focus-visible { outline: 2px solid #6FAF45; outline-offset: 2px; }
+.pc-nav-dd-menu { display: none; position: absolute; top: 100%; left: -16px; padding-top: 18px; z-index: 70; }
+.pc-nav-dd:hover .pc-nav-dd-menu, .pc-nav-dd.pc-dd-open .pc-nav-dd-menu, .pc-nav-dd:has(:focus-visible) .pc-nav-dd-menu { display: block; }
+.pc-nav-dd-panel { min-width: 250px; background: rgba(12, 31, 25, 0.97); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 18px; padding: 8px; box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.55); display: flex; flex-direction: column; animation: pcFadeUp .18s ease; }
+.pc-nav-dd-panel a { display: block; color: #F7F4EC !important; text-decoration: none !important; font-size: 13.5px; font-weight: 500; padding: 10px 14px; border-radius: 12px; white-space: nowrap; transition: background .15s ease, color .15s ease; }
+.pc-nav-dd-panel a:hover { background: rgba(255, 255, 255, 0.08); color: #6FAF45 !important; }
+.pc-nav-dd-panel a.pc-dd-all { font-weight: 600; border-bottom: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px 12px 0 0; margin-bottom: 4px; }
+
+/* Phone menu: Products accordion */
+.pc-m-dd > summary { display: flex !important; align-items: center; justify-content: space-between; cursor: pointer; list-style: none; }
+.pc-m-dd > summary::-webkit-details-marker { display: none; }
+.pc-m-dd > summary svg { transition: transform .2s ease; flex: none; }
+.pc-m-dd[open] > summary svg { transform: rotate(180deg); }
+.pc-m-dd-list { display: flex; flex-direction: column; padding: 2px 0 8px 14px; }
+.pc-m-dd-list a { color: #F7F4ECdd !important; text-decoration: none !important; font-size: 15.5px; padding: 12px 4px; border-bottom: 1px solid #ffffff0d; }
+.pc-m-dd-list a:last-child { border-bottom: 0; }
+@keyframes pcFadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
