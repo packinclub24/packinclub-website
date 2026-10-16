@@ -244,6 +244,109 @@ margin:0;
     </div>
   </section>
 
+  <!-- ============ TWO FUTURES: DRAG TO COMPARE + TABLE ============ -->
+  <section id="compare" style="background:#F7F4EC; padding:clamp(64px,8vw,112px) clamp(20px,4vw,40px) clamp(40px,5vw,64px);">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div data-reveal style="max-width:760px; margin-bottom:clamp(32px,4vw,46px);">
+        <div style="font-family:'Lora', serif; font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:#C1622D; margin-bottom:16px;">
+  Two futures, one parcel
+</div>
+
+<h2 style="font-family:'Libre Baskerville', serif; font-weight:700; font-size:clamp(30px,4.4vw,54px); line-height:1.05; letter-spacing:-0.02em; margin:0 0 18px;">
+  Drag through time. Watch the difference 500 years makes.
+</h2>
+        <p style="font-size:17px; line-height:1.6; color:#14342Ccc; margin:0;">The same mailer, sent today. Pull the timeline and watch one side return to soil and grow, while the other simply refuses to leave.</p>
+      </div>
+
+      <!-- two panels -->
+      <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:18px;">
+
+        <!-- PLASTIC: stays whole -->
+        <div style="position:relative; border-radius:4px; overflow:hidden; min-height:clamp(380px,40vw,460px); background:linear-gradient(160deg,#33322e,#1c1b18); display:flex; flex-direction:column; justify-content:flex-end;">
+          <div style="position:absolute; top:clamp(18px,2.4vw,28px); left:clamp(18px,2.4vw,28px); z-index:3; font-family:Inter,sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#C1622D; border:1px solid #C1622D77; padding:6px 12px; border-radius:2px;">Conventional plastic</div>
+          <!-- plastic waste, stays forever -->
+          <img src="assets/plastic-wall.png" alt="Plastic pollution that never breaks down" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;" />
+          <div style="position:absolute; inset:0; background:linear-gradient(160deg,#33322e44,#1c1b18cc); pointer-events:none;"></div>
+          <!-- accumulating microplastic specks -->
+          <div ref="{{ plasticSpecksRef }}" style="position:absolute; inset:0; pointer-events:none; opacity:0;">
+            <sc-for list="{{ specks }}" as="s" hint-placeholder-count="0">
+              <span style="{{ s.style }}"></span>
+            </sc-for>
+          </div>
+          <div style="position:relative; z-index:3; padding:clamp(22px,3vw,40px); background:linear-gradient(0deg,#16151388,transparent);">
+            <div style="display:flex; align-items:baseline; gap:10px;">
+              <span style="font-family:Bitter,serif; font-size:clamp(40px,6vw,68px); font-weight:600; line-height:.9; color:#C1622D;">{{ plasticYears }}</span>
+              <span style="font-family:Inter,sans-serif; font-size:13px; letter-spacing:0.06em; color:#F7F4EC99;">years on</span>
+            </div>
+            <div style="font-family:Bitter,serif; font-size:clamp(20px,2.4vw,26px); color:#F7F4EC; margin-top:8px;">{{ plasticLabel }}</div>
+          </div>
+        </div>
+
+        <!-- COMPOSTABLE: morphs product -> soil -> plant -->
+        <div style="position:relative; border-radius:4px; overflow:hidden; min-height:clamp(380px,40vw,460px); background:linear-gradient(160deg,#1d4439,#0c1f19); display:flex; flex-direction:column; justify-content:flex-end;">
+          <div style="position:absolute; top:clamp(18px,2.4vw,28px); right:clamp(18px,2.4vw,28px); z-index:3; font-family:Inter,sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#6FAF45; border:1px solid #6FAF4577; padding:6px 12px; border-radius:2px;">Packin Club</div>
+          <canvas ref="{{ morphCanvasRef }}" width="720" height="640" style="position:absolute; inset:0; width:100%; height:100%; display:block;"></canvas>
+          <div style="position:relative; z-index:3; padding:clamp(22px,3vw,40px); background:linear-gradient(0deg,#0c1f1999,transparent);">
+            <div style="display:flex; align-items:baseline; gap:10px;">
+              <span style="font-family:Bitter,serif; font-size:clamp(40px,6vw,68px); font-weight:600; line-height:.9; color:#6FAF45;">{{ compostDay }}</span>
+              <span style="font-family:Inter,sans-serif; font-size:13px; letter-spacing:0.06em; color:#F7F4EC99;">{{ compostUnit }}</span>
+            </div>
+            <div style="font-family:Bitter,serif; font-size:clamp(20px,2.4vw,26px); color:#F7F4EC; margin-top:8px;">{{ morphLabel }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- timeline drag -->
+      <div data-reveal style="margin-top:clamp(26px,3vw,38px);">
+        <div style="display:flex; justify-content:space-between; font-family:Inter,sans-serif; font-size:11px; letter-spacing:0.08em; color:#8C8579; margin-bottom:12px;">
+          <span>SENT TODAY</span><span>500 YEARS LATER</span>
+        </div>
+        <input type="range" min="0" max="100" step="1" value="{{ compareVal }}" onInput="{{ onCompareSlide }}" ref="{{ compareRangeRef }}" style="-webkit-appearance:none; appearance:none; width:100%; height:5px; border-radius:3px; background:linear-gradient(90deg,#C1622D 0%,#6FAF45 var(--cpct,0%),#14342C22 var(--cpct,0%)); outline:none; cursor:grab;" />
+        <div style="text-align:center; font-family:Inter,sans-serif; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#C1622D; margin-top:14px;">⇄ &nbsp;Drag the timeline&nbsp; ⇄</div>
+      </div>
+
+      <!-- comparison table -->
+      <div data-reveal style="margin-top:clamp(40px,5vw,64px);">
+        <div style="overflow-x:auto; border-radius:16px; border:1px solid #14342C1f; background:#FCFBF7; box-shadow:0 30px 70px -34px rgba(20,52,44,0.45), 0 1px 0 #ffffff inset;">
+          <table style="width:100%; border-collapse:separate; border-spacing:0; min-width:720px; font-size:15px;">
+            <thead>
+              <tr>
+                <th style="text-align:left; padding:22px 24px 18px; vertical-align:bottom; font-weight:500; color:#8C8579; font-family:Inter,sans-serif; font-size:11px; letter-spacing:0.16em; text-transform:uppercase;">Material</th>
+                <th style="text-align:left; padding:22px 24px 18px; vertical-align:bottom; border-bottom:1px solid #14342C12;">
+                  <div style="font-family:Inter,sans-serif; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#C1622D; margin-bottom:7px;">The default</div>
+                  <div style="font-family:Bitter,serif; font-weight:600; font-size:19px; color:#14342C;">Conventional plastic</div>
+                </th>
+                <th style="text-align:left; padding:22px 24px 18px; vertical-align:bottom; border-bottom:1px solid #14342C12;">
+                  <div style="font-family:Inter,sans-serif; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#8C8579; margin-bottom:7px;">The greenwash</div>
+                  <div style="font-family:Bitter,serif; font-weight:600; font-size:19px; color:#14342C;">Oxo / &ldquo;biodegradable&rdquo;</div>
+                </th>
+                <th style="text-align:left; padding:18px 24px; vertical-align:bottom; background:linear-gradient(160deg,#6FAF45,#558c34); border-top-left-radius:13px; border-top-right-radius:13px; box-shadow:0 -10px 30px -12px #6FAF4566;">
+                  <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                    <span style="width:18px; height:18px; border-radius:50%; background:#F7F4EC; color:#558c34; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:700;">✓</span>
+                    <span style="font-family:Inter,sans-serif; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:#eef7e6;">Recommended</span>
+                  </div>
+                  <div style="font-family:Bitter,serif; font-weight:600; font-size:20px; color:#fff;">Packin Club</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <sc-for list="{{ tableRows }}" as="r" hint-placeholder-count="5">
+                <tr>
+                  <td style="padding:19px 24px; font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.07em; text-transform:uppercase; color:#14342C; border-bottom:1px solid #14342C0f;">{{ r.label }}</td>
+                  <td style="padding:19px 24px; color:#7c7468; border-bottom:1px solid #14342C0f;">{{ r.plastic }}</td>
+                  <td style="padding:19px 24px; color:#7c7468; border-bottom:1px solid #14342C0f;">{{ r.oxo }}</td>
+                  <td style="padding:19px 24px; color:#14342C; font-weight:600; background:#6FAF4514; border-left:1px solid #6FAF4533; border-right:1px solid #6FAF4533; border-bottom:1px solid #6FAF4524;">
+                    <span style="display:inline-flex; align-items:center; gap:9px;"><span style="color:#558c34; font-size:13px;">✓</span>{{ r.packin }}</span>
+                  </td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- INDUSTRIES GRID -->
   <section style="background:#F7F4EC; padding:clamp(56px,7vw,96px) clamp(20px,4vw,40px) clamp(40px,5vw,64px);">
     <div style="max-width:1280px; margin:0 auto;">
@@ -553,9 +656,10 @@ margin:0;
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
 class Component extends DCLogic {
-  state = { mobileMenuOpen: false };
+  state = { mobileMenuOpen: false, compareVal: 0 };
 
   componentDidMount() {
+    this._mounted = true;
     this._plTimer = setTimeout(() => {
       if (this.preloaderEl) { this.preloaderEl.style.opacity = '0'; this.preloaderEl.style.visibility = 'hidden'; }
     }, 1400);
@@ -575,8 +679,18 @@ class Component extends DCLogic {
     window.addEventListener('scroll', this._onScroll, { passive: true });
     this._onScroll();
     this._reveal();
+    // "Two futures" drag-to-compare: load the mailer image, then build the particle animation
+    this.targetCmp = 0;
+    this.dispCmp = 0;
+    this._rafOK = false;
+    this._imgs = {};
+    const mim = new Image();
+    mim.onload = () => { this._imgs.morph = mim; this._morphReady = true; this._initMorph(); };
+    mim.src = 'assets/mailer-plants.png';
+    requestAnimationFrame(() => { this._rafOK = true; });
+    this._loop();
   }
-  componentWillUnmount() { clearTimeout(this._plTimer); if (this._io) this._io.disconnect(); window.removeEventListener('scroll', this._onScroll); }
+  componentWillUnmount() { clearTimeout(this._plTimer); if (this._io) this._io.disconnect(); window.removeEventListener('scroll', this._onScroll); cancelAnimationFrame(this._raf); }
 
   _reveal() {
     if (!this.root) return;
@@ -586,6 +700,162 @@ class Component extends DCLogic {
     this._io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.style.transition = tr; e.target.style.opacity = '1'; e.target.style.transform = 'none'; this._io.unobserve(e.target); } }), { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
     els.forEach(el => this._io.observe(el));
     setTimeout(() => els.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; }), 3000);
+  }
+
+
+  // ---------- shared helpers for the compare animation ----------
+  _easeCol(a, b, t) { return a.map((v, i) => Math.round(v + (b[i] - v) * t)); }
+
+  // Sample the real product image into a particle grid that crumbles to a soil mound.
+  _sampleParts(img, W, H, opts) {
+    const ratio = img.naturalHeight / img.naturalWidth;
+    const bw = W * opts.widthFrac;
+    const bh = bw * ratio;
+    const bx = (W - bw) / 2;
+    const topY = H * opts.topFrac;
+    const groundY = H * opts.groundFrac;
+    // offscreen sample
+    const oc = document.createElement('canvas');
+    oc.width = Math.round(bw); oc.height = Math.round(bh);
+    const ox = oc.getContext('2d');
+    ox.drawImage(img, 0, 0, oc.width, oc.height);
+    const data = ox.getImageData(0, 0, oc.width, oc.height).data;
+    const step = Math.max(5, Math.round(bw / 56));
+    const parts = [];
+    const cx = W / 2, moundW = bw * 0.92, moundPeak = (groundY - topY) * 0.16;
+    for (let gy = 0; gy < oc.height; gy += step) {
+      for (let gx = 0; gx < oc.width; gx += step) {
+        const idx = (gy * oc.width + gx) * 4;
+        if (data[idx + 3] < 70) continue;
+        const hx = bx + gx, hy = topY + gy;
+        const vert = gy / oc.height;                 // top dissolves first
+        const thr = Math.min(0.96, vert * 0.5 + Math.random() * 0.45);
+        const tx = cx + (Math.random() - 0.5) * moundW;
+        const moundH = moundPeak * (1 - Math.abs((tx - cx) / (moundW / 2))) + Math.random() * 8;
+        const ty = groundY - Math.max(0, moundH) - Math.random() * 4;
+        parts.push({
+          hx, hy, tx, ty, thr,
+          r: 1.5 + Math.random() * 2.3,
+          col: [data[idx], data[idx + 1], data[idx + 2]]
+        });
+      }
+    }
+    return { parts, bx, topY, bw, bh, groundY, img };
+  }
+
+  // Draw the crumble: intact image -> falling crumbs -> soil mound. p in 0..1.
+  _crumble(ctx, geo, W, H, p) {
+    const clay = [150, 92, 46], soil = [74, 54, 34];
+    // soil ground + glow
+    ctx.strokeStyle = 'rgba(111,175,69,' + (0.12 + p * 0.22) + ')';
+    ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(W * 0.12, geo.groundY + 2); ctx.lineTo(W * 0.88, geo.groundY + 2); ctx.stroke();
+    // intact product (fades over first half)
+    const intact = Math.max(0, 1 - p / 0.5);
+    if (intact > 0.02) {
+      ctx.save();
+      ctx.globalAlpha = intact;
+      ctx.drawImage(geo.img, geo.bx, geo.topY, geo.bw, geo.bh);
+      ctx.restore();
+    }
+    // particles
+    for (const pt of geo.parts) {
+      const start = pt.thr * 0.2;
+const local = Math.max(0, Math.min(1, (p - start) / (1 - start)));
+      if (local <= 0) continue;
+      const e = local;
+      const x = pt.hx + (pt.tx - pt.hx) * e;
+      const y = pt.hy + (pt.ty - pt.hy) * e + Math.sin(e * Math.PI) * 14;
+      let col;
+if (p < 0.8) col = this._easeCol(pt.col, clay, Math.min(1, p / 0.8));
+else col = this._easeCol(clay, soil, Math.min(1, (p - 0.8) / 0.6));
+      const alpha = local < 0.16 ? local / 0.16 : 1;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = 'rgb(' + col[0] + ',' + col[1] + ',' + col[2] + ')';
+      ctx.beginPath();
+      ctx.arc(x, y, pt.r * (1 - e * 0.25), 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  _leaf(ctx, x, y, ang, len, wid, col) {
+    ctx.save(); ctx.translate(x, y); ctx.rotate(ang); ctx.fillStyle = col;
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.quadraticCurveTo(len * 0.5, -wid, len, 0);
+    ctx.quadraticCurveTo(len * 0.5, wid, 0, 0);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // ---------- 500-year morph canvas (product -> soil -> plant) ----------
+  _initMorph() {
+    const c = this.morphCanvas; if (!c || !this._morphReady) return;
+    this.mctx = c.getContext('2d');
+    this.mGeo = this._sampleParts(this._imgs.morph, c.width, c.height, { widthFrac: 0.52, topFrac: 0.05, groundFrac: 0.72 });
+    this._morphInit = true;
+    this._drawMorph(this.dispCmp);
+  }
+  _drawMorph(cp) {
+    const ctx = this.mctx; if (!ctx || !this.mGeo) return;
+    const c = this.morphCanvas, W = c.width, H = c.height;
+    ctx.clearRect(0, 0, W, H);
+    // decompose phase
+    const pc = Math.min(1, cp / 0.62);
+    this._crumble(ctx, this.mGeo, W, H, pc);
+    // grow phase
+    const pg = Math.max(0, Math.min(1, (cp - 0.5) / 0.5));
+    if (pg > 0) {
+      const baseX = W / 2, baseY = this.mGeo.groundY - 4;
+      const stemH = pg * H * 0.5;
+      const tipX = baseX + Math.sin(pg * 1.4) * 10;
+      const tipY = baseY - stemH;
+      // stem
+      ctx.save();
+      ctx.strokeStyle = '#5c9a3a';
+      ctx.lineWidth = 2 + pg * 3;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(baseX, baseY);
+      ctx.quadraticCurveTo(baseX + Math.sin(pg) * 6, baseY - stemH * 0.5, tipX, tipY);
+      ctx.stroke();
+      ctx.restore();
+      // leaf pairs along the stem
+      const pairs = [{ at: 0.42, len: 0.20 }, { at: 0.68, len: 0.16 }];
+      for (const lp of pairs) {
+        const g = Math.max(0, Math.min(1, (pg - lp.at * 0.55) / 0.3));
+        if (g <= 0) continue;
+        const ly = baseY - stemH * lp.at;
+        const lx = baseX + Math.sin(pg) * 6 * lp.at;
+        const L = lp.len * H * g;
+        this._leaf(ctx, lx, ly, -0.5, L, L * 0.42, '#6FAF45');
+        this._leaf(ctx, lx, ly, Math.PI + 0.5, L, L * 0.42, '#5c9a3a');
+      }
+      // top bud / sprout leaves
+      const gt = Math.max(0, Math.min(1, (pg - 0.55) / 0.45));
+      if (gt > 0) {
+        const L = 0.17 * H * gt;
+        this._leaf(ctx, tipX, tipY, -1.05, L, L * 0.45, '#8FCB62');
+        this._leaf(ctx, tipX, tipY, -Math.PI + 1.05, L, L * 0.45, '#6FAF45');
+      }
+    }
+  }
+  _setCompare(v) {
+    this.targetCmp = v;
+    if (!this._rafOK) { this.dispCmp = v; this._drawMorph(v); this._updatePlastic(v); }
+  }
+  _updatePlastic(v) {
+    if (this.plasticSpecksEl) this.plasticSpecksEl.style.opacity = Math.min(1, v * 1.15).toFixed(3);
+  }
+
+  _loop() {
+    this._raf = requestAnimationFrame(() => this._loop());
+    if (this.targetCmp != null) {
+      const d = this.targetCmp - this.dispCmp;
+      if (Math.abs(d) > 0.0012) { this.dispCmp += d * 0.16; this._drawMorph(this.dispCmp); this._updatePlastic(this.dispCmp); }
+    }
   }
 
   magnetMove = (e) => {
@@ -632,6 +902,30 @@ class Component extends DCLogic {
       { no: '09', name: 'Temple & Religious', icon: this._icon('flame'), body: 'Food-safe pouches for prasadam and offerings, keeping high-footfall festivals and daily darshan free of single-use plastic, with room for your branding.', formats: ['Prasadam pouches'], href: prod, cta: 'See temple range' }
     ];
 
+    // ----- 500-year timeline derived values -----
+    const cp = this.state.compareVal / 100;
+    const plasticYears = Math.round(cp * 500);
+    const plasticLabel = cp < 0.05 ? 'Sealed and shipped today.'
+      : cp < 0.4 ? 'Still intact. Still whole.'
+      : cp < 0.8 ? 'Fragmenting into microplastics.'
+      : 'Still here. Now in the food chain.';
+    const compostDay = Math.min(240, Math.round(cp / 0.62 * 240));
+    const compostUnit = cp < 0.64 ? '/ 240 days' : 'new life';
+    const morphLabel = cp < 0.06 ? 'Sealed and shipped today.'
+      : cp < 0.3 ? 'Microbes colonise the surface.'
+      : cp < 0.52 ? 'Crumbling into humus.'
+      : cp < 0.66 ? 'Returned to soil. Nothing left.'
+      : cp < 0.85 ? 'A seed takes hold in the compost.'
+      : 'New life grows from what we shipped.';
+    if (!this._specks) {
+      this._specks = [];
+      const cols = ['#C1622D', '#9a9488', '#b9b1a3'];
+      for (let i = 0; i < 46; i++) {
+        const sz = (2 + Math.random() * 3.4).toFixed(1);
+        this._specks.push({ style: 'position:absolute; top:' + (8 + Math.random() * 84).toFixed(1) + '%; left:' + (6 + Math.random() * 88).toFixed(1) + '%; width:' + sz + 'px; height:' + sz + 'px; border-radius:50%; background:' + cols[i % 3] + '; animation:pcFloat ' + (4 + Math.random() * 4).toFixed(1) + 's ease-in-out ' + (Math.random() * 4).toFixed(1) + 's infinite;' });
+      }
+    }
+
     return {
       rootRef: el => { this.root = el; },
       headerRef: el => { this.header = el; },
@@ -643,12 +937,31 @@ class Component extends DCLogic {
       toggleMobileMenu: () => { this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen }); setTimeout(() => this._syncBurger(), 0); },
       closeMobileMenu: () => { this.setState({ mobileMenuOpen: false }); setTimeout(() => this._syncBurger(), 0); },
       emailRef: el => { this.emailEl = el; },
+      morphCanvasRef: el => { this.morphCanvas = el; if (this._mounted && el && this._morphReady && !this._morphInit) this._initMorph(); },
+      plasticSpecksRef: el => { this.plasticSpecksEl = el; },
+      compareRangeRef: el => { this.compareRange = el; if (el) el.style.setProperty('--cpct', this.state.compareVal + '%'); },
+      compareVal: this.state.compareVal,
+      plasticYears, plasticLabel, compostDay, compostUnit, morphLabel,
+      specks: this._specks,
+      onCompareSlide: (e) => {
+        const v = +e.target.value;
+        this._setCompare(v / 100);
+        this.setState({ compareVal: v });
+        if (this.compareRange) this.compareRange.style.setProperty('--cpct', v + '%');
+      },
       magnetMove: this.magnetMove,
       magnetLeave: this.magnetLeave,
       heroStats: [
         { value: '9+', label: 'Industries served' },
         { value: '24', label: 'Certified formats' },
         { value: '240 days', label: 'Returns to soil' }
+      ],
+      tableRows: [
+        { label: 'Time to break down', plastic: '500+ years', oxo: 'Unverified', packin: '240 days' },
+        { label: 'Microplastic residue', plastic: 'Severe', oxo: 'Yes, fragments', packin: 'None' },
+        { label: 'Certification', plastic: 'None', oxo: 'Rarely', packin: 'CPCB' },
+        { label: 'End state', plastic: 'Pollution', oxo: 'Microplastics', packin: 'Humus' },
+        { label: 'Ban-compliant', plastic: 'No', oxo: 'Varies', packin: 'Yes' }
       ],
       industries,
       steps: [
