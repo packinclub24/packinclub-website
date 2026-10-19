@@ -2469,20 +2469,20 @@
   // own image instead of the category default, e.g.
   // var THUMB_OVERRIDE = { 'compostable-vs-biodegradable-packaging-what-s-the-real-difference': 'https://...jpg' };
    var THUMB_OVERRIDE = {
-    'compostable-vs-biodegradable-packaging-what-s-the-real-difference': 'thumbnail_blog/CompostablevsBiodegradable_homepage.png',
-    'are-compostable-bags-really-eco-friendly-an-honest-look': 'thumbnail_blog/AnHonestLook.png',
-    'india-s-single-use-plastic-ban-a-practical-compliance-guide-for-businesses': 'thumbnail_blog/IndiaSingle-UsePlasticBan_homepage.png',
-    'what-is-is-17088-compostable-plastic-certification-explained': 'thumbnail_blog/IS17088_homepage.png',
-    'compostable-courier-bags-for-e-commerce-the-complete-guide': 'thumbnail_blog/compostable-courier-bags.png',
-    'how-long-does-compostable-packaging-take-to-decompose': 'thumbnail_blog/decompose-packaging.png',
-    'compostable-packaging-for-restaurants-and-cloud-kitchens': 'thumbnail_blog/Compostable-Packaging-for-Restaurants.png',
-    'aqueous-coated-paper-cups-are-they-actually-compostable': 'thumbnail_blog/Aqueous-Coated-Paper-Cups.png',
-    'the-true-cost-of-switching-to-compostable-packaging': 'thumbnail_blog/True-Cost-of-Switching-to-Compostable-Packaging.png',
-    'home-composting-vs-industrial-composting-what-you-need-to-know': 'thumbnail_blog/Home-Composting-vs-Industrial-Composting.png',
-    'compostable-mulch-film-a-practical-guide-for-indian-farmers': 'thumbnail_blog/Compostable_mulch_film.png',
-    'how-to-spot-greenwashing-in-eco-friendly-packaging': 'thumbnail_blog/Eco-FriendlyPackaging.png',
-    'what-is-compostable-packaging': 'thumbnail_blog/what_is_compostable_packaging.png',
-    'courier-bag-sizes-chart': 'thumbnail_blog/PackinClub_Eco_Packaging_Guide.png'
+    'compostable-vs-biodegradable-packaging-what-s-the-real-difference': 'thumbnail_blog/CompostablevsBiodegradable_homepage.webp',
+    'are-compostable-bags-really-eco-friendly-an-honest-look': 'thumbnail_blog/AnHonestLook.webp',
+    'india-s-single-use-plastic-ban-a-practical-compliance-guide-for-businesses': 'thumbnail_blog/IndiaSingle-UsePlasticBan_homepage.webp',
+    'what-is-is-17088-compostable-plastic-certification-explained': 'thumbnail_blog/IS17088_homepage.webp',
+    'compostable-courier-bags-for-e-commerce-the-complete-guide': 'thumbnail_blog/compostable-courier-bags.webp',
+    'how-long-does-compostable-packaging-take-to-decompose': 'thumbnail_blog/decompose-packaging.webp',
+    'compostable-packaging-for-restaurants-and-cloud-kitchens': 'thumbnail_blog/Compostable-Packaging-for-Restaurants.webp',
+    'aqueous-coated-paper-cups-are-they-actually-compostable': 'thumbnail_blog/Aqueous-Coated-Paper-Cups.webp',
+    'the-true-cost-of-switching-to-compostable-packaging': 'thumbnail_blog/True-Cost-of-Switching-to-Compostable-Packaging.webp',
+    'home-composting-vs-industrial-composting-what-you-need-to-know': 'thumbnail_blog/Home-Composting-vs-Industrial-Composting.webp',
+    'compostable-mulch-film-a-practical-guide-for-indian-farmers': 'thumbnail_blog/Compostable_mulch_film.webp',
+    'how-to-spot-greenwashing-in-eco-friendly-packaging': 'thumbnail_blog/Eco-FriendlyPackaging.webp',
+    'what-is-compostable-packaging': 'thumbnail_blog/what_is_compostable_packaging.webp',
+    'courier-bag-sizes-chart': 'thumbnail_blog/PackinClub_Eco_Packaging_Guide.webp'
   };
   POSTS.forEach(function (p) {
     p.slug = p.slug || slug(p.title);

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G950DCDKES"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-G950DCDKES");
+  </script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Insights on sustainable packaging, compostable materials, and the future of eco-friendly business practices from Packin Club.">
+<link rel="canonical" href="https://packinclub.com/article.html">
+<meta property="og:title" content="Packin Club Blog">
+<meta property="og:description" content="Insights on sustainable packaging, compostable materials, and the future of eco-friendly business practices from Packin Club.">
+<meta property="og:image" content="https://packinclub.com/assets/packinclub-logo.jpg">
+<meta property="og:url" content="https://packinclub.com/article.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/header-pill.css">
+<script src="nav-dropdown.js" defer></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+<script src="./blog-data.js"></script>
+<script>
+(function(){
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get('slug');
+    if (slug) {
+      window.location.replace('https://packinclub.com/' + encodeURIComponent(slug) + '.html');
+      return;
+    }
+  } catch (e) {}
+})();
+</script>
+<script>
+(function(){
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get('slug');
+    var url = 'https://packinclub.com/article.html' + (slug ? '?slug=' + encodeURIComponent(slug) : '');
+    var canon = document.querySelector('link[rel="canonical"]');
+    if (canon) canon.setAttribute('href', url);
+    var ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', url);
+  } catch (e) {}
+})();
+</script>
+<style>
+  @keyframes plStem { from { stroke-dashoffset: 70; } to { stroke-dashoffset: 0; } }
+  @keyframes plLeaf { 0% { transform: scale(0) rotate(-12deg); opacity: 0; } 60% { opacity: 1; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
+  @keyframes plWord { from { opacity: 0; transform: translateY(8px); letter-spacing: 0.12em; } to { opacity: 1; transform: translateY(0); letter-spacing: -0.015em; } }
+  @keyframes plBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes plShimmer { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #F7F4EC; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  ::selection { background: #6FAF45; color: #14342C; }
+  @keyframes pcPulse { 0% { box-shadow: 0 0 0 0 #6FAF4566; } 70% { box-shadow: 0 0 0 7px #6FAF4500; } 100% { box-shadow: 0 0 0 0 #6FAF4500; } }
+  @keyframes pcFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+  .pc-dot { animation: pcPulse 2.6s ease-out infinite; }
+  .pc-card { transition: transform .32s cubic-bezier(.2,.7,.2,1), box-shadow .32s ease, border-color .32s ease; }
+  .pc-card:hover { transform: translateY(-6px); box-shadow: 0 26px 52px -28px rgba(20,52,44,.5); border-color: #6FAF4566; }
+  .pc-card .pc-thumb { transition: transform .55s cubic-bezier(.2,.7,.2,1); will-change: transform; }
+  .pc-card:hover .pc-thumb { transform: scale(1.1); }
+  .pc-arrow { display: inline-block; transition: transform .28s ease; }
+  .pc-card:hover .pc-arrow, a:hover > .pc-arrow, button:hover > .pc-arrow { transform: translateX(5px); }
+  .pc-float { animation: pcFloat 5.5s ease-in-out infinite; }
+  .pc-link-underline { background-image: linear-gradient(#6FAF45,#6FAF45); background-size: 0% 1.5px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size .3s ease; }
+  .pc-link-underline:hover { background-size: 100% 1.5px; }
+   @keyframes pcFadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  /* responsive header */
+  .pc-nav-desktop, .pc-cta-desktop { display: flex; }
+  .pc-burger { display: none; }
+  .pc-mobile-menu { display: none; }
+  @media (max-width: 860px) {
+    .pc-nav-desktop, .pc-cta-desktop { display: none !important; }
+    .pc-burger { display: inline-flex !important; }
+  }
+  .pc-mobile-menu.pc-open { display: flex; animation: pcFadeUp .25s ease; }
+  .pc-burger-bar { display: block; width: 22px; height: 2px; background: #F7F4EC; border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+.pc-burger.pc-active .pc-burger-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.pc-burger.pc-active .pc-burger-bar:nth-child(2) { opacity: 0; }
+.pc-burger.pc-active .pc-burger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .pc-hero-imgwrap { margin-top: clamp(28px,3.4vw,40px); }
+  @media (min-width: 861px) {
+    .pc-hero-section { padding-bottom: clamp(50px,6vw,72px) !important; }
+    .pc-hero-flex { display: flex; align-items: center; gap: clamp(32px,4vw,56px); }
+    .pc-hero-text { flex: 1 1 auto; min-width: 0; }
+    .pc-hero-imgwrap { flex: 0 0 380px; width: 380px; margin-top: 0 !important; }
+    .pc-hero-imgwrap .pc-hero-img { aspect-ratio: 3/2 !important; max-height: 320px !important; border-radius: 14px !important; background-size: cover !important; background-repeat: no-repeat !important; }
+  }
+
+  /* ===== article redesign ===== */
+  .pc-progress-track { position: fixed; top: 0; left: 0; right: 0; height: 2.5px; background: #14342C14; z-index: 61; }
+  .pc-progress-bar { height: 100%; width: 0%; background: #6FAF45; transition: width .08s linear; }
+
+  .pc-article p, .pc-article li, .pc-article .pc-body-p { font-family: 'Source Serif 4', Georgia, serif; }
+  .pc-article h2 { font-family: 'Space Grotesk', Inter, sans-serif; }
+
+  .pc-dropcap::first-letter {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 3.4em;
+    line-height: 0.8;
+    float: left;
+    padding: 6px 8px 0 0;
+    color: #3f7a26;
+  }
+
+  .pc-pullquote { position: relative; margin: clamp(30px,4vw,44px) 0; padding: 4px 0 4px clamp(20px,2.4vw,28px); border-left: 3px solid #6FAF45; }
+  .pc-pullquote p { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: clamp(19px,2vw,23px); line-height: 1.5; color: #14342C; margin: 0; letter-spacing: -0.01em; }
+
+  .pc-toc-link { display: block; font-size: 13.5px; line-height: 1.5; color: #14342C99; text-decoration: none; padding: 7px 0; border-left: 2px solid transparent; padding-left: 12px; margin-left: -1px; transition: color .15s ease, border-color .15s ease; }
+  .pc-toc-link:hover { color: #3f7a26; border-color: #6FAF4566; }
+
+  details.pc-faq { border: 1px solid #14342C18; border-radius: 4px; background: #fff; overflow: hidden; }
+  details.pc-faq + details.pc-faq { margin-top: 12px; }
+  details.pc-faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 18px 22px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15.5px; color: #14342C; }
+  details.pc-faq summary::-webkit-details-marker { display: none; }
+  details.pc-faq .pc-faq-plus { flex: none; width: 20px; height: 20px; position: relative; }
+  details.pc-faq .pc-faq-plus::before, details.pc-faq .pc-faq-plus::after { content: ''; position: absolute; background: #3f7a26; top: 50%; left: 50%; transform: translate(-50%,-50%); transition: transform .25s ease, opacity .25s ease; }
+  details.pc-faq .pc-faq-plus::before { width: 12px; height: 2px; }
+  details.pc-faq .pc-faq-plus::after { width: 2px; height: 12px; }
+  details.pc-faq[open] .pc-faq-plus::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
+  details.pc-faq .pc-faq-a { padding: 0 22px 20px; font-family: 'Source Serif 4', serif; font-size: 15.5px; line-height: 1.65; color: #14342C99; }
+
+.pc-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid #14342C18; border-radius: 6px; margin: 4px 0 6px; }
+table.pc-table { width: 100%; min-width: 480px; border-collapse: collapse; font-family: 'Source Serif 4', serif; font-size: 14.5px; }
+table.pc-table th { background: #14342C; color: #F7F4EC; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 12.5px; letter-spacing: 0.02em; text-align: left; padding: 13px 16px; }
+table.pc-table th:first-child { color: #F7F4EC99; font-weight: 500; }
+table.pc-table td { padding: 13px 16px; border-top: 1px solid #14342C14; color: #14342Cdd; line-height: 1.5; vertical-align: top; }
+table.pc-table td:first-child { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.04em; color: #3f7a26; white-space: nowrap; }
+table.pc-table tr:nth-child(even) td { background: #14342C06; }
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" style="font-family:Inter,sans-serif; color:#14342C; background:#F7F4EC; overflow-x:hidden; min-height:100vh;">
+      <!-- ============ PRELOADER ============ -->
+  <div ref="{{ preloaderRef }}" style="position:fixed; inset:0; z-index:9999; background:#14342C; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px; transition:opacity .7s ease, visibility .7s ease;">
+    <div style="position:relative; width:74px; height:96px;">
+      <svg viewBox="0 0 74 96" width="74" height="96" fill="none" style="position:absolute; inset:0;">
+        <!-- stem draws up -->
+        <path d="M37 94 L37 46" stroke="#6FAF45" stroke-width="2.4" stroke-linecap="round" style="stroke-dasharray:70; stroke-dashoffset:70; animation:plStem .7s cubic-bezier(.6,0,.2,1) .15s forwards;"/>
+        <!-- left leaf -->
+        <path d="M37 60 q-28 -6 -30 -34 q28 4 30 34 Z" fill="#6FAF45" style="transform-origin:37px 60px; opacity:0; animation:plLeaf .6s cubic-bezier(.2,.8,.2,1) .55s forwards;"/>
+        <!-- right leaf -->
+        <path d="M37 50 q28 -8 31 -44 q-29 6 -31 44 Z" fill="#8FCB62" style="transform-origin:37px 50px; opacity:0; animation:plLeaf .6s cubic-bezier(.2,.8,.2,1) .8s forwards;"/>
+      </svg>
+    </div>
+    <div style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:30px; letter-spacing:-0.015em; color:#F7F4EC; opacity:0; animation:plWord .7s ease 1.05s forwards;">
+      Packin<span style="color:#6FAF45;">Club</span>
+    </div>
+    <div style="width:160px; height:2px; background:#ffffff1f; border-radius:2px; overflow:hidden; margin-top:2px;">
+      <div style="height:100%; background:#6FAF45; transform-origin:left; transform:scaleX(0); animation:plBar 1.5s cubic-bezier(.5,0,.1,1) .2s forwards;"></div>
+    </div>
+    <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#6FAF4599; margin-top:4px; animation:plShimmer 1.6s ease infinite;">Returning to soil</div>
+  </div>
+  <!-- HEADER -->
+  <header class="pc-header" ref="{{ headerRef }}" style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px clamp(20px,4vw,40px); transition:padding .25s ease, background-color .25s ease, box-shadow .25s ease;">
+    <a href="index.html" style="display:flex; align-items:baseline; gap:1px; text-decoration:none; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:23px; letter-spacing:-0.015em; color:#F7F4EC;">
+      <img src="assets/packinclub-logo.png" alt="PackinClub" style="height:55px; width:auto; display:block;">
+    </a>
+    <nav class="pc-nav-desktop" style="display:flex; align-items:center; gap:clamp(10px,1.6vw,26px); font-size:13.5px; font-weight:500;">
+      <a href="index.html" style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Home</a>
+      <a href="about.html" style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">About</a>
+      <a href="industries.html" style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Industries</a>
+      <div class="pc-nav-dd"><a href="products.html" style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Products</a><button type="button" class="pc-nav-dd-btn" aria-label="Show product categories" aria-haspopup="true" aria-expanded="false" style="color:#F7F4EC;"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></button><div class="pc-nav-dd-menu"><div class="pc-nav-dd-panel" role="menu"><a role="menuitem" href="products.html" data-pc-cat="all" class="pc-dd-all">All Products</a><a role="menuitem" href="products.html?cat=agriculture-nursery" data-pc-cat="agriculture-nursery">Agriculture &amp; Nursery</a><a role="menuitem" href="products.html?cat=bags-on-roll" data-pc-cat="bags-on-roll">Bags on Roll</a><a role="menuitem" href="products.html?cat=healthcare-hospital" data-pc-cat="healthcare-hospital">Healthcare &amp; Hospital</a><a role="menuitem" href="products.html?cat=horeca" data-pc-cat="horeca">HORECA</a><a role="menuitem" href="products.html?cat=industrial" data-pc-cat="industrial">Industrial</a><a role="menuitem" href="products.html?cat=retail" data-pc-cat="retail">Retail</a><a role="menuitem" href="products.html?cat=temple-religious" data-pc-cat="temple-religious">Temple &amp; Religious</a></div></div></div>
+      <a href="blog.html" style="color:#6FAF45; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Blog</a>
+<a href="contact.html" style="color:#F7F4EC; text-decoration:none; transition:color .15s;">Contact</a>
+    </nav>
+    <div class="pc-cta-desktop" style="align-items:center; gap:12px;">
+    <a href="contact.html" onMouseMove="{{ magnetMove }}" onMouseLeave="{{ magnetLeave }}" style="flex:none; align-items:center; gap:8px; background:#6FAF45; color:#14342C; font-size:13.5px; font-weight:600; padding:11px 18px; border-radius:2px; text-decoration:none; transition:transform .18s ease-out; will-change:transform;">Request a Quote</a>
+      <a href="https://www.facebook.com/profile.php?id=61592764912658" target="_blank" rel="noopener" aria-label="Facebook" style="width:28px; height:28px; border-radius:6px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+      <a href="https://x.com/ClubPackin" target="_blank" rel="noopener" aria-label="Twitter" style="width:28px; height:28px; border-radius:6px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98A8.521 8.521 0 0 1 2 18.57a12.02 12.02 0 0 0 6.29 1.85c7.55 0 11.69-6.25 11.69-11.69l-.01-.53c.8-.58 1.5-1.3 2.05-2.13z"/></svg></a>
+      <a href="https://www.linkedin.com/company/packin-club-compostable-packaging/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:28px; height:28px; border-radius:6px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a href="https://www.instagram.com/packinclub/" target="_blank" rel="noopener" aria-label="Instagram" style="width:28px; height:28px; border-radius:6px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.02-3.58.07-4.85c.15-3.23 1.67-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8.16zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
+      <a href="https://www.youtube.com/@packinclub" target="_blank" rel="noopener" aria-label="YouTube" style="width:28px; height:28px; border-radius:6px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+    </div>
+    <button class="pc-burger" onClick="{{ toggleMobileMenu }}" aria-label="Toggle menu" style="flex:none; align-items:center; justify-content:center; width:38px; height:38px; border:none; background:transparent; cursor:pointer; padding:0; gap:5px; flex-direction:column;">
+      <span class="pc-burger-bar" ref="{{ burgerBar1Ref }}"></span>
+      <span class="pc-burger-bar" ref="{{ burgerBar2Ref }}"></span>
+      <span class="pc-burger-bar" ref="{{ burgerBar3Ref }}"></span>
+    </button>
+  </header>
+
+  <!-- MOBILE MENU PANEL -->
+  <div class="pc-mobile-menu {{ mobileMenuClass }}" style="position:fixed; top:0; left:0; right:0; z-index:59; flex-direction:column; background:#0c1f19f5; backdrop-filter:blur(10px); padding:88px 24px 28px; gap:2px;">
+    <a href="index.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Home</a>
+    <a href="about.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">About</a>
+    <a href="industries.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Industries</a>
+    <details class="pc-m-dd"><summary style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Products<svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></summary><div class="pc-m-dd-list"><a href="products.html" data-pc-cat="all" onClick="{{ closeMobileMenu }}">All Products</a><a href="products.html?cat=agriculture-nursery" data-pc-cat="agriculture-nursery" onClick="{{ closeMobileMenu }}">Agriculture &amp; Nursery</a><a href="products.html?cat=bags-on-roll" data-pc-cat="bags-on-roll" onClick="{{ closeMobileMenu }}">Bags on Roll</a><a href="products.html?cat=healthcare-hospital" data-pc-cat="healthcare-hospital" onClick="{{ closeMobileMenu }}">Healthcare &amp; Hospital</a><a href="products.html?cat=horeca" data-pc-cat="horeca" onClick="{{ closeMobileMenu }}">HORECA</a><a href="products.html?cat=industrial" data-pc-cat="industrial" onClick="{{ closeMobileMenu }}">Industrial</a><a href="products.html?cat=retail" data-pc-cat="retail" onClick="{{ closeMobileMenu }}">Retail</a><a href="products.html?cat=temple-religious" data-pc-cat="temple-religious" onClick="{{ closeMobileMenu }}">Temple &amp; Religious</a></div></details>
+    <a href="blog.html" onClick="{{ closeMobileMenu }}" style="color:#6FAF45; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Blog</a>
+    <a href="contact.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Contact</a>
+    <a href="contact.html" onClick="{{ closeMobileMenu }}" style="margin-top:18px; display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#6FAF45; color:#14342C; font-size:15px; font-weight:600; padding:14px 18px; border-radius:2px; text-decoration:none;">Request a Quote</a>
+    <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-top:20px;">
+      <a href="https://www.facebook.com/profile.php?id=61592764912658" target="_blank" rel="noopener" aria-label="Facebook" style="width:38px; height:38px; border-radius:8px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="#14342C"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+      <a href="https://x.com/ClubPackin" target="_blank" rel="noopener" aria-label="Twitter" style="width:38px; height:38px; border-radius:8px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="#14342C"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98A8.521 8.521 0 0 1 2 18.57a12.02 12.02 0 0 0 6.29 1.85c7.55 0 11.69-6.25 11.69-11.69l-.01-.53c.8-.58 1.5-1.3 2.05-2.13z"/></svg></a>
+      <a href="https://www.linkedin.com/company/packin-club-compostable-packaging/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:38px; height:38px; border-radius:8px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="#14342C"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a href="https://www.instagram.com/packinclub/" target="_blank" rel="noopener" aria-label="Instagram" style="width:38px; height:38px; border-radius:8px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="#14342C"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.02-3.58.07-4.85c.15-3.23 1.67-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8.16zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
+       <a href="https://www.youtube.com/@packinclub" target="_blank" rel="noopener" aria-label="YouTube" style="width:38px; height:38px; border-radius:8px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="#14342C">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/>
+        </svg>
+      </a>
+    </div>  <!-- ✅ closes the social-icons row -->
+  </div>  <!-- ✅ closes .pc-mobile-menu -->
+
+  <!-- NOT FOUND -->
+  <sc-if value="{{ notFound }}" hint-placeholder-val="{{ false }}">
+    <section style="background:#14342C; color:#F7F4EC; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:120px 24px;">
+      <div style="max-width:520px;">
+        <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">404 · Article not found</div>
+        <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(30px,5vw,52px); line-height:1.05; margin:0 0 18px;">That article has moved.</h2>
+        <p style="font-size:16px; line-height:1.6; color:#F7F4ECcc; margin:0 0 32px;">Browse the journal for guides on compostable packaging, certifications and the plastic switch.</p>
+        <a href="blog.html" style="display:inline-flex; align-items:center; gap:9px; background:#6FAF45; color:#14342C; font-weight:600; font-size:15px; padding:14px 26px; border-radius:2px; text-decoration:none;">Back to the journal →</a>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- ARTICLE -->
+  <sc-if value="{{ found }}" hint-placeholder-val="{{ true }}">
+  <div>
+
+    <!-- READING PROGRESS -->
+    <div class="pc-progress-track"><div class="pc-progress-bar" ref="{{ progressBarRef }}"></div></div>
+
+    <!-- HERO -->
+    <section class="pc-hero-section" style="background:#14342C; color:#F7F4EC; padding:clamp(110px,14vw,150px) clamp(20px,4vw,40px) 0;">
+      <div class="pc-hero-flex" style="max-width:1180px; margin:0 auto;">
+        <div class="pc-hero-text">
+          <div style="display:flex; align-items:center; gap:9px; flex-wrap:wrap; font-family:Inter,sans-serif; font-size:12px; color:#F7F4EC99; margin-bottom:22px;">
+            <a href="index.html" style="color:#F7F4EC99; text-decoration:none;" style-hover="color:#6FAF45;">Home</a>
+            <span style="color:#F7F4EC55;">/</span>
+            <a href="blog.html" style="color:#F7F4EC99; text-decoration:none;" style-hover="color:#6FAF45;">Journal</a>
+            <span style="color:#F7F4EC55;">/</span>
+            <span style="color:#6FAF45;">{{ category }}</span>
+          </div>
+          <h1 style="font-family: Charter, 'Bitstream Charter', serif; font-weight:500; font-size:clamp(27px,3.6vw,42px); line-height:1.14; letter-spacing:-0.02em; margin:0 0 22px; max-width:780px;">{{ title }}</h1>
+          <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; font-family:Inter,sans-serif; font-size:13px; color:#F7F4ECcc; padding-bottom:clamp(28px,3.4vw,40px);">
+            <span>{{ dateLabel }}</span>
+            <span style="width:4px; height:4px; border-radius:50%; background:#6FAF45;"></span>
+            <span>{{ readLabel }}</span>
+            <span style="width:4px; height:4px; border-radius:50%; background:#6FAF45;"></span>
+            <span>{{ author }}</span>
+          </div>
+        </div>
+        <div class="pc-hero-imgwrap">
+          <div class="pc-hero-img" style="{{ heroImgStyle }} width:100%; aspect-ratio:3/2; max-height:560px; border-radius:10px 10px 0 0; position:relative; overflow:hidden;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <section style="background:#F7F4EC; padding:clamp(40px,5vw,60px) clamp(20px,4vw,40px) clamp(56px,7vw,96px);">
+      <div style="max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; gap:clamp(36px,4vw,64px); align-items:flex-start;">
+
+        <!-- main -->
+        <article class="pc-article" style="flex:1 1 560px; min-width:300px; max-width:700px;">
+
+          <p class="pc-dropcap" style="font-size:clamp(17px,1.5vw,18.5px); line-height:1.75; letter-spacing:-0.005em; color:#14342C; margin:0 0 clamp(32px,3.6vw,44px); padding-bottom:clamp(26px,2.8vw,36px); border-bottom:1px solid #14342C18;">{{ excerpt }}</p>
+
+          <sc-for list="{{ sections }}" as="s" hint-placeholder-count="6">
+            <sc-if value="{{ s.isQuote }}" hint-placeholder-val="{{ false }}">
+              <div class="pc-pullquote"><p>{{ s.quoteText }}</p></div>
+            </sc-if>
+            <sc-if value="{{ s.isNotQuote }}" hint-placeholder-val="{{ true }}">
+            <div style="margin-bottom:30px;">
+              <sc-if value="{{ s.hasH }}" hint-placeholder-val="{{ true }}">
+                <h2 style="font-weight:600; font-size:clamp(20px,2vw,25px); line-height:1.28; letter-spacing:-0.005em; margin:0 0 15px; color:#14342C;">{{ s.h }}</h2>
+              </sc-if>
+              <sc-for list="{{ s.paras }}" as="para" hint-placeholder-count="2">
+                <p style="font-size:16.5px; line-height:1.78; color:#14342Cdd; margin:0 0 16px;">{{ para }}</p>
+              </sc-for>
+              <sc-if value="{{ s.hasList }}" hint-placeholder-val="{{ false }}">
+                <ul style="list-style:none; padding:0; margin:8px 0 0; display:flex; flex-direction:column; gap:11px;">
+                  <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="4">
+                    <li style="display:flex; gap:12px; align-items:flex-start; font-family:'Source Serif 4',serif; font-size:16px; line-height:1.6; color:#14342Cdd;">
+                      <span style="flex:none; margin-top:8px; width:6px; height:6px; border-radius:50%; background:#6FAF45;"></span>
+                      <span>{{ it }}</span>
+                    </li>
+                  </sc-for>
+                </ul>
+              </sc-if>
+              <sc-if value="{{ s.hasTable }}" hint-placeholder-val="{{ false }}">
+                <div class="pc-table-wrap">
+                  <table class="pc-table">
+                    <thead>
+                      <tr>
+                        <sc-for list="{{ s.tableHeaders }}" as="th" hint-placeholder-count="3">
+                          <th>{{ th }}</th>
+                        </sc-for>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <sc-for list="{{ s.tableRows }}" as="row" hint-placeholder-count="3">
+                        <tr>
+                          <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="3">
+                            <td>{{ cell }}</td>
+                          </sc-for>
+                        </tr>
+                      </sc-for>
+                    </tbody>
+                  </table>
+                </div>
+              </sc-if>
+            </div>
+            </sc-if>
+          </sc-for>
+
+          <!-- FAQ -->
+          <div style="margin-top:clamp(36px,4vw,52px); padding-top:clamp(32px,3vw,44px); border-top:1px solid #14342C18;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#3f7a26; margin-bottom:10px;">Common questions</div>
+            <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(20px,2vw,25px); letter-spacing:-0.005em; margin:0 0 20px; color:#14342C;">Frequently asked questions</h2>
+            <div>
+              <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
+                <details class="pc-faq">
+                  <summary>{{ f.q }}<span class="pc-faq-plus"></span></summary>
+                  <div class="pc-faq-a">{{ f.a }}</div>
+                </details>
+              </sc-for>
+            </div>
+          </div>
+        </article>
+
+        <!-- sidebar -->
+        <aside style="flex:0 0 auto; width:clamp(280px,28vw,320px); position:sticky; top:88px; display:flex; flex-direction:column; gap:16px;">
+          <div style="border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+            <div style="padding:16px 20px 8px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:#3f7a26;">In this article</div>
+            <nav style="display:flex; flex-direction:column; padding:2px 20px 16px;">
+              <sc-for list="{{ tocItems }}" as="tc" hint-placeholder-count="4">
+                <a href="javascript:void(0)" onClick="{{ tc.onClick }}" class="pc-toc-link">{{ tc.label }}</a>
+              </sc-for>
+            </nav>
+          </div>
+          <div style="border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff;">
+            <div style="background:#14342C; color:#F7F4EC; padding:16px 20px; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:#6FAF45;">Key takeaways</div>
+            <ul style="list-style:none; padding:18px 20px; margin:0; display:flex; flex-direction:column; gap:13px;">
+              <sc-for list="{{ takeaways }}" as="t" hint-placeholder-count="4">
+                <li style="display:flex; gap:11px; align-items:flex-start; font-family:'Source Serif 4',serif; font-size:14px; line-height:1.55; color:#14342Cdd;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3f7a26" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:1px;"><path d="M20 6L9 17l-5-5"></path></svg>
+                  <span>{{ t }}</span>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+          <div style="border:1px solid #14342C18; border-radius:6px; background:#14342C; color:#F7F4EC; padding:24px;">
+            <div style="font-family:Fraunces,serif; font-size:20px; line-height:1.25; margin-bottom:10px;">Make the switch.</div>
+            <p style="font-size:13.5px; line-height:1.6; color:#F7F4EC99; margin:0 0 18px;">Get certified compostable packaging matched to your sizes, with samples and a quote in two business days.</p>
+            <a href="contact.html" style="display:flex; align-items:center; justify-content:center; gap:8px; background:#6FAF45; color:#14342C; font-weight:600; font-size:14.5px; padding:13px; border-radius:2px; text-decoration:none;">Request a quote →</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- RELATED -->
+    <sc-if value="{{ hasRelated }}" hint-placeholder-val="{{ false }}">
+      <section style="background:#fff; border-top:1px solid #14342C12; padding:clamp(48px,6vw,84px) clamp(20px,4vw,40px);">
+        <div style="max-width:1180px; margin:0 auto;">
+          <div style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:26px;">
+            <h2 style="font-family:Fraunces,serif; font-weight:500; font-size:clamp(24px,2.8vw,32px); letter-spacing:-0.01em; margin:0;">Keep reading</h2>
+            <a href="blog.html" style="font-size:14px; font-weight:600; color:#3f7a26; text-decoration:none;">All articles →</a>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px;">
+            <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
+              <a href="{{ r.href }}" class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
+                <div style="height:120px; position:relative; {{ r.thumbStyle }} display:flex; align-items:flex-end; padding:16px;">
+  <span style="position:relative; font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#F7F4EC; background:#14342C4D; padding:4px 9px; border-radius:2px;">{{ r.cat }}</span>
+</div>
+                <div style="padding:18px 20px;">
+                  <h3 style="font-family:Fraunces,serif; font-weight:500; font-size:17px; line-height:1.22; margin:0 0 8px; color:#14342C;">{{ r.title }}</h3>
+                  <span style="font-size:12.5px; font-weight:600; color:#3f7a26;">Read more <span class="pc-arrow">→</span></span>
+                </div>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+  </div>
+  </sc-if>
+
+  <!-- FOOTER -->
+  <footer style="background:#0c1f19; color:#F7F4EC; padding:clamp(56px,7vw,88px) clamp(20px,4vw,40px) 36px;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div style="display:flex; flex-wrap:wrap; gap:clamp(40px,6vw,72px); justify-content:space-between; padding-bottom:clamp(40px,5vw,60px); border-bottom:1px solid #ffffff14;">
+        <div style="max-width:300px;">
+          <img src="assets/packinclub-logo.png" alt="PackinClub" style="height:53px; width:auto; display:block; margin-bottom:15px;">
+          <p style="font-size:14.5px; line-height:1.65; color:#F7F4EC99; margin:0 0 22px;">India's pioneering eco-packaging partner, pairing material science with practical business solutions.</p>
+          <div style="display:flex; gap:10px;">
+            <a href="https://www.linkedin.com/company/packin-club-compostable-packaging/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:38px; height:38px; border-radius:8px; background:#ffffff14; display:inline-flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+            <a href="https://www.instagram.com/packinclub/" target="_blank" rel="noopener" aria-label="Instagram" style="width:38px; height:38px; border-radius:8px; background:#ffffff14; display:inline-flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.02-3.58.07-4.85c.15-3.23 1.67-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8.16zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
+            <a href="https://x.com/ClubPackin" target="_blank" rel="noopener" aria-label="Twitter" style="width:38px; height:38px; border-radius:8px; background:#ffffff14; display:inline-flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98A8.521 8.521 0 0 1 2 18.57a12.02 12.02 0 0 0 6.29 1.85c7.55 0 11.69-6.25 11.69-11.69l-.01-.53c.8-.58 1.5-1.3 2.05-2.13z"/></svg></a>
+            <a href="https://www.youtube.com/@packinclub" target="_blank" rel="noopener" aria-label="YouTube" style="width:38px; height:38px; border-radius:8px; background:#ffffff14; display:inline-flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">Explore</div>
+          <div style="display:flex; flex-direction:column; gap:12px; font-size:14.5px;">
+              <a href="index.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">Home</a>
+              <a href="about.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">About</a>
+              <a href="industries.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">Industries</a>
+              <a href="products.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">Products</a>
+              <a href="blog.html" style="color:#e97114da; text-decoration:none;" style-hover="color:#6FAF45;">Blog</a>
+          </div>
+        </div>
+        <div style="max-width:260px;">
+          <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">Newsletter</div>
+          <p style="font-size:14.5px; line-height:1.6; color:#F7F4ECcc; margin:0 0 16px;">Material science, compliance updates and case studies. Once a month.</p>
+          <div style="display:flex; gap:8px; margin-bottom:16px;">
+            <input type="email" placeholder="you@company.com" style="flex:1; min-width:0; background:#ffffff0d; border:1px solid #ffffff1f; border-radius:2px; padding:11px 14px; color:#F7F4EC; font-family:Inter,sans-serif; font-size:13.5px;">
+            <button type="button" style="background:#6FAF45; border:none; border-radius:2px; width:42px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14342C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <span style="font-family:Inter,sans-serif; font-size:11.5px; color:#F7F4ECaa; border:1px solid #ffffff1f; border-radius:999px; padding:5px 12px;">IS 17088</span>
+            <span style="font-family:Inter,sans-serif; font-size:11.5px; color:#F7F4ECaa; border:1px solid #ffffff1f; border-radius:999px; padding:5px 12px;">EN 13432</span>
+            <span style="font-family:Inter,sans-serif; font-size:11.5px; color:#F7F4ECaa; border:1px solid #ffffff1f; border-radius:999px; padding:5px 12px;">CPCB Certified</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">Contact</div>
+          <div style="display:flex; flex-direction:column; gap:12px; font-size:14.5px; color:#F7F4ECcc;">
+            <a ref="{{ emailRef }}" href="contact.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">info@packinclub.com</a>
+            <a href="tel:+918178414360" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">+91 81784 14360</a>
+            <span style="line-height:1.6; max-width:240px;">D-1/64, 21st Century Business Centre, Veer Savarkar Block, Shakarpur, Nirman Vihar, Delhi 110092</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; padding-top:28px; font-size:12.5px; color:#F7F4EC66; font-family:Inter,sans-serif;">
+        <span style="display:flex; gap:16px; align-items:center; flex-wrap:wrap;">© 2026 Packin Club. All rights reserved.<a href="privacy.html" style="color:#F7F4EC66; text-decoration:none;">Privacy Policy</a><a href="terms.html" style="color:#F7F4EC66; text-decoration:none;">Terms of Use</a><a href="cookies.html" style="color:#F7F4EC66; text-decoration:none;">Cookies</a><a href="javascript:void(0)" onclick="window.pcOpenCookieSettings &amp;&amp; window.pcOpenCookieSettings()" style="color:#F7F4EC66; text-decoration:none;">Cookie Settings</a></span>
+        <span style="display:flex; align-items:center; gap:8px;"></span>Your trusted partner for Compostable Solutions.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { post: null, notFound: false, ready: false, mobileMenuOpen: false };
+
+  componentDidMount() {
+    this._plTimer = setTimeout(() => {
+      if (this.preloaderEl) { this.preloaderEl.style.opacity = '0'; this.preloaderEl.style.visibility = 'hidden'; }
+    }, 1400);
+    this._lookup();
+    if (this.emailEl) {
+      const addr = 'info' + String.fromCharCode(64) + 'packinclub.com';
+      this.emailEl.textContent = addr;
+      this.emailEl.href = 'mailto:' + addr;
+    }
+    this._onScroll = () => {
+      if (this.header) {
+        const s = window.scrollY > 30;
+        this.header.style.padding = s ? '12px clamp(20px,4vw,40px)' : '22px clamp(20px,4vw,40px)';
+        this.header.style.background = s ? 'rgba(12,31,25,0.92)' : 'rgba(12,31,25,0.38)';
+        this.header.style.backdropFilter = 'blur(8px)';
+        this.header.style.boxShadow = s ? '0 1px 0 #ffffff14' : 'none';
+      }
+      if (this.progressBar) {
+        const doc = document.documentElement;
+        const total = doc.scrollHeight - doc.clientHeight;
+        const pct = total > 0 ? Math.min(100, Math.max(0, (window.scrollY / total) * 100)) : 0;
+        this.progressBar.style.width = pct + '%';
+      }
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+
+  componentWillUnmount() { clearTimeout(this._plTimer); window.removeEventListener('scroll', this._onScroll); }
+
+  _lookup() {
+    const go = () => {
+      if (!window.PACKIN_BLOG) { setTimeout(go, 40); return; }
+      let s = '';
+      try {
+        const u = new URL(window.location.href);
+        s = u.searchParams.get('slug') || (u.hash.indexOf('slug=') > -1 ? decodeURIComponent(u.hash.split('slug=')[1]) : '');
+      } catch (e) { s = ''; }
+      if (!s) { this.setState({ post: window.PACKIN_BLOG.posts[0], ready: true }); this._seo(window.PACKIN_BLOG.posts[0]); return; }
+      const p = window.PACKIN_BLOG.bySlug(s);
+      if (p) { this.setState({ post: p, ready: true }); this._seo(p); }
+      else this.setState({ notFound: true, ready: true });
+    };
+    go();
+  }
+
+  _seo(p) {
+    if (!p) return;
+    try {
+      document.title = p.metaTitle + ' | Packin Club';
+      let m = document.querySelector('meta[name="description"]');
+      if (!m) { m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); }
+      m.setAttribute('content', p.metaDescription);
+      const setProp = (prop, content) => {
+        let el = document.querySelector('meta[property="' + prop + '"]');
+        if (!el) { el = document.createElement('meta'); el.setAttribute('property', prop); document.head.appendChild(el); }
+        el.setAttribute('content', content);
+      };
+      const pageUrl = 'https://packinclub.com/article.html?slug=' + p.slug;
+      const imgUrl = p.thumb ? (p.thumb.indexOf('http') === 0 ? p.thumb : 'https://packinclub.com/' + p.thumb) : 'https://packinclub.com/assets/hero-veggie.png';
+      const allKeywords = [p.keyword].concat(p.secondaryKeywords || []).concat(p.semanticKeywords || []).join(', ');
+      let mk = document.querySelector('meta[name="keywords"]');
+      if (!mk) { mk = document.createElement('meta'); mk.setAttribute('name', 'keywords'); document.head.appendChild(mk); }
+      mk.setAttribute('content', allKeywords);
+      setProp('og:title', p.metaTitle);
+      setProp('og:description', p.metaDescription);
+      setProp('og:image', imgUrl);
+      setProp('og:image:alt', p.imageAlt || p.title);
+      setProp('og:url', pageUrl);
+      setProp('og:type', 'article');
+      let canon = document.querySelector('link[rel="canonical"]');
+      if (!canon) { canon = document.createElement('link'); canon.setAttribute('rel', 'canonical'); document.head.appendChild(canon); }
+      canon.setAttribute('href', pageUrl);
+      // structured data: Article + FAQPage
+      const old = document.getElementById('pc-ldjson');
+      if (old) old.remove();
+      const ld = document.createElement('script');
+      ld.type = 'application/ld+json';
+      ld.id = 'pc-ldjson';
+      ld.textContent = JSON.stringify([
+        {
+          '@context': 'https://schema.org', '@type': 'Article',
+          headline: p.title, description: p.metaDescription,
+          image: imgUrl,
+          datePublished: p.date, dateModified: p.date,
+          author: { '@type': 'Organization', name: 'Packin Club' },
+          publisher: { '@type': 'Organization', name: 'Packin Club' },
+          keywords: allKeywords
+        },
+        {
+          '@context': 'https://schema.org', '@type': 'FAQPage',
+          mainEntity: p.faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))
+        },
+        {
+          '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://packinclub.com/index.html' },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://packinclub.com/blog.html' },
+            { '@type': 'ListItem', position: 3, name: p.title, item: pageUrl }
+          ]
+        }
+      ]);
+      document.head.appendChild(ld);
+    } catch (e) {}
+  }
+
+  magnetMove = (e) => {
+    const el = e.currentTarget; const r = el.getBoundingClientRect();
+    el.style.transform = 'translate(' + ((e.clientX - (r.left + r.width / 2)) * 0.28) + 'px,' + ((e.clientY - (r.top + r.height / 2)) * 0.32) + 'px)';
+  };
+  magnetLeave = (e) => { e.currentTarget.style.transform = 'translate(0,0)'; };
+
+  _syncBurger() {
+    const open = this.state.mobileMenuOpen;
+    if (this.burgerBar1) this.burgerBar1.style.transform = open ? 'translateY(7px) rotate(45deg)' : 'none';
+    if (this.burgerBar2) this.burgerBar2.style.opacity = open ? '0' : '1';
+    if (this.burgerBar3) this.burgerBar3.style.transform = open ? 'translateY(-7px) rotate(-45deg)' : 'none';
+  }
+
+  renderVals() {
+    const refs = {
+      rootRef: el => { this.root = el; },
+      headerRef: el => { this.header = el; },
+       preloaderRef: el => { this.preloaderEl = el; },
+      burgerBar1Ref: el => { this.burgerBar1 = el; this._syncBurger(); },
+      burgerBar2Ref: el => { this.burgerBar2 = el; this._syncBurger(); },
+      burgerBar3Ref: el => { this.burgerBar3 = el; this._syncBurger(); },
+      mobileMenuClass: this.state.mobileMenuOpen ? 'pc-open' : '',
+      toggleMobileMenu: () => { this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen }); setTimeout(() => this._syncBurger(), 0); },
+      closeMobileMenu: () => { this.setState({ mobileMenuOpen: false }); setTimeout(() => this._syncBurger(), 0); },
+      emailRef: el => { this.emailEl = el; },
+      progressBarRef: el => { this.progressBar = el; },
+      magnetMove: this.magnetMove,
+      magnetLeave: this.magnetLeave
+    };
+    const cardThumbStyle = (x) => x.thumb
+  ? "background-color:" + x.heroBg + "; background-image:url('" + x.thumb + "'); background-size:cover; background-position:center;"
+  : "background-color:" + x.heroBg + "; background-image:radial-gradient(circle at 50% 42%,#6FAF4518,transparent 62%);";
+
+const heroImgStyle = (x) => x.thumb
+  ? "background-color:" + x.heroBg + "; background-image:url('" + x.thumb + "'); background-size:cover; background-repeat:no-repeat; background-position:center;"
+  : "background:" + x.heroBg + "; background-image:radial-gradient(75% 85% at 80% 12%,#6FAF4530,transparent 68%);";
+
+const p = this.state.post;
+if (!p) {
+  return Object.assign(refs, {
+    found: false, notFound: this.state.notFound,
+    heroBg: '#14342C', heroImgStyle: 'background:#14342C;', category: '', title: '', dateLabel: '', readLabel: '', author: '',
+    excerpt: '', sections: [], faqs: [], takeaways: [], tocItems: [], related: [], hasRelated: false
+  });
+}
+const B = window.PACKIN_BLOG;
+const related = B.posts.filter(x => x.slug !== p.slug && x.cat === p.cat)
+  .concat(B.posts.filter(x => x.slug !== p.slug && x.cat !== p.cat))
+  .slice(0, 3)
+  .map(r => ({ title: r.title, cat: r.cat, heroBg: r.heroBg, thumbStyle: cardThumbStyle(r), href: 'article.html?slug=' + r.slug }));
+
+// build reading sections, inserting a pull-quote after the second section (if a takeaway exists)
+const rawSections = p.body.map(s => ({
+  isQuote: false, isNotQuote: true, quoteText: '',
+  hasH: !!s.h, h: s.h || '',
+  paras: s.p || [],
+  hasList: !!(s.ul && s.ul.length), items: s.ul || [],
+  hasTable: !!(s.table && s.table.rows && s.table.rows.length),
+  tableHeaders: s.table ? s.table.headers : [],
+  tableRows: s.table ? s.table.rows.map(r => ({ cells: r })) : []
+}));
+if (p.takeaways && p.takeaways.length && rawSections.length > 2) {
+  rawSections.splice(2, 0, { isQuote: true, isNotQuote: false, quoteText: p.takeaways[0], hasH: false, h: '', paras: [], hasList: false, items: [], hasTable: false, tableHeaders: [], tableRows: [] });
+}
+const headingIdxs = [];
+rawSections.forEach((s, i) => { if (s.hasH) headingIdxs.push(i); });
+const tocItems = headingIdxs.map((i, n) => ({
+  label: rawSections[i].h,
+  onClick: () => this._scrollToHeading(n)
+}));
+if (p.faqs && p.faqs.length) {
+  tocItems.push({
+    label: 'Frequently asked questions',
+    onClick: () => this._scrollToHeading(headingIdxs.length)
+  });
+}
+
+return Object.assign(refs, {
+  found: true, notFound: false,
+  heroBg: p.heroBg, heroImgStyle: heroImgStyle(p), category: p.cat, title: p.title,
+      dateLabel: p.dateLabel, readLabel: p.readMins + ' min read', author: p.author,
+      excerpt: p.excerpt,
+      sections: rawSections,
+      faqs: p.faqs,
+      takeaways: p.takeaways,
+      tocItems,
+      related, hasRelated: related.length > 0
+    });
+  }
+
+  _scrollToHeading(n) {
+    if (!this.root) return;
+    const heads = this.root.querySelectorAll('.pc-article h2');
+    const target = heads[n];
+    if (!target) return;
+    const y = target.getBoundingClientRect().top + window.scrollY - 96;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+}
+</script>
+<script>
+(function(){
+  var CONSENT_KEY = 'pc_cookie_consent';
+  var GA_ID = 'G-G950DCDKES';
+  function loadAnalytics(){
+    if (window.__pcAnalyticsLoaded) return;
+    window.__pcAnalyticsLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+  function getConsent(){ try { return window.localStorage.getItem(CONSENT_KEY); } catch(e){ return null; } }
+  function setConsent(val){ try { window.localStorage.setItem(CONSENT_KEY, val); } catch(e){} }
+  function hideBanner(){ var el = document.getElementById('pc-cookie-banner'); if (el) el.style.display = 'none'; }
+  function showBanner(){ var el = document.getElementById('pc-cookie-banner'); if (el) el.style.display = 'flex'; }
+  window.pcCookieAccept = function(){ setConsent('accepted'); hideBanner(); loadAnalytics(); };
+  window.pcCookieDecline = function(){ setConsent('declined'); hideBanner(); };
+  window.pcOpenCookieSettings = function(){ showBanner(); };
+  function injectBanner(){
+    var wrap = document.createElement('div');
+    wrap.id = 'pc-cookie-banner';
+    wrap.style.cssText = 'display:none; position:fixed; left:0; right:0; bottom:0; z-index:9999; background:#0c1f19; color:#F7F4EC; padding:18px clamp(16px,3vw,32px); box-shadow:0 -4px 24px rgba(0,0,0,0.25); flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; font-family:Inter,sans-serif;';
+    wrap.innerHTML =
+      '<div style="flex:1 1 320px; font-size:13.5px; line-height:1.6; color:#F7F4ECcc;">We use essential cookies to run this site, and optional analytics cookies to understand traffic. See our <a href="cookies.html" style="color:#6FAF45; text-decoration:underline;">Cookie Policy</a>.</div>' +
+      '<div style="display:flex; gap:10px; flex-wrap:wrap;">' +
+        '<button onclick="window.pcCookieDecline()" style="background:transparent; border:1px solid #ffffff33; color:#F7F4EC; font-weight:600; font-size:13.5px; padding:10px 18px; border-radius:2px; cursor:pointer; font-family:Inter,sans-serif;">Decline</button>' +
+        '<button onclick="window.pcCookieAccept()" style="background:#6FAF45; border:none; color:#0c1f19; font-weight:700; font-size:13.5px; padding:10px 18px; border-radius:2px; cursor:pointer; font-family:Inter,sans-serif;">Accept</button>' +
+      '</div>';
+    document.body.appendChild(wrap);
+  }
+  function init(){
+    injectBanner();
+    var consent = getConsent();
+    if (consent === 'accepted') { loadAnalytics(); }
+    else if (consent !== 'declined') { showBanner(); }
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); }
+  else { init(); }
+})();
+</script>
+</body>
+</html>
