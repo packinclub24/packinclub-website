@@ -21,6 +21,12 @@
   ));
 
   // src/parse.ts
+  // Pre-rendered pages keep their template in <script type="text/x-dc-template"> and put a static snapshot of the
+  // rendered page inside <x-dc> (so search engines and AI crawlers can read it). In the saved template, "<!--", "<script", "</script", "{{" and "}}" are written with a backslash inside (for example "{\{") so they cannot confuse the browser or look like placeholders to a crawler.
+  function readTemplateScript(doc) {
+    const t = doc.querySelector('script[type="text/x-dc-template"]');
+    return t ? (t.textContent || "").replace(/<\\(!--|\/script|script)/gi, "<$1").replace(/\{\\\{/g, "{{").replace(/\}\\\}/g, "}}") : null;
+  }
   function parseDcDocument(doc) {
     const dc = doc.querySelector("x-dc");
     if (!dc) return null;
@@ -28,8 +34,9 @@
     const { props, preview } = parseDataProps(
       scriptEl?.getAttribute("data-props") ?? null
     );
+    const tplFromScript = readTemplateScript(doc);
     return {
-      template: dc.innerHTML,
+      template: tplFromScript !== null ? tplFromScript : dc.innerHTML,
       js: scriptEl ? scriptEl.textContent || "" : "",
       props,
       preview
@@ -40,8 +47,9 @@
     if (!openMatch) return null;
     const close = src.lastIndexOf("</x-dc>");
     if (close === -1 || close < openMatch.index) return null;
-    const template = src.slice(openMatch.index + openMatch[0].length, close);
     const doc = new DOMParser().parseFromString(src, "text/html");
+    const tplFromScript = readTemplateScript(doc);
+    const template = tplFromScript !== null ? tplFromScript : src.slice(openMatch.index + openMatch[0].length, close);
     const scriptEl = doc.querySelector("script[data-dc-script]");
     const { props, preview } = parseDataProps(
       scriptEl?.getAttribute("data-props") ?? null

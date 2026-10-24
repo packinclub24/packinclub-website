@@ -51,12 +51,15 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the Packin Club blog cover?","acceptedAnswer":{"@type":"Answer","text":"Plain-language guides on compostable packaging for Indian businesses: certification (IS 17088 and CPCB), regulation, composting, costs, greenwashing, and format guides such as courier bags, cups and mulch film."}},{"@type":"Question","name":"Where should I start if I am new to compostable packaging?","acceptedAnswer":{"@type":"Answer","text":"Start with What is compostable packaging?, then read Compostable vs biodegradable."}},{"@type":"Question","name":"What does IS 17088 mean?","acceptedAnswer":{"@type":"Answer","text":"IS 17088 is the Indian standard, based on ISO 17088, behind CPCB certification of compostable plastic sold in India. It tests disintegration, biodegradation, ecotoxicity and heavy metal content together. Read the explainer."}},{"@type":"Question","name":"How do I check a supplier’s compostable claim?","acceptedAnswer":{"@type":"Answer","text":"Ask for the CPCB registration number and the test report for the specific product you are buying, because a certificate covers one product and formulation, not a whole company. How to spot greenwashing."}},{"@type":"Question","name":"Is the blog legal advice?","acceptedAnswer":{"@type":"Answer","text":"No. The articles are general information for buyers. Rules and certifications change, so confirm current requirements with the relevant authority or your adviser before making compliance decisions."}}]}</script>
 </head>
 <body>
-<x-dc>
+<script type="text/x-dc-template" id="dc-template">
+
+
+
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
-<script src="./blog-data.js"></script>
+<\script src="./blog-data.js"><\/script>
 <style>
    @keyframes plStem { from { stroke-dashoffset: 70; } to { stroke-dashoffset: 0; } }
   @keyframes plLeaf { 0% { transform: scale(0) rotate(-12deg); opacity: 0; } 60% { opacity: 1; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
@@ -92,16 +95,16 @@
 </style>
 </helmet>
 
-<div ref="{{ rootRef }}" style="font-family:Inter,sans-serif; color:#14342C; background:#F7F4EC; overflow-x:hidden; min-height:100vh;">
-     <!-- ============ PRELOADER ============ -->
-  <div ref="{{ preloaderRef }}" style="position:fixed; inset:0; z-index:9999; background:#14342C; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px; transition:opacity .7s ease, visibility .7s ease;">
+<div ref="{\{ rootRef }\}" style="font-family:Inter,sans-serif; color:#14342C; background:#F7F4EC; overflow-x:hidden; min-height:100vh;">
+     <\!-- ============ PRELOADER ============ -->
+  <div ref="{\{ preloaderRef }\}" style="position:fixed; inset:0; z-index:9999; background:#14342C; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px; transition:opacity .7s ease, visibility .7s ease;">
     <div style="position:relative; width:74px; height:96px;">
       <svg viewBox="0 0 74 96" width="74" height="96" fill="none" style="position:absolute; inset:0;">
-        <!-- stem draws up -->
+        <\!-- stem draws up -->
         <path d="M37 94 L37 46" stroke="#6FAF45" stroke-width="2.4" stroke-linecap="round" style="stroke-dasharray:70; stroke-dashoffset:70; animation:plStem .7s cubic-bezier(.6,0,.2,1) .15s forwards;"/>
-        <!-- left leaf -->
+        <\!-- left leaf -->
         <path d="M37 60 q-28 -6 -30 -34 q28 4 30 34 Z" fill="#6FAF45" style="transform-origin:37px 60px; opacity:0; animation:plLeaf .6s cubic-bezier(.2,.8,.2,1) .55s forwards;"/>
-        <!-- right leaf -->
+        <\!-- right leaf -->
         <path d="M37 50 q28 -8 31 -44 q-29 6 -31 44 Z" fill="#8FCB62" style="transform-origin:37px 50px; opacity:0; animation:plLeaf .6s cubic-bezier(.2,.8,.2,1) .8s forwards;"/>
       </svg>
     </div>
@@ -113,8 +116,8 @@
     </div>
     <div style="font-family:Inter,sans-serif; font-size:10.5px; letter-spacing:0.22em; text-transform:uppercase; color:#6FAF4599; margin-top:4px; animation:plShimmer 1.6s ease infinite;">Returning to soil</div>
   </div>
-  <!-- HEADER -->
-  <header class="pc-header" ref="{{ headerRef }}" style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px clamp(20px,4vw,40px); transition:padding .25s ease, background-color .25s ease, box-shadow .25s ease;">
+  <\!-- HEADER -->
+  <header class="pc-header" ref="{\{ headerRef }\}" style="position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px clamp(20px,4vw,40px); transition:padding .25s ease, background-color .25s ease, box-shadow .25s ease;">
     <a href="index.html" style="display:flex; align-items:baseline; gap:1px; text-decoration:none; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:23px; letter-spacing:-0.015em; color:#F7F4EC;">
       <img src="assets/packinclub-logo.webp" alt="PackinClub" style="height:55px; width:auto; display:block;">
     </a>
@@ -127,36 +130,36 @@
   <a href="contact.html" data-nav style="color:#F7F4EC; text-decoration:none; transition:color .15s;" style-hover="color:#6FAF45;">Contact</a>
 </nav>
     <div class="pc-cta-desktop" style="align-items:center; gap:12px;">
-    <a href="contact.html" onMouseMove="{{ magnetMove }}" onMouseLeave="{{ magnetLeave }}" style="flex:none; align-items:center; gap:8px; background:#6FAF45; color:#14342C; font-size:13.5px; font-weight:600; padding:11px 18px; border-radius:2px; text-decoration:none; transition:transform .18s ease-out; will-change:transform;">Request a Quote</a>
+    <a href="contact.html" onMouseMove="{\{ magnetMove }\}" onMouseLeave="{\{ magnetLeave }\}" style="flex:none; align-items:center; gap:8px; background:#6FAF45; color:#14342C; font-size:13.5px; font-weight:600; padding:11px 18px; border-radius:2px; text-decoration:none; transition:transform .18s ease-out; will-change:transform;">Request a Quote</a>
       <a href="https://www.facebook.com/profile.php?id=61592764912658" target="_blank" rel="noopener" aria-label="Facebook" style="width:28px; height:28px; border-radius:6px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
       <a href="https://x.com/ClubPackin" target="_blank" rel="noopener" aria-label="Twitter" style="width:28px; height:28px; border-radius:6px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98A8.521 8.521 0 0 1 2 18.57a12.02 12.02 0 0 0 6.29 1.85c7.55 0 11.69-6.25 11.69-11.69l-.01-.53c.8-.58 1.5-1.3 2.05-2.13z"/></svg></a>
       <a href="https://www.linkedin.com/company/packin-club-compostable-packaging/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:28px; height:28px; border-radius:6px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
       <a href="https://www.instagram.com/packinclub/" target="_blank" rel="noopener" aria-label="Instagram" style="width:28px; height:28px; border-radius:6px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.02-3.58.07-4.85c.15-3.23 1.67-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8.16zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
       <a href="https://www.youtube.com/@packinclub" target="_blank" rel="noopener" aria-label="YouTube" style="width:28px; height:28px; border-radius:6px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/></svg></a>
     </div>
-    <button class="pc-burger" onClick="{{ toggleMobileMenu }}" aria-label="Toggle menu" style="flex:none; align-items:center; justify-content:center; width:38px; height:38px; border:none; background:transparent; cursor:pointer; padding:0; gap:5px; flex-direction:column;">
-      <span class="pc-burger-bar" ref="{{ burgerBar1Ref }}"></span>
-      <span class="pc-burger-bar" ref="{{ burgerBar2Ref }}"></span>
-      <span class="pc-burger-bar" ref="{{ burgerBar3Ref }}"></span>
+    <button class="pc-burger" onClick="{\{ toggleMobileMenu }\}" aria-label="Toggle menu" style="flex:none; align-items:center; justify-content:center; width:38px; height:38px; border:none; background:transparent; cursor:pointer; padding:0; gap:5px; flex-direction:column;">
+      <span class="pc-burger-bar" ref="{\{ burgerBar1Ref }\}"></span>
+      <span class="pc-burger-bar" ref="{\{ burgerBar2Ref }\}"></span>
+      <span class="pc-burger-bar" ref="{\{ burgerBar3Ref }\}"></span>
     </button>
   </header>
 
-  <!-- MOBILE MENU PANEL -->
-  <div class="pc-mobile-menu {{ mobileMenuClass }}" style="position:fixed; top:0; left:0; right:0; z-index:59; flex-direction:column; background:#0c1f19f5; backdrop-filter:blur(10px); padding:88px 24px 28px; gap:2px;">
-  <a href="index.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Home</a>
+  <\!-- MOBILE MENU PANEL -->
+  <div class="pc-mobile-menu {\{ mobileMenuClass }\}" style="position:fixed; top:0; left:0; right:0; z-index:59; flex-direction:column; background:#0c1f19f5; backdrop-filter:blur(10px); padding:88px 24px 28px; gap:2px;">
+  <a href="index.html" onClick="{\{ closeMobileMenu }\}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Home</a>
 
-  <a href="about.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">About</a>
+  <a href="about.html" onClick="{\{ closeMobileMenu }\}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">About</a>
 
-  <a href="industries.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Industries</a>
+  <a href="industries.html" onClick="{\{ closeMobileMenu }\}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Industries</a>
 
-  <details class="pc-m-dd"><summary style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Products<svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></summary><div class="pc-m-dd-list"><a href="products.html" data-pc-cat="all" onClick="{{ closeMobileMenu }}">All Products</a><a href="products.html?cat=agriculture-nursery" data-pc-cat="agriculture-nursery" onClick="{{ closeMobileMenu }}">Agriculture &amp; Nursery</a><a href="products.html?cat=bags-on-roll" data-pc-cat="bags-on-roll" onClick="{{ closeMobileMenu }}">Bags on Roll</a><a href="products.html?cat=healthcare-hospital" data-pc-cat="healthcare-hospital" onClick="{{ closeMobileMenu }}">Healthcare &amp; Hospital</a><a href="products.html?cat=horeca" data-pc-cat="horeca" onClick="{{ closeMobileMenu }}">HORECA</a><a href="products.html?cat=industrial" data-pc-cat="industrial" onClick="{{ closeMobileMenu }}">Industrial</a><a href="products.html?cat=retail" data-pc-cat="retail" onClick="{{ closeMobileMenu }}">Retail</a><a href="products.html?cat=temple-religious" data-pc-cat="temple-religious" onClick="{{ closeMobileMenu }}">Temple &amp; Religious</a></div></details>
+  <details class="pc-m-dd"><summary style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Products<svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></summary><div class="pc-m-dd-list"><a href="products.html" data-pc-cat="all" onClick="{\{ closeMobileMenu }\}">All Products</a><a href="products.html?cat=agriculture-nursery" data-pc-cat="agriculture-nursery" onClick="{\{ closeMobileMenu }\}">Agriculture &amp; Nursery</a><a href="products.html?cat=bags-on-roll" data-pc-cat="bags-on-roll" onClick="{\{ closeMobileMenu }\}">Bags on Roll</a><a href="products.html?cat=healthcare-hospital" data-pc-cat="healthcare-hospital" onClick="{\{ closeMobileMenu }\}">Healthcare &amp; Hospital</a><a href="products.html?cat=horeca" data-pc-cat="horeca" onClick="{\{ closeMobileMenu }\}">HORECA</a><a href="products.html?cat=industrial" data-pc-cat="industrial" onClick="{\{ closeMobileMenu }\}">Industrial</a><a href="products.html?cat=retail" data-pc-cat="retail" onClick="{\{ closeMobileMenu }\}">Retail</a><a href="products.html?cat=temple-religious" data-pc-cat="temple-religious" onClick="{\{ closeMobileMenu }\}">Temple &amp; Religious</a></div></details>
 
-  <a href="blog.html" onClick="{{ closeMobileMenu }}" style="color:#6FAF45; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Blog</a>
+  <a href="blog.html" onClick="{\{ closeMobileMenu }\}" style="color:#6FAF45; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Blog</a>
 
-  <a href="contact.html" onClick="{{ closeMobileMenu }}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Contact</a>
+  <a href="contact.html" onClick="{\{ closeMobileMenu }\}" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Contact</a>
 
   
-    <a href="contact.html" onClick="{{ closeMobileMenu }}" style="margin-top:18px; display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#6FAF45; color:#14342C; font-size:15px; font-weight:600; padding:14px 18px; border-radius:2px; text-decoration:none;">Request a Quote</a>
+    <a href="contact.html" onClick="{\{ closeMobileMenu }\}" style="margin-top:18px; display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#6FAF45; color:#14342C; font-size:15px; font-weight:600; padding:14px 18px; border-radius:2px; text-decoration:none;">Request a Quote</a>
   
     <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-top:20px;">
       <a href="https://www.facebook.com/profile.php?id=61592764912658" target="_blank" rel="noopener" aria-label="Facebook" style="width:38px; height:38px; border-radius:8px; background:#6FAF45; display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="#14342C"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
@@ -168,11 +171,11 @@
           <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/>
         </svg>
       </a>
-    </div>  <!-- ✅ closes the social-icons row -->
-  </div>  <!-- ✅ closes .pc-mobile-menu -->
+    </div>  <\!-- ✅ closes the social-icons row -->
+  </div>  <\!-- ✅ closes .pc-mobile-menu -->
 
 
-  <!-- HERO -->
+  <\!-- HERO -->
   <style>
     .pc-blog-hero-bg {
       background-color: #14342C;
@@ -242,11 +245,11 @@ max-width:840px;
     </div>
   </section>
 
-  <!-- BODY -->
+  <\!-- BODY -->
   <section style="background:#F7F4EC; padding:clamp(40px,5vw,64px) clamp(20px,4vw,40px) clamp(72px,9vw,120px);">
     <div style="max-width:1280px; margin:0 auto;">
 
-      <!-- filter chips -->
+      <\!-- filter chips -->
       <div style="display:flex; flex-wrap:wrap; gap:9px; margin-bottom:clamp(32px,4vw,48px); padding-bottom:clamp(28px,3vw,40px); border-bottom:1px solid #14342C18;">
                 <button type="button" data-chip="All" style="cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:600; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C; background:#14342C; color:#F7F4EC;">All</button>
         <button type="button" data-chip="Guides" style="cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:500; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C26; background:transparent; color:#14342Ccc;">Guides</button>
@@ -259,7 +262,7 @@ max-width:840px;
         <button type="button" data-chip="Agriculture" style="cursor:pointer; font-family:Inter,sans-serif; font-size:13px; font-weight:500; padding:9px 15px; border-radius:2px; transition:background-color .15s, color .15s, border-color .15s; border:1px solid #14342C26; background:transparent; color:#14342Ccc;">Agriculture</button>
       </div>
 
-      <!-- featured (only on All, no filter) -->
+      <\!-- featured (only on All, no filter) -->
             <div data-featured-wrap>
         <a href="what-is-compostable-packaging.html" data-reveal class="pc-card" style="display:flex; flex-wrap:wrap; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:6px; overflow:hidden; background:#fff; margin-bottom:clamp(32px,4vw,48px);">
           <div style="flex:1 1 360px; min-width:280px; min-height:280px; position:relative; background-color:#0f2820; background-image:url('thumbnail_blog/what_is_compostable_packaging.webp'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:clamp(24px,3vw,40px);">
@@ -276,7 +279,7 @@ max-width:840px;
         </a>
       </div>
 
-      <!-- grid -->
+      <\!-- grid -->
       <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px;">
         <a href="courier-bag-sizes-chart.html" data-post-cat="Guides" data-reveal class="pc-card" style="display:flex; flex-direction:column; text-decoration:none; color:inherit; border:1px solid #14342C18; border-radius:5px; overflow:hidden; background:#fff;">
           <div style="height:150px; position:relative; background-color:#0f2820; background-image:url('thumbnail_blog/PackinClub_Eco_Packaging_Guide.webp'); background-size:cover; background-position:center 15%; display:flex; align-items:flex-end; padding:18px;">
@@ -436,18 +439,18 @@ max-width:840px;
     </div>
   </section>
 
-  <!-- NEWSLETTER / CTA -->
+  <\!-- NEWSLETTER / CTA -->
   <section style="background:#6FAF45; color:#14342C; padding:clamp(64px,9vw,120px) clamp(20px,4vw,40px); position:relative; overflow:hidden;">
     <div style="position:absolute; inset:0; background-image:radial-gradient(80% 80% at 50% 0%,#14342C14,transparent 72%); mask-image:radial-gradient(100% 100% at 50% 0%,#000,transparent 75%);"></div>
     <div style="max-width:820px; margin:0 auto; text-align:center; position:relative;">
       <div style="font-family:Inter,sans-serif; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#14342C99; margin-bottom:18px;">Ready to switch?</div>
       <h2 style="font-family:Bitter,serif; font-weight:600; font-size:clamp(30px,4.6vw,56px); line-height:1.05; letter-spacing:-0.02em; margin:0 0 22px;">Reading is good. Switching is better.</h2>
       <p style="font-size:clamp(16px,1.4vw,19px); line-height:1.55; color:#14342Ccc; max-width:520px; margin:0 auto 34px;">Tell us what you ship and we'll match it to a certified compostable format, with samples to trial and a quote within two business days.</p>
-      <a href="contact.html" onMouseMove="{{ magnetMove }}" onMouseLeave="{{ magnetLeave }}" style="display:inline-flex; align-items:center; gap:10px; background:#14342C; color:#F7F4EC; font-weight:600; font-size:16px; padding:17px 32px; border-radius:2px; text-decoration:none; transition:transform .18s ease-out; will-change:transform;">Request a quote <span style="font-size:18px;">→</span></a>
+      <a href="contact.html" onMouseMove="{\{ magnetMove }\}" onMouseLeave="{\{ magnetLeave }\}" style="display:inline-flex; align-items:center; gap:10px; background:#14342C; color:#F7F4EC; font-weight:600; font-size:16px; padding:17px 32px; border-radius:2px; text-decoration:none; transition:transform .18s ease-out; will-change:transform;">Request a quote <span style="font-size:18px;">→</span></a>
     </div>
   </section>
 
-  <!-- ============ FAQ ============ -->
+  <\!-- ============ FAQ ============ -->
   <section class="pc-faq" id="faq" style="background:#F7F4EC; padding:clamp(56px,7vw,100px) clamp(20px,4vw,40px); border-top:1px solid #14342C14;">
     <div style="max-width:860px; margin:0 auto;">
       <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.16em; text-transform:uppercase; color:#3f7a26; margin-bottom:14px;">FAQ</div>
@@ -462,7 +465,7 @@ max-width:840px;
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <\!-- FOOTER -->
   <footer style="background:#0c1f19; color:#F7F4EC; padding:clamp(56px,7vw,88px) clamp(20px,4vw,40px) 36px;">
     <div style="max-width:1280px; margin:0 auto;">
       <div style="display:flex; flex-wrap:wrap; gap:clamp(40px,6vw,72px); justify-content:space-between; padding-bottom:clamp(40px,5vw,60px); border-bottom:1px solid #ffffff14;">
@@ -502,7 +505,7 @@ max-width:840px;
         <div>
           <div style="font-family:Inter,sans-serif; font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:#6FAF45; margin-bottom:18px;">Contact</div>
           <div style="display:flex; flex-direction:column; gap:12px; font-size:14.5px; color:#F7F4ECcc;">
-            <a ref="{{ emailRef }}" href="contact.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">info@packinclub.com</a>
+            <a ref="{\{ emailRef }\}" href="contact.html" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">info@packinclub.com</a>
             <a href="tel:+918178414360" style="color:#F7F4ECcc; text-decoration:none;" style-hover="color:#6FAF45;">+91 81784 14360</a>
             <span style="line-height:1.6; max-width:240px;">D-1/64, 21st Century Business Centre, Veer Savarkar Block, Shakarpur, Nirman Vihar, Delhi 110092</span>
           </div>
@@ -515,7 +518,441 @@ max-width:840px;
     </div>
   </footer>
 </div>
-</x-dc>
+
+
+
+</script>
+<!-- PRERENDER:START (made by prerender.js: do not edit between START and END. Edit the template above, then run: node prerender.js) -->
+<x-dc data-prerendered><helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+<script src="./blog-data.js"></script>
+<style>
+   @keyframes plStem { from { stroke-dashoffset: 70; } to { stroke-dashoffset: 0; } }
+  @keyframes plLeaf { 0% { transform: scale(0) rotate(-12deg); opacity: 0; } 60% { opacity: 1; } 100% { transform: scale(1) rotate(0deg); opacity: 1; } }
+  @keyframes plWord { from { opacity: 0; transform: translateY(8px); letter-spacing: 0.12em; } to { opacity: 1; transform: translateY(0); letter-spacing: -0.015em; } }
+  @keyframes plBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes plShimmer { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #F7F4EC; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  ::selection { background: #6FAF45; color: #14342C; }
+  @keyframes pcPulse { 0% { box-shadow: 0 0 0 0 #6FAF4566; } 70% { box-shadow: 0 0 0 7px #6FAF4500; } 100% { box-shadow: 0 0 0 0 #6FAF4500; } }
+  @keyframes pcFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+  .pc-dot { animation: pcPulse 2.6s ease-out infinite; }
+  .pc-card { transition: transform .32s cubic-bezier(.2,.7,.2,1), box-shadow .32s ease, border-color .32s ease; }
+  .pc-card:hover { transform: translateY(-6px); box-shadow: 0 26px 52px -28px rgba(20,52,44,.5); border-color: #6FAF4566; }
+  .pc-card .pc-thumb { transition: transform .55s cubic-bezier(.2,.7,.2,1); will-change: transform; }
+  .pc-card:hover .pc-thumb { transform: scale(1.1); }
+  .pc-arrow { display: inline-block; transition: transform .28s ease; }
+  .pc-card:hover .pc-arrow, a:hover > .pc-arrow, button:hover > .pc-arrow { transform: translateX(5px); }
+  .pc-float { animation: pcFloat 5.5s ease-in-out infinite; }
+  .pc-link-underline { background-image: linear-gradient(#6FAF45,#6FAF45); background-size: 0% 1.5px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size .3s ease; }
+  .pc-link-underline:hover { background-size: 100% 1.5px; }
+ @keyframes pcFadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  /* responsive header */
+  .pc-nav-desktop, .pc-cta-desktop { display: flex; }
+  .pc-burger { display: none; }
+  .pc-mobile-menu { display: none; }
+  @media (max-width: 860px) {
+    .pc-nav-desktop, .pc-cta-desktop { display: none !important; }
+    .pc-burger { display: inline-flex !important; }
+  }
+  .pc-mobile-menu.pc-open { display: flex; animation: pcFadeUp .25s ease; }
+  .pc-burger-bar { display: block; width: 22px; height: 2px; background: #F7F4EC; border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+</style>
+</helmet><div class="sc-host" data-sc-name="blog"><div style="font-family: Inter, sans-serif; color: rgb(20, 52, 44); background: rgb(247, 244, 236); overflow-x: hidden; min-height: 100vh;">
+     
+  <div style="position: fixed; inset: 0px; z-index: 9999; background: rgb(20, 52, 44); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; transition: opacity 0.7s, visibility 0.7s;">
+    <div style="position: relative; width: 74px; height: 96px;">
+      <svg viewBox="0 0 74 96" width="74" height="96" fill="none" style="position: absolute; inset: 0px;">
+        
+        <path d="M37 94 L37 46" stroke="#6FAF45" stroke-width="2.4" stroke-linecap="round" style="stroke-dasharray: 70; stroke-dashoffset: 70; animation: 0.7s cubic-bezier(0.6, 0, 0.2, 1) 0.15s 1 normal forwards running plStem;"></path>
+        
+        <path d="M37 60 q-28 -6 -30 -34 q28 4 30 34 Z" fill="#6FAF45" style="transform-origin: 37px 60px; opacity: 0; animation: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.55s 1 normal forwards running plLeaf;"></path>
+        
+        <path d="M37 50 q28 -8 31 -44 q-29 6 -31 44 Z" fill="#8FCB62" style="transform-origin: 37px 50px; opacity: 0; animation: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.8s 1 normal forwards running plLeaf;"></path>
+      </svg>
+    </div>
+    <div style="font-family: &quot;Plus Jakarta Sans&quot;, sans-serif; font-weight: 700; font-size: 30px; letter-spacing: -0.015em; color: rgb(247, 244, 236); opacity: 0; animation: 0.7s ease 1.05s 1 normal forwards running plWord;">
+      Packin<span style="color: rgb(111, 175, 69);">Club</span>
+    </div>
+    <div style="width: 160px; height: 2px; background: rgba(255, 255, 255, 0.12); border-radius: 2px; overflow: hidden; margin-top: 2px;">
+      <div style="height: 100%; background: rgb(111, 175, 69); transform-origin: left center; transform: scaleX(0); animation: 1.5s cubic-bezier(0.5, 0, 0.1, 1) 0.2s 1 normal forwards running plBar;"></div>
+    </div>
+    <div style="font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(111, 175, 69, 0.6); margin-top: 4px; animation: 1.6s ease 0s infinite normal none running plShimmer;">Returning to soil</div>
+  </div>
+  
+  <header class="pc-header" style="position: fixed; top: 0px; left: 0px; right: 0px; z-index: 60; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px clamp(20px, 4vw, 40px); transition: padding 0.25s, background-color 0.25s, box-shadow 0.25s; background: rgba(12, 31, 25, 0.38); backdrop-filter: blur(8px); box-shadow: none;">
+    <a href="index.html" style="display: flex; align-items: baseline; gap: 1px; text-decoration: none; font-family: &quot;Plus Jakarta Sans&quot;, sans-serif; font-weight: 700; font-size: 23px; letter-spacing: -0.015em; color: rgb(247, 244, 236);">
+      <img src="assets/packinclub-logo.webp" alt="PackinClub" style="height: 55px; width: auto; display: block;">
+    </a>
+    <nav class="pc-nav-desktop" style="display: flex; align-items: center; gap: clamp(10px, 1.6vw, 26px); font-size: 13.5px; font-weight: 500;">
+  <a href="index.html" class="scp0" style="color: rgb(247, 244, 236); text-decoration: none; transition: color 0.15s;">Home</a>
+  <a href="about.html" data-nav="" class="scp0" style="color: rgb(247, 244, 236); text-decoration: none; transition: color 0.15s;">About</a>
+  <a href="industries.html" data-nav="" class="scp0" style="color: rgb(247, 244, 236); text-decoration: none; transition: color 0.15s;">Industries</a>
+  <div class="pc-nav-dd"><a href="products.html" data-nav="" class="scp0" style="color: rgb(247, 244, 236); text-decoration: none; transition: color 0.15s;">Products</a><button type="button" class="pc-nav-dd-btn" aria-label="Show product categories" aria-haspopup="true" aria-expanded="false" style="color: rgb(247, 244, 236);"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></button><div class="pc-nav-dd-menu"><div class="pc-nav-dd-panel" role="menu"><a role="menuitem" href="products.html" data-pc-cat="all" class="pc-dd-all">All Products</a><a role="menuitem" href="products.html?cat=agriculture-nursery" data-pc-cat="agriculture-nursery">Agriculture &amp; Nursery</a><a role="menuitem" href="products.html?cat=bags-on-roll" data-pc-cat="bags-on-roll">Bags on Roll</a><a role="menuitem" href="products.html?cat=healthcare-hospital" data-pc-cat="healthcare-hospital">Healthcare &amp; Hospital</a><a role="menuitem" href="products.html?cat=horeca" data-pc-cat="horeca">HORECA</a><a role="menuitem" href="products.html?cat=industrial" data-pc-cat="industrial">Industrial</a><a role="menuitem" href="products.html?cat=retail" data-pc-cat="retail">Retail</a><a role="menuitem" href="products.html?cat=temple-religious" data-pc-cat="temple-religious">Temple &amp; Religious</a></div></div></div>
+  <a href="blog.html" data-nav="" style="color: rgb(111, 175, 69); text-decoration: none; transition: color 0.15s;">Blog</a>
+  <a href="contact.html" data-nav="" class="scp0" style="color: rgb(247, 244, 236); text-decoration: none; transition: color 0.15s;">Contact</a></nav>
+    <div class="pc-cta-desktop" style="align-items: center; gap: 12px;">
+    <a href="contact.html" style="flex: 0 0 auto; align-items: center; gap: 8px; background: rgb(111, 175, 69); color: rgb(20, 52, 44); font-size: 13.5px; font-weight: 600; padding: 11px 18px; border-radius: 2px; text-decoration: none; transition: transform 0.18s ease-out; will-change: transform;">Request a Quote</a>
+      <a href="https://www.facebook.com/profile.php?id=61592764912658" target="_blank" rel="noopener" aria-label="Facebook" style="width: 28px; height: 28px; border-radius: 6px; background: rgb(111, 175, 69); display: inline-flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"></path></svg></a>
+      <a href="https://x.com/ClubPackin" target="_blank" rel="noopener" aria-label="Twitter" style="width: 28px; height: 28px; border-radius: 6px; background: rgb(111, 175, 69); display: inline-flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98A8.521 8.521 0 0 1 2 18.57a12.02 12.02 0 0 0 6.29 1.85c7.55 0 11.69-6.25 11.69-11.69l-.01-.53c.8-.58 1.5-1.3 2.05-2.13z"></path></svg></a>
+      <a href="https://www.linkedin.com/company/packin-club-compostable-packaging/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width: 28px; height: 28px; border-radius: 6px; background: rgb(111, 175, 69); display: inline-flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg></a>
+      <a href="https://www.instagram.com/packinclub/" target="_blank" rel="noopener" aria-label="Instagram" style="width: 28px; height: 28px; border-radius: 6px; background: rgb(111, 175, 69); display: inline-flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.02-3.58.07-4.85c.15-3.23 1.67-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8.16zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"></path></svg></a>
+      <a href="https://www.youtube.com/@packinclub" target="_blank" rel="noopener" aria-label="YouTube" style="width: 28px; height: 28px; border-radius: 6px; background: rgb(111, 175, 69); display: inline-flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#14342C"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"></path></svg></a>
+    </div>
+    <button class="pc-burger" aria-label="Toggle menu" style="flex: 0 0 auto; align-items: center; justify-content: center; width: 38px; height: 38px; border: none; background: transparent; cursor: pointer; padding: 0px; gap: 5px; flex-direction: column;">
+      <span class="pc-burger-bar" style="transform: none;"></span>
+      <span class="pc-burger-bar" style="opacity: 1;"></span>
+      <span class="pc-burger-bar" style="transform: none;"></span>
+    </button>
+  </header>
+
+  
+  <div class="pc-mobile-menu " style="position: fixed; top: 0px; left: 0px; right: 0px; z-index: 59; flex-direction: column; background: rgba(12, 31, 25, 0.96); backdrop-filter: blur(10px); padding: 88px 24px 28px; gap: 2px;">
+  <a href="index.html" style="color: rgb(247, 244, 236); text-decoration: none; font-size: 17px; font-weight: 500; padding: 14px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">Home</a>
+
+  <a href="about.html" style="color: rgb(247, 244, 236); text-decoration: none; font-size: 17px; font-weight: 500; padding: 14px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">About</a>
+
+  <a href="industries.html" style="color: rgb(247, 244, 236); text-decoration: none; font-size: 17px; font-weight: 500; padding: 14px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">Industries</a>
+
+  <details class="pc-m-dd"><summary style="color: rgb(247, 244, 236); text-decoration: none; font-size: 17px; font-weight: 500; padding: 14px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">Products<svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></summary><div class="pc-m-dd-list"><a href="products.html" data-pc-cat="all">All Products</a><a href="products.html?cat=agriculture-nursery" data-pc-cat="agriculture-nursery">Agriculture &amp; Nursery</a><a href="products.html?cat=bags-on-roll" data-pc-cat="bags-on-roll">Bags on Roll</a><a href="products.html?cat=healthcare-hospital" data-pc-cat="healthcare-hospital">Healthcare &amp; Hospital</a><a href="products.html?cat=horeca" data-pc-cat="horeca">HORECA</a><a href="products.html?cat=industrial" data-pc-cat="industrial">Industrial</a><a href="products.html?cat=retail" data-pc-cat="retail">Retail</a><a href="products.html?cat=temple-religious" data-pc-cat="temple-religious">Temple &amp; Religious</a></div></details>
+
+  <a href="blog.html" style="color: rgb(111, 175, 69); text-decoration: none; font-size: 17px; font-weight: 500; padding: 14px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">Blog</a>
+
+  <a href="contact.html" style="color: rgb(247, 244, 236); text-decoration: none; font-size: 17px; font-weight: 500; padding: 14px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">Contact</a>
+
+  
+    <a href="contact.html" style="margin-top: 18px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: rgb(111, 175, 69); color: rgb(20, 52, 44); font-size: 15px; font-weight: 600; padding: 14px 18px; border-radius: 2px; text-decoration: none;">Request a Quote</a>
+  
+    <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 20px;">
+      <a href="https://www.facebook.com/profile.php?id=61592764912658" target="_blank" rel="noopener" aria-label="Facebook" style="width: 38px; height: 38px; border-radius: 8px; background: rgb(111, 175, 69); display: inline-flex; align-items: center; justify-content: center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="#14342C"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"></path></svg></a>
+      <a href="https://x.com/ClubPackin" target="_blank" rel="noopener" aria-label="Twitter" style="width: 38px; height: 38px; border-radius: 8px; background: rgb(111, 175, 69); display: inline-flex; align-items: center; justify-content: center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="#14342C"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98A8.521 8.521 0 0 1 2 18.57a12.02 12.02 0 0 0 6.29 1.85c7.55 0 11.69-6.25 11.69-11.69l-.01-.53c.8-.58 1.5-1.3 2.05-2.13z"></path></svg></a>
+      <a href="https://www.linkedin.com/company/packin-club-compostable-packaging/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width: 38px; height: 38px; border-radius: 8px; background: rgb(111, 175, 69); display: inline-flex; align-items: center; justify-content: center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="#14342C"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg></a>
+      <a href="https://www.instagram.com/packinclub/" target="_blank" rel="noopener" aria-label="Instagram" style="width: 38px; height: 38px; border-radius: 8px; background: rgb(111, 175, 69); display: inline-flex; align-items: center; justify-content: center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="#14342C"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.02-3.58.07-4.85c.15-3.23 1.67-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8.16zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"></path></svg></a>
+       <a href="https://www.youtube.com/@packinclub" target="_blank" rel="noopener" aria-label="YouTube" style="width: 38px; height: 38px; border-radius: 8px; background: rgb(111, 175, 69); display: inline-flex; align-items: center; justify-content: center;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="#14342C">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"></path>
+        </svg>
+      </a>
+    </div>  
+  </div>  
+
+
+  
+  <style>
+    .pc-blog-hero-bg {
+      background-color: #14342C;
+      background-image:
+        linear-gradient(100deg, rgba(11,28,24,.95) 0%, rgba(11,28,24,.86) 30%, rgba(11,28,24,.5) 58%, rgba(11,28,24,.22) 100%),
+        url('assets/hero-blog-desktop.webp');
+      background-size: cover;
+      background-position: right center;
+      background-repeat: no-repeat;
+    }
+    @media (max-width: 780px) {
+      .pc-blog-hero-bg {
+        background-image:
+          linear-gradient(180deg, rgba(11,28,24,.4) 0%, rgba(11,28,24,.9) 55%, rgba(11,28,24,.98) 100%),
+          url('assets/hero-blog-mobile.webp');
+        background-position: center top;
+      }
+    }
+  </style>
+  <section class="pc-blog-hero-bg" style="color: rgb(247, 244, 236); padding: clamp(128px, 16vw, 176px) clamp(20px, 4vw, 40px) clamp(48px, 6vw, 72px); position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0px; background-image: radial-gradient(75% 85% at 80% 12%, rgba(111, 175, 69, 0.07), transparent 68%); mask-image: radial-gradient(120% 90% at 80% 10%, rgb(0, 0, 0) 30%, transparent 75%); pointer-events: none;"></div>
+    <div style="max-width: 1280px; margin: 0px auto; position: relative;">
+      <div style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 999px; background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(10px); margin-bottom: 24px;">
+  <span style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.02em; color: rgb(215, 210, 200);">
+    The Journal
+  </span></div>
+      <h1 style="font-family: &quot;Libre Baskerville&quot;, serif; font-weight: 700; font-size: clamp(36px, 5.4vw, 68px); line-height: 1.02; letter-spacing: -0.02em; margin: 0px 0px 22px; max-width: 840px;">
+  Plain talk on a
+  <em style="font-style: italic; font-weight: 700; color: rgb(111, 175, 69);">
+    confusing
+  </em>
+  category.
+</h1>
+      <p style="font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; color: rgba(247, 244, 236, 0.8); max-width: 600px; margin: 0px;">
+        Guides, comparisons and straight answers on compostable packaging, certifications and the switch away from single-use plastic, written for the people who have to make the decision.
+      </p>
+    </div>
+  </section>
+
+  
+  <section style="background: rgb(247, 244, 236); padding: clamp(40px, 5vw, 64px) clamp(20px, 4vw, 40px) clamp(72px, 9vw, 120px);">
+    <div style="max-width: 1280px; margin: 0px auto;">
+
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: clamp(32px, 4vw, 48px); padding-bottom: clamp(28px, 3vw, 40px); border-bottom: 1px solid rgba(20, 52, 44, 0.094);">
+                <button type="button" data-chip="All" style="cursor: pointer; font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; padding: 9px 15px; border-radius: 2px; transition: background-color 0.15s, color 0.15s, border-color 0.15s; border: 1px solid rgb(20, 52, 44); background: rgb(20, 52, 44); color: rgb(247, 244, 236);">All</button>
+        <button type="button" data-chip="Guides" style="cursor: pointer; font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; padding: 9px 15px; border-radius: 2px; transition: background-color 0.15s, color 0.15s, border-color 0.15s; border: 1px solid rgba(20, 52, 44, 0.15); background: transparent; color: rgba(20, 52, 44, 0.8);">Guides</button>
+        <button type="button" data-chip="Sustainability" style="cursor: pointer; font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; padding: 9px 15px; border-radius: 2px; transition: background-color 0.15s, color 0.15s, border-color 0.15s; border: 1px solid rgba(20, 52, 44, 0.15); background: transparent; color: rgba(20, 52, 44, 0.8);">Sustainability</button>
+        <button type="button" data-chip="Compliance" style="cursor: pointer; font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; padding: 9px 15px; border-radius: 2px; transition: background-color 0.15s, color 0.15s, border-color 0.15s; border: 1px solid rgba(20, 52, 44, 0.15); background: transparent; color: rgba(20, 52, 44, 0.8);">Compliance</button>
+        <button type="button" data-chip="Certification" style="cursor: pointer; font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; padding: 9px 15px; border-radius: 2px; transition: background-color 0.15s, color 0.15s, border-color 0.15s; border: 1px solid rgba(20, 52, 44, 0.15); background: transparent; color: rgba(20, 52, 44, 0.8);">Certification</button>
+        <button type="button" data-chip="E-commerce" style="cursor: pointer; font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; padding: 9px 15px; border-radius: 2px; transition: background-color 0.15s, color 0.15s, border-color 0.15s; border: 1px solid rgba(20, 52, 44, 0.15); background: transparent; color: rgba(20, 52, 44, 0.8);">E-commerce</button>
+        <button type="button" data-chip="Food Service" style="cursor: pointer; font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; padding: 9px 15px; border-radius: 2px; transition: background-color 0.15s, color 0.15s, border-color 0.15s; border: 1px solid rgba(20, 52, 44, 0.15); background: transparent; color: rgba(20, 52, 44, 0.8);">Food Service</button>
+        <button type="button" data-chip="Business" style="cursor: pointer; font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; padding: 9px 15px; border-radius: 2px; transition: background-color 0.15s, color 0.15s, border-color 0.15s; border: 1px solid rgba(20, 52, 44, 0.15); background: transparent; color: rgba(20, 52, 44, 0.8);">Business</button>
+        <button type="button" data-chip="Agriculture" style="cursor: pointer; font-family: Inter, sans-serif; font-size: 13px; font-weight: 500; padding: 9px 15px; border-radius: 2px; transition: background-color 0.15s, color 0.15s, border-color 0.15s; border: 1px solid rgba(20, 52, 44, 0.15); background: transparent; color: rgba(20, 52, 44, 0.8);">Agriculture</button>
+      </div>
+
+      
+            <div data-featured-wrap="">
+        <a href="what-is-compostable-packaging.html" data-reveal="" class="pc-card" style="display: flex; flex-wrap: wrap; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 6px; overflow: hidden; background: rgb(255, 255, 255); margin-bottom: clamp(32px, 4vw, 48px); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="flex: 1 1 360px; min-width: 280px; min-height: 280px; position: relative; background-color: rgb(15, 40, 32); background-image: url(&quot;thumbnail_blog/what_is_compostable_packaging.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: clamp(24px, 3vw, 40px);">
+            <div style="position: relative;">
+              <span style="font-family: Inter, sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 5px 10px; border-radius: 2px;">Featured · Sustainability</span>
+            </div>
+          </div>
+          <div style="flex: 1 1 420px; min-width: 300px; padding: clamp(28px, 3.4vw, 52px); display: flex; flex-direction: column; justify-content: center;">
+            <div style="font-family: Inter, sans-serif; font-size: 11.5px; color: rgb(140, 133, 121); margin-bottom: 14px;">4 Sept 2026 · 10 min read</div>
+            <h2 style="font-family: Newsreader, serif; font-weight: 500; font-size: clamp(24px, 2.8vw, 36px); line-height: 1.12; letter-spacing: -0.01em; margin: 0px 0px 16px; color: rgb(20, 52, 44);">What Is Compostable Packaging? A Complete Guide</h2>
+            <p style="font-size: 15.5px; line-height: 1.6; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 22px; max-width: 520px;">A clear, no-jargon breakdown of what compostable packaging actually is, how it’s made, and how it differs from biodegradable alternatives.</p>
+            <span style="font-size: 14px; font-weight: 600; color: rgb(63, 122, 38);">Read the guide <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+      </div>
+
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px;">
+        <a href="courier-bag-sizes-chart.html" data-post-cat="Guides" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(15, 40, 32); background-image: url(&quot;thumbnail_blog/PackinClub_Eco_Packaging_Guide.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Guides</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">15 Oct 2026 · 6 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">Courier Bag Sizes Chart: Find the Right Size for Your Product</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">One chart for every common product, a 30-second way to measure, and the size mistakes that quietly cost D2C brands money.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+                <a href="what-is-compostable-packaging.html" data-post-cat="Sustainability" data-dup="1" data-reveal="" class="pc-card" style="display: none; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(15, 40, 32); background-image: url(&quot;thumbnail_blog/what_is_compostable_packaging.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Sustainability</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">4 Sept 2026 · 10 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">What Is Compostable Packaging? A Complete Guide</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">A clear, no-jargon breakdown of what compostable packaging actually is, how it’s made, and how it differs from biodegradable alternatives.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="are-compostable-bags-really-eco-friendly-an-honest-look.html" data-post-cat="Sustainability" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(15, 40, 32); background-image: url(&quot;thumbnail_blog/AnHonestLook.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Sustainability</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">24 Jul 2025 · 11 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">Are Compostable Bags Really Eco-Friendly? An Honest Look</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">Compostable packaging solves plastic persistence, but not every environmental question. An honest look at feedstock, infrastructure, and footprint tradeoffs.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="how-to-spot-greenwashing-in-eco-friendly-packaging.html" data-post-cat="Sustainability" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(15, 40, 32); background-image: url(&quot;thumbnail_blog/Eco-FriendlyPackaging.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Sustainability</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">10 Jul 2025 · 12 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">How to Spot Greenwashing in Eco-Friendly Packaging: A Buyer's Verification Framework</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">Every packaging supplier says biodegradable, eco-friendly, sustainable, compostable, green. They don't mean the same thing. Here's how to verify the claim before you sign the PO.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="compostable-mulch-film-a-practical-guide-for-indian-farmers.html" data-post-cat="Agriculture" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(15, 40, 32); background-image: url(&quot;thumbnail_blog/Compostable_mulch_film.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Agriculture</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">23 Jun 2025 · 12 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">Compostable Mulch Film: A Practical Guide for Indian Farmers</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">How compostable mulch film performs in the field, what it costs versus plastic mulch, and what to verify before buying for your crop and region.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="how-long-does-compostable-packaging-take-to-decompose.html" data-post-cat="Guides" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(20, 52, 44); background-image: url(&quot;thumbnail_blog/decompose-packaging.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Guides</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">16 Jun 2025 · 12 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">How Long Does Compostable Packaging Take to Decompose?</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">How long does compostable packaging actually take to break down? Here are the real IS 17088 timeframes by material, and why real-world results vary.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="home-composting-vs-industrial-composting-what-you-need-to-know.html" data-post-cat="Guides" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(20, 52, 44); background-image: url(&quot;thumbnail_blog/Home-Composting-vs-Industrial-Composting.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Guides</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">9 Jun 2025 · 6 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">Home Composting vs Industrial Composting: What You Need to Know</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">“Compostable” sounds like a single promise. In practice it splits into two very different disposal pathways — home composting and industrial composting — and a product certified for one isn’t automatically suited to the other.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="the-true-cost-of-switching-to-compostable-packaging.html" data-post-cat="Business" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(20, 52, 44); background-image: url(&quot;thumbnail_blog/True-Cost-of-Switching-to-Compostable-Packaging.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Business</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">26 May 2025 · 12 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">The True Cost of Switching to Compostable Packaging</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">A per-unit price comparison misses the real cost of switching to compostable packaging. Compliance, damage, and brand costs, weighed against material cost.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="aqueous-coated-paper-cups-are-they-actually-compostable.html" data-post-cat="Food Service" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(61, 43, 22); background-image: url(&quot;thumbnail_blog/Aqueous-Coated-Paper-Cups.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Food Service</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">12 May 2025 · 10 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">Aqueous Coated Paper Cups: Are They Actually Compostable?</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">A cup that looks like plain paper can still contain plastic. Here’s how aqueous coating differs from PE and PLA linings, and how to verify whether a paper cup is genuinely compostable.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="compostable-packaging-for-restaurants-and-cloud-kitchens.html" data-post-cat="Food Service" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(61, 43, 22); background-image: url(&quot;thumbnail_blog/Compostable-Packaging-for-Restaurants.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Food Service</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">28 Apr 2025 · 12 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">Compostable Packaging for Restaurants &amp; Cloud Kitchens</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">What to test before switching to compostable food packaging — grease resistance, heat retention, leak-proofing, and matching material to your menu.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="compostable-courier-bags-for-e-commerce-the-complete-guide.html" data-post-cat="E-commerce" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(15, 40, 32); background-image: url(&quot;thumbnail_blog/compostable-courier-bags.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">E-commerce</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">31 Mar 2025 · 8 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">Compostable Courier Bags for E-Commerce: The Complete Guide</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">What to evaluate before switching to compostable courier bags — tear strength, seal integrity, certification, and how they compare to conventional poly mailers.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="what-is-is-17088-compostable-plastic-certification-explained.html" data-post-cat="Certification" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(20, 52, 44); background-image: url(&quot;thumbnail_blog/IS17088_homepage.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Certification</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">17 Mar 2025 · 12 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">What Is IS 17088? Compostable Plastic Certification Explained</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">What IS 17088 compostable plastic certification actually tests, how CPCB registration works, and how to verify a supplier’s certificate before you buy.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="india-s-single-use-plastic-ban-a-practical-compliance-guide-for-businesses.html" data-post-cat="Compliance" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(61, 43, 22); background-image: url(&quot;thumbnail_blog/IndiaSingle-UsePlasticBan_homepage.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Compliance</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">3 Mar 2025 · 12 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">India’s Single-Use Plastic Ban: A Practical Compliance Guide for Businesses</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">What’s actually banned, carry bag thickness rules, and EPR obligations under India’s Plastic Waste Management Rules — a practical compliance guide.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+        <a href="compostable-vs-biodegradable-packaging-what-s-the-real-difference.html" data-post-cat="Guides" data-reveal="" class="pc-card" style="display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid rgba(20, 52, 44, 0.094); border-radius: 5px; overflow: hidden; background: rgb(255, 255, 255); opacity: 1; transform: none; transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);">
+          <div style="height: 150px; position: relative; background-color: rgb(20, 52, 44); background-image: url(&quot;thumbnail_blog/CompostablevsBiodegradable_homepage.webp&quot;); background-size: cover; background-position: center 15%; display: flex; align-items: flex-end; padding: 18px;">
+            <span style="position: relative; font-family: Inter, sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(247, 244, 236); background: rgba(20, 52, 44, 0.3); padding: 4px 9px; border-radius: 2px;">Guides</span>
+          </div>
+          <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1 1 0%;">
+            <div style="font-family: Inter, sans-serif; font-size: 11px; color: rgb(140, 133, 121); margin-bottom: 11px;">4 Feb 2025 · 8 min read</div>
+            <h3 style="font-family: Newsreader, serif; font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0px 0px 10px; color: rgb(20, 52, 44);">Compostable vs Biodegradable Packaging: What’s the Real Difference?</h3>
+            <p style="font-size: 13.5px; line-height: 1.55; color: rgba(20, 52, 44, 0.6); margin: 0px 0px 18px; flex: 1 1 0%;">“Biodegradable” and “compostable” get used as if they’re the same word. They’re not, and the gap between them changes what a product is legally allowed to claim, and whether your sustainability positioning actually holds up.</p>
+            <span style="font-size: 13px; font-weight: 600; color: rgb(63, 122, 38);">Read more <span class="pc-arrow">→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section style="background: rgb(111, 175, 69); color: rgb(20, 52, 44); padding: clamp(64px, 9vw, 120px) clamp(20px, 4vw, 40px); position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0px; background-image: radial-gradient(80% 80% at 50% 0%, rgba(20, 52, 44, 0.08), transparent 72%); mask-image: radial-gradient(100% 100% at 50% 0%, rgb(0, 0, 0), transparent 75%);"></div>
+    <div style="max-width: 820px; margin: 0px auto; text-align: center; position: relative;">
+      <div style="font-family: Inter, sans-serif; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(20, 52, 44, 0.6); margin-bottom: 18px;">Ready to switch?</div>
+      <h2 style="font-family: Bitter, serif; font-weight: 600; font-size: clamp(30px, 4.6vw, 56px); line-height: 1.05; letter-spacing: -0.02em; margin: 0px 0px 22px;">Reading is good. Switching is better.</h2>
+      <p style="font-size: clamp(16px, 1.4vw, 19px); line-height: 1.55; color: rgba(20, 52, 44, 0.8); max-width: 520px; margin: 0px auto 34px;">Tell us what you ship and we'll match it to a certified compostable format, with samples to trial and a quote within two business days.</p>
+      <a href="contact.html" style="display: inline-flex; align-items: center; gap: 10px; background: rgb(20, 52, 44); color: rgb(247, 244, 236); font-weight: 600; font-size: 16px; padding: 17px 32px; border-radius: 2px; text-decoration: none; transition: transform 0.18s ease-out; will-change: transform;">Request a quote <span style="font-size: 18px;">→</span></a>
+    </div>
+  </section>
+
+  
+  <section class="pc-faq" id="faq" style="background: rgb(247, 244, 236); padding: clamp(56px, 7vw, 100px) clamp(20px, 4vw, 40px); border-top: 1px solid rgba(20, 52, 44, 0.08);">
+    <div style="max-width: 860px; margin: 0px auto;">
+      <div style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(63, 122, 38); margin-bottom: 14px;">FAQ</div>
+      <h2 style="font-family: Bitter, Georgia, serif; font-weight: 600; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.15; letter-spacing: -0.01em; color: rgb(20, 52, 44); margin: 0px 0px 28px;">Frequently asked questions</h2>
+      <div style="border-top: 1px solid rgba(20, 52, 44, 0.12);">
+        <details style="border-bottom: 1px solid rgba(20, 52, 44, 0.12);"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 0px;"><span class="pc-faq-q" style="font-family: Inter, sans-serif; font-size: clamp(16px, 1.5vw, 18px); font-weight: 600; line-height: 1.4; color: rgb(20, 52, 44);">What does the Packin Club blog cover?</span><span class="pc-faq-plus" aria-hidden="true">+</span></summary><div style="padding: 0px 0px 24px; max-width: 720px; font-family: Inter, sans-serif; font-size: 15.5px; line-height: 1.75; color: rgba(20, 52, 44, 0.867);">Plain-language guides on compostable packaging for Indian businesses: certification (IS 17088 and CPCB), regulation, composting, costs, greenwashing, and format guides such as courier bags, cups and mulch film.</div></details>
+        <details style="border-bottom: 1px solid rgba(20, 52, 44, 0.12);"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 0px;"><span class="pc-faq-q" style="font-family: Inter, sans-serif; font-size: clamp(16px, 1.5vw, 18px); font-weight: 600; line-height: 1.4; color: rgb(20, 52, 44);">Where should I start if I am new to compostable packaging?</span><span class="pc-faq-plus" aria-hidden="true">+</span></summary><div style="padding: 0px 0px 24px; max-width: 720px; font-family: Inter, sans-serif; font-size: 15.5px; line-height: 1.75; color: rgba(20, 52, 44, 0.867);">Start with <a href="what-is-compostable-packaging.html">What is compostable packaging?</a>, then read <a href="compostable-vs-biodegradable-packaging-what-s-the-real-difference.html">Compostable vs biodegradable</a>.</div></details>
+        <details style="border-bottom: 1px solid rgba(20, 52, 44, 0.12);"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 0px;"><span class="pc-faq-q" style="font-family: Inter, sans-serif; font-size: clamp(16px, 1.5vw, 18px); font-weight: 600; line-height: 1.4; color: rgb(20, 52, 44);">What does IS 17088 mean?</span><span class="pc-faq-plus" aria-hidden="true">+</span></summary><div style="padding: 0px 0px 24px; max-width: 720px; font-family: Inter, sans-serif; font-size: 15.5px; line-height: 1.75; color: rgba(20, 52, 44, 0.867);">IS 17088 is the Indian standard, based on ISO 17088, behind CPCB certification of compostable plastic sold in India. It tests disintegration, biodegradation, ecotoxicity and heavy metal content together. <a href="what-is-is-17088-compostable-plastic-certification-explained.html">Read the explainer</a>.</div></details>
+        <details style="border-bottom: 1px solid rgba(20, 52, 44, 0.12);"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 0px;"><span class="pc-faq-q" style="font-family: Inter, sans-serif; font-size: clamp(16px, 1.5vw, 18px); font-weight: 600; line-height: 1.4; color: rgb(20, 52, 44);">How do I check a supplier’s compostable claim?</span><span class="pc-faq-plus" aria-hidden="true">+</span></summary><div style="padding: 0px 0px 24px; max-width: 720px; font-family: Inter, sans-serif; font-size: 15.5px; line-height: 1.75; color: rgba(20, 52, 44, 0.867);">Ask for the CPCB registration number and the test report for the specific product you are buying, because a certificate covers one product and formulation, not a whole company. <a href="how-to-spot-greenwashing-in-eco-friendly-packaging.html">How to spot greenwashing</a>.</div></details>
+        <details style="border-bottom: 1px solid rgba(20, 52, 44, 0.12);"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 0px;"><span class="pc-faq-q" style="font-family: Inter, sans-serif; font-size: clamp(16px, 1.5vw, 18px); font-weight: 600; line-height: 1.4; color: rgb(20, 52, 44);">Is the blog legal advice?</span><span class="pc-faq-plus" aria-hidden="true">+</span></summary><div style="padding: 0px 0px 24px; max-width: 720px; font-family: Inter, sans-serif; font-size: 15.5px; line-height: 1.75; color: rgba(20, 52, 44, 0.867);">No. The articles are general information for buyers. Rules and certifications change, so confirm current requirements with the relevant authority or your adviser before making compliance decisions.</div></details>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer style="background: rgb(12, 31, 25); color: rgb(247, 244, 236); padding: clamp(56px, 7vw, 88px) clamp(20px, 4vw, 40px) 36px;">
+    <div style="max-width: 1280px; margin: 0px auto;">
+      <div style="display: flex; flex-wrap: wrap; gap: clamp(40px, 6vw, 72px); justify-content: space-between; padding-bottom: clamp(40px, 5vw, 60px); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+        <div style="max-width: 300px;">
+          <img src="assets/packinclub-logo.webp" alt="PackinClub" style="height: 53px; width: auto; display: block; margin-bottom: 15px;">
+          <p style="font-size: 14.5px; line-height: 1.65; color: rgba(247, 244, 236, 0.6); margin: 0px 0px 22px;">India's pioneering eco-packaging partner, pairing material science with practical business solutions.</p>
+          <div style="display: flex; gap: 10px;">
+            <a href="https://www.linkedin.com/company/packin-club-compostable-packaging/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width: 38px; height: 38px; border-radius: 8px; background: rgba(255, 255, 255, 0.08); display: inline-flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg></a>
+            <a href="https://www.instagram.com/packinclub/" target="_blank" rel="noopener" aria-label="Instagram" style="width: 38px; height: 38px; border-radius: 8px; background: rgba(255, 255, 255, 0.08); display: inline-flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.02-3.58.07-4.85c.15-3.23 1.67-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.07c-4.35.2-6.78 2.62-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8.16zm6.4-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"></path></svg></a>
+            <a href="https://x.com/ClubPackin" target="_blank" rel="noopener" aria-label="Twitter" style="width: 38px; height: 38px; border-radius: 8px; background: rgba(255, 255, 255, 0.08); display: inline-flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.49-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98A8.521 8.521 0 0 1 2 18.57a12.02 12.02 0 0 0 6.29 1.85c7.55 0 11.69-6.25 11.69-11.69l-.01-.53c.8-.58 1.5-1.3 2.05-2.13z"></path></svg></a>
+            <a href="https://www.youtube.com/@packinclub" target="_blank" rel="noopener" aria-label="YouTube" style="width: 38px; height: 38px; border-radius: 8px; background: rgba(255, 255, 255, 0.08); display: inline-flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#F7F4EC"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"></path></svg></a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family: Inter, sans-serif; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(111, 175, 69); margin-bottom: 18px;">Explore</div>
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14.5px;">
+              <a href="index.html" class="scp0" style="color: rgba(247, 244, 236, 0.8); text-decoration: none;">Home</a>
+              <a href="about.html" class="scp0" style="color: rgba(247, 244, 236, 0.8); text-decoration: none;">About</a>
+              <a href="industries.html" class="scp0" style="color: rgba(247, 244, 236, 0.8); text-decoration: none;">Industries</a>
+              <a href="products.html" class="scp0" style="color: rgba(247, 244, 236, 0.8); text-decoration: none;">Products</a>
+              <a href="#top" class="scp0" style="color: rgba(233, 113, 20, 0.855); text-decoration: none;">Blog</a>
+          </div>
+        </div>
+        <div style="max-width: 260px;">
+          <div style="font-family: Inter, sans-serif; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(111, 175, 69); margin-bottom: 18px;">Newsletter</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(247, 244, 236, 0.8); margin: 0px 0px 16px;">Material science, compliance updates and case studies. Once a month.</p>
+          <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+            <input type="email" placeholder="you@company.com" style="flex: 1 1 0%; min-width: 0px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 2px; padding: 11px 14px; color: rgb(247, 244, 236); font-family: Inter, sans-serif; font-size: 13.5px;">
+            <button type="button" style="background: rgb(111, 175, 69); border: none; border-radius: 2px; width: 42px; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14342C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span style="font-family: Inter, sans-serif; font-size: 11.5px; color: rgba(247, 244, 236, 0.667); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 999px; padding: 5px 12px;">IS 17088</span>
+            <span style="font-family: Inter, sans-serif; font-size: 11.5px; color: rgba(247, 244, 236, 0.667); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 999px; padding: 5px 12px;">EN 13432</span>
+            <span style="font-family: Inter, sans-serif; font-size: 11.5px; color: rgba(247, 244, 236, 0.667); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 999px; padding: 5px 12px;">CPCB Certified</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family: Inter, sans-serif; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(111, 175, 69); margin-bottom: 18px;">Contact</div>
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14.5px; color: rgba(247, 244, 236, 0.8);">
+            <a href="mailto:info@packinclub.com" class="scp0" style="color: rgba(247, 244, 236, 0.8); text-decoration: none;">info@packinclub.com</a>
+            <a href="tel:+918178414360" class="scp0" style="color: rgba(247, 244, 236, 0.8); text-decoration: none;">+91 81784 14360</a>
+            <span style="line-height: 1.6; max-width: 240px;">D-1/64, 21st Century Business Centre, Veer Savarkar Block, Shakarpur, Nirman Vihar, Delhi 110092</span>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 28px; font-size: 12.5px; color: rgba(247, 244, 236, 0.4); font-family: Inter, sans-serif;">
+        <span style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">© 2026 Packin Club. All rights reserved.<a href="privacy.html" style="color: rgba(247, 244, 236, 0.4); text-decoration: none;">Privacy Policy</a><a href="terms.html" style="color: rgba(247, 244, 236, 0.4); text-decoration: none;">Terms of Use</a><a href="cookies.html" style="color: rgba(247, 244, 236, 0.4); text-decoration: none;">Cookies</a><a href="javascript:void(0)" style="color: rgba(247, 244, 236, 0.4); text-decoration: none;">Cookie Settings</a></span>
+        <span style="display: flex; align-items: center; gap: 8px;"></span>Your trusted partner for Compostable Solutions.
+      </div>
+    </div>
+  </footer></div></div></x-dc>
+<!-- PRERENDER:END -->
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
 class Component extends DCLogic {
 state = { cat: 'All', mobileMenuOpen: false };
