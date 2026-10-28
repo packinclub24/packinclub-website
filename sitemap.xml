@@ -32,7 +32,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <loc>https://packinclub.com/blog.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -544,6 +544,16 @@
     <loc>https://packinclub.com/cookies.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <lastmod>2026-10-28</lastmod>
+    <loc>https://packinclub.com/what-is-cpcb-certificate-for-compostable-packaging.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://packinclub.com/thumbnail_blog/what-is-cpcb-certificate-for-compostable-packaging.webp</image:loc>
+      <image:title>What Is a CPCB Certificate? CPCB certificate for compostable packaging</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://packinclub.com/courier-bag-sizes-chart.html</loc>
