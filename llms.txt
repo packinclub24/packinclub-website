@@ -13,6 +13,7 @@ Packin Club sells to businesses only (B2B), not to individual consumers. Product
 - Email: info@packinclub.com
 - Founder: Vikas Jha. Co-founder: Rajat Sharma
 - Standards: IS 17088 (India's compostable plastics standard), EN 13432, CPCB certified
+- CPCB certificate explained: https://packinclub.com/what-is-cpcb-certificate-for-compostable-packaging.html
 - Composting time: 240 days in a managed composting environment
 - Minimum order quantity: 100 kg per specification
 - Quote and samples: within two business days via https://packinclub.com/contact.html
@@ -89,6 +90,7 @@ Packin Club sells to businesses only (B2B), not to individual consumers. Product
 - [How to Spot Greenwashing in Eco-Friendly Packaging: A Buyer's Verification Framework](https://packinclub.com/how-to-spot-greenwashing-in-eco-friendly-packaging.html)
 - [What Is Compostable Packaging? A Complete Guide](https://packinclub.com/what-is-compostable-packaging.html)
 - [Courier Bag Sizes Chart: Find the Right Size for Your Product](https://packinclub.com/courier-bag-sizes-chart.html)
+- [What Is a CPCB Certificate? And Why It Matters for Compostable Packaging](https://packinclub.com/what-is-cpcb-certificate-for-compostable-packaging.html)
 
 ## Full fact sheet
 - [llms-full.txt](https://packinclub.com/llms-full.txt): every product with specifications and FAQs, every guide with its quick answer, and company facts in one file

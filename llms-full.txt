@@ -10,6 +10,7 @@
 - Phone: +91 81784 14360. Email: info@packinclub.com
 - Founder: Vikas Jha. Co-founder: Rajat Sharma
 - Standards: IS 17088 (India's standard for compostable plastics), EN 13432, CPCB certified. Certificates are shared on request.
+- CPCB certificate guide: https://packinclub.com/what-is-cpcb-certificate-for-compostable-packaging.html
 - Minimum order quantity: 100 kg per specification
 - Samples and a quote: within two business days, via https://packinclub.com/contact.html
 - Composting time (our specification): returns to soil within 240 days in industrial composting
@@ -1315,7 +1316,20 @@ A: The minimum order is 100 kg per specification. Share your pouch size and thic
 Q: How do I get samples and a quote?
 A: Use the quote form on this page or the contact page. Tell us the type of prasadam, the serving size and how many you distribute. We send samples and a quote within two business days.
 
-## Guides (14)
+## Guides (15)
+
+### What Is a CPCB Certificate? And Why It Matters for Compostable Packaging
+Page: https://packinclub.com/what-is-cpcb-certificate-for-compostable-packaging.html
+Published: 28 Oct 2026
+
+Quick answer: A CPCB certificate is the approval India’s Central Pollution Control Board gives makers and sellers of compostable plastic bags and products. Under the Plastic Waste Management Rules, they cannot market these products without it. It rests on IS/ISO 17088 test reports and brings a certificate number, a QR code and an industrial-composting label that buyers can verify.
+
+Key takeaways:
+- A CPCB certificate is legal permission, issued by India’s Central Pollution Control Board, to market compostable plastic carry bags and products. It is not a quality badge.
+- IS/ISO 17088 is the exam and the CPCB certificate is the licence: the product must pass the test, and the maker or seller must hold the certificate.
+- Before you buy, check the certificate number, validity date, company, plant and product against CPCB’s published list.
+- Indian rules require the label “Compostable only under industrial composting”, so any home-compostable claim needs a question.
+- “Biodegradable” and “compostable” are not interchangeable, and foreign certificates such as EN 13432 do not replace the CPCB certificate.
 
 ### Courier Bag Sizes Chart: Find the Right Size for Your Product
 Page: https://packinclub.com/courier-bag-sizes-chart.html
