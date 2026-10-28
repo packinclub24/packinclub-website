@@ -2448,6 +2448,220 @@
   ]
 },
 
+{
+  title: 'What Is a CPCB Certificate? And Why It Matters for Compostable Packaging',
+  slug: 'what-is-cpcb-certificate-for-compostable-packaging',
+  cat: 'Certification',
+  keyword: 'CPCB certificate',
+  secondaryKeywords: [
+    'CPCB certificate for compostable bags',
+    'CPCB certified compostable packaging',
+    'CPCB registration compostable plastic',
+    'how to verify CPCB certificate',
+    'CPCB certificate vs IS 17088',
+    'is CPCB certificate mandatory for compostable bags',
+    'CPCB certificate validity',
+    'compostable plastic certification India',
+    'Plastic Waste Management Rules compostable',
+    'CPCB certified bags'
+  ],
+  date: '2026-10-28',
+  readMins: 8,
+  author: 'Packin Club',
+  excerpt: 'What a CPCB certificate is, who needs one, how it differs from IS 17088, and how to check a compostable packaging supplier’s certificate in five minutes.',
+  metaTitle: 'CPCB Certificate for Compostable Packaging',
+  metaDescription: 'CPCB certificate explained: what it is, who needs it for compostable packaging, how it differs from IS 17088, and how to verify a supplier’s certificate.',
+  takeaways: [
+    'A CPCB certificate is legal permission, issued by India’s Central Pollution Control Board, to market compostable plastic carry bags and products. It is not a quality badge.',
+    'IS/ISO 17088 is the exam and the CPCB certificate is the licence: the product must pass the test, and the maker or seller must hold the certificate.',
+    'Before you buy, check the certificate number, validity date, company, plant and product against CPCB’s published list.',
+    'Indian rules require the label “Compostable only under industrial composting”, so any home-compostable claim needs a question.',
+    '“Biodegradable” and “compostable” are not interchangeable, and foreign certificates such as EN 13432 do not replace the CPCB certificate.'
+  ],
+  body: [
+    {
+      p: [
+          'Search for compostable bags in India and two words appear on almost every supplier page: “CPCB certified”. Most buyers nod and move on. Very few know what the certificate is, who issues it, or how to check it.',
+          'This guide explains the CPCB certificate for compostable packaging in plain language. You will learn what it is and why the law requires it. You will also see how it differs from IS 17088. Then you will learn to verify a supplier’s certificate in about five minutes.',
+          'The rules changed in 2024. This guide follows the Plastic Waste Management Rules, as amended in March 2024, plus CPCB’s clarification of 8 September 2026.'
+        ]
+    },
+    {
+      h: 'What Is a CPCB Certificate?',
+      p: [
+          'CPCB stands for the Central Pollution Control Board, India’s national pollution regulator. It was set up in 1974 and works under the Ministry of Environment, Forest and Climate Change.',
+          'A CPCB certificate for compostable packaging is CPCB’s permission to market compostable plastic carry bags and products in India. CPCB issues it through its Compostable Plastic E-Certification portal, after the product passes testing to the Indian standard IS/ISO 17088.',
+          'So when a supplier says “CPCB certified”, they should hold this certificate, with a number you can check. It does not mean CPCB has endorsed the company in general.'
+        ]
+    },
+    {
+      h: 'Is a CPCB Certificate Mandatory for Compostable Packaging?',
+      p: [
+          'Yes, for compostable plastic carry bags and commodities. The Plastic Waste Management Rules, 2016 say that manufacturers and sellers must obtain a certificate from CPCB before marketing or selling them.',
+          'The Plastic Waste Management (Amendment) Rules, 2024 restated this for compostable and biodegradable plastic carry bags and commodities. They came into force on 14 March 2024. They also tie compostable products to IS/ISO 17088:2021 and require the label “Compostable only under industrial composting”.',
+          'Skipping the certificate is not a paperwork slip. CPCB reports non-compliance to the State Pollution Control Board for action. It has also issued notices to companies selling bags with missing or forged certificates.'
+        ]
+    },
+    {
+      h: 'What Does a CPCB Certificate Actually Prove?',
+      p: [
+          'Three things. Each one matters when you are the person signing the purchase order.'
+        ],
+      ul: [
+          'The product passed the test. Samples from the manufacturer’s own unit are tested at CIPET or another laboratory CPCB recognises, against IS/ISO 17088. The full report covers disintegration, ultimate aerobic biodegradation, plant toxicity (seed germination) and heavy metals.',
+          'The factory is registered. The unit holds the registration its State Pollution Control Board requires. CPCB also reviews its process flow, raw material purchases and sales records.',
+          'The product can be traced. The certificate number is printed on the product, with a QR code and the required label. A buyer can then match a pack to a certified unit.'
+        ]
+    },
+    {
+      p: [
+          'It does not prove the product will break down at home, in a landfill or in your garden. Indian rules require the label “Compostable only under industrial composting” because the testing assumes a managed composting facility. Our guide to home composting vs industrial composting explains the difference.'
+        ]
+    },
+    {
+      h: 'CPCB Certificate vs IS 17088: What Is the Difference?',
+      p: [
+          'People mix these two up all the time. The simplest way to separate them: IS/ISO 17088 is the exam, and the CPCB certificate is the licence you receive after passing it.'
+        ],
+      table: {
+          headers: ['At a glance', 'IS/ISO 17088', 'CPCB certificate', 'EN 13432, BPI, OK Compost'],
+          rows: [
+          ['What it is', 'A technical standard for compostable plastics', 'A certificate issued to a named manufacturer or seller', 'Foreign certification schemes'],
+          ['Set or issued by', 'Bureau of Indian Standards, based on ISO 17088', 'Central Pollution Control Board', 'Bodies outside India'],
+          ['Needed to sell in India', 'It is the test the law points to', 'Yes, before marketing or selling', 'No, and it cannot replace the CPCB certificate'],
+          ['What to ask for', 'The lab test report', 'Certificate number and validity date', 'A copy, as extra proof for export buyers']
+          ]
+        }
+    },
+    {
+      p: [
+          'A product can pass IS/ISO 17088 and still be illegal to sell if the maker never obtained the CPCB certificate. For the full testing detail, read our guide to IS 17088 certification.'
+        ]
+    },
+    {
+      h: 'How a Manufacturer Gets a CPCB Certificate',
+      p: [
+          'You do not apply as a buyer. But the route shows why a real certificate is hard to fake. In short:'
+        ],
+      ul: [
+          'Register the unit. The manufacturer first holds the State Pollution Control Board registration needed to make compostable carry bags or products.',
+          'Test the product. Samples go to CIPET or another CPCB-recognised laboratory for testing to IS/ISO 17088.',
+          'Apply on the portal. The application includes the test report, a process flow diagram, raw material records, sales documents and the fee.',
+          'Receive the certificate. CPCB can issue a provisional certificate on an interim report covering the first two tests. It is valid for six months and can be extended by six. A final certificate follows the full four-part report.',
+          'Print and report. Each product carries the certificate number, the compostable label and a QR code. The manufacturer keeps reporting to CPCB.'
+        ]
+    },
+    {
+      p: [
+          'CPCB also verifies certified units in the field and runs market surveys. It can cancel a certificate if the conditions are not met.'
+        ]
+    },
+    {
+      h: 'How to Check a CPCB Certificate Before You Buy',
+      p: [
+          'Ask for the certificate before you ask for the price. Then run these six checks. They take about five minutes.'
+        ],
+      ul: [
+          'Get the certificate number and validity date. A supplier who hesitates is giving you an answer.',
+          'Match the names. The company and plant address on the certificate should match the firm invoicing you. A trader should show the certified manufacturer’s authorisation letter.',
+          'Find it on CPCB’s list. Its Compostable Plastic E-Certification dashboard names certified manufacturers and sellers, with validity dates and provisional or final status.',
+          'Check the product. The certificate should cover what you are buying, such as carry bags, courier bags or films. The company alone is not enough.',
+          'Read the pack. Look for the certificate number, the label “Compostable only under industrial composting” and a QR code that resolves.',
+          'Ask for the test report. It should name IS/ISO 17088 and the laboratory, and match the product you will receive.'
+        ]
+    },
+    {
+      h: '5 Signs a “CPCB Certified” Claim Is Not What It Seems',
+      ul: [
+          'A logo but no number. A real certificate always has a number and a validity date.',
+          'The word “biodegradable” instead of “compostable”. In its clarification of 8 September 2026, CPCB said the two terms must not be used interchangeably. It also reported that, as of 23 July 2026, 371 manufacturers held compostable plastic certification. None held it for biodegradable plastic carry bags or commodities.',
+          'A home-compostable promise. Indian rules require the industrial-composting label. A “compost it at home” claim on a CPCB certified product deserves a question.',
+          'A certificate that does not fit. It is expired, still provisional, or issued to another company, plant or product.',
+          'A foreign certificate offered instead. EN 13432, BPI and OK Compost are respected abroad. None of them replaces the CPCB certificate in India.'
+        ]
+    },
+    {
+      p: [
+          'For the wider buyer checklist, see our guide to spotting greenwashing in eco-friendly packaging. To see why the two words are different, read compostable vs biodegradable packaging.'
+        ]
+    },
+    {
+      h: 'Why a CPCB Certificate Matters for Compostable Packaging',
+      p: [
+          'A certificate looks like paperwork. In practice it protects three things you care about.'
+        ],
+      ul: [
+          'Your legal position. Selling compostable bags without the certificate breaks the Plastic Waste Management Rules. Your marketing claims lose their footing too.',
+          'Your brand’s credibility. A certificate number turns “eco-friendly” from a slogan into a claim anyone can check, which is exactly what greenwashing lacks.',
+          'Your sales. Large retailers, quick commerce platforms and export buyers increasingly ask for documents before they list a product. A buyer who can show the certificate clears those checks faster.'
+        ]
+    },
+    {
+      p: [
+          'One more thing to know. The CPCB certificate covers the packaging itself. If your brand puts packaged goods on the market, you may also have separate Extended Producer Responsibility (EPR) duties. These are registered on CPCB’s centralised portal, and compostable plastic has its own category there. Ask your compliance adviser which duties apply to you. For the wider picture, read our guide to India’s single-use plastic ban.'
+        ]
+    },
+    {
+      h: 'Which Packin Club Products Come With a CPCB Certificate?',
+      p: [
+          'Packin Club’s compostable range is made to IS 17088 and is CPCB certified. When you request a quote, ask us for the certificate number, validity date and test report. Then check them on CPCB’s list. A genuine supplier hands over all three without hesitation.',
+          'Here is where the certificate applies across our range:'
+        ],
+      ul: [
+          'Retail and e-commerce: compostable carry bags, compostable courier bags, garment bags and compostable grocery bags.',
+          'Waste and hygiene: compostable garbage bags, compostable pet poop bags and compostable medical waste bags.',
+          'Food and hospitality: compostable pouches, compostable bread pouch and compostable cling film.',
+          'Agriculture: mulch film and nursery bags.',
+          'Industrial and logistics: compostable stretch film and compostable shrink film.'
+        ]
+    },
+    {
+      h: 'Request Our Certificate and Samples',
+      p: [
+          'Not sure which product suits your business? Tell us what you ship. We will send samples and a quote within two business days, along with our certificate details. Request a quote.'
+        ]
+    }
+  ],
+  faqs: [
+    {
+      q: 'What is a CPCB certificate?',
+      a: 'A CPCB certificate is the approval the Central Pollution Control Board gives a manufacturer or seller of compostable plastic carry bags and products. It is issued after testing to IS/ISO 17088 and must be held before the products are marketed or sold in India. It carries a certificate number and a validity date.'
+    },
+    {
+      q: 'Is a CPCB certificate mandatory for compostable bags in India?',
+      a: 'Yes. The Plastic Waste Management Rules require manufacturers and sellers of compostable plastic carry bags and commodities to obtain a CPCB certificate before marketing or selling them. The 2024 amendment restated this and tied compostable products to IS/ISO 17088:2021.'
+    },
+    {
+      q: 'What is the difference between a CPCB certificate and IS 17088?',
+      a: 'IS/ISO 17088 is the technical standard a compostable plastic must pass. The CPCB certificate is the legal approval issued to a named manufacturer or seller after the product passes that standard. You need both: the test proves the material, and the certificate permits the sale.'
+    },
+    {
+      q: 'How do I check whether a CPCB certificate is genuine?',
+      a: 'Ask for the certificate number and validity date, then look the supplier up on CPCB’s Compostable Plastic E-Certification list. Match the company, plant and product, check the QR code and label on the pack, and ask for the IS/ISO 17088 test report.'
+    },
+    {
+      q: 'Does CPCB certify biodegradable bags?',
+      a: 'CPCB treats compostable and biodegradable plastics as separate and says the terms must not be used interchangeably. It reported that, as of 23 July 2026, 371 manufacturers held compostable plastic certification and none held certification for biodegradable carry bags or commodities.'
+    },
+    {
+      q: 'How long is a CPCB certificate valid?',
+      a: 'Every certificate shows an issue date and a validity date, so check the date on CPCB’s list rather than an old PDF. A provisional certificate, issued on an interim test report, is valid for six months and can be extended by six. A final certificate follows the full report.'
+    },
+    {
+      q: 'Is CPCB certified compostable packaging home compostable?',
+      a: 'No. Indian rules require compostable plastic to carry the label “Compostable only under industrial composting”, because certification assumes a managed composting facility. Treat any home-compostable claim on a CPCB certified product as a question to put to the supplier.'
+    },
+    {
+      q: 'Does an EN 13432, BPI or OK Compost certificate replace a CPCB certificate?',
+      a: 'No. These schemes are respected abroad and useful for export buyers, but they do not replace the CPCB certificate or IS/ISO 17088 testing for compostable plastic sold in India. Ask for the CPCB certificate first and treat foreign certificates as extra proof.'
+    },
+    {
+      q: 'Is a CPCB certificate the same as EPR registration?',
+      a: 'No. The CPCB certificate approves a compostable product for sale. EPR registration is a separate duty for producers, importers and brand owners of plastic packaging, filed on CPCB’s centralised portal. Many businesses need both, so check your obligations with a compliance adviser.'
+    }
+  ]
+},
+
  ];
   // category brand colour for hero blocks
   var CAT_BG = {
@@ -2482,7 +2696,8 @@
     'compostable-mulch-film-a-practical-guide-for-indian-farmers': 'thumbnail_blog/Compostable_mulch_film.webp',
     'how-to-spot-greenwashing-in-eco-friendly-packaging': 'thumbnail_blog/Eco-FriendlyPackaging.webp',
     'what-is-compostable-packaging': 'thumbnail_blog/what_is_compostable_packaging.webp',
-    'courier-bag-sizes-chart': 'thumbnail_blog/PackinClub_Eco_Packaging_Guide.webp'
+    'courier-bag-sizes-chart': 'thumbnail_blog/PackinClub_Eco_Packaging_Guide.webp',
+    'what-is-cpcb-certificate-for-compostable-packaging': 'thumbnail_blog/what-is-cpcb-certificate-for-compostable-packaging.webp'
   };
   POSTS.forEach(function (p) {
     p.slug = p.slug || slug(p.title);
