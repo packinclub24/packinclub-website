@@ -2302,7 +2302,7 @@
   ],
   date: '2026-10-15',
   readMins: 6,
-  author: 'Vikas Jha',
+  author: 'Packin Club',
   excerpt: 'One chart for every common product, a 30-second way to measure, and the size mistakes that quietly cost D2C brands money.',
   metaTitle: 'Courier Bag Sizes Chart: 8 Sizes Explained',
   metaDescription: 'Courier bag sizes chart in inches for tees, kurtas, jeans, cosmetics and boxes. Measure in 30 seconds, skip common mistakes, and order once.',
