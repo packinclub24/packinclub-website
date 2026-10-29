@@ -1,4 +1,24 @@
+# Packin Club robots.txt
+# The whole site is open to search engines.
 User-agent: *
 Allow: /
+
+# AI search and assistant crawlers are allowed, so Packin Club can be found and cited in AI answers.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
+# Plain-text summaries of the site for AI tools:
+# https://packinclub.com/llms.txt
+# https://packinclub.com/llms-full.txt
 
 Sitemap: https://packinclub.com/sitemap.xml
