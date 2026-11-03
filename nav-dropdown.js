@@ -33,7 +33,7 @@
     if (!t.closest(DD)) closeAll();
 
     var link = t.closest('a[data-pc-cat]');
-    if (link && onProductsPage() && e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
+    if (false && link && onProductsPage() && e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
       e.preventDefault();
       closeAll();
       var m = document.querySelector('details.pc-m-dd');

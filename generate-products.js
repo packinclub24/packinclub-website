@@ -218,8 +218,46 @@ function absUrl(img) {
   if (!img) return SITE_URL + '/assets/hero-veggie.webp';
   return img.indexOf('http') === 0 ? img : SITE_URL + '/' + img;
 }
+// Category pages are now real static pages (made by generate-categories.js), not ?cat= parameter URLs.
+const CAT_PAGE = { AGRI: 'compostable-agriculture-packaging.html', ROLL: 'compostable-bags-on-roll.html', HEALTH: 'compostable-healthcare-packaging.html', HORECA: 'compostable-horeca-packaging.html', IND: 'compostable-industrial-packaging.html', RETAIL: 'compostable-retail-packaging.html', TEMPLE: 'compostable-temple-packaging.html' };
 function catHref(cat) {
-  return '../products.html?cat=' + cat;
+  return '../' + (CAT_PAGE[cat] || 'products.html');
+}
+
+// ---------- Search keywords per product (from Keywords.md) + geography ----------
+const CITIES_TXT = 'Delhi NCR, Noida, Gurugram, Ludhiana, Mumbai, Pune, Chennai and Coimbatore';
+const PROD_KW = {
+  'compostable-courier-bags-mailers': 'shipping bags, mailing bags, mailer bags, poly mailer bags, poly mailers',
+  'compostable-nursery-bags': 'nursery bags for plants',
+  'compostable-agri-mulch-film': 'mulch film, garden mulch, organic mulch, plastic mulch, biodegradable mulch film',
+  'compostable-pet-poop-bags': 'dog bags, pet poop bags, corn starch dog poop bags, dog waste bags',
+  'compostable-grocery-bags': 'grocery store bags',
+  'compostable-grocery-bags-on-roll': 'grocery store bags',
+  'compostable-aqueous-coated-paper-cups': 'disposable paper cups, disposable cups, tea cups, coffee cups, custom paper cups, small tea cups',
+  'compostable-pouches': 'pouch bags, mini pouch, phone pouch',
+  'compostable-garment-bags': 'garment bags, garment bags for travel',
+  'compostable-carry-bags': 'compostable carry bags, compostable plastic bags, bioplastic bags, corn starch bags',
+  'compostable-carry-bags-on-roll': 'compostable carry bags, compostable plastic bags, corn starch bags',
+  'compostable-d-cut-shopping-bags': 'compostable carry bags, bioplastic bags',
+  'compostable-loop-handle-bags': 'compostable carry bags, bioplastic bags',
+  'compostable-garbage-bags': 'best compostable trash bags, compostable garbage bags manufacturer',
+  'compostable-garbage-bag-on-roll': 'best compostable trash bags, compostable plastic bags',
+  'compostable-bread-pouch': 'compostable food packaging, pouch bags',
+  'compostable-hot-liquid-pouches': 'compostable food packaging, pouch bags',
+  'compostable-cling-film': 'compostable food packaging',
+  'compostable-bamboo-tissue': 'sustainable products, compostable food packaging',
+  'compostable-prasadam-pouches': 'pouch bags, compostable food packaging'
+};
+function productKeywords(p) {
+  const extra = PROD_KW[p.slug] ? PROD_KW[p.slug] + ', ' : '';
+  const n = p.name.toLowerCase();
+  return extra + n + ' manufacturer in India, buy ' + n + ' in bulk, ' + n + ' supplier Delhi, IS 17088 certified ' + n + ', CPCB certified compostable packaging, compostable packaging Noida, Gurugram, Ludhiana, Mumbai, Pune, Chennai, Coimbatore';
+}
+function renderSupply(p) {
+  const n = p.name.toLowerCase(), also = PROD_KW[p.slug];
+  return guideH2('Buy ' + p.name + ' in India') +
+    guideP('Packin Club is a Delhi-based manufacturer and supplier of ' + n + ', made to order in bulk and shipped to Delhi NCR, Noida, Gurugram, Ludhiana, Mumbai, Pune, Chennai, Coimbatore and other cities across India. Every order is IS 17088 and CPCB certified, with a minimum of 100 kg per specification.') +
+    (also ? guideP('Buyers also search for: ' + also + '. Ask us for a sample or a bulk quote on the contact page.') : guideP('Ask us for a sample or a bulk quote on the contact page.'));
 }
 function related(product) {
   const sameCat = PACKIN.products.filter(p => p.cat === product.cat && p.slug !== product.slug);
@@ -406,6 +444,7 @@ function renderPage(p) {
 <meta property="og:url" content="${pageUrl}">
 <meta property="og:type" content="product">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="keywords" content="${esc(productKeywords(p))}">
 <script type="application/ld+json">${JSON.stringify(productSchema)}</script>
 <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
 ${faqSchemaTag(p)}
@@ -449,7 +488,7 @@ ${faqSchemaTag(p)}
       <a href="../index.html" style="color:#F7F4EC; text-decoration:none;">Home</a>
       <a href="../about.html" style="color:#F7F4EC; text-decoration:none;">About</a>
       <a href="../industries.html" style="color:#F7F4EC; text-decoration:none;">Industries</a>
-      <div class="pc-nav-dd"><a href="../products.html" style="color:#6FAF45; text-decoration:none;">Products</a><button type="button" class="pc-nav-dd-btn" aria-label="Show product categories" aria-haspopup="true" aria-expanded="false" style="color:#6FAF45;"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></button><div class="pc-nav-dd-menu"><div class="pc-nav-dd-panel" role="menu"><a role="menuitem" href="../products.html" data-pc-cat="all" class="pc-dd-all">All Products</a><a role="menuitem" href="../products.html?cat=agriculture-nursery" data-pc-cat="agriculture-nursery">Agriculture &amp; Nursery</a><a role="menuitem" href="../products.html?cat=bags-on-roll" data-pc-cat="bags-on-roll">Bags on Roll</a><a role="menuitem" href="../products.html?cat=healthcare-hospital" data-pc-cat="healthcare-hospital">Healthcare &amp; Hospital</a><a role="menuitem" href="../products.html?cat=horeca" data-pc-cat="horeca">HORECA</a><a role="menuitem" href="../products.html?cat=industrial" data-pc-cat="industrial">Industrial</a><a role="menuitem" href="../products.html?cat=retail" data-pc-cat="retail">Retail</a><a role="menuitem" href="../products.html?cat=temple-religious" data-pc-cat="temple-religious">Temple &amp; Religious</a></div></div></div>
+      <div class="pc-nav-dd"><a href="../products.html" style="color:#6FAF45; text-decoration:none;">Products</a><button type="button" class="pc-nav-dd-btn" aria-label="Show product categories" aria-haspopup="true" aria-expanded="false" style="color:#6FAF45;"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></button><div class="pc-nav-dd-menu"><div class="pc-nav-dd-panel" role="menu"><a role="menuitem" href="../products.html" data-pc-cat="all" class="pc-dd-all">All Products</a><a role="menuitem" href="../compostable-agriculture-packaging.html" data-pc-cat="agriculture-nursery">Agriculture &amp; Nursery</a><a role="menuitem" href="../compostable-bags-on-roll.html" data-pc-cat="bags-on-roll">Bags on Roll</a><a role="menuitem" href="../compostable-healthcare-packaging.html" data-pc-cat="healthcare-hospital">Healthcare &amp; Hospital</a><a role="menuitem" href="../compostable-horeca-packaging.html" data-pc-cat="horeca">HORECA</a><a role="menuitem" href="../compostable-industrial-packaging.html" data-pc-cat="industrial">Industrial</a><a role="menuitem" href="../compostable-retail-packaging.html" data-pc-cat="retail">Retail</a><a role="menuitem" href="../compostable-temple-packaging.html" data-pc-cat="temple-religious">Temple &amp; Religious</a></div></div></div>
       <a href="../blog.html" style="color:#F7F4EC; text-decoration:none;">Blog</a>
       <a href="../contact.html" style="color:#F7F4EC; text-decoration:none;">Contact</a>
     </nav>
@@ -465,7 +504,7 @@ ${faqSchemaTag(p)}
     <a href="../index.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Home</a>
     <a href="../about.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">About</a>
     <a href="../industries.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Industries</a>
-    <details class="pc-m-dd"><summary style="color:#6FAF45; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Products<svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></summary><div class="pc-m-dd-list"><a href="../products.html" data-pc-cat="all">All Products</a><a href="../products.html?cat=agriculture-nursery" data-pc-cat="agriculture-nursery">Agriculture &amp; Nursery</a><a href="../products.html?cat=bags-on-roll" data-pc-cat="bags-on-roll">Bags on Roll</a><a href="../products.html?cat=healthcare-hospital" data-pc-cat="healthcare-hospital">Healthcare &amp; Hospital</a><a href="../products.html?cat=horeca" data-pc-cat="horeca">HORECA</a><a href="../products.html?cat=industrial" data-pc-cat="industrial">Industrial</a><a href="../products.html?cat=retail" data-pc-cat="retail">Retail</a><a href="../products.html?cat=temple-religious" data-pc-cat="temple-religious">Temple &amp; Religious</a></div></details>
+    <details class="pc-m-dd"><summary style="color:#6FAF45; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Products<svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></summary><div class="pc-m-dd-list"><a href="../products.html" data-pc-cat="all">All Products</a><a href="../compostable-agriculture-packaging.html" data-pc-cat="agriculture-nursery">Agriculture &amp; Nursery</a><a href="../compostable-bags-on-roll.html" data-pc-cat="bags-on-roll">Bags on Roll</a><a href="../compostable-healthcare-packaging.html" data-pc-cat="healthcare-hospital">Healthcare &amp; Hospital</a><a href="../compostable-horeca-packaging.html" data-pc-cat="horeca">HORECA</a><a href="../compostable-industrial-packaging.html" data-pc-cat="industrial">Industrial</a><a href="../compostable-retail-packaging.html" data-pc-cat="retail">Retail</a><a href="../compostable-temple-packaging.html" data-pc-cat="temple-religious">Temple &amp; Religious</a></div></details>
     <a href="../blog.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Blog</a>
     <a href="../contact.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Contact</a>
     <a href="../contact.html#quote" style="margin-top:18px; display:inline-flex; align-items:center; justify-content:center; gap:8px; background:#6FAF45; color:#14342C; font-size:15px; font-weight:600; padding:14px 18px; border-radius:2px; text-decoration:none;">Request a Quote</a>
@@ -514,6 +553,7 @@ ${faqSchemaTag(p)}
         ${featuresSectionHtml}
         ${applicationsSectionHtml}
         ${renderGuide(p)}
+        ${renderSupply(p)}
         ${morePhotosHtml}
       </div>
 
@@ -592,7 +632,7 @@ ${relatedHtml}
       </div>
       <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; padding-top:28px; font-size:12.5px; color:#F7F4EC66; font-family:Inter,sans-serif;">
         <span style="display:flex; gap:16px; align-items:center; flex-wrap:wrap;">© 2026 Packin Club. All rights reserved.<a href="../privacy.html" style="color:#F7F4EC66; text-decoration:none;">Privacy Policy</a><a href="../terms.html" style="color:#F7F4EC66; text-decoration:none;">Terms of Use</a><a href="../cookies.html" style="color:#F7F4EC66; text-decoration:none;">Cookies</a><a href="javascript:void(0)" onclick="window.pcOpenCookieSettings &amp;&amp; window.pcOpenCookieSettings()" style="color:#F7F4EC66; text-decoration:none;">Cookie Settings</a></span>
-        <span style="display:flex; align-items:center; gap:8px;">Your trusted partner for Compostable Solutions.</span>
+        <span style="display:flex; align-items:center; gap:8px;">Your trusted partner for Compostable Solutions. Supplying compostable packaging across India, including Delhi NCR, Noida, Gurugram, Ludhiana, Mumbai, Pune, Chennai, Coimbatore.</span>
       </div>
     </div>
   </footer>
