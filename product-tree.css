@@ -1,0 +1,102 @@
+/* Packin Club - interactive product tree (homepage "Browse all compostable packaging products")
+   Works without JavaScript (everything open and crawlable). product-tree.js adds the interactivity. */
+.pt-root{--pt-dark:#14342C;--pt-green:#6FAF45;--pt-terra:#C1622D;--pt-cream:#F7F4EC;--pt-line:rgba(20,52,44,.22);--pt-gap:30px;font-family:Inter,system-ui,sans-serif;color:var(--pt-dark)}
+.pt-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* toolbar (JS only) */
+.pt-toolbar{display:none;flex-wrap:wrap;align-items:center;gap:12px 14px;margin:0 0 26px}
+.pt-js .pt-toolbar{display:flex}
+.pt-search-wrap{position:relative;flex:1 1 280px;max-width:460px}
+.pt-search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);pointer-events:none;opacity:.55}
+.pt-search{width:100%;box-sizing:border-box;font:500 15px Inter,sans-serif;color:var(--pt-dark);background:#fff;border:1.5px solid rgba(20,52,44,.18);border-radius:999px;padding:13px 18px 13px 42px;outline:none;transition:border-color .2s,box-shadow .2s}
+.pt-search:focus{border-color:var(--pt-green);box-shadow:0 0 0 4px rgba(111,175,69,.18)}
+.pt-actions{display:flex;gap:8px}
+.pt-btn{font:600 13.5px Inter,sans-serif;color:var(--pt-dark);background:transparent;border:1.5px solid rgba(20,52,44,.25);border-radius:999px;padding:11px 18px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pt-btn:hover,.pt-btn:focus-visible{background:var(--pt-dark);color:var(--pt-cream);border-color:var(--pt-dark)}
+.pt-status{margin:0;font-size:13.5px;color:rgba(20,52,44,.7);min-height:1.2em}
+
+/* layout */
+.pt-layout{display:block}
+.pt-preview{display:none}
+@media(min-width:960px){
+  .pt-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:44px;align-items:start}
+  .pt-js .pt-preview{display:block;position:relative;align-self:stretch}
+}
+
+/* root node */
+.pt-rootnode{display:inline-flex;align-items:center;gap:12px;margin:0 0 4px}
+.pt-rootnode .pt-rooticon{width:40px;height:40px;border-radius:50%;background:var(--pt-dark);display:grid;place-items:center;flex:none;box-shadow:0 0 0 5px rgba(111,175,69,.18)}
+.pt-rootnode strong{display:block;font:700 17px Bitter,serif}
+.pt-rootnode small{display:block;font-size:12.5px;letter-spacing:.04em;color:rgba(20,52,44,.65)}
+
+/* trunk + branches */
+.pt-cats{margin:0 0 0 19px;padding:10px 0 0 var(--pt-gap);border-left:2px solid var(--pt-line)}
+.pt-cat{position:relative;margin:0 0 12px}
+.pt-cat::before{content:"";position:absolute;left:calc(var(--pt-gap) * -1);top:27px;width:var(--pt-gap);border-top:2px solid var(--pt-line);transition:border-color .3s}
+.pt-cat::after{content:"";position:absolute;left:calc(var(--pt-gap) * -1 - 8px);top:20px;width:12px;height:12px;border-radius:50%;background:var(--pt-cream);border:2px solid var(--pt-green);transition:background .3s,transform .3s}
+.pt-cat.is-open::before{border-top-color:var(--pt-green)}
+.pt-cat.is-open::after{background:var(--pt-green);transform:scale(1.25)}
+.pt-cat[hidden],.pt-leaf[hidden]{display:none}
+
+.pt-cat-head{display:flex;gap:10px;align-items:stretch}
+.pt-cat-btn{flex:1;min-width:0;display:flex;align-items:center;gap:12px;text-align:left;font:600 17px Bitter,serif;color:var(--pt-dark);background:#fff;border:1.5px solid rgba(20,52,44,.14);border-radius:12px;padding:0 16px;min-height:54px;cursor:default;transition:background .25s,color .25s,border-color .25s,box-shadow .25s,transform .25s}
+.pt-js .pt-cat-btn{cursor:pointer}
+.pt-js .pt-cat-btn:hover{border-color:var(--pt-green);box-shadow:0 6px 18px rgba(20,52,44,.08);transform:translateY(-1px)}
+.pt-cat-btn:focus-visible,.pt-cat-link:focus-visible,.pt-leaf a:focus-visible,.pt-prev-link:focus-visible{outline:3px solid var(--pt-green);outline-offset:2px}
+.pt-cat-name{flex:1;min-width:0}
+.pt-count{flex:none;font:700 12.5px Inter,sans-serif;background:rgba(111,175,69,.18);color:var(--pt-dark);border-radius:999px;padding:3px 10px;transition:background .25s,color .25s}
+.pt-chev{flex:none;display:none;transition:transform .3s}
+.pt-js .pt-chev{display:block}
+.pt-cat.is-open .pt-cat-btn{background:var(--pt-dark);color:var(--pt-cream);border-color:var(--pt-dark)}
+.pt-cat.is-open .pt-count{background:var(--pt-green);color:var(--pt-dark)}
+.pt-cat.is-open .pt-chev{transform:rotate(180deg)}
+.pt-cat-link{flex:none;display:inline-flex;align-items:center;gap:6px;font:600 13.5px Inter,sans-serif;color:var(--pt-terra);text-decoration:none;border:1.5px solid rgba(193,98,45,.35);border-radius:12px;padding:0 14px;transition:background .2s,color .2s,border-color .2s}
+.pt-cat-link:hover{background:var(--pt-terra);color:#fff;border-color:var(--pt-terra)}
+
+/* sub list (animated open/close only when JS is running) */
+.pt-sub ul{list-style:none;margin:8px 0 4px 22px;padding:4px 0 4px 24px;border-left:2px dashed var(--pt-line)}
+.pt-js .pt-sub{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .38s ease,visibility 0s .38s}
+.pt-js .pt-cat.is-open .pt-sub{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .38s ease,visibility 0s}
+.pt-js .pt-sub>ul{overflow:hidden;min-height:0;margin-top:0;margin-bottom:0}
+.pt-js .pt-cat.is-open .pt-sub>ul{margin:8px 0 4px 22px}
+.pt-leaf{position:relative}
+.pt-leaf::before{content:"";position:absolute;left:-24px;top:50%;width:18px;border-top:2px dashed var(--pt-line)}
+.pt-leaf a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:var(--pt-dark);text-decoration:none;font-size:15px;line-height:1.35;transition:background .2s,color .2s,transform .2s}
+.pt-leaf a::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;border:2px solid var(--pt-green);transition:background .2s}
+.pt-leaf a::after{content:"\2192";margin-left:auto;opacity:0;transform:translateX(-6px);transition:opacity .2s,transform .2s;color:var(--pt-terra)}
+.pt-leaf a:hover,.pt-leaf a:focus-visible,.pt-leaf a.is-active{background:#fff;color:var(--pt-terra);transform:translateX(3px)}
+.pt-leaf a:hover::before,.pt-leaf a:focus-visible::before,.pt-leaf a.is-active::before{background:var(--pt-green)}
+.pt-leaf a:hover::after,.pt-leaf a:focus-visible::after,.pt-leaf a.is-active::after{opacity:1;transform:none}
+/* leaves slide in one by one when a branch opens */
+.pt-js .pt-leaf{opacity:0;transform:translateX(-10px);transition:opacity .3s ease,transform .3s ease}
+.pt-js .pt-cat.is-open .pt-leaf{opacity:1;transform:none;transition-delay:calc(var(--i,0) * 45ms + 120ms)}
+
+.pt-empty{margin:14px 0 0;padding:16px 18px;background:#fff;border:1.5px dashed rgba(20,52,44,.25);border-radius:12px;font-size:14.5px}
+.pt-empty[hidden]{display:none}
+.pt-empty a,.pt-foot a{color:var(--pt-terra);font-weight:600}
+.pt-foot{margin:26px 0 0;font-size:14.5px;color:rgba(20,52,44,.8)}
+
+/* preview card */
+.pt-prev-card{position:absolute;top:0;left:0;right:0;will-change:transform;transition:transform .2s ease-out;background:#fff;border:1px solid rgba(20,52,44,.12);border-radius:16px;overflow:hidden;box-shadow:0 18px 44px rgba(20,52,44,.10)}
+.pt-prev-img{aspect-ratio:4/3;background:var(--pt-dark);position:relative;overflow:hidden}
+.pt-prev-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .25s,transform .6s}
+.pt-prev-card.is-swap .pt-prev-img img{opacity:0;transform:scale(1.04)}
+.pt-prev-body{padding:22px 24px 24px;transition:opacity .2s}
+.pt-prev-card.is-swap .pt-prev-body{opacity:.2}
+.pt-prev-cat{margin:0 0 6px;font:700 11.5px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--pt-terra)}
+.pt-prev-name{margin:0 0 10px;font:700 22px/1.2 Bitter,serif}
+.pt-prev-blurb{margin:0 0 18px;font-size:14.5px;line-height:1.6;color:rgba(20,52,44,.82)}
+.pt-prev-link{display:inline-flex;align-items:center;gap:8px;background:var(--pt-green);color:var(--pt-dark);font:700 14px Inter,sans-serif;text-decoration:none;padding:12px 20px;border-radius:999px;transition:background .2s,color .2s}
+.pt-prev-link:hover{background:var(--pt-dark);color:var(--pt-cream)}
+
+@media(max-width:600px){
+  .pt-root{--pt-gap:22px}
+  .pt-cats{margin-left:14px}
+  .pt-cat-btn{font-size:16px;padding:0 12px}
+  .pt-cat-link{padding:0 11px;font-size:13px}
+  .pt-sub ul,.pt-js .pt-cat.is-open .pt-sub>ul{margin-left:14px;padding-left:20px}
+  .pt-leaf::before{left:-20px;width:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .pt-root *,.pt-root *::before,.pt-root *::after{transition-duration:0s!important;transition-delay:0s!important}
+}
