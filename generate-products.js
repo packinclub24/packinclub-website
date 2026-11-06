@@ -488,6 +488,7 @@ ${faqSchemaTag(p)}
       <a href="../index.html" style="color:#F7F4EC; text-decoration:none;">Home</a>
       <a href="../about.html" style="color:#F7F4EC; text-decoration:none;">About</a>
       <a href="../industries.html" style="color:#F7F4EC; text-decoration:none;">Industries</a>
+      <a href="../certifications.html" style="color:#F7F4EC; text-decoration:none;">Certifications</a>
       <div class="pc-nav-dd"><a href="../products.html" style="color:#6FAF45; text-decoration:none;">Products</a><button type="button" class="pc-nav-dd-btn" aria-label="Show product categories" aria-haspopup="true" aria-expanded="false" style="color:#6FAF45;"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></button><div class="pc-nav-dd-menu"><div class="pc-nav-dd-panel" role="menu"><a role="menuitem" href="../products.html" data-pc-cat="all" class="pc-dd-all">All Products</a><a role="menuitem" href="../compostable-agriculture-packaging.html" data-pc-cat="agriculture-nursery">Agriculture &amp; Nursery</a><a role="menuitem" href="../compostable-bags-on-roll.html" data-pc-cat="bags-on-roll">Bags on Roll</a><a role="menuitem" href="../compostable-healthcare-packaging.html" data-pc-cat="healthcare-hospital">Healthcare &amp; Hospital</a><a role="menuitem" href="../compostable-horeca-packaging.html" data-pc-cat="horeca">HORECA</a><a role="menuitem" href="../compostable-industrial-packaging.html" data-pc-cat="industrial">Industrial</a><a role="menuitem" href="../compostable-retail-packaging.html" data-pc-cat="retail">Retail</a><a role="menuitem" href="../compostable-temple-packaging.html" data-pc-cat="temple-religious">Temple &amp; Religious</a></div></div></div>
       <a href="../blog.html" style="color:#F7F4EC; text-decoration:none;">Blog</a>
       <a href="../contact.html" style="color:#F7F4EC; text-decoration:none;">Contact</a>
@@ -504,6 +505,7 @@ ${faqSchemaTag(p)}
     <a href="../index.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Home</a>
     <a href="../about.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">About</a>
     <a href="../industries.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Industries</a>
+    <a href="../certifications.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Certifications</a>
     <details class="pc-m-dd"><summary style="color:#6FAF45; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Products<svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2.5 4.5 6 8 9.5 4.5"></polyline></svg></summary><div class="pc-m-dd-list"><a href="../products.html" data-pc-cat="all">All Products</a><a href="../compostable-agriculture-packaging.html" data-pc-cat="agriculture-nursery">Agriculture &amp; Nursery</a><a href="../compostable-bags-on-roll.html" data-pc-cat="bags-on-roll">Bags on Roll</a><a href="../compostable-healthcare-packaging.html" data-pc-cat="healthcare-hospital">Healthcare &amp; Hospital</a><a href="../compostable-horeca-packaging.html" data-pc-cat="horeca">HORECA</a><a href="../compostable-industrial-packaging.html" data-pc-cat="industrial">Industrial</a><a href="../compostable-retail-packaging.html" data-pc-cat="retail">Retail</a><a href="../compostable-temple-packaging.html" data-pc-cat="temple-religious">Temple &amp; Religious</a></div></details>
     <a href="../blog.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Blog</a>
     <a href="../contact.html" style="color:#F7F4EC; text-decoration:none; font-size:17px; font-weight:500; padding:14px 4px; border-bottom:1px solid #ffffff14;">Contact</a>
@@ -604,6 +606,7 @@ ${relatedHtml}
             <a href="../index.html" style="color:#F7F4ECcc; text-decoration:none;">Home</a>
             <a href="../about.html" style="color:#F7F4ECcc; text-decoration:none;">About</a>
             <a href="../industries.html" style="color:#F7F4ECcc; text-decoration:none;">Industries</a>
+            <a href="../certifications.html" style="color:#F7F4ECcc; text-decoration:none;">Certifications</a>
             <a href="../products.html" style="color:#e97114da; text-decoration:none;">Products</a>
             <a href="../blog.html" style="color:#F7F4ECcc; text-decoration:none;">Blog</a>
           </div>
@@ -616,9 +619,9 @@ ${relatedHtml}
             <button type="button" style="background:#6FAF45; border:none; border-radius:2px; width:42px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14342C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            <span style="font-family:Inter,sans-serif; font-size:11.5px; color:#F7F4ECaa; border:1px solid #ffffff1f; border-radius:999px; padding:5px 12px;">IS 17088</span>
-            <span style="font-family:Inter,sans-serif; font-size:11.5px; color:#F7F4ECaa; border:1px solid #ffffff1f; border-radius:999px; padding:5px 12px;">EN 13432</span>
-            <span style="font-family:Inter,sans-serif; font-size:11.5px; color:#F7F4ECaa; border:1px solid #ffffff1f; border-radius:999px; padding:5px 12px;">CPCB Certified</span>
+            <a href="../certifications.html" style="text-decoration:none; font-family:Inter,sans-serif; font-size:11.5px; color:#F7F4ECaa; border:1px solid #ffffff1f; border-radius:999px; padding:5px 12px;">IS 17088</a>
+            <a href="../certifications.html" style="text-decoration:none; font-family:Inter,sans-serif; font-size:11.5px; color:#F7F4ECaa; border:1px solid #ffffff1f; border-radius:999px; padding:5px 12px;">EN 13432</a>
+            <a href="../certifications.html" style="text-decoration:none; font-family:Inter,sans-serif; font-size:11.5px; color:#F7F4ECaa; border:1px solid #ffffff1f; border-radius:999px; padding:5px 12px;">CPCB Certified</a>
           </div>
         </div>
         <div>

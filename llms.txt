@@ -23,6 +23,7 @@ Packin Club sells to businesses only (B2B), not to individual consumers. Product
 - [About Packin Club](https://packinclub.com/about.html): Company story, mission and leadership
 - [Products](https://packinclub.com/products.html): Full range of 24 compostable packaging products
 - [Industries](https://packinclub.com/industries.html): Packaging by industry: e-commerce, HORECA, retail, agriculture, healthcare and more
+- [Certifications](https://packinclub.com/certifications.html): all certifications and compliance for our packaging: DIN, Seedling, TÜV Austria home and industrial compost, BPI, IS 17088, CPCB, CIPET, SGS REACH and migration, SEDEX SMETA; what each means and how to verify it
 - [Blog](https://packinclub.com/blog.html): Buyer guides on compostable packaging, IS 17088 and Indian regulations
 - [Contact and quote](https://packinclub.com/contact.html): Request samples and a quote
 

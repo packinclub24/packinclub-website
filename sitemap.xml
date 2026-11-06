@@ -38,6 +38,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <lastmod>2026-11-05</lastmod>
+    <loc>https://packinclub.com/certifications.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://packinclub.com/assets/hero-certifications-desktop.webp</image:loc>
+      <image:title>Packin Club certifications and compliance: IS 17088, CPCB, TÜV Austria, BPI, DIN, Seedling, SGS and SMETA</image:title>
+    </image:image>
+  </url>
+  <url>
     <lastmod>2026-10-26</lastmod>
     <loc>https://packinclub.com/products/compostable-agri-mulch-film.html</loc>
     <changefreq>monthly</changefreq>
