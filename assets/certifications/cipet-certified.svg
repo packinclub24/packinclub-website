@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="CIPET Plastics testing &amp; certification">
+  <rect width="640" height="480" fill="#F7F4EC"/>
+  <rect x="18" y="18" width="604" height="444" rx="6" fill="none" stroke="#14342C" stroke-width="2"/>
+  <rect x="30" y="30" width="580" height="420" rx="3" fill="none" stroke="#6FAF45" stroke-width="1.2" stroke-dasharray="3 5"/>
+  <g transform="translate(320 92)"><path d="M0 40 L0 6" stroke="#14342C" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M0 28 q-26 -4 -28 -26 q26 3 28 26 Z" fill="#6FAF45"/><path d="M0 20 q26 -6 28 -34 q-27 5 -28 34 Z" fill="#8FCB62"/></g>
+  <text x="320" y="170" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" letter-spacing="4" fill="#14342C99">GOVERNMENT OF INDIA INSTITUTE</text>
+  <text x="320" y="240" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="700" fill="#14342C">CIPET</text>
+  <text x="320" y="282" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#14342C">Plastics testing &amp; certification</text>
+  <text x="320" y="316" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#14342Cbb">Central Institute of Petrochemicals Engineering &amp; Technology</text>
+  <line x1="150" y1="344" x2="490" y2="344" stroke="#14342C33" stroke-width="1"/>
+  <g transform="translate(320 396)"><circle r="36" fill="#14342C"/><circle r="31" fill="none" stroke="#6FAF45" stroke-width="1.5"/>
+    <text y="-3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" fill="#F7F4EC">CIPET</text>
+    <text y="14" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" fill="#6FAF45">TESTED</text></g>
+  <text x="40" y="436" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#14342C99">Packin Club</text>
+  <text x="600" y="436" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#14342C99">packinclub.com</text>
+</svg>
