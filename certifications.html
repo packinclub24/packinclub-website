@@ -74,9 +74,13 @@
 .pc-burger.pc-active .pc-burger-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .pc-burger.pc-active .pc-burger-bar:nth-child(2) { opacity: 0; }
 .pc-burger.pc-active .pc-burger-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .cert-hero { background-color:#14342C; background-image:linear-gradient(100deg, rgba(11,28,24,.93) 0%, rgba(11,28,24,.82) 30%, rgba(11,28,24,.42) 56%, rgba(11,28,24,.10) 78%, rgba(11,28,24,.04) 100%), url('assets/hero-certifications-desktop.webp'); background-size:cover; background-position:center; background-repeat:no-repeat; min-height:clamp(500px,52vw,660px); display:flex; align-items:center; }
+  .cert-hero { background-color:#14342C; background-image:linear-gradient(100deg, rgba(11,28,24,.94) 0%, rgba(11,28,24,.84) 26%, rgba(11,28,24,.46) 46%, rgba(11,28,24,.08) 60%, rgba(11,28,24,0) 100%), url('assets/hero-certifications-desktop.webp'); background-size:cover; background-position:left center; background-repeat:no-repeat; min-height:clamp(500px,52vw,660px); display:flex; align-items:center; }
   .cert-hero > div { width:100%; }
-  @media (max-width: 780px) { .cert-hero { background-image:linear-gradient(180deg, rgba(11,28,24,.50) 0%, rgba(11,28,24,.86) 55%, rgba(11,28,24,.97) 100%), url('assets/hero-certifications-mobile.webp'); background-position:center top; min-height:0; } }
+  /* Phones and tablets: certificate image on top, text below on the dark green */
+  @media (max-width: 860px) {
+    .cert-hero { background-image:none; display:block; min-height:0; padding-top:clamp(300px,82vw,500px) !important; }
+    .cert-hero::before { content:''; position:absolute; top:0; left:0; right:0; height:clamp(300px,82vw,520px); background:linear-gradient(180deg, rgba(20,52,44,0) 0%, rgba(20,52,44,0) 80%, #14342C 100%), url('assets/hero-certifications-mobile.webp') 62% 30% / cover no-repeat; }
+  }
   .hero-chip { font-family:Inter,sans-serif; font-size:12.5px; font-weight:500; color:#F7F4EC; text-decoration:none; border:1px solid #ffffff40; background:#ffffff0f; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-radius:999px; padding:7px 14px; transition:background .2s ease, border-color .2s ease; }
   .hero-chip:hover { background:#6FAF45; border-color:#6FAF45; color:#14342C; }
   html { scroll-behavior: smooth; }
