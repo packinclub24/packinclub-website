@@ -20,7 +20,7 @@
         readMins: 8,
         author: 'Packin Club Editorial',
         excerpt: '“Biodegradable” and “compostable” get used as if they’re the same word. They’re not, and the gap between them changes what a product is legally allowed to claim, and whether your sustainability positioning actually holds up.',
-        metaTitle: 'Compostable vs Biodegradable: What’s the Difference?',
+        metaTitle: 'Compostable vs Biodegradable: The Difference',
         metaDescription: 'Biodegradable and compostable aren’t the same claim. The real difference, IS 17088 testing, and why it matters for your packaging and compliance.',
         imageAlt: 'Compostable versus biodegradable packaging materials comparison',
         imageFilename: 'compostable-vs-biodegradable-packaging-whats-the-real-difference.jpg',
@@ -92,7 +92,7 @@
   readMins: 11,
   author: 'Packin Club Editorial',
   excerpt: 'Compostable packaging solves plastic persistence, but not every environmental question. An honest look at feedstock, infrastructure, and footprint tradeoffs.',
-  metaTitle: 'Are Compostable Bags Eco-Friendly? The Real Tradeoffs',
+  metaTitle: 'Are Compostable Bags Eco-Friendly? Honest Look',
   metaDescription: 'Compostable packaging solves plastic persistence, but not every environmental question. An honest look at feedstock, infrastructure, and footprint tradeoffs.',
   takeaways: [
     'Certified compostable packaging genuinely solves the persistence and microplastic problem of conventional plastic, but it isn\u2019t a zero-footprint product.',
@@ -278,7 +278,7 @@
   readMins: 12,
   author: 'Packin Club Editorial',
   excerpt: 'What\u2019s actually banned, carry bag thickness rules, and EPR obligations under India\u2019s Plastic Waste Management Rules \u2014 a practical compliance guide.',
-  metaTitle: 'Single-Use Plastic Ban India: What Businesses Must Know',
+  metaTitle: 'Single-Use Plastic Ban India: Business Guide',
   metaDescription: 'What\u2019s actually banned, carry bag thickness rules, and EPR obligations under India\u2019s Plastic Waste Management Rules \u2014 a practical compliance guide.',
   takeaways: [
     'The single-use plastic ban, carry bag thickness rules, and EPR obligations are three separate compliance requirements, not one combined rule.',
@@ -613,7 +613,7 @@
   readMins: 8,
   author: 'Packin Club Editorial',
   excerpt: 'What to evaluate before switching to compostable courier bags — tear strength, seal integrity, certification, and how they compare to conventional poly mailers.',
-  metaTitle: 'Compostable Courier Bags: A Complete E-Commerce Guide',
+  metaTitle: 'Compostable Courier Bags: E-Commerce Guide',
   metaDescription: 'What to evaluate before switching to compostable courier bags — tear strength, seal integrity, certification, and how they compare to poly mailers.',
   takeaways: [
     'Compostable courier bags can match conventional poly mailer performance, but this needs to be verified through testing, not assumed from marketing claims.',
@@ -760,7 +760,7 @@
   author: 'Packin Club Editorial',
   readMins: 12,
   excerpt: 'How long does compostable packaging actually take to break down? Here are the real IS 17088 timeframes by material, and why real-world results vary.',
-  metaTitle: 'Compostable Packaging Decomposition Time, Explained',
+  metaTitle: 'Compostable Packaging Decomposition Time',
   metaDescription: 'The real timeframes behind compostable packaging: IS 17088 disintegration and biodegradation numbers, by material, and why real-world results vary.',
   takeaways: [
     'Certified compostable plastic under IS/ISO 17088 disintegrates within roughly 12 weeks and fully biodegrades within a maximum of 180 days, under industrial composting conditions specifically.',
@@ -954,7 +954,7 @@
   readMins: 12,
   author: 'Packin Club Editorial',
   excerpt: 'What to test before switching to compostable food packaging — grease resistance, heat retention, leak-proofing, and matching material to your menu.',
-  metaTitle: 'Compostable Food Packaging: A Restaurant Buyer\'s Guide',
+  metaTitle: 'Compostable Food Packaging for Restaurants',
   metaDescription: 'What to test before switching to compostable food packaging — grease resistance, heat retention, leak-proofing, and matching material to your menu.',
   takeaways: [
     'Food packaging needs testing against real kitchen and delivery conditions, grease, heat, leaks, transit, not just how it looks in a sample box.',
@@ -1125,7 +1125,7 @@
   readMins: 10,
   author: 'Packin Club Editorial',
   excerpt: 'A cup that looks like plain paper can still contain plastic. Here’s how aqueous coating differs from PE and PLA linings, and how to verify whether a paper cup is genuinely compostable.',
-  metaTitle: 'Aqueous Coated Paper Cups: The Real Compostability Answer',
+  metaTitle: 'Aqueous Coated Paper Cups: Truly Compostable?',
   metaDescription: 'Aqueous coating doesn\'t automatically mean compostable. Learn the real difference between PE, PLA, and aqueous-barrier paper cup linings.',
   takeaways: [
     'A paper cup\'s compostability is determined by its interior lining material, not by the paper itself or by exterior coatings.',
@@ -1506,7 +1506,7 @@
   author: 'Packin Club Editorial',
   readMins: 6,
   excerpt: '“Compostable” sounds like a single promise. In practice it splits into two very different disposal pathways — home composting and industrial composting — and a product certified for one isn’t automatically suited to the other.',
-  metaTitle: 'Home Composting vs Industrial Composting Explained',
+  metaTitle: 'Home vs Industrial Composting Explained',
   metaDescription: 'Compostable packaging isn’t one claim. Learn the real difference between home and industrial composting, and how to specify the right one to your supplier.',
   takeaways: [
     'Industrial and home composting are different processes with different temperature, consistency, and timeframes, and they require separate certifications.',
@@ -1698,7 +1698,7 @@
   author: 'Packin Club Editorial',
   readMins: 12,
   excerpt: 'How compostable mulch film performs in the field, what it costs versus plastic mulch, and what to verify before buying for your crop and region.',
-  metaTitle: "Compostable Mulch Film: A Farmer's Buying Guide",
+  metaTitle: 'Compostable Mulch Film: Farmer’s Buying Guide',
   metaDescription: 'How compostable mulch film performs in the field, what it costs versus plastic mulch, and what to verify before buying for your crop and region.',
   takeaways: [
     'Compostable mulch film eliminates the removal labour and disposal burden of conventional plastic mulch by breaking down directly into the soil after harvest.',
@@ -2101,7 +2101,7 @@
   readMins: 10,
   author: 'Packin Club Editorial',
   excerpt: 'A clear, no-jargon breakdown of what compostable packaging actually is, how it\u2019s made, and how it differs from biodegradable alternatives.',
-  metaTitle: 'What Is Compostable Packaging? Meaning, Types & Uses',
+  metaTitle: 'What Is Compostable Packaging? Meaning & Uses',
   metaDescription: 'Compostable packaging explained simply: what it\u2019s made from, how it breaks down, home vs industrial composting, certifications, and where it\u2019s used.',
   takeaways: [
     'Compostable packaging fully breaks down into water, CO2, and nutrient-rich humus under proper composting conditions, unlike plastic, which just fragments into microplastics.',

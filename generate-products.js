@@ -157,7 +157,8 @@ const SEO_USE = {
   'compostable-prasadam-pouches': 'food-safe pouches for temple prasadam'
 };
 const SEO_TITLE = {
-  'compostable-courier-bags-mailers': 'Compostable Courier Bags India: Mailers for D2C | Packin Club'
+  'compostable-courier-bags-mailers': 'Compostable Courier Bags & Mailers India | Packin Club',
+  'compostable-electrical-wire-packaging-wrap': 'Compostable Electrical Wire Packaging Wrap | Packin Club'
 };
 function buildProductSeo(p) {
   const use = SEO_USE[p.slug];
