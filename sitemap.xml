@@ -38,6 +38,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <lastmod>2026-11-14</lastmod>
+    <loc>https://packinclub.com/author/vikas-jha.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://packinclub.com/uploads/vikas-jha-portrait.webp</image:loc>
+      <image:title>Vikas Kumar Jha, Founder and CEO of Packin Club</image:title>
+    </image:image>
+  </url>
+  <url>
     <lastmod>2026-11-11</lastmod>
     <loc>https://packinclub.com/certifications.html</loc>
     <changefreq>monthly</changefreq>
