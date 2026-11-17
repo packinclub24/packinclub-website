@@ -1326,11 +1326,68 @@ A: The minimum order is 100 kg per specification. Share your pouch size and thic
 Q: How do I get samples and a quote?
 A: Use the quote form on this page or the contact page. Tell us the type of prasadam, the serving size and how many you distribute. We send samples and a quote within two business days.
 
-## Guides (15)
+## Guides (19)
+
+### Plastic Waste Management Rules 2026: What Packaging Buyers Must Do in 2027
+Page: https://packinclub.com/plastic-waste-management-rules-2026-packaging-checklist.html
+Published: 13 Nov 2026
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
+
+Quick answer: The Plastic Waste Management (Amendment) Rules, 2026, notified on 31 March 2026, set binding recycled-content minimums for plastic packaging, let registered environment auditors verify EPR claims, and keep compostable plastic in Category IV, which needs CPCB certification. For 2027, map each pack to a category, check supplier certificates, and plan for recycled-content targets.
+
+Key takeaways:
+- The Plastic Waste Management (Amendment) Rules, 2026 were notified on 31 March 2026 (G.S.R. 237(E)) and set a binding minimum for recycled content in plastic packaging.
+- Registered environment auditors can now verify EPR claims, EPR certificates can be traded, and raw material suppliers fall under EPR.
+- Compostable plastic is Category IV and must be CPCB-certified. It is not a loophole around EPR, because it has its own rules.
+- Recycled-content shortfalls from FY 2025-26 can be carried forward for up to three financial years, to 2028-29.
+- Before the new financial year on 1 April 2027, map each pack to a category, confirm your EPR registration and collect supplier certificates.
+
+### How to Start a Compostable Packaging Distributorship in India
+Page: https://packinclub.com/compostable-packaging-distributorship-india.html
+Published: 12 Nov 2026
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
+
+Quick answer: To start a compostable packaging distributorship in India, pick a customer segment and region, choose a small starter range, and buy from a manufacturer that holds a CPCB certificate and IS 17088 test reports. Verify the documents, trial samples with real customers, and agree minimum order, lead time, branding and payment terms in writing before you stock.
+
+Key takeaways:
+- A distributor buys certified compostable packaging in bulk, stocks it and sells it in smaller quantities to local businesses, with fast delivery and advice as the main advantages.
+- You do not need a factory. You need a customer base, storage space and a habit of keeping documents in order.
+- Start with 3 to 5 products matched to the customers you already serve, then expand.
+- Check the CPCB certificate number, validity date and IS/ISO 17088 test report, and ask a trader for the certified maker’s authorisation letter.
+- Never sell the product as “biodegradable” or promise home composting. Indian rules require the label “Compostable only under industrial composting”.
+
+### Compostable Packaging for Quick Commerce and Dark Stores
+Page: https://packinclub.com/compostable-packaging-for-quick-commerce-and-dark-stores.html
+Published: 11 Nov 2026
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
+
+Quick answer: Quick commerce and dark stores need bags that open fast, hold wet and heavy groceries, and come with certificates. Certified compostable carry bags on roll, grocery bags and mailers can fit when sized and gauged for your orders. Trial them on your real picking line, and check each supplier’s CPCB certificate and IS 17088 test report before you scale.
+
+Key takeaways:
+- Dark stores need bags that open fast, hold wet and chilled items and survive last-mile handling, so test on your real picking line before you scale.
+- Four compostable formats suit most dark stores: carry bags on roll, grocery bags on roll, W-cut or U-cut carry bags, and courier mailers.
+- Check thickness, load rating, seams, roll core and dispenser fit, and printing, using the ranges on each product page.
+- Run a one-week side-by-side trial and measure pack time, tears and leaks per 1,000 orders, and delivery partner feedback.
+- Ask for the CPCB certificate and IS/ISO 17088 test report, and never promise home composting. The label reads “Compostable only under industrial composting”.
+
+### Compostable Bags Price in India (2027): How to Compare the Cost With Plastic
+Page: https://packinclub.com/compostable-bags-price-in-india.html
+Published: 10 Nov 2026
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
+
+Quick answer: Compostable bags generally cost more than ordinary plastic bags, and the gap depends on size, thickness, print and volume. Price per kg can mislead, because compostable material is denser, so a same-size bag weighs about a third more. Compare cost per bag, then add compliance and brand value. Ask for a quote on your exact specification.
+
+Key takeaways:
+- Compostable bags generally cost more than ordinary plastic bags. Five things set the gap: size, thickness, print, order volume and format.
+- Price per kg can mislead. Compostable blends are denser than polyethylene, so a bag of the same size and thickness weighs about a third more.
+- Cost per bag equals price per kg multiplied by bag weight in kg. At 50 microns, a 12×16 inch flat bag weighs about 15.5 g, so every ₹100 per kg adds about ₹1.55 per bag.
+- You can narrow the cost gap by right-sizing bags, using the thinnest gauge that passes a load test, simplifying print and planning larger runs.
+- Be careful with very low prices. Always check the CPCB certificate number, validity date and IS/ISO 17088 test report.
 
 ### What Is a CPCB Certificate? And Why It Matters for Compostable Packaging
 Page: https://packinclub.com/what-is-cpcb-certificate-for-compostable-packaging.html
 Published: 28 Oct 2026
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: A CPCB certificate is the approval India’s Central Pollution Control Board gives makers and sellers of compostable plastic bags and products. Under the Plastic Waste Management Rules, they cannot market these products without it. It rests on IS/ISO 17088 test reports and brings a certificate number, a QR code and an industrial-composting label that buyers can verify.
 
@@ -1344,6 +1401,7 @@ Key takeaways:
 ### Courier Bag Sizes Chart: Find the Right Size for Your Product
 Page: https://packinclub.com/courier-bag-sizes-chart.html
 Published: 15 Oct 2026
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: Choose a courier bag 1 to 2 inches wider and longer than your folded product; for boxed items, add the box height to both width and length. Many sellers quote size without the flap, which adds about 2 inches, so confirm it. Use 50 microns for light, soft items and 60 microns or more for boxes and heavier parcels.
 
@@ -1357,6 +1415,7 @@ Key takeaways:
 ### What Is Compostable Packaging? A Complete Guide
 Page: https://packinclub.com/what-is-compostable-packaging.html
 Published: 4 Sept 2026
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: Compostable packaging is made from materials that break down into water, carbon dioxide and nutrient-rich humus under proper composting conditions, instead of fragmenting into microplastics. Common materials include PLA, bagasse, PHA, cellulose and starch blends. A genuine claim in India needs IS 17088 certification and CPCB registration, and it works best when customers have access to real composting.
 
@@ -1370,6 +1429,7 @@ Key takeaways:
 ### Are Compostable Bags Really Eco-Friendly? An Honest Look
 Page: https://packinclub.com/are-compostable-bags-really-eco-friendly-an-honest-look.html
 Published: 24 Jul 2025
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: Mostly yes, but with limits. Certified compostable bags solve the persistence and microplastic problem of conventional plastic, yet they are not zero-footprint. Feedstock sourcing, manufacturing energy and access to composting infrastructure still shape the real impact. The most defensible approach is an honest, specific claim such as “certified industrially compostable”, not “100% eco-friendly” or “zero impact”.
 
@@ -1383,6 +1443,7 @@ Key takeaways:
 ### How to Spot Greenwashing in Eco-Friendly Packaging: A Buyer's Verification Framework
 Page: https://packinclub.com/how-to-spot-greenwashing-in-eco-friendly-packaging.html
 Published: 10 Jul 2025
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: To spot greenwashing, treat “biodegradable”, “compostable” and “recyclable” as three different claims that need different proof. In India, a genuine compostable claim rests on IS/ISO 17088 testing and CPCB certification for a specific product, not a company-wide statement. Ask for the certificate number and test report before you order, because the regulatory and reputational risk lands on the brand owner.
 
@@ -1396,6 +1457,7 @@ Key takeaways:
 ### Compostable Mulch Film: A Practical Guide for Indian Farmers
 Page: https://packinclub.com/compostable-mulch-film-a-practical-guide-for-indian-farmers.html
 Published: 23 Jun 2025
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: Compostable mulch film removes the labour and disposal burden of plastic mulch, because it breaks down into the soil after harvest. In-season performance is comparable when the film suits your crop and climate. Confirm breakdown timing against your growing season, check IS/ISO 17088 certification including soil ecotoxicity, and compare cost including the removal labour you save.
 
@@ -1409,6 +1471,7 @@ Key takeaways:
 ### How Long Does Compostable Packaging Take to Decompose?
 Page: https://packinclub.com/how-long-does-compostable-packaging-take-to-decompose.html
 Published: 16 Jun 2025
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: Certified compostable plastic under IS/ISO 17088 disintegrates in roughly 12 weeks and fully biodegrades within a maximum of 180 days, but only under industrial composting conditions. Bagasse, paper and plastic film break down at different rates. In a landfill, compostable packaging generally will not decompose on its certified timeframe, so real results depend on reaching a proper composting facility.
 
@@ -1422,6 +1485,7 @@ Key takeaways:
 ### Home Composting vs Industrial Composting: What You Need to Know
 Page: https://packinclub.com/home-composting-vs-industrial-composting-what-you-need-to-know.html
 Published: 9 Jun 2025
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: Home and industrial composting are different processes, with different temperatures, timeframes and certifications. Most standard compostable packaging in India is certified for industrial composting only, under IS/ISO 17088. Home compostability needs a separate, generally stricter certification and should never be assumed. Because industrial facilities are unevenly available across India, match your disposal message to the exact certification your product holds.
 
@@ -1435,6 +1499,7 @@ Key takeaways:
 ### The True Cost of Switching to Compostable Packaging
 Page: https://packinclub.com/the-true-cost-of-switching-to-compostable-packaging.html
 Published: 26 May 2025
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: A per-unit price comparison misses most of the real cost of switching. Compostable material costs more because of feedstock, certification and scale, though the gap has narrowed. Staying on non-compliant plastic also has costs: penalties, retailer onboarding friction and brand perception. Base quotes on realistic annual volume, not small trial orders, and compare material, compliance, customer-facing and switching costs together.
 
@@ -1448,6 +1513,7 @@ Key takeaways:
 ### Aqueous Coated Paper Cups: Are They Actually Compostable?
 Page: https://packinclub.com/aqueous-coated-paper-cups-are-they-actually-compostable.html
 Published: 12 May 2025
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: A paper cup’s compostability depends on its interior lining, not the paper itself. PE-lined cups are not compostable, whatever the marketing says. PLA-lined cups can be compostable, but only with product-specific IS/ISO 17088 certification. “Aqueous coated” is a marketing term, not proof on its own, so ask what the actual liquid barrier is and request the certificate before sourcing.
 
@@ -1461,6 +1527,7 @@ Key takeaways:
 ### Compostable Packaging for Restaurants & Cloud Kitchens
 Page: https://packinclub.com/compostable-packaging-for-restaurants-and-cloud-kitchens.html
 Published: 28 Apr 2025
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: Test compostable food packaging against real kitchen and delivery conditions before switching: grease, heat, leaks and transit, not just how a sample looks. Food-contact safety and compostability certification are separate requirements, so confirm both. Different menu items often need different materials. Run a phased pilot and track delivery-platform complaints. Several food-service disposables are also covered by India’s single-use plastic ban.
 
@@ -1474,6 +1541,7 @@ Key takeaways:
 ### Compostable Courier Bags for E-Commerce: The Complete Guide
 Page: https://packinclub.com/compostable-courier-bags-for-e-commerce-the-complete-guide.html
 Published: 31 Mar 2025
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: Compostable courier bags can match conventional poly mailers, but this must be verified through testing, not assumed from marketing. Match tear strength, seal integrity and thickness to your products, run a phased pilot on damage-prone categories, and confirm courier and warehouse compatibility before scaling. Make public sustainability claims only once certification and real performance data are both in hand.
 
@@ -1487,6 +1555,7 @@ Key takeaways:
 ### What Is IS 17088? Compostable Plastic Certification Explained
 Page: https://packinclub.com/what-is-is-17088-compostable-plastic-certification-explained.html
 Published: 17 Mar 2025
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: IS 17088 is the Indian standard, based on ISO 17088, behind CPCB certification of compostable plastic sold in India. It tests four things together: disintegration, biodegradation, ecotoxicity and heavy metal content. A certificate covers one specific product and formulation, not a whole company. To verify a claim, ask the supplier for the CPCB registration number and the matching test report.
 
@@ -1500,6 +1569,7 @@ Key takeaways:
 ### India’s Single-Use Plastic Ban: A Practical Compliance Guide for Businesses
 Page: https://packinclub.com/india-s-single-use-plastic-ban-a-practical-compliance-guide-for-businesses.html
 Published: 3 Mar 2025
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: India’s plastic ban, carry bag thickness rules and EPR are three separate requirements. A defined list of disposable items has been banned since July 2022; IS 17088 certified compostable versions are exempt. Plastic carry bags need a minimum thickness of 120 microns. EPR makes producers, importers and brand owners register, report and meet recycling targets for packaging outside the ban.
 
@@ -1513,6 +1583,7 @@ Key takeaways:
 ### Compostable vs Biodegradable Packaging: What’s the Real Difference?
 Page: https://packinclub.com/compostable-vs-biodegradable-packaging-what-s-the-real-difference.html
 Published: 4 Feb 2025
+Author: Vikas Jha, Founder & CEO of Packin Club (https://packinclub.com/author/vikas-jha.html)
 
 Quick answer: Compostable and biodegradable are not the same. “Biodegradable” is a broad, largely unregulated term with no fixed timeframe, while “compostable” is a certified claim with defined breakdown times and thresholds, such as IS/ISO 17088 in India. Every certified compostable product is biodegradable, but not the reverse. Only certified compostable packaging qualifies for exemptions under India’s single-use plastic ban.
 

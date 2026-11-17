@@ -6,7 +6,7 @@
     node check-blog-post.js my-new-post.html          -> checks the post and prints what is missing
     node check-blog-post.js my-new-post.html --fix    -> also adds inline product links and the "Related products" block
 
-  What it checks:  author (Packin Club), quick answer (50-60 words), inline product links,
+  What it checks:  author (Vikas Jha, linked to his author page), quick answer (50-60 words), inline product links,
                    related products block, and that the post is listed in blog-data.js, sitemap.xml and llms.txt.
   What --fix does: links the first mention of each product name in the article text, links product names in the
                    closing paragraph, and adds a "Related products" block. It never edits headings, FAQs or the lead paragraph.
@@ -83,14 +83,16 @@ function walk(toks, onText) {            // calls onText(i, text, ctx) only for 
 }
 const plain = h => h.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
 
-// ---- 1. author
-ok('No "Packin Club Editorial" or personal author left', !/Packin Club Editorial/.test(s));
-ok('<meta name="author" content="Packin Club"> in <head>', /<meta name="author" content="Packin Club">/.test(s));
+// ---- 1. author (Vikas Jha, linked to /author/vikas-jha.html)
+ok('No "Packin Club Editorial" or other old author left', !/Packin Club Editorial/.test(s));
+ok('<meta name="author" content="Vikas Jha"> in <head>', /<meta name="author" content="Vikas Jha">/.test(s));
 let schemaOk = false;
 (s.match(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g) || []).forEach(b => {
-  try { const d = JSON.parse(b.replace(/<\/?script[^>]*>/g, '')); if (d['@type'] === 'Article' && d.author && d.author['@type'] === 'Organization' && d.author.name === 'Packin Club') schemaOk = true; } catch (e) {}
+  try { const d = JSON.parse(b.replace(/<\/?script[^>]*>/g, '')); if (d['@type'] === 'Article' && d.author && d.author['@type'] === 'Person' && d.author.alternateName === 'Vikas Jha' && /author\/vikas-jha\.html/.test(d.author.url)) schemaOk = true; } catch (e) {}
 });
-ok('Article schema author is the organisation "Packin Club"', schemaOk, 'Set "author" to {"@type":"Organization","name":"Packin Club","url":"https://packinclub.com/"}');
+ok('Article schema author is the Person "Vikas Jha" (author page URL)', schemaOk, 'Run: node apply-author.js ' + file);
+ok('Byline under the title links to the author page', /<span>By <a href="author\/vikas-jha\.html"[^>]*>Vikas Jha<\/a><\/span>/.test(s), 'Run: node apply-author.js ' + file);
+ok('"About the author" card at the end of the article', s.includes('class="pc-author-box"'), 'Run: node apply-author.js ' + file);
 // ---- 2. quick answer
 const qa = s.match(/class="pc-quick-answer"[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/);
 const qaWords = qa ? plain(qa[1]).split(' ').length : 0;
@@ -154,7 +156,7 @@ ok('"Related products" block at the end of the article', hasRelated, 'Run again 
 
 // ---- 5. registered elsewhere
 const reg = (f, label) => { try { ok('Listed in ' + label, fs.readFileSync(f, 'utf8').includes(slug)); } catch (e) { ok('Listed in ' + label, false, f + ' not found (run from the project root)'); } };
-reg('blog-data.js', 'blog-data.js (with author: \'Packin Club\')'); reg('sitemap.xml', 'sitemap.xml'); reg('llms.txt', 'llms.txt');
+reg('blog-data.js', 'blog-data.js (with author: \'Vikas Jha\')'); reg('sitemap.xml', 'sitemap.xml'); reg('llms.txt', 'llms.txt');
 
 if (FIX) { s = s.slice(0, a0) + article + s.slice(a1); fs.writeFileSync(file, s, 'utf8'); console.log('Saved ' + file); }
 console.log('\nChecks for ' + file + ':');

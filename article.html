@@ -259,7 +259,7 @@ table.pc-table tr:nth-child(even) td { background: #14342C06; }
             <span style="width:4px; height:4px; border-radius:50%; background:#6FAF45;"></span>
             <span>{{ readLabel }}</span>
             <span style="width:4px; height:4px; border-radius:50%; background:#6FAF45;"></span>
-            <span>{{ author }}</span>
+            <span>By <a href="author/vikas-jha.html" rel="author" style="color:inherit; text-decoration:underline; text-decoration-color:#6FAF45; text-underline-offset:3px;">{{ author }}</a></span>
           </div>
         </div>
         <div class="pc-hero-imgwrap">
@@ -638,7 +638,7 @@ class Component extends DCLogic {
           headline: p.title, description: p.metaDescription,
           image: imgUrl,
           datePublished: p.date, dateModified: p.date,
-          author: { '@type': 'Organization', name: 'Packin Club' },
+          author: { '@type': 'Person', '@id': 'https://packinclub.com/author/vikas-jha.html#person', name: 'Vikas Kumar Jha', alternateName: 'Vikas Jha', url: 'https://packinclub.com/author/vikas-jha.html' },
           publisher: { '@type': 'Organization', name: 'Packin Club' },
           keywords: allKeywords
         },
