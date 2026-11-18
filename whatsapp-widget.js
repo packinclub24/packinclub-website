@@ -20,9 +20,9 @@
   var TEXT = {
     label: 'Chat with Packin Club team on WhatsApp',
     tip: 'Contact us',
-    title: 'Contact us',
+    title: 'Packin Club',
     sub: 'Chat with our team on WhatsApp',
-    body: 'Hello! Need samples, pricing or help choosing the right bag? Message us and we will get back to you.',
+    body: 'Hello! Let’s find the right packaging for you.',
     cta: 'Start chat on WhatsApp',
     note: 'Opens WhatsApp  \u00b7  ' + DISPLAY
   };
