@@ -476,6 +476,7 @@ ${faqSchemaTag(p)}
 </style>
 <link rel="stylesheet" href="../header-pill.css">
 <script src="../nav-dropdown.js" defer></script>
+<script src="../whatsapp-widget.js" defer></script>
 </head>
 <body>
 <div class="pc-site" style="overflow-x:hidden; min-height:100vh;">
