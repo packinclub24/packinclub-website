@@ -3499,6 +3499,489 @@
   ]
 },
 
+{
+  title: 'Compostable Garbage Bags in India: Sizes, Micron and Bulk Buying Guide',
+  slug: 'compostable-garbage-bags-india',
+  cat: 'Guides',
+  keyword: 'compostable garbage bags India',
+  secondaryKeywords: [
+    'compostable bin liners',
+    'compostable garbage bags for hotels',
+    'compostable dustbin bag sizes',
+    'compostable garbage bags bulk',
+    'compostable garbage bag size chart',
+    'compostable garbage bag on roll',
+    'compostable bin liners wholesale',
+    'biodegradable garbage bags India',
+    'garbage bag micron thickness'
+  ],
+  searchIntent: 'Commercial and informational, buyers such as hotels, restaurants, offices and housing societies researching compostable bin liners, sizes, thickness and bulk orders',
+  date: '2026-11-19',
+  readMins: 10,
+  author: 'Vikas Jha',
+  excerpt: 'Compostable garbage bags only pay off when the waste goes to composting. Here are the sizes by bin type, how to pick the micron, where these bags make sense, how shelf life works and how to buy in bulk.',
+  metaTitle: 'Compostable Garbage Bags in India (2027)',
+  metaDescription: 'Compostable garbage bags in India: size chart by bin type, micron and load guide, where they make sense, shelf life and how to buy in bulk.',
+  imageAlt: 'Compostable garbage bags on roll in a kitchen bin, size and micron guide for India',
+  imageFilename: 'compostable-garbage-bags-india.webp',
+  quickAnswer: 'Compostable garbage bags are certified bin liners that break down in industrial composting, so they suit wet waste that is headed there. Match the bag to your bin by size, choose a thickness that carries the load, check the CPCB certificate and IS 17088 report, and order in bulk with the 12-month shelf life in mind.',
+  pullQuote: 'A compostable bin liner only does its job when the waste inside it is going to a composting route.',
+  pullAfter: 5,
+  internalLinks: [
+    { anchor: 'guide to the CPCB certificate', targetSlug: 'what-is-cpcb-certificate-for-compostable-packaging' },
+    { anchor: 'compostable vs biodegradable packaging', targetSlug: 'compostable-vs-biodegradable-packaging-what-s-the-real-difference' },
+    { anchor: 'compostable packaging for restaurants and cloud kitchens', targetSlug: 'compostable-packaging-for-restaurants-and-cloud-kitchens' },
+    { anchor: 'home vs industrial composting', targetSlug: 'home-composting-vs-industrial-composting-what-you-need-to-know' },
+    { anchor: 'compostable bags price in India', targetSlug: 'compostable-bags-price-in-india' },
+    { anchor: 'spot greenwashing', targetSlug: 'how-to-spot-greenwashing-in-eco-friendly-packaging' },
+    { anchor: 'Plastic Waste Management Rules 2026', targetSlug: 'plastic-waste-management-rules-2026-packaging-checklist' }
+  ],
+  pageLinks: [
+    { anchor: 'compostable garbage bags range', href: 'products/compostable-garbage-bags.html' },
+    { anchor: 'compostable garbage bag on roll', href: 'products/compostable-garbage-bag-on-roll.html' },
+    { anchor: 'industrial packaging range', href: 'compostable-industrial-packaging.html' },
+    { anchor: 'HORECA packaging range', href: 'compostable-horeca-packaging.html' },
+    { anchor: 'Solid Waste Management Rules, 2026', href: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2246814', external: true },
+    { anchor: 'Request a quote', href: 'contact.html' }
+  ],
+  externalReferences: [
+    'Packin Club product specifications: compostable garbage bags and garbage bag on roll (size, thickness, load and shelf-life ranges)',
+    'PIB / MoEFCC, Solid Waste Management Rules, 2026 (in force from 1 April 2026; four-stream segregation, bulk waste generators)',
+    'CCPA, Guidelines for Prevention and Regulation of Greenwashing or Misleading Environmental Claims, 2024',
+    'CPCB, Compostable Plastic E-Certification portal',
+    'Typical material densities: PLA and PBAT blends about 1.2 to 1.3 g/cm3'
+  ],
+  takeaways: [
+    'A compostable garbage bag is a certified bin liner made to break down in industrial composting with the food waste inside it. Ask for the CPCB certificate and IS/ISO 17088 test report.',
+    'Size the bag to the bin: width at least half the distance around the bin, length equal to bin height plus half the bin width plus 4 to 6 inches for the rim.',
+    'Our garbage bags run from 30 to 75 microns, with load ratings up to 15 kg depending on size. Trial the thickness with your real waste before you scale.',
+    'These bags make sense for wet waste with a composting route, and not for dry recyclables, mixed landfill waste or home compost heaps.',
+    'Shelf life is 12 months from manufacture and the minimum order is 100 kg per specification, so standardise sizes and order what you will use.'
+  ],
+  body: [
+    {
+      p: [
+        'Search for “compostable garbage bags” and you will find everything from certified bin liners to ordinary plastic bags with a green leaf printed on them. Hotels, restaurants, offices and housing societies keep asking the same questions: which ones are real, what size to order and how thick they need to be.',
+        'This guide answers them in order. It covers what makes a garbage bag compostable, how to match a bag to a bin, how micron thickness relates to load, where these bags make sense and where they do not, how to store them, and how to buy in bulk.'
+      ]
+    },
+    {
+      h: 'What Is a Compostable Garbage Bag?',
+      p: [
+        'A compostable garbage bag, also called a compostable bin liner, is made from a blend such as corn starch, PLA and PBAT that breaks down in a composting facility. It goes into the bin with food waste and is composted along with it, so nobody has to separate the bag from the scraps.',
+        'In India the claim should be backed by two documents: a test report to IS/ISO 17088, the standard for compostable plastics, and a CPCB certificate. Our guide to the CPCB certificate shows how to read both.'
+      ]
+    },
+    {
+      h: 'Compostable vs “Biodegradable” Garbage Bags',
+      p: [
+        '“Biodegradable” sounds like the same thing, but it is not. Almost everything biodegrades eventually, so the word says nothing about how long it takes, where it happens or what is left behind. “Compostable” is stricter. The bag must break down in a composting process within a set time and leave no harmful residue, which is what the IS/ISO 17088 test checks.',
+        'Oxo-biodegradable bags are different again. They are ordinary plastic with an additive that makes the film fragment, and they are not compostable. Our explainer on compostable vs biodegradable packaging goes deeper.',
+        'Under the CCPA’s 2024 greenwashing guidelines, vague green terms need qualifiers and evidence. So ask for the certificate, not the claim.'
+      ],
+      table: {
+        headers: ['What the pack says', 'What it tells you', 'What to ask for'],
+        rows: [
+          ['Certified compostable', 'Tested to break down in industrial composting', 'CPCB certificate and IS/ISO 17088 test report'],
+          ['Biodegradable', 'Nothing specific about time, place or residue', 'The test standard, the time and the conditions'],
+          ['Oxo-biodegradable', 'Plastic that fragments; not compostable', 'Do not accept it as a compostable bag'],
+          ['Plain bag with an “eco” print', 'No substantiated environmental claim', 'Treat it as ordinary plastic until proven otherwise']
+        ]
+      }
+    },
+    {
+      h: 'Compostable Garbage Bag Size Chart by Bin Type',
+      p: [
+        'Order by the bin, not by a guess. Measure your bin and apply two rules. The bag width should be at least half the distance around the bin. The bag length should be the bin height plus half the bin width, plus 4 to 6 inches to fold over the rim.',
+        'The table gives starting points for common bins. Capacities are approximate, so always measure yours. Our compostable garbage bags range from 17″×19″ to 36″×45″, and bags on roll from 19″×21″ to 30″×37″. Send us your bin size and we confirm the closest available size.'
+      ],
+      table: {
+        headers: ['Bin type', 'Approximate capacity', 'Bag size to start with'],
+        rows: [
+          ['Desk, bathroom or bedside bin', '5 to 7 litres', '17″ × 19″'],
+          ['Office and kitchen counter bin', '8 to 12 litres', '19″ × 21″'],
+          ['Kitchen and room bin', '20 to 30 litres', '24″ × 31″'],
+          ['Large kitchen, corridor or canteen bin', '40 to 60 litres', '30″ × 37″'],
+          ['Back-of-house drum or bulk bin', '80 to 120 litres', '36″ × 45″']
+        ]
+      }
+    },
+    {
+      p: [
+        'For bins that are emptied several times a day, a roll is faster. Our compostable garbage bag on roll comes with 15 to 30 bags per roll and a heat-sealed, leak-resistant base, which helps with wet waste.'
+      ]
+    },
+    {
+      h: 'Micron and Load: How Thick Should the Bag Be?',
+      p: [
+        'Thickness is measured in microns. Thicker film carries more weight and resists tearing, but it uses more material and costs more per bag. Our garbage bags run from 30 to 75 microns, with load ratings up to 15 kg depending on size.',
+        'Thickness is not the whole story. A wide bag can hold more weight, yet the same film is stretched over a bigger area, so seams and corners matter as much as microns. Treat the table as a starting point for a trial, not as a guarantee.'
+      ],
+      table: {
+        headers: ['What goes in the bag', 'Thickness to trial', 'What to watch'],
+        rows: [
+          ['Dry office and light waste', '30 to 40 microns', 'Light loads and low moisture'],
+          ['Kitchen scraps and wet waste', '40 to 51 microns', 'Wet waste is heavy and finds weak seams; prefer a sealed base'],
+          ['Canteen, hotel back-of-house and heavy bins', '51 to 75 microns', 'Check the load rating for your bag size']
+        ]
+      }
+    },
+    {
+      p: [
+        'Run a one-week trial. Fill the bags the way your staff really do, lift them by the top, carry them to the collection point and note any tears, leaks or liners that slip into the bin.'
+      ]
+    },
+    {
+      h: 'Where Compostable Garbage Bags Make Sense',
+      ul: [
+        'Wet and food waste that goes to a composting or bio-processing facility. This is the main use, because the bag and the waste are composted together.',
+        'Hotels, restaurants, canteens and cloud kitchens that segregate wet waste and hand it to a composting or collection partner. Read more in our guide to compostable packaging for restaurants and cloud kitchens.',
+        'Housing societies, offices, campuses and events that have a wet-waste collection route.',
+        'Bulk waste generators that must now manage wet waste properly. The Solid Waste Management Rules, 2026 have been in force since 1 April 2026. They require four-stream segregation at source into wet, dry, sanitary and special-care waste and place extra duties on bulk waste generators.'
+      ]
+    },
+    {
+      h: 'Where They Do Not Make Sense',
+      ul: [
+        'Mixed waste headed to landfill. Without a composting route, a compostable bag gives you little, and a plain bag costs less.',
+        'Dry recyclables. Keep compostable film out of the dry stream, because it can contaminate plastic recycling.',
+        'Home compost heaps. Our garbage bags are made for industrial composting. Read home vs industrial composting before you promise anything else.',
+        'Sharp, hot or hazardous waste. Broken glass, needles, hot ash and chemicals can tear any bag. Sanitary and special-care waste follow their own rules.'
+      ]
+    },
+    {
+      p: [
+        'The pattern is simple. Choose compostable bin liners when you can name the place where the bag will be composted. If you cannot, fix the route first.'
+      ]
+    },
+    {
+      h: 'Hotels and HORECA: What to Order',
+      p: [
+        'A hotel runs several kinds of bin: guest-room bins, housekeeping carts, kitchen wet-waste bins and back-of-house drums. A simple way to buy is to fix two or three standard sizes, use colour to separate waste streams, and put bags on roll where bins turn over fastest. Our garbage bags come in colour options for waste segregation.',
+        'For the wider range of kitchen and service packaging, see our HORECA packaging range and our industrial packaging range.'
+      ]
+    },
+    {
+      h: 'Storage and Shelf Life',
+      p: [
+        'Compostable film is made to break down, so it ages faster than ordinary plastic. Packin Club garbage bags have a shelf life of 12 months from the date of manufacture.'
+      ],
+      ul: [
+        'Store cartons in a cool, dry place away from direct sun, heat and damp.',
+        'Keep cartons closed and off the floor.',
+        'Use the oldest stock first.',
+        'Order a quantity you can use well inside the 12 months, and confirm the manufacturing date when the delivery arrives.',
+        'Check a bag from each new carton before it goes into service.'
+      ]
+    },
+    {
+      h: 'Bulk Buying: What 100 kg Gets You',
+      p: [
+        'Packin Club’s minimum order is 100 kg per specification. Because compostable film is denser than polyethylene, count bags rather than kilos. The table shows approximate weights for flat bags, using a density of about 1.25 and two layers of film. It is illustrative arithmetic, not a quote or a performance claim. Real bags vary with seams and gussets.'
+      ],
+      table: {
+        headers: ['Bag size and thickness', 'Grams per bag', 'Bags per kg', 'Bags in 100 kg'],
+        rows: [
+          ['19″ × 21″ at 30 microns', '19.3 g', '52', 'about 5,180'],
+          ['24″ × 31″ at 40 microns', '48.0 g', '21', 'about 2,080'],
+          ['30″ × 37″ at 51 microns', '91.3 g', '11', 'about 1,095'],
+          ['36″ × 45″ at 75 microns', '196 g', '5', 'about 510']
+        ]
+      }
+    },
+    {
+      p: [
+        'Each specification needs its own 100 kg, so using fewer sizes and thicknesses makes the minimum easier to reach and lets you pool volume across outlets. To compare a quote with plastic, use the cost-per-bag method in our guide to compostable bags price in India.'
+      ]
+    },
+    {
+      h: 'Checklist Before You Place a Bulk Order',
+      ul: [
+        'Ask for the CPCB certificate number, validity date and IS/ISO 17088 test report, and check that they cover the bag you are buying. Our checklist on how to spot greenwashing lists the red flags.',
+        'Confirm the composting route for your waste before you buy.',
+        'Ask for samples and run the one-week trial described above.',
+        'Confirm size, thickness, load rating, packing (flat or roll) and colour in writing.',
+        'Confirm the date of manufacture and the shelf life.',
+        'Check how the Plastic Waste Management Rules 2026 affect your business.'
+      ]
+    },
+    {
+      h: 'Get a Quote for Your Bins',
+      p: [
+        'Send us your bin sizes, what goes into them, your monthly quantity and your delivery city. We send samples and a quote within two business days. Request a quote and we will match a compostable bin liner to each bin. You can also browse the full compostable garbage bags range.'
+      ]
+    }
+  ],
+  faqs: [
+    {
+      q: 'What are compostable garbage bags?',
+      a: 'They are bin liners made from compostable materials such as corn starch, PLA and PBAT. They are designed to break down in industrial composting along with the food waste inside them. Always ask for the CPCB certificate and IS/ISO 17088 test report.'
+    },
+    {
+      q: 'Are compostable garbage bags the same as biodegradable garbage bags?',
+      a: 'No. “Biodegradable” has no fixed time, place or residue test behind it. “Compostable” means the bag has been tested to break down in a composting process. Oxo-biodegradable bags only fragment and are not compostable.'
+    },
+    {
+      q: 'What size compostable garbage bag do I need for my dustbin?',
+      a: 'Make the bag width at least half the distance around the bin, and the length equal to the bin height plus half the bin width plus 4 to 6 inches for the rim. As a starting point, 17″×19″ suits 5 to 7 litre bins and 30″×37″ suits 40 to 60 litre bins.'
+    },
+    {
+      q: 'What micron thickness should I choose?',
+      a: 'Our garbage bags run from 30 to 75 microns. Start around 30 to 40 microns for dry office waste, 40 to 51 for wet kitchen waste and 51 to 75 for heavy back-of-house bins, then confirm with a one-week trial.'
+    },
+    {
+      q: 'How much weight can a compostable garbage bag hold?',
+      a: 'Load ratings go up to 15 kg depending on the size and thickness. Wet waste is heavy and stresses the seams, so test with your real waste before you order in bulk.'
+    },
+    {
+      q: 'Can I use compostable garbage bags for wet kitchen waste?',
+      a: 'Yes, and it is the best use. Our bags on roll have a heat-sealed, leak-resistant base, and the whole bag composts with the food waste in an industrial facility, provided the waste has a composting route.'
+    },
+    {
+      q: 'Can I compost these bags at home?',
+      a: 'Our garbage bags are made for industrial composting, so do not promise home composting. Read our guide on home vs industrial composting to understand the difference.'
+    },
+    {
+      q: 'How long can I store compostable garbage bags?',
+      a: 'Packin Club garbage bags have a shelf life of 12 months from the date of manufacture. Store them in a cool, dry place away from sun, heat and damp, and use the oldest stock first.'
+    },
+    {
+      q: 'What is the minimum order for compostable garbage bags?',
+      a: 'The minimum order is 100 kg per specification. Share your bin sizes and quantities through the quote form, and we confirm the order with samples and a quote within two business days.'
+    },
+    {
+      q: 'Are compostable garbage bags suitable for hotels?',
+      a: 'They suit hotels that segregate wet waste and send it to composting or a wet-waste collection partner. Use two or three standard sizes, colour to separate streams, and rolls for fast-turnover bins.'
+    }
+  ]
+},
+
+{
+  title: 'Switch to Compostable Packaging: A 30-Day Plan for D2C Brands',
+  slug: 'how-to-switch-to-compostable-packaging',
+  cat: 'E-commerce',
+  keyword: 'how to switch to compostable packaging',
+  secondaryKeywords: [
+    'eco-friendly packaging for D2C brands India',
+    'compostable mailers sample',
+    'switch from plastic mailers to compostable',
+    'compostable packaging for ecommerce brands',
+    'compostable mailer bags India',
+    'compostable packaging checklist',
+    'sustainable packaging for D2C',
+    'compostable packaging label claims'
+  ],
+  searchIntent: 'Informational and commercial, D2C and e-commerce brands planning a move from plastic mailers to certified compostable packaging',
+  date: '2026-11-20',
+  readMins: 11,
+  author: 'Vikas Jha',
+  excerpt: 'A week-by-week plan for D2C brands: audit what you ship, spec and sample, test drop, seal and shelf life, then order and print. Includes the label claims you can and cannot make.',
+  metaTitle: 'How to Switch to Compostable Packaging (30 Days)',
+  metaDescription: 'How to switch to compostable packaging in 30 days: a week-by-week D2C plan covering audit, samples, drop and seal tests, ordering, print and label claims.',
+  imageAlt: 'Compostable courier mailers laid out for a 30-day switch plan for D2C brands in India',
+  imageFilename: 'how-to-switch-to-compostable-packaging.webp',
+  quickAnswer: 'To switch to compostable packaging, audit what you ship in week one, spec and sample certified mailers in week two, run drop, seal and shelf-life tests in week three, and order and print in week four. Verify the CPCB certificate, pilot on real orders, and make only the label claims your certificates support.',
+  pullQuote: 'Set your pass and fail rules before the test starts, so the result decides the order and not the other way round.',
+  pullAfter: 6,
+  internalLinks: [
+    { anchor: 'true cost of switching to compostable packaging', targetSlug: 'the-true-cost-of-switching-to-compostable-packaging' },
+    { anchor: 'courier bag sizes chart', targetSlug: 'courier-bag-sizes-chart' },
+    { anchor: 'complete guide to compostable courier bags', targetSlug: 'compostable-courier-bags-for-e-commerce-the-complete-guide' },
+    { anchor: 'compostable bags price in India', targetSlug: 'compostable-bags-price-in-india' },
+    { anchor: 'CPCB certificate', targetSlug: 'what-is-cpcb-certificate-for-compostable-packaging' },
+    { anchor: 'how to spot greenwashing', targetSlug: 'how-to-spot-greenwashing-in-eco-friendly-packaging' },
+    { anchor: 'Plastic Waste Management Rules 2026', targetSlug: 'plastic-waste-management-rules-2026-packaging-checklist' },
+    { anchor: 'home vs industrial composting', targetSlug: 'home-composting-vs-industrial-composting-what-you-need-to-know' }
+  ],
+  pageLinks: [
+    { anchor: 'compostable courier mailers', href: 'products/compostable-courier-bags-mailers.html' },
+    { anchor: 'Request a quote', href: 'contact.html' }
+  ],
+  externalReferences: [
+    'Packin Club product specifications: compostable courier bags / mailers (size, thickness, closure, print and shelf-life ranges)',
+    'CCPA, Guidelines for Prevention and Regulation of Greenwashing or Misleading Environmental Claims, 2024',
+    'CPCB, Compostable Plastic E-Certification portal'
+  ],
+  takeaways: [
+    'Treat the switch as a 30-day project with one owner: audit in week 1, spec and samples in week 2, tests in week 3, order and print in week 4.',
+    'Group your products into two or three size bands, so you test and order only a few mailer sizes.',
+    'Set pass and fail rules before testing, and run drop, seal, wet and shelf-life checks plus a pilot on real orders.',
+    'Verify the CPCB certificate number, validity date and IS/ISO 17088 test report before you approve any supplier.',
+    'Say “certified compostable” and name the industrial composting condition. Avoid unqualified words such as “eco-friendly”, “green” or “biodegradable”.'
+  ],
+  body: [
+    {
+      p: [
+        'Most D2C brands do not stall on the decision to switch to compostable packaging. They stall on the project: who tests what, what happens if a mailer fails in transit, and what the label is allowed to say. A fixed 30-day plan removes that stall.',
+        'This plan is written for a D2C brand shipping across India with a small team. It assumes you use poly mailers or plastic courier bags today and want certified compostable mailers without hurting delivery quality.'
+      ]
+    },
+    {
+      h: 'Before You Start: What You Need on Day 1',
+      ul: [
+        'One owner for the project, with authority to approve samples and spend.',
+        'Your monthly order count, split by product.',
+        'Your current mailer specification, price per piece, damage rate and return rate.',
+        'The courier partners and regions you ship to.',
+        'A realistic wish: replace one mailer family first, not every pack in the warehouse.'
+      ]
+    },
+    {
+      h: 'The 30-Day Plan at a Glance',
+      table: {
+        headers: ['Week', 'Focus', 'You finish with'],
+        rows: [
+          ['Week 1 (days 1 to 7)', 'Audit', 'A one-page spec of what you ship, grouped into size bands'],
+          ['Week 2 (days 8 to 14)', 'Spec and samples', 'Two or three candidate mailers, samples in hand, certificates checked'],
+          ['Week 3 (days 15 to 21)', 'Drop, seal and shelf-life tests', 'A pass or fail result for each candidate, plus a pilot started'],
+          ['Week 4 (days 22 to 30)', 'Order and print', 'A purchase order, approved artwork and signed-off label text']
+        ]
+      }
+    },
+    {
+      h: 'Week 1: Audit What You Ship',
+      p: [
+        'You cannot pick a mailer until you know what goes into it. Spend the week on facts, not opinions.'
+      ],
+      ul: [
+        'List every product and its packed length, width and height. Our courier bag sizes chart shows how to measure.',
+        'Group products into two or three size bands. Fewer sizes make samples, tests and the minimum order easier.',
+        'Record your current mailer: size, thickness, price per piece, damage rate, return rate and customer complaints.',
+        'Note special needs: wet or cold items, sharp corners, heavy products and fragile items that need inner protection.',
+        'Note your courier partners and the toughest routes, such as long-distance or monsoon-affected lanes.'
+      ]
+    },
+    {
+      p: [
+        'Then work out what the move will really cost. Our true cost of switching to compostable packaging walks through the full framework, and the guide to compostable bags price in India shows how to turn a price per kg into a cost per mailer.'
+      ]
+    },
+    {
+      h: 'Week 2: Spec and Samples',
+      p: [
+        'Use your audit to write a short specification for each size band, then ask suppliers for samples against it. Our complete guide to compostable courier bags explains the formats in detail.'
+      ],
+      ul: [
+        'Size. Choose a mailer that fits the product with room to seal, and avoid oversize bags that waste material.',
+        'Thickness. Our compostable courier mailers run from 50 to 60 microns. Pick the thinnest gauge that passes your tests.',
+        'Closure and surface. Look for a permanent self-seal strip, a tamper-evident closure and a write-on surface for labels.',
+        'Print. Decide whether you want a logo, how many colours and where. We print up to 8 colours with food-grade flexographic inks.',
+        'Certificates. Ask for the CPCB certificate number, its validity date and the IS/ISO 17088 test report, and check them. Our guide to the CPCB certificate explains how.',
+        'Samples. Request a compostable mailer sample for each size band, with at least a few pieces of each, so you can test properly.'
+      ]
+    },
+    {
+      h: 'Week 3: Drop, Seal and Shelf-Life Tests',
+      p: [
+        'Write your pass and fail rules first. For example: no seal failures, no split seams, no leaks, and a damage rate equal to or better than your current mailer. Then run these simple internal checks. They are practical tests for your own decision, not certified standards.'
+      ],
+      ul: [
+        'Drop test. Pack a real order and drop it from waist height onto a hard floor several times. Check seams and corners.',
+        'Seal test. Seal the mailer, leave it for 24 hours, then press and pull at the seal. Repeat in a warm room and a cool one.',
+        'Load test. Pack your heaviest product and carry the mailer by the top edge and the seal.',
+        'Wet test. Stand a packed mailer on a damp surface and check the water resistance and the write-on surface.',
+        'Shelf-life check. Packin Club mailers have a shelf life of 12 months from manufacture. Store a spare carton in your own storeroom and inspect it for stickiness or brittleness over the weeks.',
+        'Pilot. Ship 20 to 50 real orders to different cities with a few courier partners, and track damage, complaints and packing time.'
+      ]
+    },
+    {
+      h: 'Week 4: Order and Print',
+      ul: [
+        'Choose the winners by size band and write the final specification: size, thickness, closure, print and packing.',
+        'Work out the quantity. The minimum order is 100 kg per specification, so convert it into a number of mailers and compare it with your monthly demand.',
+        'Approve artwork. Ask for a print proof, and check colours, logo size and the label text.',
+        'Ask for the production lead time and delivery date in writing.',
+        'Plan the overlap. Keep your current mailers until the new stock arrives, and use the oldest compostable stock first.',
+        'Brief your packing team on the new mailer and train them to seal it properly.'
+      ]
+    },
+    {
+      h: 'Label Claims You Can and Cannot Make',
+      p: [
+        'This is where brands get into trouble. Under the CCPA’s 2024 greenwashing guidelines, vague green words need qualifiers and evidence. Make only the claims your certificates support, and follow the marking rules in the Plastic Waste Management Rules 2026.'
+      ],
+      table: {
+        headers: ['Claim', 'Safe to use?', 'Why'],
+        rows: [
+          ['Certified compostable', 'Yes, if you hold the certificates', 'Backed by a CPCB certificate and IS/ISO 17088 report'],
+          ['Compostable in industrial composting facilities', 'Yes', 'It names the condition that applies'],
+          ['Biodegradable', 'Avoid on its own', 'It has no time, place or residue test behind it'],
+          ['Eco-friendly, green or sustainable', 'Avoid unqualified', 'Vague terms need qualifiers and evidence'],
+          ['Home compostable', 'Only if certified for it', 'Home and industrial composting are different conditions'],
+          ['Plastic-free or zero waste', 'No, unless it is true', 'Compostable materials can still be plastic-based, and waste still has to go somewhere'],
+          ['Recyclable', 'No', 'Compostable mailers belong in a composting route, not in recycling']
+        ]
+      }
+    },
+    {
+      p: [
+        'Tell customers what to do with the mailer. A clear line such as “Compostable only under industrial composting. Place in your wet-waste bin if a composting route exists” is more useful than a leaf icon. Read how to spot greenwashing to see what regulators and customers look for, and our home vs industrial composting guide to word the disposal advice correctly.'
+      ]
+    },
+    {
+      h: 'Common Mistakes to Avoid',
+      ul: [
+        'Switching every pack at once instead of one mailer family first.',
+        'Buying on price per kg alone, instead of cost per mailer.',
+        'Skipping the certificate check because the sample “looks right”.',
+        'Testing on a desk, not on real routes with real couriers.',
+        'Using one oversize mailer for every product.',
+        'Over-ordering stock that will sit through a humid monsoon past its shelf life.',
+        'Printing green claims that the certificates do not support.',
+        'Forgetting to tell customers how to dispose of the mailer.'
+      ]
+    },
+    {
+      h: 'Your Next Step: Ask for Samples',
+      p: [
+        'Send us your product sizes, your monthly orders and the courier lanes you use. We send samples and a quote within two business days, and you can start week two the same week. Request a quote, or look at the specifications of our compostable courier mailers first.'
+      ]
+    }
+  ],
+  faqs: [
+    {
+      q: 'How do I switch to compostable packaging?',
+      a: 'Follow four steps: audit what you ship, write a spec and request samples, test drop, seal and shelf life with a pilot, then order and print. A 30-day plan fits a small D2C team that starts with one mailer family.'
+    },
+    {
+      q: 'How long does it take to switch to compostable packaging?',
+      a: 'A focused brand can finish the audit, samples, tests and order in about 30 days. Production and delivery of your first order come on top, so ask for the lead time in writing.'
+    },
+    {
+      q: 'Are compostable mailers strong enough for courier shipping?',
+      a: 'Certified compostable mailers can handle courier shipping when the size and thickness suit the product. Our mailers run from 50 to 60 microns with a self-seal strip. Test them on your real routes before you scale.'
+    },
+    {
+      q: 'Where can I get a compostable mailer sample?',
+      a: 'Ask the supplier for samples of each size band before you order. Share your product sizes and monthly orders through the quote form, and Packin Club sends samples and a quote within two business days.'
+    },
+    {
+      q: 'Do compostable mailers cost more than poly mailers?',
+      a: 'They generally cost more, and the gap depends on size, thickness, print and volume. Compare cost per mailer rather than price per kg, and add compliance and brand value to the comparison.'
+    },
+    {
+      q: 'What is the minimum order for compostable mailers?',
+      a: 'Packin Club’s minimum order is 100 kg per specification. Convert it into a number of mailers to check it against your monthly demand.'
+    },
+    {
+      q: 'What does certified compostable mean in India?',
+      a: 'It means the product has been tested to IS/ISO 17088 and holds a valid CPCB certificate. Ask for the certificate number, the validity date and the test report before you make the claim.'
+    },
+    {
+      q: 'Can I print my brand logo on compostable mailers?',
+      a: 'Yes. Packin Club prints up to 8 colours with food-grade flexographic inks. Simpler print costs less, so ask for options when you request a quote.'
+    },
+    {
+      q: 'What can I write on the label of a compostable mailer?',
+      a: 'Use “certified compostable” and state the industrial composting condition, if your certificates support it. Avoid unqualified words such as “eco-friendly”, “green” and “biodegradable”, and do not claim home compostability unless it is certified.'
+    },
+    {
+      q: 'How should customers dispose of compostable mailers?',
+      a: 'They should go into a wet-waste or composting stream where a composting route exists, not into dry recycling. Put the instruction on the mailer or the packing slip.'
+    }
+  ]
+},
+
  ];
   // category brand colour for hero blocks
   var CAT_BG = {
@@ -3538,7 +4021,9 @@
     'plastic-waste-management-rules-2026-packaging-checklist': 'thumbnail_blog/plastic-waste-management-rules-2026-packaging-checklist.webp',
     'compostable-packaging-distributorship-india': 'thumbnail_blog/compostable-packaging-distributorship-india.webp',
     'compostable-packaging-for-quick-commerce-and-dark-stores': 'thumbnail_blog/compostable-packaging-for-quick-commerce-and-dark-stores.webp',
-    'compostable-bags-price-in-india': 'thumbnail_blog/compostable-bags-price-in-india.webp'
+    'compostable-bags-price-in-india': 'thumbnail_blog/compostable-bags-price-in-india.webp',
+    'compostable-garbage-bags-india': 'thumbnail_blog/compostable-garbage-bags-india.webp',
+    'how-to-switch-to-compostable-packaging': 'thumbnail_blog/how-to-switch-to-compostable-packaging.webp'
   };
   POSTS.forEach(function (p) {
     p.slug = p.slug || slug(p.title);
