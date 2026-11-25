@@ -27,13 +27,17 @@ const RELATED_PRODUCTS = {
   'plastic-waste-management-rules-2026-packaging-checklist': ['compostable-carry-bags', 'compostable-courier-bags-mailers', 'compostable-garbage-bags', 'compostable-grocery-bags'],
   'compostable-packaging-distributorship-india': ['compostable-carry-bags', 'compostable-garbage-bags', 'compostable-courier-bags-mailers', 'compostable-pouches'],
   'compostable-packaging-for-quick-commerce-and-dark-stores': ['compostable-carry-bags-on-roll', 'compostable-grocery-bags-on-roll', 'compostable-carry-bags', 'compostable-courier-bags-mailers'],
-  'compostable-bags-price-in-india': ['compostable-carry-bags', 'compostable-courier-bags-mailers', 'compostable-garbage-bags', 'compostable-grocery-bags']
+  'compostable-bags-price-in-india': ['compostable-carry-bags', 'compostable-courier-bags-mailers', 'compostable-garbage-bags', 'compostable-grocery-bags'],
+  'compostable-garbage-bags-india': ['compostable-garbage-bags', 'compostable-garbage-bag-on-roll', 'compostable-pet-poop-bags'],
+  'how-to-switch-to-compostable-packaging': ['compostable-courier-bags-mailers', 'compostable-carry-bags', 'compostable-garment-bags', 'compostable-pouches']
 };
 const KEEP_READING = {
   'plastic-waste-management-rules-2026-packaging-checklist': ['what-is-cpcb-certificate-for-compostable-packaging', 'india-s-single-use-plastic-ban-a-practical-compliance-guide-for-businesses', 'compostable-packaging-distributorship-india'],
   'compostable-packaging-distributorship-india': ['what-is-cpcb-certificate-for-compostable-packaging', 'plastic-waste-management-rules-2026-packaging-checklist', 'compostable-bags-price-in-india'],
   'compostable-packaging-for-quick-commerce-and-dark-stores': ['compostable-courier-bags-for-e-commerce-the-complete-guide', 'courier-bag-sizes-chart', 'compostable-bags-price-in-india'],
-  'compostable-bags-price-in-india': ['the-true-cost-of-switching-to-compostable-packaging', 'compostable-packaging-for-quick-commerce-and-dark-stores', 'plastic-waste-management-rules-2026-packaging-checklist']
+  'compostable-bags-price-in-india': ['the-true-cost-of-switching-to-compostable-packaging', 'compostable-packaging-for-quick-commerce-and-dark-stores', 'plastic-waste-management-rules-2026-packaging-checklist'],
+  'compostable-garbage-bags-india': ['what-is-cpcb-certificate-for-compostable-packaging', 'compostable-bags-price-in-india', 'home-composting-vs-industrial-composting-what-you-need-to-know'],
+  'how-to-switch-to-compostable-packaging': ['compostable-courier-bags-for-e-commerce-the-complete-guide', 'the-true-cost-of-switching-to-compostable-packaging', 'courier-bag-sizes-chart']
 };
 
 const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
